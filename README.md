@@ -6,5 +6,7 @@
 
 * git clone
 
+* aws configure
+
 * 인프라 빌드
 
