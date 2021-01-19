@@ -34,6 +34,7 @@ $ aws configure           # region 과 aws key 설정
 오라클 설치, OS 파리미터 설정, 네트워크 설정 등과 같은 기본적인 설정은 모두 자동화 되어 있기 때문에, DMS 와 postgresql 에 대한 이해도를 높일 수...
 
 ```
+var.tf 수정 (내아이피 확인후)
 $ terraform apply -auto-approve
 ```
 
