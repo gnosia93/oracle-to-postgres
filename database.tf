@@ -75,7 +75,8 @@ sudo systemctl start postgresql
 sudo -u ec2-user ps aux | grep postgres >> /home/ec2-user/postgres.out
 EOF
     tags = {
-      "Name" = "tf_postgres"
+      "Name" = "tf_postgres",
+      "Project" = "oracle2postgres"
     } 
 }
 
@@ -152,7 +153,8 @@ sudo chown oracle:dba /u01/app/oracle/.bash_profile
 _DATA
     
     tags = {
-      "Name" = "tf_oracle_11xe"
+      "Name" = "tf_oracle_11xe",
+      "Project" = "oracle2postgres"
     } 
 }
 

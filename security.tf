@@ -1,12 +1,77 @@
+data "aws_vpc" "tf_vpc" {
+    default = true
+}
+
+/*
+data "aws_iam_policy" "ec2_service_policy" {
+  arn = "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+}
+*/
+
 resource "aws_key_pair" "tf_key" {
   key_name = "tf_key"
   public_key = file("~/.ssh/tf_key.pub")
 }
 
-
-data "aws_vpc" "tf_vpc" {
-    default = true
+resource "aws_iam_role" "tf_ec2_service_role" {
+  name = "tf_ec2_service_role"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
 }
+EOF
+}
+
+resource "aws_iam_instance_profile" "tf_ec2_profile" {
+  name = "tf_ec2_profile"
+  role = aws_iam_role.tf_ec2_service_role.name
+}
+
+
+resource "aws_iam_role_policy" "tf_ec2_policy" {
+  name = "tf_ec2_policy"
+  role = aws_iam_role.tf_ec2_service_role.id
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "s3:*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "ec2:*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ]
+}
+EOF
+}
+
+
+/*
+resource "aws_iam_role_policy_attachment" "tf_ec2_service_role_policy_attach" {
+   role       = aws_iam_role.tf_ec2_service_role.name
+   policy_arn = data.aws_iam_policy.ec2_service_policy.arn
+}
+*/
 
 resource "aws_security_group" "tf_sg_pub" {
     name = "tf_sg_pub"
