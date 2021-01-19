@@ -8,16 +8,20 @@ resource "aws_instance" "tf_loadgen" {
     }
     key_name = aws_key_pair.tf_key.id
     vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
-    user_data = <<EOF
+    user_data = <<_DATA
 #! /bin/bash
-sudo yum install -y python37
+sudo yum install -y python37 git
 sudo pip3 install cx_oracle
-sudo -u ec2-user mkdir images
-sudo -u ec2-user curl -o /home/ec2-user/images/images.tar https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/images/images.tar
+sudo -u ec2-user git clone https://github.com/gnosia93/postgres-pyoracle.git /home/ec2-user/pyoracle
+sudo -u ec2-user mkdir -p /home/ec2-user/pyoracle/images
+sudo -u ec2-user curl -o /home/ec2-user/pyoracle/images/images.tar https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/images/images.tar
+sudo -u ec2-user tar xvf /home/ec2-user/pyoracle/images/images.tar -C /home/ec2-user/pyoracle/images
 sudo -u ec2-user curl -o /home/ec2-user/client.zip https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/instantclient-basic-linux.x64-21.1.0.0.0.zip
-sudo -u ec2-user tar xvf /home/ec2-user/images/images.tar
-sudo -u ec2-user unzip /home/ec2-user/client.zip
+sudo -u ec2-user unzip /home/ec2-user/client.zip -d /home/ec2-user
+sudo cat >> /home/ec2-user/.bash_profile <<EOF
+export ORACLE_HOME=/home/ec2-user/instantclient_21_1
 EOF
+_DATA
 
     tags = {
       "Name" = "tf_loadgen"
