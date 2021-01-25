@@ -50,6 +50,57 @@ DMS을 이용하여 CDC 방식으로 데이터를 복제하기 위해서는 아�
 
 #### 5-1. 아카이브 로그 모드 전환 ####
 
+아카이브 로그 모드로 전환하기 위해서는 데이테베이스를 shutdown 한 후, 아래와 같이 mount 모드에서 아카이브 로그를 활성화 해준다.
+운영 시스템의 경우 이미 아카이브 로그가 활성화 되어 있는 경우가 대부분이기 때문에 이 과정을 불필요할 수 있다
+데이터베이스가 아카이브 로그로 운영중인지 체크하기 위해서는 아래의 SQL 을 실행하면 된다. 
+```
+SQL> select name, log_mode from v$database;
+```
+
+[아카이브 로그 전환 방법]
+```
+[oracle@ip-172-31-7-143 ~]$ sqlplus "/ as sysdba"
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Mon Jan 11 08:31:16 2021
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL> shutdown immediate;
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+SQL> startup mount
+ORACLE instance started.
+
+Total System Global Area 1577055360 bytes
+Fixed Size		    9135232 bytes
+Variable Size		  419430400 bytes
+Database Buffers	 1140850688 bytes
+Redo Buffers		    7639040 bytes
+Database mounted.
+SQL> alter database archivelog;
+
+Database altered.
+
+SQL> alter database open;
+
+Database altered.
+
+SQL> archive log list
+Database log mode	       Archive Mode
+Automatic archival	       Enabled
+Archive destination	       /app/oracle/product/19c/dbhome/dbs/arch
+Oldest online log sequence     58
+Next log sequence to archive   60
+Current log sequence	       60
+```
+
 
 #### 5-2. supplemental 로깅 활성화 ####
 
