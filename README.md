@@ -316,6 +316,16 @@ host    all             all             0.0.0.0/0               md5            <
 
 ### 7. 오라클 데이터 로딩 ###
 
+소스 DB 인 오라클데이터베이스에 실습용 테이블을 생서하고, 샘플 데이터를 로딩하기 위해서 tf_loadgen 서버로 로그인 한 후,  
+아래 명령어를 실행한다. 
+
+```
+(base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@3.34.179.8
+
+
+```
+
+
 ### 8. DMS 태스크 설정 ###
 
 - binary reader
