@@ -41,7 +41,7 @@ sudo -u ec2-user cat > $ORACLE_HOME/tnsnames.ora <<EOF
 # caution : 
 #    if you replace <your-oracle-private-ip> with public ip, you can't connect oracle
 #
-oracle =
+xe =
     (DESCRIPTION =
         (ADDRESS_LIST =
             (ADDRESS = (PROTOCOL = TCP)(HOST = <your-oracle-private-ip>)(PORT = 1521))
