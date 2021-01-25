@@ -58,11 +58,10 @@ SQL> select name, log_mode,
 ```
 
 [supplemental logging 활성화]
-
 ```
 SQL> alter database add supplemental log data;
 SQL> alter database add supplemental log data (primary key) columns;
-SQL> 
+SQL> alter database add supplemental log data (unique) columns;
 ```
 supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조하도록 한다. 
 * [Supplemental Logging](https://docs.oracle.com/database/121/SUTIL/GUID-D857AF96-AC24-4CA1-B620-8EA3DF30D72E.htm#SUTIL1582)
