@@ -1,4 +1,4 @@
-# Oracle2Postgres Migration Workshop #
+# Oracle to Postgres Migration Workshop #
 
 이 튜토리얼은 Mac OS 기준으로 작성되었다. 클라이언트가 윈도우인 경우, 구글 검색을 통해 관련된 명령어를 찾아야 한다.   
 실습용 인프라는 테라폼을 이용하여 빌드하는데, 테라폼 관련 정보는 다음 URL 을 통해 확인할 수 있다. (https://www.terraform.io/)  
