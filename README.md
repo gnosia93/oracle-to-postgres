@@ -442,26 +442,23 @@ DMS 인스턴스와 소스 및 타켓 데이터베이스에 대한 엔드포인�
 
 #### 8.3 마이그레이션 태스크 설정 ####
 
-마이그레이션 태스크 설정은 3단계로 구성되는 태스크 설정과 태스크 셋팅 그리고 태스크 매핑이다. 본 워크샵에서 다양한 형태의 데이터 타입에 대한 마이그레이션
-테스트로 구성되어지는데, 상품(TB_PRODUCT) 테이블의 경우 상품 이미지를 저장하는 BLOB 및 상품 설명 본문을 저장하기 위해 CLOB 칼럼을 사용하고 있다.
+마이그레이션 태스크 설정은 3단계로 구성되는데 태스크 설정과 셋팅 그리고 매핑이다. 본 워크샵에서 사용하는 오라클의 원본 테이블은 다양한 형태의 데이터 타입으로 구성되어져 있는데
+품(TB_PRODUCT) 테이블의 경우 상품 이미지를 저장하는 BLOB 및 상품 본문 HTML을 저장하기 위해 CLOB 칼럼을 사용하고 있다.
 
 테이블 매핑과 관련해서 오라클의 경우 태이블, 칼럼과 같은 스키마의 명칭에 대소문자를 가리지 않은 것에 반해, postgresql 의 경우 명시적으로 Quote를 사용하여 테이블 또는 칼럼을 만드는 경우 대소문자를
 구분하게 된다. SCT 를 사용하지 않고 DMS 만을 사용하여 매핑을 설정하는 경우, DMS 가 자동으로 데이터 타입을 인지하여 스키마를 만들게 되는데, 스키마 생성시 Quote("") 를
 사용하기 때문에 postgres 입장에서는 대소문자를 구분짓게 되는 것이다.
 
-마이그레이션 태스트 매핑 설정시 스미카, 테이블 및 칼럼 명칭에 대헛 lower case 매핑룰을 설정해서 이러한 문제를 사전에 방지해야 한다. lower case 룰을 설정하지 않는 경우
+마이그레이션 태스트 매핑 설정시 스키마, 테이블 및 칼럼 명칭에 대헛 lower case 매핑룰을 설정해서 이러한 문제를 사전에 방지해야 한다. lower case 룰을 설정하지 않는 경우
 postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 및 조회시 쌍따옴표를 이용하여 오브젝트 명칭을 감싸줘야 제대로 SQL 이 에러없이 동작하게 된다. 
 
-아래의 내용은 참고하여 마이그레이션 태스크 설정을 수행한다. 
+아래의 내용을 참고하여 마이그레이션 태스크를 설정한다. 
 
 ![task-configuration](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-configuration.png)
-![task-setting]https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-setting.png
+
+![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-setting.png)
+
 ![task-mapping](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-table-mapping.png)
-
-
-
-
-
 
 
 
