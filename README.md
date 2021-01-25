@@ -48,9 +48,16 @@ DMS을 이용하여 CDC 방식으로 데이터를 복제하기 위해서는 아�
 데이터 로딩은 자동으로 빌드된 ec2 인스턴스 중, tf_loggen 이라는 이름을 가지 인스턴스로 로그인 한 후, 아래의 명령어를 이용하여 진행하면 된다.
 스키마 생성 및 초기 데이터 로딩의 대상이 되는 오라클 데이터베이스의 IP 는, 자동으로 설정되기 때문에 아래의 명령어를 수행하기만 하면 된다. 
 
+[오라클 설정 조회]
+```
+select name, log_mode, 
+    supplemental_log_data_min, 
+    supplemental_log_data_pk, 
+    supplemental_log_data_ui, 
+    supplemental_log_data_all from v$database
 ```
 
-```
+
 
 ### 6. postgres 설정 ###
 
