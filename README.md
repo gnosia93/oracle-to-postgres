@@ -424,10 +424,16 @@ DMS 를 이용하여 CDC 방식으로 데이터를 복제하기 위해서는 리
 본 실습에서는 CDC 복제에 필요한 리플리케이션 인스턴스 2대와 오라클 및 postgres 용 엔드포인트는 테라폼을 이용하여 자동으로 빌드하는데, 세부적인 설정 내용에 대해서는
 테라폼 HCL 설정값을 확인하도록 한다. 물론 AWS Console 상에서 UI 를 이용한 수동 설정 역시 가능하다.
 
-[자동 생성된 인프라 확인]
+[테라폼이 생성한 리소스 확인]
+
+![rep-instance](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-replication-instnace.png)
+
+![rep-endpoint](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-endpoint.png)
 
 
 [엔드포인트 접속 테스트]
+
+
 
 
 [태스크 설정]
