@@ -454,7 +454,8 @@ postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 
 
 아래의 내용은 참고하여 마이그레이션 태스크 설정을 수행한다. 
 
-![task-create](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-create.png)
+![task-configuration](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-configuration.png)
+![task-setting]https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-setting.png
 ![task-mapping](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-table-mapping.png)
 
 
