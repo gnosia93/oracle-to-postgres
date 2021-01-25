@@ -59,6 +59,10 @@ SQL> select name, log_mode,
        supplemental_log_data_pk as log_pk, 
        supplemental_log_data_ui as log_ui, 
        supplemental_log_data_all as log_all from v$database;
+       
+NAME	     LOG_MODE     LOG_MIN	  LOG_PK     LOG_UI	LOG_ALL
+--------- ------------ --------- ---------- ------ ----------
+XE	       NOARCHIVELOG NO	       NO	        NO 	   NO      
 ```
 
 [supplemental logging 활성화]
