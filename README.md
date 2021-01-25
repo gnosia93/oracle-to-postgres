@@ -51,10 +51,10 @@ DMS을 이용하여 CDC 방식으로 데이터를 복제하기 위해서는 아�
 [오라클 설정 조회]
 ```
 SQL> select name, log_mode, 
-       supplemental_log_data_min, 
-       supplemental_log_data_pk, 
-       supplemental_log_data_ui, 
-       supplemental_log_data_all from v$database
+       supplemental_log_data_min as log_min, 
+       supplemental_log_data_pk as log_pk, 
+       supplemental_log_data_ui as log_ui, 
+       supplemental_log_data_all as log_all from v$database;
 ```
 
 [supplemental logging 활성화]
