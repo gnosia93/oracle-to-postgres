@@ -59,30 +59,28 @@ SQL> select name, log_mode from v$database;
 
 [아카이브 로그 전환 방법]
 ```
-[oracle@ip-172-31-7-143 ~]$ sqlplus "/ as sysdba"
+oracle@ip-172-31-32-20:~$ sqlplus "/ as sysdba"
 
-SQL*Plus: Release 19.0.0.0.0 - Production on Mon Jan 11 08:31:16 2021
-Version 19.3.0.0.0
+SQL*Plus: Release 11.2.0.2.0 Production on Mon Jan 25 07:37:09 2021
 
-Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+Copyright (c) 1982, 2011, Oracle.  All rights reserved.
 
 
 Connected to:
-Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-Version 19.3.0.0.0
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
 
 SQL> shutdown immediate;
 Database closed.
 Database dismounted.
 ORACLE instance shut down.
-SQL> startup mount
+SQL> startup mount          
 ORACLE instance started.
 
-Total System Global Area 1577055360 bytes
-Fixed Size		    9135232 bytes
-Variable Size		  419430400 bytes
-Database Buffers	 1140850688 bytes
-Redo Buffers		    7639040 bytes
+Total System Global Area 1068937216 bytes
+Fixed Size		    2233344 bytes
+Variable Size		  822086656 bytes
+Database Buffers	  239075328 bytes
+Redo Buffers		    5541888 bytes
 Database mounted.
 SQL> alter database archivelog;
 
@@ -95,12 +93,11 @@ Database altered.
 SQL> archive log list
 Database log mode	       Archive Mode
 Automatic archival	       Enabled
-Archive destination	       /app/oracle/product/19c/dbhome/dbs/arch
-Oldest online log sequence     58
-Next log sequence to archive   60
-Current log sequence	       60
+Archive destination	       USE_DB_RECOVERY_FILE_DEST
+Oldest online log sequence     497
+Next log sequence to archive   498
+Current log sequence	       498
 ```
-
 
 #### 5-2. supplemental 로깅 활성화 ####
 
