@@ -42,11 +42,16 @@ $ terraform apply -auto-approve
 
 DMS을 이용하여 CDC 방식으로 데이터를 복제하기 위해서는 아래의 두가지 요건을 충족해야 한다.
 
-* 아카이브 로그 모드 활성화
-* supplemental 모드 활성화
+* 아카이브 로그 모드 전환
+* supplemental 로깅 활성화
 
 데이터 로딩은 자동으로 빌드된 ec2 인스턴스 중, tf_loggen 이라는 이름을 가지 인스턴스로 로그인 한 후, 아래의 명령어를 이용하여 진행하면 된다.
 스키마 생성 및 초기 데이터 로딩의 대상이 되는 오라클 데이터베이스의 IP 는, 자동으로 설정되기 때문에 아래의 명령어를 수행하기만 하면 된다. 
+
+#### 5-1. 아카이브 로그 모드 전환 ####
+
+
+#### 5-2. supplemental 로깅 활성화 ####
 
 [오라클 설정 조회]
 ```
@@ -54,6 +59,7 @@ SQL> col log_min format a10
 SQL> col log_pk format a10
 SQL> col log_ui format a10
 SQL> col log_all format a10
+
 SQL> select name, log_mode, 
        supplemental_log_data_min as log_min, 
        supplemental_log_data_pk as log_pk, 
@@ -70,6 +76,16 @@ XE	  NOARCHIVELOG NO	  NO	     NO 	NO
 SQL> alter database add supplemental log data;
 SQL> alter database add supplemental log data (primary key) columns;
 SQL> alter database add supplemental log data (unique) columns;
+
+SQL> select name, log_mode, 
+       supplemental_log_data_min as log_min, 
+       supplemental_log_data_pk as log_pk, 
+       supplemental_log_data_ui as log_ui, 
+       supplemental_log_data_all as log_all from v$database;
+
+NAME	  LOG_MODE     LOG_MIN	  LOG_PK     LOG_UI	LOG_ALL
+--------- ------------ ---------- ---------- ---------- ----------
+XE	  NOARCHIVELOG YES	  YES	     YES	NO
 ```
 로그 마이너를 위한 최소한의 로깅과 update 시 레코드를 식별하기 위해 필요한 PK 또는 유니크 인덱스에 대한 supplemental logging 기능을 활성화 한다.
 만약 복제 대상이 되는 테이블에 PK 또는 Non-NULL 유니크 인덱스 또는 제약조건이 없다면 전체 칼럼에 로깅된다. 
