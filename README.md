@@ -388,8 +388,18 @@ SQL>
 
 #### 7-2. 샘플 데이터 생성하기 ####
 
-```
+pyoracle.py 파이썬 프로그램을 아래와 같이 실행한다.
 
+```
+[ec2-user@ip-172-31-37-6 pyoracle]$ pwd
+/home/ec2-user/pyoracle
+[ec2-user@ip-172-31-37-6 pyoracle]$ python3 pyoracle.py 
+ORACLE_DB_URL: shop/shop@172.31.32.20:1521/xe
+DATA_PATH" /home/ec2-user/pyoracle/images
+PRODUCT_DESCRIPTION_HTML_PATH: /home/ec2-user/pyoracle/images/product_body.html
+DEFAULT_PRODUCT_COUNT: 1000
+DEFAULT_ORDER_COUNT: 1000000
+loading product table... 
 ```
 
 
