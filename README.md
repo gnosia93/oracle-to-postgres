@@ -390,6 +390,7 @@ SQL>
 
 pyoracle.py 파이썬 프로그램을 아래와 같이 실행한다.
 
+[샘플 데이터 생성]
 ```
 [ec2-user@ip-172-31-37-6 pyoracle]$ pwd
 /home/ec2-user/pyoracle
@@ -401,6 +402,15 @@ DEFAULT_PRODUCT_COUNT: 1000
 DEFAULT_ORDER_COUNT: 1000000
 loading product table... 
 ```
+
+오라클 서버로 로그인해서 데이터가 제대로 생성되는 지 확인한다 . 
+
+[데이터 생성 확인]
+```
+SQL> select count(1) from tb_product;
+SQL> select count(1) from tf_order;
+```
+
 
 
 ### 8. DMS 태스크 설정 ###
