@@ -64,8 +64,9 @@ SQL> alter database add supplemental log data;
 SQL> alter database add supplemental log data (primary key) columns;
 SQL> 
 ```
-supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조하도록 한다. (https://docs.oracle.com/database/121/SUTIL/GUID-D857AF96-AC24-4CA1-B620-8EA3DF30D72E.htm#SUTIL1582)
-
+supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조하도록 한다. 
+* [Supplemental Logging](https://docs.oracle.com/database/121/SUTIL/GUID-D857AF96-AC24-4CA1-B620-8EA3DF30D72E.htm#SUTIL1582)
+* [Database-Level Supplemental Logging](https://docs.oracle.com/database/121/SUTIL/GUID-D2DDD67C-E1CC-45A6-A2A7-198E4C142FA3.htm#SUTIL1583)
 
 ### 6. postgres 설정 ###
 
