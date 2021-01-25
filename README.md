@@ -447,7 +447,8 @@ DMS 를 이용하여 CDC 방식으로 데이터를 복제하기 위해서는 리
 postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 및 조회시 쌍따옴표를 이용하여 오브젝트 명칭을 감싸줘야 제대로 SQL 이 에러없이 동작하게 된다. 
 
 
-
+![task-create](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-create.png)
+![task-mapping](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-table-mapping.png)
 
 
 
