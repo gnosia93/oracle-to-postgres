@@ -55,6 +55,10 @@ DMS을 이용하여 CDC 방식으로 데이터를 복제하기 위해서는 아�
 데이터베이스가 아카이브 로그로 운영중인지 체크하기 위해서는 아래의 SQL 을 실행하면 된다. 
 ```
 SQL> select name, log_mode from v$database;
+
+NAME	  LOG_MODE
+--------- ------------
+XE	  NOARCHIVELOG
 ```
 
 [아카이브 로그 전환 방법]
@@ -116,7 +120,7 @@ SQL> select name, log_mode,
        
 NAME	  LOG_MODE     LOG_MIN	  LOG_PK     LOG_UI	LOG_ALL
 --------- ------------ ---------- ---------- ---------- ----------
-XE	  NOARCHIVELOG NO	  NO	     NO 	NO
+XE	  ARCHIVELOG NO	  NO	     NO 	NO
 ```
 
 [supplemental logging 활성화]
