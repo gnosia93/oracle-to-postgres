@@ -50,13 +50,21 @@ DMS을 이용하여 CDC 방식으로 데이터를 복제하기 위해서는 아�
 
 [오라클 설정 조회]
 ```
-select name, log_mode, 
-    supplemental_log_data_min, 
-    supplemental_log_data_pk, 
-    supplemental_log_data_ui, 
-    supplemental_log_data_all from v$database
+SQL> select name, log_mode, 
+       supplemental_log_data_min, 
+       supplemental_log_data_pk, 
+       supplemental_log_data_ui, 
+       supplemental_log_data_all from v$database
 ```
 
+[supplemental logging 활성화]
+
+```
+SQL> alter database add supplemental log data;
+SQL> alter database add supplemental log data (primary key) columns;
+SQL> 
+```
+supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조하도록 한다. (https://docs.oracle.com/database/121/SUTIL/GUID-D857AF96-AC24-4CA1-B620-8EA3DF30D72E.htm#SUTIL1582)
 
 
 ### 6. postgres 설정 ###
