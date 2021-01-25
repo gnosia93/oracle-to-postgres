@@ -433,6 +433,7 @@ DMS 를 이용하여 CDC 방식으로 데이터를 복제하기 위해서는 리
 
 [엔드포인트 접속 테스트]
 
+![endpoint test](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-endpint-test.png)
 
 
 
