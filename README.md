@@ -314,14 +314,16 @@ host    all             all             0.0.0.0/0               md5            <
            └─18154 postgres: logical replication launcher   
 ```
 
-### 7. DMS 태스크 설정 ###
+### 7. 오라클 데이터 로딩 ###
+
+### 8. DMS 태스크 설정 ###
 
 - binary reader
 
 - log miner
 
 
-### 8. DMS 모니터링하기 ###
+### 9. DMS 모니터링하기 ###
 
 
 
