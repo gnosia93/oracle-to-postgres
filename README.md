@@ -407,8 +407,8 @@ loading product table...
 
 [데이터 생성 확인]
 ```
-SQL> select count(1) from tb_product;
-SQL> select count(1) from tf_order;
+SQL> select count(1) from shop.tb_product;
+SQL> select count(1) from shop.tf_order;
 ```
 
 
