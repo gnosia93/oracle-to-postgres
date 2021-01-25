@@ -155,8 +155,163 @@ postgresql는 여러개의 작은 데이터베이스들로 구성이 되어져 �
 오라클 12c 부터는 경우 PDB, CDB 구조로 되어 있어 postgresql 와 비슷한 데이터베이스 구조로 설계되어 있지만, 오라클 11g 의 겨우
 하나의 데이터베이스로 설계되어져 있어서, postgresql 전환시 하나의 데이터베이스 매핑 되도록 해야 한다. 
 
-* 외부 접속 설정
-* 데이터베이스, 테이블 스페이스, 유저 생성
+이 단계에서는 타켓 데이터베이스인 postgres 에서 사용할 데이터베이스, 테이블스페이스 및 유저를 생성하게 된다. 
+
+#### 6-1. 유저 생성 ####
+
+postgres 의 어드민 계정인 postgres 로 로그인 하여, 일반 유저인 shop 유저를 만든 후, 
+
+오라클의 DBA_USER 뷰에 해당하는 pg_shadow 뷰로 부터 shop 유저가 제대로 만들어 졌는지 확인한다.
+
+```
+(base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@13.124.101.223
+
+[ec2-user@ip-172-31-42-82 ~]$ sudo su - postgres
+-bash-4.2$ psql
+psql (11.5)
+Type "help" for help.
+
+postgres=# select 1;
+ ?column? 
+----------
+        1
+(1 row)
+
+postgres=# create user shop password 'shop';
+CREATE ROLE
+postgres=# select * from pg_shadow;
+ usename  | usesysid | usecreatedb | usesuper | userepl | usebypassrls |               passwd                | valuntil | useconfig 
+----------+----------+-------------+----------+---------+--------------+-------------------------------------+----------+-----------
+ postgres |       10 | t           | t        | t       | t            |                                     |          | 
+ shop     |    16384 | f           | f        | f       | f            | md5f0c1de5eb2934ac9f886a646a0a46ba4 |          | 
+(2 rows)
+```
+
+#### 6-2. 테이블스페이스 생성 ####
+
+/var/lib/pgsql/data 디렉토리 하위에 tbs_shop 이라는 디렉토리를 만든 다음, 테이블 스페이스를 생성한다. 
+
+```
+-bash-4.2$ pwd
+/var/lib/pgsql
+
+-bash-4.2$ mkdir tablespace
+-bash-4.2$ cd tablespace/
+-bash-4.2$ mkdir tbs_shop
+-bash-4.2$ ls -la
+total 0
+drwxr-xr-x 3 postgres postgres  22 Jan 18 08:42 .
+drwx------ 5 postgres postgres 122 Jan 18 08:42 ..
+drwxr-xr-x 2 postgres postgres   6 Jan 18 08:42 tbs_shop
+
+-bash-4.2$ psql
+psql (11.5)
+Type "help" for help.
+
+postgres=# \db+
+                                  List of tablespaces
+    Name    |  Owner   | Location | Access privileges | Options |  Size  | Description 
+------------+----------+----------+-------------------+---------+--------+-------------
+ pg_default | postgres |          |                   |         | 23 MB  | 
+ pg_global  | postgres |          |                   |         | 574 kB | 
+(2 rows)
+
+postgres=# create tablespace tbs_shop location '/var/lib/pgsql/tablespace/tbs_shop';
+CREATE TABLESPACE
+postgres=# 
+postgres=# \db+
+                                               List of tablespaces
+    Name    |  Owner   |              Location              | Access privileges | Options |  Size   | Description 
+------------+----------+------------------------------------+-------------------+---------+---------+-------------
+ pg_default | postgres |                                    |                   |         | 23 MB   | 
+ pg_global  | postgres |                                    |                   |         | 574 kB  | 
+ tbs_shop   | postgres | /var/lib/pgsql/tablespace/tbs_shop |                   |         | 0 bytes | 
+(3 rows)
+```
+
+#### 6-3. 데이터베이스 생성 ####
+
+```
+postgres=# \l
+                                  List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
+-----------+----------+----------+-------------+-------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
+           |          |          |             |             | postgres=CTc/postgres
+(3 rows)
+
+postgres=# create database shop_db owner = shop tablespace = tbs_shop;
+CREATE DATABASE
+
+postgres=# \l+
+                                                                    List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   |  Size   | Tablespace |                Description                 
+-----------+----------+----------+-------------+-------------+-----------------------+---------+------------+--------------------------------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                       | 7973 kB | pg_default | default administrative connection database
+ shop_db   | shop     | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                       | 7833 kB | tbs_shop   | 
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7833 kB | pg_default | unmodifiable empty database
+           |          |          |             |             | postgres=CTc/postgres |         |            | 
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7833 kB | pg_default | default template for new databases
+           |          |          |             |             | postgres=CTc/postgres |         |            | 
+(4 rows)
+```
+
+#### 6-4. 외부 접속 설정 ####
+
+postgres 는 기본적으로 로컬 접속만 허용하기 때문에 외부에서 접속하기 위해서는 2가지의 수정 사항이 필요한다.
+
+* /var/lib/pgsql/data/postgresql.conf
+
+```
+listen_addresses = '*'
+```
+
+* /var/lib/pgsql/data/pg_hba.conf
+
+```
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
+# "local" is for Unix domain socket connections only
+local   all             shop  					            md5            <--- 추가
+local   all             all                                     peer
+
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            ident
+
+# IPv6 local connections:
+host    all             all             ::1/128                 ident
+
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+local   replication     all                                     peer
+host    replication     all             127.0.0.1/32            ident
+host    replication     all             ::1/128                 ident
+
+host    all             all             0.0.0.0/0               md5            <--- 추가
+```
+
+두개의 설정 파일을 위와 같이 수정한 후, 아래 명령어를 이용하여 postgresql 서버를 재시작한다. 
+
+```
+[ec2-user@ip-172-31-42-82 ~]$ sudo systemctl restart postgresql
+[ec2-user@ip-172-31-42-82 ~]$ sudo systemctl status postgresql
+● postgresql.service - PostgreSQL database server
+   Loaded: loaded (/usr/lib/systemd/system/postgresql.service; enabled; vendor preset: disabled)
+   Active: active (running) since 월 2021-01-18 09:02:59 UTC; 8s ago
+  Process: 18142 ExecStartPre=/usr/libexec/postgresql-check-db-dir %N (code=exited, status=0/SUCCESS)
+ Main PID: 18145 (postmaster)
+   CGroup: /system.slice/postgresql.service
+           ├─18145 /usr/bin/postmaster -D /var/lib/pgsql/data
+           ├─18147 postgres: logger   
+           ├─18149 postgres: checkpointer   
+           ├─18150 postgres: background writer   
+           ├─18151 postgres: walwriter   
+           ├─18152 postgres: autovacuum launcher   
+           ├─18153 postgres: stats collector   
+           └─18154 postgres: logical replication launcher   
+```
 
 ### 7. DMS 태스크 설정 ###
 
