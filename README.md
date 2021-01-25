@@ -63,7 +63,10 @@ SQL> alter database add supplemental log data;
 SQL> alter database add supplemental log data (primary key) columns;
 SQL> alter database add supplemental log data (unique) columns;
 ```
+로그 마이너를 위한 최소한의 로깅과 update 시 레코드를 식별하기 위해 필요한 PK 또는 유니크 인덱스에 대한 supplemental logging 기능을 활성화 한다.
+만약 복제 대상이 되는 테이블에 PK 또는 Non-NULL 유니크 인덱스 또는 제약조건이 없다면 전체 칼럼에 로깅된다. 
 supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조하도록 한다. 
+
 * [Supplemental Logging](https://docs.oracle.com/database/121/SUTIL/GUID-D857AF96-AC24-4CA1-B620-8EA3DF30D72E.htm#SUTIL1582)
 * [Database-Level Supplemental Logging](https://docs.oracle.com/database/121/SUTIL/GUID-D2DDD67C-E1CC-45A6-A2A7-198E4C142FA3.htm#SUTIL1583)
 
