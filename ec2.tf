@@ -44,7 +44,7 @@ sudo -u ec2-user cat > $ORACLE_HOME/tnsnames.ora <<EOF
 xe =
     (DESCRIPTION =
         (ADDRESS_LIST =
-            (ADDRESS = (PROTOCOL = TCP)(HOST = <your-oracle-private-ip>)(PORT = 1521))
+            (ADDRESS = (PROTOCOL = TCP)(HOST = <11xe-oracle-private-ip>)(PORT = 1521))
         )
         (CONNECT_DATA =
             (SERVER = DEDICATED)
@@ -55,7 +55,7 @@ xe =
 cdb1 =
     (DESCRIPTION =
         (ADDRESS_LIST =
-            (ADDRESS = (PROTOCOL = TCP)(HOST = <your-oracle-private-ip>)(PORT = 1521))
+            (ADDRESS = (PROTOCOL = TCP)(HOST = <19c-oracle-private-ip>)(PORT = 1521))
         )
         (CONNECT_DATA =
             (SERVER = DEDICATED)
