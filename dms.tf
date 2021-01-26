@@ -10,7 +10,7 @@ resource "aws_dms_replication_instance" "tf_dms_logm" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-logm"
 
-    depends_on = [aws_iam_role.tf_dms_vpc_role]
+    depends_on = [aws_iam_role.dms-vpc-role]
 }
 
 resource "aws_dms_replication_instance" "tf_dms_binr" {
@@ -22,7 +22,7 @@ resource "aws_dms_replication_instance" "tf_dms_binr" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-binr"
 
-    depends_on = [aws_iam_role.tf_dms_vpc_role]
+    depends_on = [aws_iam_role.dms-vpc-role]
 }
 
 resource "aws_dms_endpoint" "tf_dms_ep_oracle_logm" {

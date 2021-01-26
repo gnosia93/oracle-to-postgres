@@ -150,6 +150,8 @@ export PATH=/u01/app/oracle/product/11.2.0/xe/bin:$PATH
 EOF
 
 sudo chown oracle:dba /u01/app/oracle/.bash_profile
+sudo echo "oracle" | passwd oracle --stdin
+
 _DATA
     
     tags = {
