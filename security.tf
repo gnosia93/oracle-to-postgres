@@ -13,6 +13,61 @@ resource "aws_key_pair" "tf_key" {
   public_key = file("~/.ssh/tf_key.pub")
 }
 
+
+# If you are using AWS console to create replication instance, 
+# this role gets created automatically. 
+# But if you are using AwsCli, you have to make dms-vpc-role assume role and related policy
+# otherwise, you encounter error like below
+# The IAM Role arn:aws:iam::509243859827:role/dms-vpc-role is not configured properly.
+
+resource "aws_iam_role" "dms-vpc-role" {
+  name               = "dms-vpc-role"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "dms.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+}
+
+
+resource "aws_iam_role_policy" "tf_dms_policy" {
+  name = "tf_dms_policy"
+  role = aws_iam_role.dms-vpc-role.id
+  policy = <<EOF
+{
+"Version": "2012-10-17",
+"Statement": [
+    {
+        "Effect": "Allow",
+        "Action": [
+            "ec2:CreateNetworkInterface",
+            "ec2:DescribeAvailabilityZones",
+            "ec2:DescribeInternetGateways",
+            "ec2:DescribeSecurityGroups",
+            "ec2:DescribeSubnets",
+            "ec2:DescribeVpcs",
+            "ec2:DeleteNetworkInterface",
+            "ec2:ModifyNetworkInterfaceAttribute"
+        ],
+        "Resource": "*"
+    }
+]
+}
+EOF
+}
+
+
+
 resource "aws_iam_role" "tf_ec2_service_role" {
   name = "tf_ec2_service_role"
   assume_role_policy = <<EOF
@@ -41,7 +96,6 @@ resource "aws_iam_instance_profile" "tf_ec2_profile" {
 resource "aws_iam_role_policy" "tf_ec2_policy" {
   name = "tf_ec2_policy"
   role = aws_iam_role.tf_ec2_service_role.id
-
   policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -135,3 +189,7 @@ output "tf_key" {
 output "tf_sg_pub" {
     value = aws_security_group.tf_sg_pub.id 
 }
+
+#output "aws_iam_policy_document" {
+#    value = aws_iam_policy_document.dms_assume_role
+#}

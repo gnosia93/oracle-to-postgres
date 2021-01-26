@@ -161,7 +161,7 @@ _DATA
 
 # oracle 19c setup
 # 서브넷을 설정하지 않으면 자동으로 매핑된다. 
-/*
+
 resource "aws_instance" "tf_oracle_19c" {
     ami = data.aws_ami.rhel-8.id
     associate_public_ip_address = true
@@ -169,16 +169,14 @@ resource "aws_instance" "tf_oracle_19c" {
     key_name = aws_key_pair.tf_key.id
     vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
     user_data = <<EOF
-        #! /bin/bash
-        sudo touch /home/ec2-user/aaa.txt
-    EOF
-    
+#! /bin/bash
+sudo touch /home/ec2-user/aaa.txt
+EOF 
 
     tags = {
       "Name" = "tf_oracle_19c"
     } 
 }
-*/
 
 #
 # Output Section
