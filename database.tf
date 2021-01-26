@@ -254,9 +254,9 @@ sudo -u oracle $ORACLE_HOME/runInstaller -ignorePrereq -waitforcompletion -silen
 
 /app/oraInventory/orainstRoot.sh
 /app/oracle/product/19c/dbhome/root.sh
-sudo -u oracle lsnrctl start
 
-sudo -u oracle dbca -silent -createDatabase                                 \
+su - oracle -c "lsnrctl start"
+sudo -u oracle $ORACLE_HOME/bin/dbca -silent -createDatabase                          \
      -templateName General_Purpose.dbc                                      \
      -gdbname $ORACLE_SID -sid  $ORACLE_SID -responseFile NO_VALUE          \
      -characterSet AL32UTF8                                                 \
@@ -275,10 +275,12 @@ sudo -u oracle dbca -silent -createDatabase                                 \
      -emConfiguration NONE                                                  \
      -ignorePreReqs > /home/oracle/dbca.out
 
-sudo -u oracle sqlplus / as sysdba <<EOF
+su - oracle <<EOF
+sqlplus "/ as sysdba" <<EOS
 alter system set db_create_file_dest='$DATA_DIR';
 alter pluggable database $PDB_NAME save state;
 exit;
+EOS
 EOF
 
 echo "oracle 19c installation completed..."
