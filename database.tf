@@ -161,11 +161,18 @@ _DATA
 
 # oracle 19c setup
 # 서브넷을 설정하지 않으면 자동으로 매핑된다. 
+# cloud init output 확인
+# sudo tail -f /var/log/cloud-init-output.log
+# 데이터베이스 설치에 20분 정도가 소요된다.
 
 resource "aws_instance" "tf_oracle_19c" {
     ami = data.aws_ami.rhel-8.id
     associate_public_ip_address = true
-    instance_type = "t2.xlarge"
+    instance_type = "c5.4xlarge"
+    monitoring = true
+    root_block_device {
+        volume_size = "300"
+    }
     key_name = aws_key_pair.tf_key.id
     vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
     user_data = <<_DATA
@@ -223,14 +230,12 @@ export PATH=$ORACLE_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
 export CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
 
-cd $ORACLE_HOME
-sudo -u oracle curl -o oracle.zip https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/LINUX.X64_193000_db_home.zip
+sudo -u oracle curl -o $ORACLE_HOME/oracle.zip https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/LINUX.X64_193000_db_home.zip
 sudo -u oracle unzip -o $ORACLE_HOME/oracle.zip -d $ORACLE_HOME
 sudo -u oracle rm $ORACLE_HOME/oracle.zip
-echo $ORACLE_HOME > $ORACLE_HOME/out
 
-export CV_ASSUME_DISTID=OEL7.6
-sudo -u oracle ./runInstaller -ignorePrereq -waitforcompletion -silent      \
+sudo -u oracle echo "CV_ASSUME_DISTID=OEL7.6" >> $ORACLE_HOME/cv/admin/cvu_config
+sudo -u oracle $ORACLE_HOME/runInstaller -ignorePrereq -waitforcompletion -silent      \
     -responseFile $ORACLE_HOME/install/response/db_install.rsp              \
     oracle.install.option=INSTALL_DB_SWONLY                                 \
     ORACLE_HOSTNAME=$ORACLE_HOSTNAME                                        \
@@ -245,7 +250,38 @@ sudo -u oracle ./runInstaller -ignorePrereq -waitforcompletion -silent      \
     oracle.install.db.OSKMDBA_GROUP=dba                                     \
     oracle.install.db.OSRACDBA_GROUP=dba                                    \
     SECURITY_UPDATES_VIA_MYORACLESUPPORT=false                              \
-    DECLINE_SECURITY_UPDATES=true
+    DECLINE_SECURITY_UPDATES=true > home/oracle/runInstaller.out
+
+/app/oraInventory/orainstRoot.sh
+/app/oracle/product/19c/dbhome/root.sh
+sudo -u oracle lsnrctl start
+
+sudo -u oracle dbca -silent -createDatabase                                 \
+     -templateName General_Purpose.dbc                                      \
+     -gdbname $ORACLE_SID -sid  $ORACLE_SID -responseFile NO_VALUE          \
+     -characterSet AL32UTF8                                                 \
+     -sysPassword SysPassword1                                              \
+     -systemPassword SysPassword1                                           \
+     -createAsContainerDatabase true                                        \
+     -numberOfPDBs 1                                                        \
+     -pdbName $PDB_NAME                                                     \
+     -pdbAdminPassword PdbPassword1                                         \
+     -databaseType MULTIPURPOSE                                             \
+     -memoryMgmtType auto_sga                                               \
+     -totalMemory 2000                                                      \
+     -storageType FS                                                        \
+     -datafileDestination "$DATA_DIR"                                       \
+     -redoLogFileSize 50                                                    \
+     -emConfiguration NONE                                                  \
+     -ignorePreReqs > /home/oracle/dbca.out
+
+sudo -u oracle sqlplus / as sysdba <<EOF
+alter system set db_create_file_dest='$DATA_DIR';
+alter pluggable database $PDB_NAME save state;
+exit;
+EOF
+
+echo "oracle 19c installation completed..."
 _DATA 
 
     tags = {
