@@ -71,3 +71,8 @@ _DATA
       "Project" = "oracle2postgres"
     } 
 }
+
+
+output "load_gen_public_ip" {
+    value = aws_instance.tf_loadgen.public_ip
+}

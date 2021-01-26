@@ -57,10 +57,10 @@ data "aws_ami" "ubuntu-20" {
 resource "aws_instance" "tf_postgres" {
     ami = data.aws_ami.amazon-linux-2.id
     associate_public_ip_address = true
-    instance_type = "t2.xlarge"
+    instance_type = "c5.4xlarge"
     monitoring = true
     root_block_device {
-        volume_size = "100"
+        volume_size = "300"
     }
     key_name = aws_key_pair.tf_key.id
     vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
@@ -85,10 +85,10 @@ EOF
 resource "aws_instance" "tf_oracle_11xe" {
     ami = data.aws_ami.ubuntu-20.id
     associate_public_ip_address = true
-    instance_type = "t2.xlarge"
+    instance_type = "c5.4xlarge"
     monitoring = true
     root_block_device {
-        volume_size = "100"
+        volume_size = "300"
     }
     key_name = aws_key_pair.tf_key.id
     vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
@@ -295,14 +295,13 @@ _DATA
 #
 # Output Section
 #
-output "tf_oracle_11xe" {
-    value = aws_instance.tf_oracle_11xe.id 
+output "oracle_11xe_public_ip" {
+    value = aws_instance.tf_oracle_11xe.public_ip 
 }
 
 output "oracle_19c_public_ip" {
     value = aws_instance.tf_oracle_19c.public_ip
 }
-
 
 output "postgres_public_ip" {
     value = aws_instance.tf_postgres.public_ip

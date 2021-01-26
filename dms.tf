@@ -10,7 +10,7 @@ resource "aws_dms_replication_instance" "tf_dms_logm" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-logm"
 
-    depends_on = [aws_iam_role.dms-vpc-role]
+    depends_on = [aws_iam_role.tf_dms_vpc_role]
 }
 
 resource "aws_dms_replication_instance" "tf_dms_binr" {
@@ -22,17 +22,17 @@ resource "aws_dms_replication_instance" "tf_dms_binr" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-binr"
 
-    depends_on = [aws_iam_role.dms-vpc-role]
+    depends_on = [aws_iam_role.tf_dms_vpc_role]
 }
 
 resource "aws_dms_endpoint" "tf_dms_ep_oracle_logm" {
     endpoint_id = "tf-dms-ep-oracle-logm"
     endpoint_type = "source"
     engine_name = "oracle"
-    server_name = aws_instance.tf_oracle_11xe.public_dns
-    database_name = "xe"                                       ## oracle sid
+    server_name = aws_instance.tf_oracle_19c.public_dns
+    database_name = "cdb1"                                       ## oracle sid
     username = "system"
-    password = "manager"
+    password = "SysPassword1"
     port = 1521
     extra_connection_attributes = ""
     ssl_mode = "none"
@@ -42,10 +42,10 @@ resource "aws_dms_endpoint" "tf_dms_ep_oracle_binr" {
     endpoint_id = "tf-dms-ep-oracle-binr"
     endpoint_type = "source"
     engine_name = "oracle"
-    server_name = aws_instance.tf_oracle_11xe.public_dns
-    database_name = "xe"                                                            ## oracle sid
+    server_name = aws_instance.tf_oracle_19c.public_dns
+    database_name = "cdb1"                                        ## oracle sid
     username = "system"
-    password = "manager"
+    password = "SysPassword1"
     port = 1521
     extra_connection_attributes = "useLogminerReader=N; useBfile=Y"
     ssl_mode = "none"
@@ -67,6 +67,7 @@ resource "aws_dms_endpoint" "tf_dms_ep_postgres" {
 #
 # Output Section
 #
+/*
 output "tf_dms_logm" {
     value = aws_dms_replication_instance.tf_dms_logm.id
 }
@@ -86,4 +87,4 @@ output "tf_dms_ep_oracle_binr" {
 output "tf_dms_ep_postgres" {
     value = aws_dms_endpoint.tf_dms_ep_postgres.server_name
 }
-
+*/

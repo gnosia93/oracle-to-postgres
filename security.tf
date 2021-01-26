@@ -20,8 +20,8 @@ resource "aws_key_pair" "tf_key" {
 # otherwise, you encounter error like below
 # The IAM Role arn:aws:iam::509243859827:role/dms-vpc-role is not configured properly.
 
-resource "aws_iam_role" "dms-vpc-role" {
-  name               = "dms-vpc-role"
+resource "aws_iam_role" "tf_dms_vpc_role" {
+  name = "tf_dms_vpc_role"
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -42,7 +42,7 @@ EOF
 
 resource "aws_iam_role_policy" "tf_dms_policy" {
   name = "tf_dms_policy"
-  role = aws_iam_role.dms-vpc-role.id
+  role = aws_iam_role.tf_dms_vpc_role.id
   policy = <<EOF
 {
 "Version": "2012-10-17",
@@ -182,13 +182,14 @@ resource "aws_security_group" "tf_sg_pub" {
 #
 # Output Section
 #
-output "tf_key" {
-    value = aws_key_pair.tf_key.key_pair_id
+output "key_pairs" {
+    value = aws_key_pair.tf_key.key_name
 }
 
 output "tf_sg_pub" {
-    value = aws_security_group.tf_sg_pub.id 
+    value = aws_security_group.tf_sg_pub.ingress
 }
+
 
 #output "aws_iam_policy_document" {
 #    value = aws_iam_policy_document.dms_assume_role
