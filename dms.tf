@@ -10,7 +10,7 @@ resource "aws_dms_replication_instance" "tf_dms_logm" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-logm"
 
-    depends_on = [aws_iam_role.dms-vpc-role]
+    depends_on = [aws_iam_role.dms-vpc-role, aws_iam_role_policy.tf_dms_policy ]
 }
 
 resource "aws_dms_replication_instance" "tf_dms_binr" {
@@ -22,7 +22,7 @@ resource "aws_dms_replication_instance" "tf_dms_binr" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-binr"
 
-    depends_on = [aws_iam_role.dms-vpc-role]
+    depends_on = [aws_iam_role.dms-vpc-role, aws_iam_role_policy.tf_dms_policy ]
 }
 
 resource "aws_dms_endpoint" "tf_dms_ep_oracle_logm" {
@@ -32,7 +32,7 @@ resource "aws_dms_endpoint" "tf_dms_ep_oracle_logm" {
     server_name = aws_instance.tf_oracle_19c.public_dns
     database_name = "cdb1"                                       ## oracle sid
     username = "system"
-    password = "SysPassword1"
+    password = "manager"
     port = 1521
     extra_connection_attributes = ""
     ssl_mode = "none"
@@ -45,7 +45,7 @@ resource "aws_dms_endpoint" "tf_dms_ep_oracle_binr" {
     server_name = aws_instance.tf_oracle_19c.public_dns
     database_name = "cdb1"                                        ## oracle sid
     username = "system"
-    password = "SysPassword1"
+    password = "manager"
     port = 1521
     extra_connection_attributes = "useLogminerReader=N; useBfile=Y"
     ssl_mode = "none"
@@ -56,7 +56,7 @@ resource "aws_dms_endpoint" "tf_dms_ep_postgres" {
     endpoint_type = "target"
     engine_name = "postgres"
     server_name = aws_instance.tf_postgres.public_dns
-    database_name = "shop_db"                                                        ## database name
+    database_name = "shop_db"                                      ## database name
     username = "shop"
     password = "shop"
     port = 5432
