@@ -62,6 +62,56 @@ XE	  NOARCHIVELOG
 ```
 
 [아카이브 로그 전환 방법]
+* 19c
+```
+[oracle@ip-172-31-11-107 ~]$ sqlplus "/ as sysdba"
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Tue Jan 26 10:53:17 2021
+Version 19.3.0.0.0
+
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+SQL> shutdown immediate;
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+SQL> startup mount
+ORACLE instance started.
+
+Total System Global Area 1577057320 bytes
+Fixed Size		    9137192 bytes
+Variable Size		  520093696 bytes
+Database Buffers	 1040187392 bytes
+Redo Buffers		    7639040 bytes
+Database mounted.
+SQL> archive log list
+Database log mode	       No Archive Mode
+Automatic archival	       Disabled
+Archive destination	       /app/oracle/product/19c/dbhome/dbs/arch
+Oldest online log sequence     23
+Current log sequence	       25
+SQL> alter database archivelog;
+
+Database altered.
+
+SQL> archive log list
+Database log mode	       Archive Mode
+Automatic archival	       Enabled
+Archive destination	       /app/oracle/product/19c/dbhome/dbs/arch
+Oldest online log sequence     23
+Next log sequence to archive   25
+Current log sequence	       25
+SQL> alter database open;
+  
+Database altered.
+```
+
+* 11g
 ```
 oracle@ip-172-31-32-20:~$ sqlplus "/ as sysdba"
 
