@@ -287,7 +287,8 @@ echo "oracle 19c installation completed..."
 _DATA 
 
     tags = {
-      "Name" = "tf_oracle_19c"
+      "Name" = "tf_oracle_19c",
+      "Project" = "oracle2postgres"
     } 
 }
 
@@ -298,7 +299,12 @@ output "tf_oracle_11xe" {
     value = aws_instance.tf_oracle_11xe.id 
 }
 
-output "tf_postgres" {
-    value = aws_instance.tf_postgres.id 
+output "oracle_19c_public_ip" {
+    value = aws_instance.tf_oracle_19c.public_ip
+}
+
+
+output "postgres_public_ip" {
+    value = aws_instance.tf_postgres.public_ip
 }
 

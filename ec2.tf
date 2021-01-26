@@ -51,6 +51,17 @@ xe =
             (SERVICE_NAME = xe)
         )
     )
+
+cdb1 =
+    (DESCRIPTION =
+        (ADDRESS_LIST =
+            (ADDRESS = (PROTOCOL = TCP)(HOST = <your-oracle-private-ip>)(PORT = 1521))
+        )
+        (CONNECT_DATA =
+            (SERVER = DEDICATED)
+            (SERVICE_NAME = cdb1)
+        )
+    )
 EOF
 sudo chown ec2-user:ec2-user $ORACLE_HOME/tnsnames.ora
 _DATA
