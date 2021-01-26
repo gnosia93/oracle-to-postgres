@@ -151,7 +151,7 @@ EOF
 
 sudo chown oracle:dba /u01/app/oracle/.bash_profile
 sudo echo "oracle" | passwd oracle --stdin
-
+echo "oracle 11xe installation completed..."  >> /u01/app/oracle/build.result
 _DATA
     
     tags = {
@@ -262,8 +262,8 @@ sudo -u oracle $ORACLE_HOME/bin/dbca -silent -createDatabase                    
      -templateName General_Purpose.dbc                                      \
      -gdbname $ORACLE_SID -sid  $ORACLE_SID -responseFile NO_VALUE          \
      -characterSet AL32UTF8                                                 \
-     -sysPassword SysPassword1                                              \
-     -systemPassword SysPassword1                                           \
+     -sysPassword manager                                                   \
+     -systemPassword manager                                                \
      -createAsContainerDatabase true                                        \
      -numberOfPDBs 1                                                        \
      -pdbName $PDB_NAME                                                     \
@@ -285,7 +285,7 @@ exit;
 EOS
 EOF
 
-echo "oracle 19c installation completed..."
+echo "oracle 19c installation completed..."  >> /home/oracle/build.result
 _DATA 
 
     tags = {

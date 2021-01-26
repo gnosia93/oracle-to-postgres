@@ -186,9 +186,10 @@ output "key_pairs" {
     value = aws_key_pair.tf_key.key_name
 }
 
-output "tf_sg_pub" {
-    value = aws_security_group.tf_sg_pub.ingress
-}
+
+#output "tf_sg_pub" {
+#    value = aws_security_group.tf_sg_pub.ingress
+#}
 
 
 #output "aws_iam_policy_document" {
