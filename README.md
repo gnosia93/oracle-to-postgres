@@ -440,7 +440,9 @@ SQL>
 
 #### 7-2. 샘플 데이터 생성 및 확인하기 ####
 
-pyoracle.py 파이썬 프로그램을 아래와 같이 실행한다.
+pyoracle.py 파이썬 프로그램을 아래와 같이 실행한다. 상품 정보를 저장하는 tb_product 테이블에는 1000건을 저장하게되고, 
+
+주문 데이터를 생성하기 위해 50개의 클라이언트가 만들어지고, 클라이언트당 최대 100만개의 주문 정보를 생성하게 된다. 
 
 [샘플 데이터 생성]
 ```
@@ -460,7 +462,7 @@ loading product table...
 [데이터 생성 확인]
 ```
 SQL> select count(1) from shop.tb_product;
-SQL> select count(1) from shop.tf_order;
+SQL> select count(1) from shop.tb_order;
 ```
 
 
