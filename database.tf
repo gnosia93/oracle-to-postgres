@@ -168,10 +168,85 @@ resource "aws_instance" "tf_oracle_19c" {
     instance_type = "t2.xlarge"
     key_name = aws_key_pair.tf_key.id
     vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
-    user_data = <<EOF
+    user_data = <<_DATA
 #! /bin/bash
-sudo touch /home/ec2-user/aaa.txt
-EOF 
+sudo dnf install -y https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackage/oracle-database-preinstall-19c-1.0-1.el8.x86_64.rpm
+sudo cat > /etc/selinux/config <<EOF
+SELINUX=permissive
+SELINUXTYPE=targeted
+EOF
+sudo setenforce Permissive
+
+sudo mkdir -p /app/oracle/product/19c/dbhome
+sudo mkdir -p /app/oradata
+sudo chown -R oracle:oinstall /app
+sudo chmod -R 775 /app
+
+sudo cat >> /home/oracle/.bash_profile <<EOF
+# Oracle Settings
+export TMP=/tmp
+export TMPDIR=\$TMP
+
+#export ORACLE_HOSTNAME=ol8-19.localdomain
+export ORACLE_UNQNAME=cdb1
+export ORACLE_BASE=/app/oracle
+export ORACLE_HOME=\$ORACLE_BASE/product/19c/dbhome
+export ORA_INVENTORY=/app/oraInventory
+export ORACLE_SID=cdb1
+export PDB_NAME=pdb1
+export DATA_DIR=/app/oradata
+
+export PATH=/usr/sbin:/usr/local/bin:\$PATH
+export PATH=\$ORACLE_HOME/bin:\$PATH
+
+export LD_LIBRARY_PATH=\$ORACLE_HOME/lib:/lib:/usr/lib
+export CLASSPATH=\$ORACLE_HOME/jlib:\$ORACLE_HOME/rdbms/jlib
+EOF
+sudo chown oracle:oinstall /home/oracle/.bash_profile
+sudo echo "oracle" | passwd oracle --stdin
+
+sudo chmod u+w /etc/sudoers
+sudo cat >> /etc/sudoers <<EOF
+oracle        ALL=(ALL)       NOPASSWD: ALL
+EOF
+sudo chmod u-w /etc/sudoers
+
+export ORACLE_UNQNAME=cdb1
+export ORACLE_BASE=/app/oracle
+export ORACLE_HOME=$ORACLE_BASE/product/19c/dbhome
+export ORA_INVENTORY=/app/oraInventory
+export ORACLE_SID=cdb1
+export PDB_NAME=pdb1
+export DATA_DIR=/app/oradata
+export PATH=/usr/sbin:/usr/local/bin:$PATH
+export PATH=$ORACLE_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
+export CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
+
+cd $ORACLE_HOME
+sudo -u oracle curl -o oracle.zip https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/LINUX.X64_193000_db_home.zip
+sudo -u oracle unzip -o $ORACLE_HOME/oracle.zip -d $ORACLE_HOME
+sudo -u oracle rm $ORACLE_HOME/oracle.zip
+echo $ORACLE_HOME > $ORACLE_HOME/out
+
+export CV_ASSUME_DISTID=OEL7.6
+sudo -u oracle ./runInstaller -ignorePrereq -waitforcompletion -silent      \
+    -responseFile $ORACLE_HOME/install/response/db_install.rsp              \
+    oracle.install.option=INSTALL_DB_SWONLY                                 \
+    ORACLE_HOSTNAME=$ORACLE_HOSTNAME                                        \
+    UNIX_GROUP_NAME=oinstall                                                \
+    INVENTORY_LOCATION=$ORA_INVENTORY                                       \
+    SELECTED_LANGUAGES=en,en_GB                                             \
+    ORACLE_BASE=$ORACLE_BASE                                                \
+    oracle.install.db.InstallEdition=EE                                     \
+    oracle.install.db.OSDBA_GROUP=dba                                       \
+    oracle.install.db.OSBACKUPDBA_GROUP=dba                                 \
+    oracle.install.db.OSDGDBA_GROUP=dba                                     \
+    oracle.install.db.OSKMDBA_GROUP=dba                                     \
+    oracle.install.db.OSRACDBA_GROUP=dba                                    \
+    SECURITY_UPDATES_VIA_MYORACLESUPPORT=false                              \
+    DECLINE_SECURITY_UPDATES=true
+_DATA 
 
     tags = {
       "Name" = "tf_oracle_19c"
