@@ -33,8 +33,10 @@ $ aws configure           # region 과 aws key 설정
 인프라 구성요소는 소스 데이터베이스인 오라클과 타켓 데이터베이스인 postgresql, 데이터 복제시 사용할 DMS 인스턴스 및 초기 데이터 로딩에 사용되는 EC2 인스턴스로 구성되어 있다.  
 오라클 설치, OS 파리미터 설정, 네트워크 설정 등과 같은 기본적인 설정은 모두 자동화 되어 있기 때문에, DMS 와 postgresql 에 대한 이해도를 높일 수...
 
+오라클의 경우 약 30분 정도의 시간이 걸린다. 
+
 ```
-var.tf 수정 (내아이피 확인후)
+var.tf 수정 (내아이피를 확인한 후)
 $ terraform apply -auto-approve
 ```
 
