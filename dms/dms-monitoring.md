@@ -6,8 +6,7 @@ DMS 로 유입되는 변경량 및 각종 latency 정보를 확인할 수 있다
 
 CDC 뿐만아니라, Full load, Validation 등과 같은 추가적으로 정보 역시 확인 가능하다. 
 
-
-
+![cdc](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-monitoring-cdc.png)
 
 
 
