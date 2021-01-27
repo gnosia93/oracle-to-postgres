@@ -525,10 +525,7 @@ postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 
 - log miner
 
 
-### 9. DMS 모니터링하기 ###
-
-* https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md
-
+### [9. DMS](https://github.com/gnosia93/postgres-terraform/blob/main/dms/readme.md) ###
 
 
 
