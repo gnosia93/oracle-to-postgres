@@ -1,36 +1,36 @@
 # 
 # DMS를 위한 서브넷의 경우 설정하지 않더라도 default 라는 이름의 서브넷 그룹을 자동으로 생성해 준다. 
 #
-resource "aws_dms_replication_instance" "tf_dms_logm" {
+resource "aws_dms_replication_instance" "tf_dms_11xe" {
     allocated_storage = 50
     apply_immediately = true
     engine_version = "3.4.3"
     multi_az = false
     publicly_accessible = true
     replication_instance_class = "dms.t3.medium"
-    replication_instance_id = "tf-dms-logm"
+    replication_instance_id = "tf-dms-11xe"
 
     depends_on = [aws_iam_role.dms-vpc-role, aws_iam_role_policy.tf_dms_policy ]
 }
 
-resource "aws_dms_replication_instance" "tf_dms_binr" {
+resource "aws_dms_replication_instance" "tf_dms_19c" {
     allocated_storage = 50
     apply_immediately = true
     engine_version = "3.4.3"
     multi_az = false
     publicly_accessible = true
     replication_instance_class = "dms.t3.medium"
-    replication_instance_id = "tf-dms-binr"
+    replication_instance_id = "tf-dms-19c"
 
     depends_on = [aws_iam_role.dms-vpc-role, aws_iam_role_policy.tf_dms_policy ]
 }
 
-resource "aws_dms_endpoint" "tf_dms_ep_oracle_logm" {
-    endpoint_id = "tf-dms-ep-oracle-logm"
+resource "aws_dms_endpoint" "tf_dms_11xe_ep_oracle" {
+    endpoint_id = "tf-dms-11xe-ep-oracle"
     endpoint_type = "source"
     engine_name = "oracle"
-    server_name = aws_instance.tf_oracle_19c.public_dns
-    database_name = "cdb1"                                       ## oracle sid
+    server_name = aws_instance.tf_oracle_11xe.public_dns
+    database_name = "xe"                                       ## oracle sid
     username = "system"
     password = "manager"
     port = 1521
@@ -38,12 +38,14 @@ resource "aws_dms_endpoint" "tf_dms_ep_oracle_logm" {
     ssl_mode = "none"
 }
 
-resource "aws_dms_endpoint" "tf_dms_ep_oracle_binr" {
-    endpoint_id = "tf-dms-ep-oracle-binr"
+# log minor is not supported in oracle PDB environment.
+# end point must be configured with binary reader mode
+resource "aws_dms_endpoint" "tf_dms_19c_ep_oracle" {
+    endpoint_id = "tf-dms-19c-ep-oracle"
     endpoint_type = "source"
     engine_name = "oracle"
     server_name = aws_instance.tf_oracle_19c.public_dns
-    database_name = "cdb1"                                        ## oracle sid
+    database_name = "pdb1"                                        ## oracle sid
     username = "system"
     password = "manager"
     port = 1521
@@ -51,11 +53,24 @@ resource "aws_dms_endpoint" "tf_dms_ep_oracle_binr" {
     ssl_mode = "none"
 }
 
-resource "aws_dms_endpoint" "tf_dms_ep_postgres" {
-    endpoint_id = "tf-dms-ep-postgres"
+resource "aws_dms_endpoint" "tf_dms_11xe_ep_postgres" {
+    endpoint_id = "tf-dms-11xe-ep-postgres"
     endpoint_type = "target"
     engine_name = "postgres"
-    server_name = aws_instance.tf_postgres.public_dns
+    server_name = aws_instance.tf_postgres_11xe.public_dns
+    database_name = "shop_db"                                      ## database name
+    username = "shop"
+    password = "shop"
+    port = 5432
+    extra_connection_attributes = ""
+    ssl_mode = "none"
+}
+
+resource "aws_dms_endpoint" "tf_dms_19c_ep_postgres" {
+    endpoint_id = "tf-dms-19c-ep-postgres"
+    endpoint_type = "target"
+    engine_name = "postgres"
+    server_name = aws_instance.tf_postgres_19c.public_dns
     database_name = "shop_db"                                      ## database name
     username = "shop"
     password = "shop"

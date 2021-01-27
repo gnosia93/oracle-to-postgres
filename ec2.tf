@@ -52,14 +52,14 @@ xe =
         )
     )
 
-cdb1 =
+pdb1 =
     (DESCRIPTION =
         (ADDRESS_LIST =
             (ADDRESS = (PROTOCOL = TCP)(HOST = <19c-oracle-private-ip>)(PORT = 1521))
         )
         (CONNECT_DATA =
             (SERVER = DEDICATED)
-            (SERVICE_NAME = cdb1)
+            (SERVICE_NAME = pdb1)
         )
     )
 EOF

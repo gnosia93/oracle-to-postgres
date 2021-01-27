@@ -54,7 +54,7 @@ data "aws_ami" "ubuntu-20" {
 
 # postgres setup
 # 서브넷을 설정하지 않으면 자동으로 매핑된다. 
-resource "aws_instance" "tf_postgres" {
+resource "aws_instance" "tf_postgres_11xe" {
     ami = data.aws_ami.amazon-linux-2.id
     associate_public_ip_address = true
     instance_type = "c5.4xlarge"
@@ -75,7 +75,36 @@ sudo systemctl start postgresql
 sudo -u ec2-user ps aux | grep postgres >> /home/ec2-user/postgres.out
 EOF
     tags = {
-      "Name" = "tf_postgres",
+      "Name" = "tf_postgres_11xe",
+      "Project" = "oracle2postgres"
+    } 
+}
+
+
+# postgres setup
+# 서브넷을 설정하지 않으면 자동으로 매핑된다. 
+resource "aws_instance" "tf_postgres_19c" {
+    ami = data.aws_ami.amazon-linux-2.id
+    associate_public_ip_address = true
+    instance_type = "c5.4xlarge"
+    monitoring = true
+    root_block_device {
+        volume_size = "300"
+    }
+    key_name = aws_key_pair.tf_key.id
+    vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
+    user_data = <<EOF
+#! /bin/bash
+sudo amazon-linux-extras install postgresql11 epel -y
+sudo yum install postgresql-server postgresql-contrib postgresql-devel -y
+sudo -u ec2-user postgres --version >> /home/ec2-user/postgres.out
+sudo postgresql-setup --initdb
+sudo systemctl enable postgresql
+sudo systemctl start postgresql
+sudo -u ec2-user ps aux | grep postgres >> /home/ec2-user/postgres.out
+EOF
+    tags = {
+      "Name" = "tf_postgres_19c",
       "Project" = "oracle2postgres"
     } 
 }
@@ -305,7 +334,11 @@ output "oracle_19c_public_ip" {
     value = aws_instance.tf_oracle_19c.public_ip
 }
 
-output "postgres_public_ip" {
-    value = aws_instance.tf_postgres.public_ip
+output "postgres_19c_public_ip" {
+    value = aws_instance.tf_postgres_19c.public_ip
+}
+
+output "postgres_11xe_public_ip" {
+    value = aws_instance.tf_postgres_11xe.public_ip
 }
 
