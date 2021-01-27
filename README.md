@@ -314,59 +314,6 @@ postgres=# \l+
 (4 rows)
 ```
 
-#### 6-4. 외부 접속 설정 ####
-
-postgres 는 기본적으로 로컬 접속만 허용하기 때문에 외부에서 접속하기 위해서는 2가지의 수정 사항이 필요한다.
-
-* /var/lib/pgsql/data/postgresql.conf
-
-```
-listen_addresses = '*'
-```
-
-* /var/lib/pgsql/data/pg_hba.conf
-
-```
-# TYPE  DATABASE        USER            ADDRESS                 METHOD
-# "local" is for Unix domain socket connections only
-local   all             shop  					            md5            <--- 추가
-local   all             all                                     peer
-
-# IPv4 local connections:
-host    all             all             127.0.0.1/32            ident
-
-# IPv6 local connections:
-host    all             all             ::1/128                 ident
-
-# Allow replication connections from localhost, by a user with the
-# replication privilege.
-local   replication     all                                     peer
-host    replication     all             127.0.0.1/32            ident
-host    replication     all             ::1/128                 ident
-
-host    all             all             0.0.0.0/0               md5            <--- 추가
-```
-
-두개의 설정 파일을 위와 같이 수정한 후, 아래 명령어를 이용하여 postgresql 서버를 재시작한다. 
-
-```
-[ec2-user@ip-172-31-42-82 ~]$ sudo systemctl restart postgresql
-[ec2-user@ip-172-31-42-82 ~]$ sudo systemctl status postgresql
-● postgresql.service - PostgreSQL database server
-   Loaded: loaded (/usr/lib/systemd/system/postgresql.service; enabled; vendor preset: disabled)
-   Active: active (running) since 월 2021-01-18 09:02:59 UTC; 8s ago
-  Process: 18142 ExecStartPre=/usr/libexec/postgresql-check-db-dir %N (code=exited, status=0/SUCCESS)
- Main PID: 18145 (postmaster)
-   CGroup: /system.slice/postgresql.service
-           ├─18145 /usr/bin/postmaster -D /var/lib/pgsql/data
-           ├─18147 postgres: logger   
-           ├─18149 postgres: checkpointer   
-           ├─18150 postgres: background writer   
-           ├─18151 postgres: walwriter   
-           ├─18152 postgres: autovacuum launcher   
-           ├─18153 postgres: stats collector   
-           └─18154 postgres: logical replication launcher   
-```
 
 ### 7. 오라클 데이터 로딩 ###
 
