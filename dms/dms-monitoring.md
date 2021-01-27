@@ -1,4 +1,4 @@
-## 1. DMS 인스턴스 모니터링 하기 ##
+## 1. 복제 인스턴스 모니터링 하기 ##
 
 AWS DMS >> Replication Instnaces >> tf-dms-19c >> CloudWatch metrics 탭을 이용하여 복제 인스턴스의 CPU, Memroy, Swap 및 디스크 사용률과 같은 OS 메트릭 정보를 확인할 수 있다. 
 
