@@ -1,11 +1,9 @@
 resource "null_resource" "previous" {}
 
-resource "time_sleep" "wait_30_seconds" {
+resource "time_sleep" "wait_10_seconds" {
   depends_on = [null_resource.previous]
-
-  create_duration = "30s"
+  create_duration = "10s"
 }
-
 
 
 # 
@@ -20,7 +18,7 @@ resource "aws_dms_replication_instance" "tf_dms_11xe" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-11xe"
 
-    depends_on = [time_sleep.wait_30_seconds]       # delay resource creation for 30 sec for waiting role/dms-vpc-role creation
+    depends_on = [time_sleep.wait_10_seconds]       # delay resource creation 
 }
 
 resource "aws_dms_replication_instance" "tf_dms_19c" {
@@ -32,7 +30,7 @@ resource "aws_dms_replication_instance" "tf_dms_19c" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-19c"
 
-    depends_on = [time_sleep.wait_30_seconds]
+    depends_on = [time_sleep.wait_10_seconds]
 }
 
 resource "aws_dms_endpoint" "tf_dms_11xe_ep_oracle" {

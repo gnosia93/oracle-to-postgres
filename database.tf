@@ -70,6 +70,11 @@ sudo amazon-linux-extras install postgresql11 epel -y
 sudo yum install postgresql-server postgresql-contrib postgresql-devel -y
 sudo -u ec2-user postgres --version >> /home/ec2-user/postgres.out
 sudo postgresql-setup --initdb
+
+sudo -u postgres sed -e "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" -i /var/lib/pgsql/data/postgresql.conf
+sudo -u postgres sed -i -e "/is for Unix domain socket connections only/a\local   all             shop                        md5" /var/lib/pgsql/data/pg_hba.conf
+sudo -u postgres echo "host    all             all             0.0.0.0/0               md5" >> /var/lib/pgsql/data/pg_hba.conf
+
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
 sudo -u ec2-user ps aux | grep postgres >> /home/ec2-user/postgres.out
@@ -99,6 +104,11 @@ sudo amazon-linux-extras install postgresql11 epel -y
 sudo yum install postgresql-server postgresql-contrib postgresql-devel -y
 sudo -u ec2-user postgres --version >> /home/ec2-user/postgres.out
 sudo postgresql-setup --initdb
+
+sudo -u postgres sed -e "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" -i /var/lib/pgsql/data/postgresql.conf
+sudo -u postgres sed -i -e "/is for Unix domain socket connections only/a\local   all             shop                        md5" /var/lib/pgsql/data/pg_hba.conf
+sudo -u postgres echo "host    all             all             0.0.0.0/0               md5" >> /var/lib/pgsql/data/pg_hba.conf
+
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
 sudo -u ec2-user ps aux | grep postgres >> /home/ec2-user/postgres.out
