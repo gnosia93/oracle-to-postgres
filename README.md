@@ -142,7 +142,7 @@ SQL> alter database archivelog;
 
 Database altered.
 
-SQL> alter system set log_archive_dest_1 = 'location=/u01/app/oracle/oradata/arch' scope=spfile;
+SQL> alter system set log_archive_dest_1 = 'location=/u01/app/oracle/oradata/arch' scope=both;
 
 SQL> alter database open;
 
