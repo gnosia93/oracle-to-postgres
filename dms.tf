@@ -1,3 +1,13 @@
+resource "null_resource" "previous" {}
+
+resource "time_sleep" "wait_30_seconds" {
+  depends_on = [null_resource.previous]
+
+  create_duration = "30s"
+}
+
+
+
 # 
 # DMS를 위한 서브넷의 경우 설정하지 않더라도 default 라는 이름의 서브넷 그룹을 자동으로 생성해 준다. 
 #
@@ -10,7 +20,7 @@ resource "aws_dms_replication_instance" "tf_dms_11xe" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-11xe"
 
-    depends_on = [aws_iam_role.dms-vpc-role, aws_iam_role_policy.tf_dms_policy ]
+    depends_on = [time_sleep.wait_30_seconds]       # delay resource creation for 30 sec for waiting role/dms-vpc-role creation
 }
 
 resource "aws_dms_replication_instance" "tf_dms_19c" {
@@ -22,7 +32,7 @@ resource "aws_dms_replication_instance" "tf_dms_19c" {
     replication_instance_class = "dms.t3.medium"
     replication_instance_id = "tf-dms-19c"
 
-    depends_on = [aws_iam_role.dms-vpc-role, aws_iam_role_policy.tf_dms_policy ]
+    depends_on = [time_sleep.wait_30_seconds]
 }
 
 resource "aws_dms_endpoint" "tf_dms_11xe_ep_oracle" {
