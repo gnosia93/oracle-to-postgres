@@ -471,9 +471,10 @@ SQL> select count(1) from shop.tb_order;
 
 ### 8. DMS ###
 
-[8.1 DMS 설정하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-settings.md
+* [DMS 설정하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-settings.md)
 
-[8.2 DMS 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/readme.md)
+
+* [DMS 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/readme.md)
 
 
 
