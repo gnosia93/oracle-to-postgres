@@ -201,6 +201,9 @@ supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조�
 * [Database-Level Supplemental Logging](https://docs.oracle.com/database/121/SUTIL/GUID-D2DDD67C-E1CC-45A6-A2A7-198E4C142FA3.htm#SUTIL1583)
 
 
+### 6. postgres 사전 준비 ###
+
+
 
 ### 7. 오라클 데이터 로딩 ###
 
