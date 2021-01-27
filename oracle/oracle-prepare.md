@@ -151,6 +151,7 @@ NAME	  LOG_MODE     LOG_MIN	  LOG_PK     LOG_UI	LOG_ALL
 --------- ------------ ---------- ---------- ---------- ----------
 XE	  NOARCHIVELOG YES	  YES	     YES	NO
 ```
+CDC 방식을 이용하여 변경 데이터를 오라클로 부터 읽어오기 위해서는 suppplemental 로깅이 활성화 되어 있어야 한다. 
 로그 마이너를 위한 최소한의 로깅과 update 시 레코드를 식별하기 위해 필요한 PK 또는 유니크 인덱스에 대한 supplemental logging 기능을 활성화 한다.
 만약 복제 대상이 되는 테이블에 PK 또는 Non-NULL 유니크 인덱스 또는 제약조건이 없다면 전체 칼럼에 로깅된다. 
 supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조하도록 한다. 
