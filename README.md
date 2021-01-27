@@ -151,10 +151,10 @@ Database altered.
 SQL> archive log list
 Database log mode	       Archive Mode
 Automatic archival	       Enabled
-Archive destination	       USE_DB_RECOVERY_FILE_DEST
-Oldest online log sequence     497
-Next log sequence to archive   498
-Current log sequence	       498
+Archive destination	       /u01/app/oracle/oradata/arch
+Oldest online log sequence     4
+Next log sequence to archive   5
+Current log sequence	       5
 ```
 
 #### 5-2. supplemental 로깅 활성화 ####
