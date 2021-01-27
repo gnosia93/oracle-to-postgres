@@ -42,6 +42,8 @@ $ terraform apply -auto-approve
 
 ### 5. 오라클 사전 준비 ###
 
+* https://github.com/gnosia93/postgres-terraform/blob/main/oracle/oracle-prepare.md
+
 
 ### 6. postgres 사전 준비 ###
 
