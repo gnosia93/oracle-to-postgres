@@ -203,6 +203,7 @@ supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조�
 
 ### 6. postgres 사전 준비 ###
 
+* [유저/테이블스페이스/데이터베이스생성하기](https://github.com/gnosia93/postgres-terraform/blob/main/postgres/postgres-conf.md)
 
 
 ### 7. 오라클 데이터 로딩 ###
