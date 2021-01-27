@@ -468,12 +468,16 @@ SQL> select count(1) from shop.tb_order;
 ```
 
 
+### 8. SCT ###
 
-### 8. DMS ###
+옵션널 한 단계인 SCT 에 대해서 다룬다. 
+
+
+### 9. DMS ###
 
 * [DMS 설정하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-settings.md)
 
-* [DMS 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
+* [DMS 동작 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
 
