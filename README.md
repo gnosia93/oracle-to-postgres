@@ -31,31 +31,16 @@
 
 ## 목차 ##
 
-### 1. 사전 준비 ##
+### 1. 사전 준비 ###
 
 - [PC 환경 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) 
 
-- [Git 체크아웃]()
+- [workshop 체크아웃]()
 
 - [aws 로그인키 설정]()  
 
 
-### 2. 테라폼 프로젝트를 로컬 PC로 다운받기 ###
-
-로컬 PC 로 terraform 코드를 clone 한다. 
-
-```
-$ cd                      # home 디렉토리로 이동
-$ git clone https://github.com/gnosia93/postgres-terraform.git
-$ cd postgres-terraform/
-```
-
-### 3. AWS 로그인키 설정 ####
-```
-$ aws configure           # region 과 aws key 설정
-```
-
-### 4. 인프라 빌드 ###
+### 2. 인프라 빌드 ###
 
 인프라 구성요소는 소스 데이터베이스인 오라클과 타켓 데이터베이스인 postgresql, 데이터 복제시 사용할 DMS 인스턴스 및 초기 데이터 로딩에 사용되는 EC2 인스턴스로 구성되어 있다.  
 오라클 설치, OS 파리미터 설정, 네트워크 설정 등과 같은 기본적인 설정은 모두 자동화 되어 있기 때문에, DMS 와 postgresql 에 대한 이해도를 높일 수...
