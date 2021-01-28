@@ -29,33 +29,18 @@
 * 통상적으로 onprem의 오라클 데이터베이스를 AWS로 이전시 마이그레이션을 위한 네트워크는 VPN(1.2Gbps/s) 또는 DX(Max 40Gbps/s) 를 사용하게 되는데, 허용 가능한 서비스 다운타임에 따라 네트워크의 종류와 bandwidth 를 선택하게 됩니다. 마이그레이션을 위한 네트워크 아키텍처는 초기 데이터 로딩량과 변경 데이터량(ongoing 데이터 적재량)을 고려하여 설계하여야 합니다. 
 
 
-## 목차 ##
+## 실습 목차 ##
 
-### 1. PC 환경 구성 ###
+### 1. 사전 준비 ###
 
-튜토리얼을 진행하기 위해 테라폼, git 및 postgresql client 인 pgadmin 4 와 오라클 접속을 위한 sql developer 설치가 필요합니다.   
-  * 테라폼
-  * Git
-  * Pgadmin4
-  * SQLDeveloper
+- [PC 환경 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) 
+
+- [workshop 체크아웃]()
+
+- [aws 로그인키 설정]()  
 
 
-### 2. 테라폼 프로젝트를 로컬 PC로 다운받기 ###
-
-로컬 PC 로 terraform 코드를 clone 한다. 
-
-```
-$ cd                      # home 디렉토리로 이동
-$ git clone https://github.com/gnosia93/postgres-terraform.git
-$ cd postgres-terraform/
-```
-
-### 3. AWS 로그인키 설정 ####
-```
-$ aws configure           # region 과 aws key 설정
-```
-
-### 4. 인프라 빌드 ###
+### 2. 인프라 빌드 ###
 
 인프라 구성요소는 소스 데이터베이스인 오라클과 타켓 데이터베이스인 postgresql, 데이터 복제시 사용할 DMS 인스턴스 및 초기 데이터 로딩에 사용되는 EC2 인스턴스로 구성되어 있다.  
 오라클 설치, OS 파리미터 설정, 네트워크 설정 등과 같은 기본적인 설정은 모두 자동화 되어 있기 때문에, DMS 와 postgresql 에 대한 이해도를 높일 수...
@@ -67,19 +52,17 @@ var.tf 수정 (내아이피를 확인한 후)
 $ terraform apply -auto-approve
 ```
 
-### 5. 오라클 사전 준비 ###
+### 3. 복제를 위한 원본/타켓 DB 설정 ##
 
-* https://github.com/gnosia93/postgres-terraform/blob/main/oracle/oracle-prepare.md
+- [오라클 설정](https://github.com/gnosia93/postgres-terraform/blob/main/oracle/oracle-prepare.md)
 
-
-### 6. postgres 사전 준비 ###
-
-* [유저/테이블스페이스/데이터베이스생성하기](https://github.com/gnosia93/postgres-terraform/blob/main/postgres/postgres-conf.md)
+- [postgresql 설정](https://github.com/gnosia93/postgres-terraform/blob/main/postgres/postgres-conf.md)
 
 
-### 7. 오라클 데이터 로딩 ###
 
-#### 7-1. 스키마 생성하기 ####
+### 4. 샘플 데이터 로딩하기 ###
+
+#### 4-1. 스키마 생성하기 ####
 
 소스 DB 인 오라클데이터베이스에 실습용 스키마를 생성하고, 샘플 데이터를 로딩하기 위해서 tf_loadgen 서버로 로그인 한 후,  
 아래 명령어를 실행한다. 
@@ -149,7 +132,7 @@ Table created.
 SQL> 
 ```
 
-#### 7-2. 샘플 데이터 생성 및 확인하기 ####
+#### 4-2. 샘플 데이터 생성 및 확인하기 ####
 
 오라클 데이터베이스를 초기화하기 위해 init_11xe.sh 과 init_19c.sh 프로그램을 실행한다. 
 
@@ -177,14 +160,14 @@ SQL> select count(1) from shop.tb_order;
 ```
 
 
-### 8. 스키마 변환(/w SCT) ###
+### 5. 스키마 변환(/w SCT) ###
 
 * [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
 
 * [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
 
 
-### 9. 데이터 이관(/w DMS) ###
+### 6. 데이터 복제하기(/w DMS) ###
 
 * [DMS 설정하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-settings.md)
 
@@ -193,18 +176,18 @@ SQL> select count(1) from shop.tb_order;
 * [DMS 동작 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
-### 10. postgres 스트레스 테스트 ###
+### 7. postgres 스트레스 테스트 ###
 
 마이그레이션 완료 후 아파치 JMeter 를 활용하여 postgresql 의 성능을 측정한다. 
 
 
-### 11. postgres 진단 ###
+### 8. postgres 진단 ###
 
 * performance assessment
 * identifiy slow query / sql tunning
 
 
-### 12. postgres 어드민 ###
+### 9. postgres 어드민 ###
 
 ```
 ▶ Postgresql System Catalogs (시스템 카탈로그)
