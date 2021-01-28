@@ -14,9 +14,11 @@
 
 ![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres.jpg)
 
-* 마이그레이션 테스트를 위해 오라클, postgres, DMS 세트는 11xe 용과 19c 용으로 2세트를 빌드합니다. (아키텍처 다이어그램에는 19c만 표시)
+* 마이그레이션 테스트를 위해 오라클, postgres, DMS 로 구성된 테스트 세트는 11xe 용과 19c 용으로 2세트로 구성되며, 테라폼에 의해 빌드됩니다. (아키텍처 다이어그램에는 19c만 표시)
 
-* 오라클의 경우 12C 부터는 CDB / PDB 아키텍처 구조로 구현되어 있는데, Oracle Log Miner 가 PDB 를 지원하지 않는 관계로 19C 의 경우 binary reader 방식의 endpoint 를 사용하고, 11g 는 Log Miner 방식을 이용하여 테스트 합니다.
+* 오라클 12C 부터는 CDB / PDB 아키텍처를 채용하고 있는데, Oracle Log Miner의 경우 PDB를 지원하지 않는 관계로 19C 의 경우 binary reader 방식으로 데이터를 복제하고, 11g의 Log Miner 방식을 사용합니다.
+
+* 트랜잭션 로그 전체를 DMS 로 전달하는 binary reader 방식에 비해, Oracle Log Miner 복제 방식은 원본 데이터베이스인 오라클 데이터베이스 CPU 를 좀 더 많이 사용하게 됩니다. 이는 원본 데이터베이스에서 복제 설정시 구성된 복제 항목에 따라 필터링을 먼저 수행한 후, DMS 로 해당 로그 데이터만 카피하는 구조로 되어 있기 때문이고, 오라클 로그 마이너는 원본 DB 의 변경이 많은 경우, 원본 데이터베이스의 성능에 영향을 주게 됩니다. 
 
 * 샘플 스키마 및 초기 데이터 로딩 작업은 tf_loadgen EC2 인스턴스가 수행하고, 샘플 스키마 빌드는 sqlplus 와 shell script 로 구현되어 있으며, 초기 데이터를 로딩하는 프로그램은 python 으로 구현됩니다. 
 
