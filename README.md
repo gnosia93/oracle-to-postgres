@@ -8,7 +8,7 @@
 
 * 마이그레이션 프로세스
 * 어플리케이션 변환 가이드
-* postgresql 어드민 가이드
+* [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/admin/readme.md)
 
 ## 실습 아키텍처 ##
 
