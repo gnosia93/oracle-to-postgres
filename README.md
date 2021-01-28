@@ -192,6 +192,8 @@ SQL> select count(1) from shop.tb_order;
 
 * https://github.com/experdb/eXperDB-DB2PG
 
+* https://www.enterprisedb.com/blog/the-complete-oracle-to-postgresql-migration-guide-tutorial-move-convert-database-oracle-alternative?gclid=CjwKCAiAouD_BRBIEiwALhJH6EYfjIYgfljHPqXSBbnmgypKWRxzegJ7hbYfSb_vAxrj2ywcVu1C7xoCOpwQAvD_BwE&utm_campaign=Q42020_APAC&utm_medium=cpc&utm_source=google
+
 
 ## Revision History 
 
