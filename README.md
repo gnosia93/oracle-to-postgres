@@ -186,7 +186,7 @@ SQL> select count(1) from shop.tb_order;
 
 ### 12. postgres 어드민 ###
 
-
+```
 ▶ Postgresql System Catalogs (시스템 카탈로그)
 pg_class : 테이블, 인덱스, 시퀀스, 뷰
 pg_constraint : 제약조건
@@ -210,7 +210,7 @@ pg_tables : 테이블
 pg_timezone_name : 타임존 명
 pg_user : 데이터베이스 사용자
 pg_views : 뷰
-
+```
 
 ## 레퍼런스 ##
 
