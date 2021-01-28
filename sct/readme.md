@@ -127,9 +127,9 @@ alter table tb_product alter column reg_ymdt set default now();
 
 ### 3. 인덱스 ###
 
-DMS 는 원본 테이블의 여러개의 인덱스가 있더라도 PK 인덱스만을 생성해 준다. (UK 는 생성하는가 ??)
-아래와 같이 이관된 테이블의 인덱스 정보를 조회해 보면, 오라클의 원본 테이블에 존재하는 shop.idx_product_01 라는 인덱스는 보이지 않는다.
-이는 데이터 이관 완료 후, PK 인덱스를 제외한 나머지 인덱스는 수동으로 빌드해 줘야 함을 의미한다. 
+DMS 는 원본 테이블에 여러개의 인덱스가 있더라도 PK 인덱스만을 생성해 준다. (UK 는 생성하는가 ??)
+아래와 같이 이관된 테이블의 인덱스 정보를 조회해 보면, 오라클의 원본 테이블에 존재하는 idx_product_01 인덱스는 postgresql 에서 보이지 않는다. 
+이는 데이터 이관 완료 후, PK 인덱스를 제외한 나머지 인덱스를 수동으로 빌드해 줘야 함을 의미한다. 
 
 [oracle 인덱스 정보]
 ```
@@ -151,7 +151,6 @@ shop_db=# SELECT * FROM pg_indexes WHERE tablename = 'tb_product';
  shop       | tb_product | tb_product_pkey |            | CREATE UNIQUE INDEX tb_product_pkey ON shop.tb_product USING btree (product_id)
 (1 row)
 ```
-
 
 
 ---
