@@ -1,7 +1,6 @@
-### 9. postgres 어드민 ###
+### postgres 시스템 카탈로그 / 뷰 ###
 
 ```
-▶ Postgresql System Catalogs (시스템 카탈로그)
 pg_class : 테이블, 인덱스, 시퀀스, 뷰
 pg_constraint : 제약조건
 pg_database : 해당 클러스터에 속한 데이터베이스
@@ -10,8 +9,6 @@ pg_index : 상세 인덱스
 pg_namespace : 스키마
 pg_tablespace : 해당 클러스터에 속한 데이터베이스
 
-
-▶ Postgresql System Views (시스템 뷰)
 pg_available_extensions : 사용 가능한 extension
 pg_file_settings : 파일 컨텐츠 구성 요약
 pg_grouop : 데이터베이스 사용자 그룹
