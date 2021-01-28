@@ -188,6 +188,7 @@ SQL> select count(1) from shop.tb_order;
 
 * https://stricky.tistory.com/367
 
+* https://aws.amazon.com/ko/blogs/korea/how-to-migrate-your-oracle-database-to-postgresql/
 
 ## Revision History 
 
