@@ -141,6 +141,12 @@ SQL> alter database add supplemental log data;
 SQL> alter database add supplemental log data (primary key) columns;
 SQL> alter database add supplemental log data (unique) columns;
 
+
+SQL> col log_min format a10
+SQL> col log_pk format a10
+SQL> col log_ui format a10
+SQL> col log_all format a10
+
 SQL> select name, log_mode, 
        supplemental_log_data_min as log_min, 
        supplemental_log_data_pk as log_pk, 
