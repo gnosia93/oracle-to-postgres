@@ -22,3 +22,14 @@ pg_timezone_name : 타임존 명
 pg_user : 데이터베이스 사용자
 pg_views : 뷰
 ```
+
+
+## 레퍼런스 ##
+
+* https://stricky.tistory.com/367
+
+* https://aws.amazon.com/ko/blogs/korea/how-to-migrate-your-oracle-database-to-postgresql/
+
+* https://github.com/experdb/eXperDB-DB2PG
+
+* https://www.enterprisedb.com/blog/the-complete-oracle-to-postgresql-migration-guide-tutorial-move-convert-database-oracle-alternative?gclid=CjwKCAiAouD_BRBIEiwALhJH6EYfjIYgfljHPqXSBbnmgypKWRxzegJ7hbYfSb_vAxrj2ywcVu1C7xoCOpwQAvD_BwE&utm_campaign=Q42020_APAC&utm_medium=cpc&utm_source=google
