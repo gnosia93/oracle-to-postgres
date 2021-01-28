@@ -184,6 +184,33 @@ SQL> select count(1) from shop.tb_order;
 * identifiy slow query / sql tunning
 
 
+### 12. postgres 어드민 ###
+
+
+▶ Postgresql System Catalogs (시스템 카탈로그)
+pg_class : 테이블, 인덱스, 시퀀스, 뷰
+pg_constraint : 제약조건
+pg_database : 해당 클러스터에 속한 데이터베이스
+pg_extension : 설치된 extension
+pg_index : 상세 인덱스
+pg_namespace : 스키마
+pg_tablespace : 해당 클러스터에 속한 데이터베이스
+
+
+▶ Postgresql System Views (시스템 뷰)
+pg_available_extensions : 사용 가능한 extension
+pg_file_settings : 파일 컨텐츠 구성 요약
+pg_grouop : 데이터베이스 사용자 그룹
+pg_indexes : 인덱스
+pg_roles : 데이터베이스 롤
+pg_settings : 구성 파라미터
+pg_shadow : 데이터베이스 사용자
+pg_stats : 플래너 통계
+pg_tables : 테이블
+pg_timezone_name : 타임존 명
+pg_user : 데이터베이스 사용자
+pg_views : 뷰
+
 
 ## 레퍼런스 ##
 
