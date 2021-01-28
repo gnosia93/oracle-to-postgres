@@ -66,7 +66,7 @@ shop_db=# select table_catalog, table_schema, table_name,
 ## 2. 제약조건 ##
 
 오라클은 6가지 제약조건을 지원하는데, Primary Key, UNIQUE, Foreign Key, NOT NULL, CHECK, Default 타입의 제약조건을 지원한다. 이에 반해 
-postgresql의 경우 오라클 달리 5개의 제약조건만 지원하고 Default 에 대한 지원은 하지 않는다. 
+postgresql의 경우 오라클 달리 5개의 제약조건만 지원하고 Default 제약조건은 지원하지 않는다. 대신 칼럼에 대한 default 값 설정 형태로 지원된다. 
 
 https://www.postgresql.org/docs/9.3/ddl-constraints.html
 
