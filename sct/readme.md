@@ -31,7 +31,7 @@ DMS 의 자동 스키마 생성 기능을 이용하는 경우, 오라클의 데�
        timestamp --> timestamp
 
 
-### 1-1. pgadmin 을 이용한 정보 조회 ###
+### 1-1. Pgadmin4 로 테이블 메타 데이터 조회 ###
 
 ![pgadmin schema](https://github.com/gnosia93/postgres-terraform/blob/main/images/pgadmin-schema-table.png)
 
