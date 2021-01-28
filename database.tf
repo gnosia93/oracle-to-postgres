@@ -218,7 +218,7 @@ resource "aws_instance" "tf_oracle_19c" {
     vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
     user_data = <<_DATA
 #! /bin/bash
-sudo dnf install -y https://yum.oracle.com/repo/OracleLinux/OL8/baseos/latest/x86_64/getPackage/oracle-database-preinstall-19c-1.0-1.el8.x86_64.rpm
+sudo dnf install -y https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/oracle-database-preinstall-19c-1.0-1.el8.x86_64.rpm
 sudo cat > /etc/selinux/config <<EOF
 SELINUX=permissive
 SELINUXTYPE=targeted
