@@ -159,7 +159,7 @@ SQL> select count(1) from shop.tb_order;
 
 ### 8. SCT ###
 
-옵션널 한 단계인 SCT 에 대해서 다룬다. 
+* https://github.com/gnosia93/postgres-terraform/blob/main/sct/readme.md
 
 
 ### 9. DMS ###
