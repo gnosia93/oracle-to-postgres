@@ -157,7 +157,7 @@ SQL> select count(1) from shop.tb_order;
 ```
 
 
-### [8. 스키마 매핑 및 변환]
+### 8. 스키마 매핑 및 변환 ###
 
 * [데이터 오브젝트 매핑](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
 
