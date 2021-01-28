@@ -184,9 +184,14 @@ SQL> select count(1) from shop.tb_order;
 
 
 
+## 레퍼런스 ##
+
+* https://stricky.tistory.com/367
+
+
 ## Revision History 
 
-- 2021.2.1 V0.1 released 
+- 2021.2.1 V0.1 first draft released 
 
 
 
