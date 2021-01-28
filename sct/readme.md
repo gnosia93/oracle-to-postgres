@@ -9,8 +9,25 @@
 ### 2. postgresql 카탈로그 이용하기 ###
 
 ```
+(base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@3.36.16.13
+Last login: Wed Jan 27 23:25:04 2021 from 218.238.107.63
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+No packages needed for security; 2 packages available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-172-31-16-173 ~]$ sudo su - postgres
+마지막 로그인: 수  1월 27 23:25:17 UTC 2021 일시 pts/0
+-bash-4.2$ psql
+psql (11.5)
+Type "help" for help.
+
 postgres=# \c shop_db
 You are now connected to database "shop_db" as user "postgres".
+
 shop_db=# select table_catalog, table_schema, table_name, shop_db-# column_name, ordinal_position, shop_db-# column_default, is_nullable, 
 shop_db-# data_type, character_maximum_length, shop_db-# numeric_precision, numeric_scale, shop_db-# udt_name
 shop_db-# from information_schema.columns
