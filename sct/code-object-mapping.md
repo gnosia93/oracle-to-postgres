@@ -2,6 +2,17 @@ DMS는 스키마 정보중 테이블, 제약조건 및 PK 인덱스에 대한 �
 
 ## 시퀀스 ##
 
+```
+SQL> col sequence_name format a30
+SQL> select sequence_name, min_value, max_value, increment_by, cache_size, last_number from dba_sequences where sequence_owner = 'SHOP';
+
+SEQUENCE_NAME			MIN_VALUE  MAX_VALUE INCREMENT_BY CACHE_SIZE LAST_NUMBER
+------------------------------ ---------- ---------- ------------ ---------- -----------
+SEQ_COMMENT_COMMENT_ID			1 1.0000E+28		1	  20	  511420
+SEQ_ORDER_ORDER_ID			1 1.0000E+28		1	  20	51117857
+SEQ_PRODUCT_PRODUCT_ID			1 1.0000E+28		1	  20	    2001
+```
+
 
 ## 뷰 ##
 
