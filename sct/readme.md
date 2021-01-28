@@ -3,7 +3,7 @@
 원하는 정보를 조회할 수 있다.
 
 
-## 1. 데이터 타입 및 길이 매핑 ##
+## 1. 데이터 타입 매핑 ##
 
 ### 1-1. pgadmin 을 이용한 정보 조회 ###
 
@@ -57,9 +57,10 @@ shop_db-# where table_name = 'tb_product';
 
 ## 2. 제약조건 ##
 
-오라클은 5가지 제약조건을 지원하는데, 기본키, 외래키, NOT NULL, CHECK, Default 타입의 제약조건을 지원한다.  
-postgresql의 경우 오라클 달리 4개의 제약조건만 지원하고 Default 에 대한 지원은 하지 않는다. 
+오라클은 6가지 제약조건을 지원하는데, Primary Key, UNIQUE, Foreign Key, NOT NULL, CHECK, Default 타입의 제약조건을 지원한다. 이에 반해 
+postgresql의 경우 오라클 달리 5개의 제약조건만 지원하고 Default 에 대한 지원은 하지 않는다. 
 
+https://www.postgresql.org/docs/9.3/ddl-constraints.html
 
 ---
 
