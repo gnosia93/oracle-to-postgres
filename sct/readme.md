@@ -115,10 +115,8 @@ CREATE TABLE shop.tb_product
         USING INDEX TABLESPACE tbs_shop
 );
 ```
-이를 
-)해겨
-)
-아래와 같이 default 값을 추가적으로 입혁해 주기 위해서 postgresql 의 테이블을 alter 시켜줘야 한다. 
+
+default 제약조건은 개발시 자주 사용되는 기능이므로 아래와 같이 postgresql 테이블별의 칼럼별로 default 값을 설정해 줘야한다.  
 ```
 alter table tb_product alter column comment_cnt set default 0;
 alter table tb_product alter column buy_cnt set default 0;
