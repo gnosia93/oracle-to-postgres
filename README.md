@@ -173,14 +173,15 @@ SQL> select count(1) from shop.tb_order;
 * [DMS 동작 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
-### 10. postgres 성능 측정하기 ###
+### 10. postgres 스트레스 테스트 ###
 
-마이그레이션 완료후 아파치 JMeter 를 활용하여 SQL 의 성능을 측정한다.
-
-
-### 11. postgres 진단 및 슬로우 쿼리 확인 ###
+마이그레이션 완료 후 아파치 JMeter 를 활용하여 postgresql 의 성능을 측정한다. 
 
 
+### 11. postgres 진단 ###
+
+* performance assessment
+* identifiy slow query / sql tunning
 
 
 
