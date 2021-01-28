@@ -9,8 +9,14 @@
 ### 2. postgresql 카탈로그 이용하기 ###
 
 ```
-
-
+select table_catalog, table_schema, table_name,
+	column_name, ordinal_position,
+	column_default, is_nullable, 
+	data_type, character_maximum_length,
+	numeric_precision, numeric_scale,
+	udt_name
+from information_schema.columns
+where table_name = 'tb_product';
 ```
 
 
