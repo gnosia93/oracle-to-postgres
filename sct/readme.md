@@ -19,7 +19,7 @@
        clob --> text
 
 ### binary ###
-blob --> bytea
+       blob --> bytea
 
 ### 날짜형 ###
        date --> timestamp
