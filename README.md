@@ -8,7 +8,15 @@
 
 ## 마이그레이션 프로세스 ##
 
+- 현행 시스템 평가
+- 타켓 시스템 사이징
+- 스키마 변경 설계
+- 데이터 이관 테스트 및 성능 튜닝 
+- 어플리케이션 검증
+- 데이터 이행
+- 서비스 오픈 및 성능 모니터링/튜닝
 
+---
 * 어플리케이션 변환 가이드
 * [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/admin/readme.md)
 
