@@ -179,14 +179,14 @@ SQL> select count(1) from shop.tb_order;
 ```
 
 
-### 8. 스키마 변환 ###
+### 8. 스키마 변환(/w SCT) ###
 
 * [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
 
 * [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
 
 
-### 9. DMS ###
+### 9. 데이터 이관(/w DMS) ###
 
 * [DMS 설정하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-settings.md)
 
