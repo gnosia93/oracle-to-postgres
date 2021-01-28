@@ -31,9 +31,13 @@
 
 ## 목차 ##
 
-### [1. PC 환경 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) ###
+### 1. 사전 준비 ##
 
-  
+- [PC 환경 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) 
+
+- [Git 체크아웃]()
+
+- [aws 로그인키 설정]()  
 
 
 ### 2. 테라폼 프로젝트를 로컬 PC로 다운받기 ###
