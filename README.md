@@ -12,7 +12,7 @@
 
 ## 실습 아키텍처 ##
 
-![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres.jpg)
+![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres.png)
 
 * 마이그레이션 테스트를 위해 오라클, postgres, DMS 로 구성된 테스트 세트는 11xe 용과 19c 용으로 2세트로 구성되며, 테라폼에 의해 빌드됩니다. (아키텍처 다이어그램에는 19c만 표시)
 
