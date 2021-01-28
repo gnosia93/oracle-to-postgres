@@ -60,9 +60,9 @@ $ terraform apply -auto-approve
 
 
 
-### 7. 오라클 데이터 로딩 ###
+### 4. 샘플 데이터 로딩하기 ###
 
-#### 7-1. 스키마 생성하기 ####
+#### 4-1. 스키마 생성하기 ####
 
 소스 DB 인 오라클데이터베이스에 실습용 스키마를 생성하고, 샘플 데이터를 로딩하기 위해서 tf_loadgen 서버로 로그인 한 후,  
 아래 명령어를 실행한다. 
@@ -132,7 +132,7 @@ Table created.
 SQL> 
 ```
 
-#### 7-2. 샘플 데이터 생성 및 확인하기 ####
+#### 4-2. 샘플 데이터 생성 및 확인하기 ####
 
 오라클 데이터베이스를 초기화하기 위해 init_11xe.sh 과 init_19c.sh 프로그램을 실행한다. 
 
@@ -160,14 +160,14 @@ SQL> select count(1) from shop.tb_order;
 ```
 
 
-### 8. 스키마 변환(/w SCT) ###
+### 5. 스키마 변환(/w SCT) ###
 
 * [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
 
 * [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
 
 
-### 9. 데이터 이관(/w DMS) ###
+### 6. 데이터 복제하기(/w DMS) ###
 
 * [DMS 설정하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-settings.md)
 
@@ -176,18 +176,18 @@ SQL> select count(1) from shop.tb_order;
 * [DMS 동작 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
-### 10. postgres 스트레스 테스트 ###
+### 7. postgres 스트레스 테스트 ###
 
 마이그레이션 완료 후 아파치 JMeter 를 활용하여 postgresql 의 성능을 측정한다. 
 
 
-### 11. postgres 진단 ###
+### 8. postgres 진단 ###
 
 * performance assessment
 * identifiy slow query / sql tunning
 
 
-### 12. postgres 어드민 ###
+### 9. postgres 어드민 ###
 
 ```
 ▶ Postgresql System Catalogs (시스템 카탈로그)
