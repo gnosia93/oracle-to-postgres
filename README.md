@@ -12,7 +12,7 @@
 
 ## 실습 아키텍처 ##
 
-*실습용 아키텍처 다이어러그램과 빌드되는 인프라 현황에 대해 설명한다. 
+![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres.jpg)
 
 
 
