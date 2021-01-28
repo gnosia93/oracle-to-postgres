@@ -52,14 +52,12 @@ var.tf 수정 (내아이피를 확인한 후)
 $ terraform apply -auto-approve
 ```
 
-### 5. 오라클 사전 준비 ###
+### 3. 복제를 위한 원본/타켓 DB 설정 ##
 
-* https://github.com/gnosia93/postgres-terraform/blob/main/oracle/oracle-prepare.md
+- [오라클 설정](https://github.com/gnosia93/postgres-terraform/blob/main/oracle/oracle-prepare.md)
 
+- [postgresql 설정](https://github.com/gnosia93/postgres-terraform/blob/main/postgres/postgres-conf.md)
 
-### 6. postgres 사전 준비 ###
-
-* [유저/테이블스페이스/데이터베이스생성하기](https://github.com/gnosia93/postgres-terraform/blob/main/postgres/postgres-conf.md)
 
 
 ### 7. 오라클 데이터 로딩 ###
