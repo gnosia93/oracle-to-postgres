@@ -40,9 +40,10 @@ DMS 에 의해 자동으로 매핑 및 생성된 테이블 정보는 다음과 �
 
 ```
 shop_db=# select table_catalog, table_schema, table_name, shop_db-# column_name, ordinal_position, shop_db-# column_default, is_nullable, 
-shop_db-# data_type, character_maximum_length, shop_db-# numeric_precision, numeric_scale, shop_db-# udt_name
-shop_db-# from information_schema.columns
-shop_db-# where table_name = 'tb_product';
+                 data_type, character_maximum_length, shop_db-# numeric_precision, numeric_scale, shop_db-# udt_name
+          from information_schema.columns
+          where table_name = 'tb_product';
+          
  table_catalog | table_schema | table_name |   column_name   | ordinal_position | column_default | is_nullable |          data_type          | character_maximum_length | numeric_precision | numeric_scale | udt_name  
 ---------------+--------------+------------+-----------------+------------------+----------------+-------------+-----------------------------+--------------------------+-------------------+---------------+-----------
  shop_db       | shop         | tb_product | product_id      |                1 |                | NO          | integer                     |                          |                32 |             0 | int4
