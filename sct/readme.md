@@ -4,7 +4,7 @@
 
 ### 1. pgadmin 을 이용한 정보 조회 ###
 
-
+![pgadmin schema](https://github.com/gnosia93/postgres-terraform/blob/main/images/pgadmin-schema-table.png)
 
 ### 2. postgresql 카탈로그 이용하기 ###
 
