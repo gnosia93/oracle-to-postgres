@@ -133,13 +133,19 @@ DMS 는 원본 테이블의 여러개의 인덱스가 있더라도 PK 인덱스�
 
 [oracle 인덱스 정보]
 ```
+SQL> select table_name, index_name, index_type, constraint_index from dba_indexes where table_name = 'TB_PRODUCT';
 
-
+TABLE_NAME	INDEX_NAME		       INDEX_TYPE		   CON
+--------------- ------------------------------ --------------------------- ---
+TB_PRODUCT	SYS_IL0000073061C00005$$       LOB			   NO
+TB_PRODUCT	SYS_IL0000073061C00006$$       LOB			   NO
+TB_PRODUCT	SYS_C007612		       NORMAL			   YES
+TB_PRODUCT	IDX_PRODUCT_01		       NORMAL			   NO
 ```
 
 [postgresql 인덱스 정보]
 ```
-shop_db=#  SELECT * FROM pg_indexes WHERE tablename = 'tb_product';
+shop_db=# SELECT * FROM pg_indexes WHERE tablename = 'tb_product';
  schemaname | tablename  |    indexname    | tablespace |                                    indexdef                                     
 ------------+------------+-----------------+------------+---------------------------------------------------------------------------------
  shop       | tb_product | tb_product_pkey |            | CREATE UNIQUE INDEX tb_product_pkey ON shop.tb_product USING btree (product_id)
