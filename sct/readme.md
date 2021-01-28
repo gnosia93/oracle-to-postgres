@@ -62,6 +62,37 @@ postgresql의 경우 오라클 달리 5개의 제약조건만 지원하고 Defau
 
 https://www.postgresql.org/docs/9.3/ddl-constraints.html
 
+
+tb_product 테이블의 경우 comment_cnt, buy_cnt, display_yn, reg_ymdt 칼럼에 대해서 default 값을 수동으로 입력해 주어야 한다. 
+```
+create table shop.tb_product 
+(
+   product_id         number(9) not null,
+   category_id        number(4) not null,
+   name               varchar2(100) not null,
+   price              number(19,3) not null,,
+   description        clob,
+   image_data         blob,
+   thumb_image_url    varchar2(300),
+   image_url          varchar2(300),
+   delivery_type      varchar2(10) not null,
+   comment_cnt        number(9) default 0 not null,
+   buy_cnt            number(9) default 0 not null,
+   display_yn         char(1) default 'Y',
+   reg_ymdt           date default sysdate not null,
+   upd_ymdt           date,
+   primary key(product_id)
+);
+```
+
+아래와 같이 default 값을 입력하기 위해서 테이블을 alter 한다. 
+```
+alter table tb_product alter column comment_cnt set default 0;
+alter table tb_product alter column buy_cnt set default 0;
+alter table tb_product alter column display_yn set default 'Y';
+alter table tb_product alter column reg_ymdt set default now();
+```
+
 ---
 
 마이그레이션 작업 수행이전에 타겟 데이터베이스인 postgresql에 스키마를 생성하고자 하는 경우 AWS SCT 를 이용하여 스키마 매핑 및 원하는 형태의 스키마로 수정할 수 있으며, 이와 관련된 내용은 AWS 메뉴얼(https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_Welcome.html) 을 참고하길 바란다.
