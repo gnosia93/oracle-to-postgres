@@ -31,9 +31,9 @@
 
 ## 목차 ##
 
-  ### 1. PC 환경 구성 ###
+### [1. PC 환경설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) ###
 
-  * [소프트웨어 설치](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md)
+  
 
 
 ### 2. 테라폼 프로젝트를 로컬 PC로 다운받기 ###
