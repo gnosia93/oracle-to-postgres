@@ -31,7 +31,7 @@
 
 ## 목차 ##
 
-### [1. PC 환경설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) ###
+### [1. PC 환경 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) ###
 
   
 
