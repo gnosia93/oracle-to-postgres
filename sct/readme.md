@@ -7,19 +7,19 @@
 
 오라클의 데이터타입은 postgresql 전환시 아래와 같은 규칙으로 매핑된다.
 
-### 숫자형 ###
-* number(4) --> smallint
-* number(9) --> int
-* number(19,3) --> numeric(19,3)
-* number --> numeric(38,10)
+       ### 숫자형 ###
+       * number(4) --> smallint
+       * number(9) --> int
+       * number(19,3) --> numeric(19,3)
+       * number --> numeric(38,10)
 
-### 문자형 ###
-* char(n) -->
-* varchar2(4000) --> character varying(4000)
-* clob --> text
+       ### 문자형 ###
+       * char(n) -->
+       * varchar2(4000) --> character varying(4000)
+       * clob --> text
 
-### 날짜형 ###
-* date --> timestamp
+       ### 날짜형 ###
+       * date --> timestamp
 
 
 ### 1-1. pgadmin 을 이용한 정보 조회 ###
