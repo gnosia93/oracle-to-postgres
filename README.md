@@ -178,10 +178,10 @@ SQL> select count(1) from shop.tb_order;
 
 ### 7. postgres 스트레스 테스트 ###
 
-마이그레이션 완료 후 아파치 JMeter 를 활용하여 postgresql 의 성능을 측정한다. 
+* https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md
 
 
-### 8. postgres 진단 ###
+### 8. 서비스 오픈 후 Postgres 모니터링 및 성능 진단 ###
 
 * performance assessment
 * identifiy slow query / sql tunning
