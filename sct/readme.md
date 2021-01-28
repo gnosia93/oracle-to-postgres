@@ -71,7 +71,7 @@ postgresql의 경우 오라클 달리 5개의 제약조건만 지원하고 Defau
 https://www.postgresql.org/docs/9.3/ddl-constraints.html
 
 
-예를 들어, tb_product 테이블의 경우 comment_cnt, buy_cnt, display_yn, reg_ymdt 칼럼에 대해서 default 값을 수동으로 입력해 주어야 한다. 
+아래는 원본 데이터베이스인 오라클 데이터 베이스에 tb_product 을 생성할때 사용된 스크립트로, comment_cnt, buy_cnt, display_yn, reg_ymdt 칼럼에 default 제약조건이 설정되어 있는것을 확인할 수 있다. 
 ```
 create table shop.tb_product 
 (
@@ -93,6 +93,31 @@ create table shop.tb_product
 );
 ```
 
+DMS 에 의해 postgresql 데이터베이스로 변환된 테이블의 메타 정보를 조회해 보면 아래와 같이 default 제약조건이 존재하지 않음을 확인할 수 있다. 
+```
+CREATE TABLE shop.tb_product
+(
+    product_id integer NOT NULL,
+    category_id smallint NOT NULL,
+    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    price numeric(19,3) NOT NULL,
+    description text COLLATE pg_catalog."default",
+    image_data bytea,
+    thumb_image_url character varying(300) COLLATE pg_catalog."default",
+    image_url character varying(300) COLLATE pg_catalog."default",
+    delivery_type character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    comment_cnt integer NOT NULL,
+    buy_cnt integer NOT NULL DEFAULT 0,
+    display_yn character varying(1) COLLATE pg_catalog."default",
+    reg_ymdt timestamp without time zone NOT NULL DEFAULT now(),
+    upd_ymdt timestamp without time zone,
+    CONSTRAINT tb_product_pkey PRIMARY KEY (product_id)
+        USING INDEX TABLESPACE tbs_shop
+);
+```
+이를 
+)해겨
+)
 아래와 같이 default 값을 추가적으로 입혁해 주기 위해서 postgresql 의 테이블을 alter 시켜줘야 한다. 
 ```
 alter table tb_product alter column comment_cnt set default 0;
