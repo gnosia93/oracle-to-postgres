@@ -16,7 +16,7 @@ DMS 의 자동 스키마 생성 기능을 이용하는 경우, 오라클의 데�
        number --> numeric(38,10)
 
 ### 문자형 ###
-       char(n) -->
+       char(n) --> character varying(n)
        varchar2(4000) --> character varying(4000)
        clob --> text
 
