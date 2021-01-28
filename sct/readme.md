@@ -18,6 +18,9 @@
        varchar2(4000) --> character varying(4000)
        clob --> text
 
+### binary ###
+blob --> bytea
+
 ### 날짜형 ###
        date --> timestamp
 
