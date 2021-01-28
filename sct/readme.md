@@ -2,11 +2,14 @@
 이관이후, 자동으로 생성된 테이블에 대한 메타 정보를 확인하기 위해서는 pgadmin 과 같은 클라이언트 툴을 사용하여거나, postgresql 의 카탈로그를 이용하여
 원하는 정보를 조회할 수 있다.
 
-### 1. pgadmin 을 이용한 정보 조회 ###
+
+## 1. 데이터 타입 및 길이 매핑 ##
+
+### 1-1. pgadmin 을 이용한 정보 조회 ###
 
 ![pgadmin schema](https://github.com/gnosia93/postgres-terraform/blob/main/images/pgadmin-schema-table.png)
 
-### 2. postgresql 카탈로그 이용하기 ###
+### 1-2. postgresql 카탈로그 이용하기 ###
 
 ```
 (base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@3.36.16.13
@@ -50,6 +53,12 @@ shop_db-# where table_name = 'tb_product';
  shop_db       | shop         | tb_product | upd_ymdt        |               14 |                | YES         | timestamp without time zone |                          |                   |               | timestamp
 (14 rows)
 ```
+
+
+## 2. 제약조건 ##
+
+오라클은 5가지 제약조건을 지원하는데, 기본키, 외래키, NOT NULL, CHECK, Default 타입의 제약조건을 지원한다.  
+postgresql의 경우 오라클 달리 4개의 제약조건만 지원하고 Default 에 대한 지원은 하지 않는다. 
 
 
 ---
