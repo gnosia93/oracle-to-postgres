@@ -11,12 +11,8 @@
 ```
 postgres=# \c shop_db
 You are now connected to database "shop_db" as user "postgres".
-shop_db=# select table_catalog, table_schema, table_name,
-shop_db-# column_name, ordinal_position,
-shop_db-# column_default, is_nullable, 
-shop_db-# data_type, character_maximum_length,
-shop_db-# numeric_precision, numeric_scale,
-shop_db-# udt_name
+shop_db=# select table_catalog, table_schema, table_name, shop_db-# column_name, ordinal_position, shop_db-# column_default, is_nullable, 
+shop_db-# data_type, character_maximum_length, shop_db-# numeric_precision, numeric_scale, shop_db-# udt_name
 shop_db-# from information_schema.columns
 shop_db-# where table_name = 'tb_product';
  table_catalog | table_schema | table_name |   column_name   | ordinal_position | column_default | is_nullable |          data_type          | character_maximum_length | numeric_precision | numeric_scale | udt_name  
