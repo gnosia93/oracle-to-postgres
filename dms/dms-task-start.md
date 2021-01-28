@@ -20,7 +20,8 @@
 
 ### 4. 마이그레이션 사전 평가하기 ###
 
-DMS 동작시 문제가 될 만한 사항을 체크해서 리포트 형식으로 보여준다. 리포트를 출력할 S3버킷 생성이 필요하고, DMS 서비스가 S3 에 결과값을 기록하기 때문에 S3에 접근 가능한 DMS 서비스 롤 생성이 필요하다.
+DMS 동작시 문제가 될 만한 사항을 사전에 체크해서 리포트 형식으로 보여준다. 리포트를 출력할 S3버킷 생성이 필요하고, DMS 서비스가 S3 에 결과값을 기록하기 때문에 S3에 접근 가능한 DMS 서비스 롤 생성이 필요한데,
+해당 권한을 tfDMSServiceRole 라는 이름을 테라폼에 의해 사전에 만들어져 있다. 
 
 ![assessment](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-premig-assessment.png)
 
