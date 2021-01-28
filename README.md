@@ -14,6 +14,15 @@
 
 ![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres.jpg)
 
+* 마이그레이션 테스트를 위해 오라클, postgres, DMS 세트는 11xe 용과 19c 용으로 2세트를 빌드합니다. (아키텍처 다이어그램에는 19c만 표시)
+
+* 오라클의 경우 12C 부터는 CDB / PDB 아키텍처 구조로 구현되어 있는데, Oracle Log Miner 가 PDB 를 지원하지 않는 관계로 19C 의 경우 binary reader 방식의 endpoint 를 사용하고,
+
+11g 는 Log Miner 방식을 이용하여 테스트 합니다.
+
+* 샘플 스키마 및 초기 데이터 로딩 작업은 tf_loadgen EC2 인스턴스가 수행하고, 샘플 스키마 빌드는 sqlplus 와 shell script 로 구현되어 있으며, 초기 데이터를 로딩하는 프로그램은 python 으로 구현됩니다. 
+
+
 
 
 ## 목차 ##
