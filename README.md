@@ -6,7 +6,7 @@
 테라폼과 관련 정보는 https://www.terraform.io/ 에서 확인할 수 있고, 본문에서는 테라폼 사용법에 대한 내용은 다루지 않습니다.  
 기존에 AWS 콘솔과 오라클 데이터베이스에 대한 사전 경험 있다는 가정하에 작성되었으며, postgresql 의 경우 사전 지식이 없더라도 마이그레이션과 관련된 정보를 습득할 수 있습니다. 
 
-## 마이그레이션 프로세스 ##
+## 1. 마이그레이션 프로세스 ##
 
 - 현행 시스템 평가
 - 타켓 시스템 사이징
@@ -16,7 +16,7 @@
 - 데이터 이행 / 서비스 오픈
 - 성능 모니터링 / 튜닝
 
-## 워크샵 아키텍처 ##
+## 2. 실습 아키텍처 ##
 
 ![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres-architecture.png)
 
@@ -35,9 +35,9 @@
 * 통상적으로 onprem의 오라클 데이터베이스를 AWS로 이전시 마이그레이션을 위한 네트워크는 VPN(1.2Gbps/s) 또는 DX(Max 40Gbps/s) 를 사용하게 되는데, 허용 가능한 서비스 다운타임에 따라 네트워크의 종류와 bandwidth 를 선택하게 됩니다. 마이그레이션을 위한 네트워크 아키텍처는 초기 데이터 로딩량과 변경 데이터량(ongoing 데이터 적재량)을 고려하여 설계하여야 합니다. 
 
 
-## 실습 목차 ##
+## 3. 실습 목차 ##
 
-### 1. 사전 준비 ###
+### 3-1. 사전 준비 ###
 
 - [PC 환경 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) 
 
@@ -46,7 +46,7 @@
 - [aws 로그인키 설정]()  
 
 
-### 2. 인프라 빌드 ###
+### 3-2. 인프라 빌드 ###
 
 인프라 구성요소는 소스 데이터베이스인 오라클과 타켓 데이터베이스인 postgresql, 데이터 복제시 사용할 DMS 인스턴스 및 초기 데이터 로딩에 사용되는 EC2 인스턴스로 구성되어 있다.  
 오라클 설치, OS 파리미터 설정, 네트워크 설정 등과 같은 기본적인 설정은 모두 자동화 되어 있기 때문에, DMS 와 postgresql 에 대한 이해도를 높일 수...
@@ -58,7 +58,7 @@ var.tf 수정 (내아이피를 확인한 후)
 $ terraform apply -auto-approve
 ```
 
-### 3. 복제를 위한 원본/타켓 DB 설정 ##
+### 3-3. 복제를 위한 원본/타켓 DB 설정 ##
 
 - [오라클 설정](https://github.com/gnosia93/postgres-terraform/blob/main/oracle/oracle-prepare.md)
 
@@ -66,7 +66,7 @@ $ terraform apply -auto-approve
 
 
 
-### 4. 샘플 데이터 로딩하기 ###
+### 3-4. 샘플 데이터 로딩하기 ###
 
 #### 4-1. 스키마 생성하기 ####
 
@@ -166,14 +166,14 @@ SQL> select count(1) from shop.tb_order;
 ```
 
 
-### 5. 스키마 변환(/w SCT) ###
+### 3-5. 스키마 변환(/w SCT) ###
 
 * [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
 
 * [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
 
 
-### 6. 데이터 복제하기(/w DMS) ###
+### 3-6. 데이터 복제하기(/w DMS) ###
 
 * [DMS 설정하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-settings.md)
 
@@ -182,18 +182,18 @@ SQL> select count(1) from shop.tb_order;
 * [DMS 동작 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
-### 7. postgres 스트레스 테스트 ###
+### 3-7. postgres 스트레스 테스트 ###
 
 * https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md
 
 
-### 8. 서비스 오픈 후 Postgres 모니터링 및 성능 진단 ###
+### 3-8. 서비스 오픈 후 Postgres 모니터링 및 성능 진단 ###
 
 * performance assessment
 * identifiy slow query / sql tunning
 
 
-## Appendix ##
+## 4. Appendix ##
 
 * 어플리케이션 변환 가이드
 * [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/admin/readme.md)
@@ -201,7 +201,7 @@ SQL> select count(1) from shop.tb_order;
 
 
 
-## Revision History 
+## 5. Revision History 
 
 - 2021.2.1 V0.1 first draft released 
 
