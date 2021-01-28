@@ -9,14 +9,33 @@
 ### 2. postgresql 카탈로그 이용하기 ###
 
 ```
-select table_catalog, table_schema, table_name,
-	column_name, ordinal_position,
-	column_default, is_nullable, 
-	data_type, character_maximum_length,
-	numeric_precision, numeric_scale,
-	udt_name
-from information_schema.columns
-where table_name = 'tb_product';
+postgres=# \c shop_db
+You are now connected to database "shop_db" as user "postgres".
+shop_db=# select table_catalog, table_schema, table_name,
+shop_db-# column_name, ordinal_position,
+shop_db-# column_default, is_nullable, 
+shop_db-# data_type, character_maximum_length,
+shop_db-# numeric_precision, numeric_scale,
+shop_db-# udt_name
+shop_db-# from information_schema.columns
+shop_db-# where table_name = 'tb_product';
+ table_catalog | table_schema | table_name |   column_name   | ordinal_position | column_default | is_nullable |          data_type          | character_maximum_length | numeric_precision | numeric_scale | udt_name  
+---------------+--------------+------------+-----------------+------------------+----------------+-------------+-----------------------------+--------------------------+-------------------+---------------+-----------
+ shop_db       | shop         | tb_product | product_id      |                1 |                | NO          | integer                     |                          |                32 |             0 | int4
+ shop_db       | shop         | tb_product | category_id     |                2 |                | NO          | smallint                    |                          |                16 |             0 | int2
+ shop_db       | shop         | tb_product | name            |                3 |                | NO          | character varying           |                      100 |                   |               | varchar
+ shop_db       | shop         | tb_product | price           |                4 |                | NO          | numeric                     |                          |                19 |             3 | numeric
+ shop_db       | shop         | tb_product | description     |                5 |                | YES         | text                        |                          |                   |               | text
+ shop_db       | shop         | tb_product | image_data      |                6 |                | YES         | bytea                       |                          |                   |               | bytea
+ shop_db       | shop         | tb_product | thumb_image_url |                7 |                | YES         | character varying           |                      300 |                   |               | varchar
+ shop_db       | shop         | tb_product | image_url       |                8 |                | YES         | character varying           |                      300 |                   |               | varchar
+ shop_db       | shop         | tb_product | delivery_type   |                9 |                | NO          | character varying           |                       10 |                   |               | varchar
+ shop_db       | shop         | tb_product | comment_cnt     |               10 |                | NO          | integer                     |                          |                32 |             0 | int4
+ shop_db       | shop         | tb_product | buy_cnt         |               11 |                | NO          | integer                     |                          |                32 |             0 | int4
+ shop_db       | shop         | tb_product | display_yn      |               12 |                | YES         | character varying           |                        1 |                   |               | varchar
+ shop_db       | shop         | tb_product | reg_ymdt        |               13 |                | NO          | timestamp without time zone |                          |                   |               | timestamp
+ shop_db       | shop         | tb_product | upd_ymdt        |               14 |                | YES         | timestamp without time zone |                          |                   |               | timestamp
+(14 rows)
 ```
 
 
