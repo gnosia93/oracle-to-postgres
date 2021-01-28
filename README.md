@@ -16,10 +16,6 @@
 - 데이터 이행
 - 서비스 오픈 및 성능 모니터링/튜닝
 
----
-* 어플리케이션 변환 가이드
-* [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/admin/readme.md)
-
 ## 실습 아키텍처 ##
 
 ![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres-architecture.png)
@@ -197,17 +193,12 @@ SQL> select count(1) from shop.tb_order;
 * identifiy slow query / sql tunning
 
 
+## Appendix ##
+
+* 어플리케이션 변환 가이드
+* [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/admin/readme.md)
 
 
-## 레퍼런스 ##
-
-* https://stricky.tistory.com/367
-
-* https://aws.amazon.com/ko/blogs/korea/how-to-migrate-your-oracle-database-to-postgresql/
-
-* https://github.com/experdb/eXperDB-DB2PG
-
-* https://www.enterprisedb.com/blog/the-complete-oracle-to-postgresql-migration-guide-tutorial-move-convert-database-oracle-alternative?gclid=CjwKCAiAouD_BRBIEiwALhJH6EYfjIYgfljHPqXSBbnmgypKWRxzegJ7hbYfSb_vAxrj2ywcVu1C7xoCOpwQAvD_BwE&utm_campaign=Q42020_APAC&utm_medium=cpc&utm_source=google
 
 
 ## Revision History 
