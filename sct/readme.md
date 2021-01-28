@@ -63,7 +63,7 @@ postgresql의 경우 오라클 달리 5개의 제약조건만 지원하고 Defau
 https://www.postgresql.org/docs/9.3/ddl-constraints.html
 
 
-tb_product 테이블의 경우 comment_cnt, buy_cnt, display_yn, reg_ymdt 칼럼에 대해서 default 값을 수동으로 입력해 주어야 한다. 
+예를 들어, tb_product 테이블의 경우 comment_cnt, buy_cnt, display_yn, reg_ymdt 칼럼에 대해서 default 값을 수동으로 입력해 주어야 한다. 
 ```
 create table shop.tb_product 
 (
