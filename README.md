@@ -16,7 +16,7 @@
 - 데이터 이행 / 서비스 오픈
 - 성능 모니터링 / 튜닝
 
-## 실습 아키텍처 ##
+## 워크샵 아키텍처 ##
 
 ![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres-architecture.png)
 
