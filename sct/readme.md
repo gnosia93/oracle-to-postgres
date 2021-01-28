@@ -10,6 +10,8 @@ DMS 의 자동 스키마 생성 기능을 이용하는 경우, 오라클의 데�
 ### 숫자형 ###
        number(4) --> smallint
        number(9) --> int
+       number(10) --> numeric(10,0)
+       number(30) --> numeric(30,0)
        number(19,3) --> numeric(19,3)
        number --> numeric(38,10)
 
