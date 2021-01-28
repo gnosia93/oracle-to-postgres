@@ -85,7 +85,7 @@ create table shop.tb_product
 );
 ```
 
-아래와 같이 default 값을 입력하기 위해서 테이블을 alter 한다. 
+아래와 같이 default 값을 추가적으로 입혁해 주기 위해서 postgresql 의 테이블을 alter 시켜줘야 한다. 
 ```
 alter table tb_product alter column comment_cnt set default 0;
 alter table tb_product alter column buy_cnt set default 0;
