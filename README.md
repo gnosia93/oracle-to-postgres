@@ -157,7 +157,7 @@ SQL> select count(1) from shop.tb_order;
 ```
 
 
-[### 8. 스미마 변환 ###](https://github.com/gnosia93/postgres-terraform/blob/main/sct/readme.md)
+### [8. 스키마 매핑 및 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/readme.md) ###
 
 
 ### 9. DMS ###
