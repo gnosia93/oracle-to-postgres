@@ -182,12 +182,14 @@ SQL> select count(1) from shop.tb_order;
 * [DMS 동작 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
-### 7. postgres 스트레스 테스트 ###
+## 성능 진단 및 테스트 ##
+
+### 1. postgres 스트레스 테스트 ###
 
 * https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md
 
 
-### 8. 서비스 오픈 후 Postgres 모니터링 및 성능 진단 ###
+### 2. 서비스 오픈 후 Postgres 모니터링 및 성능 진단 ###
 
 * performance assessment
 * identifiy slow query / sql tunning
