@@ -33,11 +33,7 @@
 
 ### 1. PC 환경 구성 ###
 
-튜토리얼을 진행하기 위해 테라폼, git 및 postgresql client 인 pgadmin 4 와 오라클 접속을 위한 sql developer 설치가 필요합니다.   
-  * 테라폼
-  * Git
-  * Pgadmin4
-  * SQLDeveloper
+* [소프트웨어 설치](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md)
 
 
 ### 2. 테라폼 프로젝트를 로컬 PC로 다운받기 ###
