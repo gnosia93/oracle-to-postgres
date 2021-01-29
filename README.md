@@ -47,9 +47,7 @@
 
 - [PC 환경 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) 
 
-- [workshop 체크아웃]()
-
-- [aws 로그인키 설정]()  
+- [AWS API키 설정]()  
 
 
 ### 2. 인프라 빌드 ###
