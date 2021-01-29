@@ -54,15 +54,20 @@
 
 ### 2. 인프라 빌드 ###
 
-인프라 빌드는 테라폼 스크립트를 활용합니다. 워크샵 프로젝트 루트로 이동하여 
-
-
-오라클 설치, OS 파리미터 설정, 네트워크 설정 등과 같은 기본적인 설정은 모두 자동화 되어 있기 때문에, DMS 와 postgresql 에 대한 이해도를 높일 수...
-
-오라클의 경우 약 30분 정도의 시간이 걸린다. 
-
+워크샵에 필요한 인프라를 빌드하기 위해서 git 허브로 부터 아래와 같이 clone 한 다음 default 부분의 IP 주소를 여러분들의 주소로 변경합니다. 
 ```
-var.tf 수정 (내아이피를 확인한 후)
+$ git clone https://github.com/gnosia93/postgres-terraform.git
+$ cd postgres-terraform/
+$ vi var.tf
+variable "your_ip_addr" {
+    type = string
+    default = "218.238.107.0/24"       ## 네이버에서 "내아이피" 로 검색한 후, 결과값을 CIDR 형태로 입력.
+}
+```
+
+테라폼 init 명령어를 이용하여 플러그인 모듈을 다운로드 받은 후, apply 명령어를 이용하여 타켓 인프라를 빌드합니다.  
+```
+$ terraform init
 $ terraform apply -auto-approve
 ```
 
