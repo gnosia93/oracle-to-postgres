@@ -30,7 +30,7 @@ select * from v$sql;
 
 ## 레퍼런스 ##
 
-* [오라클 JDBC 로케일 오류발생시 - JMeter 가 제대로 동작안할때](https://butter-ring.tistory.com/5)
+* https://stackoverflow.com/questions/47457105/class-has-been-compiled-by-a-more-recent-version-of-the-java-environment
 
 * https://jmeter.apache.org/usermanual/build-db-test-plan.html
 
