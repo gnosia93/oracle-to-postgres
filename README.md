@@ -6,6 +6,12 @@
 테라폼과 관련 정보는 https://www.terraform.io/ 에서 확인할 수 있고, 본문에서는 테라폼 사용법에 대한 내용은 다루지 않습니다.  
 기존에 AWS 콘솔과 오라클 데이터베이스에 대한 사전 경험 있다는 가정하에 작성되었으며, postgresql 의 경우 사전 지식이 없더라도 마이그레이션과 관련된 정보를 습득할 수 있습니다. 
 
+## Revision History 
+
+- 2021.2.1 V0.1 first draft released 
+
+
+
 ## 마이그레이션 프로세스 ##
 
 - 현행 시스템 평가
@@ -105,10 +111,6 @@ $ terraform apply -auto-approve
 
 
 
-
-## Revision History 
-
-- 2021.2.1 V0.1 first draft released 
 
 
 
