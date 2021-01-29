@@ -23,3 +23,9 @@ select * from v$sql;
 
 
 ## JMeter 스트레스 테스트 ##
+
+
+
+## 레퍼런스 ##
+
+* https://jongsma.wordpress.com/2019/08/08/oracle-stress-testing-using-apache-jmeter/
