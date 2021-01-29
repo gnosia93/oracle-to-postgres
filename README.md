@@ -89,16 +89,12 @@ $ terraform apply -auto-approve
 * [DMS 동작 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
-## 성능 진단 및 테스트 ##
+### 7. 성능 테스트 및 진단 ###
 
-### 1. postgres 스트레스 테스트 ###
-
-* https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md
-
-
-### 2. 서비스 오픈 후 Postgres 모니터링 및 성능 진단 ###
+* [postgres 스트레스 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md)
 
 * performance assessment
+
 * identifiy slow query / sql tunning
 
 
