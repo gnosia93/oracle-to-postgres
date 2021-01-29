@@ -30,4 +30,6 @@ select * from v$sql;
 
 ## 레퍼런스 ##
 
+* https://jmeter.apache.org/usermanual/build-db-test-plan.html
+
 * https://jongsma.wordpress.com/2019/08/08/oracle-stress-testing-using-apache-jmeter/
