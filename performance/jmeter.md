@@ -34,6 +34,8 @@ select * from v$sql;
 
 ## 레퍼런스 ##
 
+* [플러그인](https://huistorage.tistory.com/89?category=723808)
+
 * https://stackoverflow.com/questions/47457105/class-has-been-compiled-by-a-more-recent-version-of-the-java-environment
 
 * https://jmeter.apache.org/usermanual/build-db-test-plan.html
