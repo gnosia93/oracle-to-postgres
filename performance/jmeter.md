@@ -1,6 +1,10 @@
 
 아파치 Jmeter 를 이용하여 이관후 postgres 의 성능을 측정합니다. 
 
+오라클사의 JDBC 드라이버가 필요하며, 오라클 홈페이지에 제공되는 드라이버들은 Java Version 10 (class file version 54.0) 으로 컴파일되어 있어서, 
+
+JDK 또는 JRE 10 버전 이상으로 설치가 필요합니다. 
+
 ## 측정 대상 SQL ##
 
 성능 측정의 대상이 되는 SQL 은 오라클 v$sqlarea 에서 관찰되는 SQL 중 다음과 같은 우선순위로 선정합니다.
