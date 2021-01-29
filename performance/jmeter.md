@@ -30,6 +30,8 @@ select * from v$sql;
 
 ## 레퍼런스 ##
 
+* [오라클 JDBC 로케일 오류발생시 - JMeter 가 제대로 동작안할때](https://butter-ring.tistory.com/5)
+
 * https://jmeter.apache.org/usermanual/build-db-test-plan.html
 
 * https://jongsma.wordpress.com/2019/08/08/oracle-stress-testing-using-apache-jmeter/
