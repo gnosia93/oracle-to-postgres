@@ -71,7 +71,7 @@
 
 - [스키마 생성하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/init-schema.md)
 
-- [데이터 생성하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/init-data.md)
+- [샘플 데이터 생성하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/init-data.md)
 
 
 ### 5. 스키마 변환(/w SCT) ###
