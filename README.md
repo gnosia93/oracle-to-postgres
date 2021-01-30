@@ -49,7 +49,7 @@
 
 - [PC 환경설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/pc-software.md) 
 
-- [AWS 억세스키 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/aws-access-key.md)  
+- [AWS 억세스 키 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/aws-access-key.md)  
 
 
 ### 2. 인프라 빌드 ###
