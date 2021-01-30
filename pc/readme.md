@@ -13,7 +13,13 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 ```
 
 * 테라폼 
-    
+
+```
+$ brew install terraform
+
+
+```
+
 * git 
 
 * 버전 10 이상의 JRE 또는 JDK 
