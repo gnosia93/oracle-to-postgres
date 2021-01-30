@@ -94,6 +94,7 @@ Check : https://jmeter.apache.org/usermanual/best-practices.html
 ================================================================================
 ```
 
+![jmeter-exec](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/apache-jmeter-exec.png)
 
 
 ## Pgadmin4 (옵션) ##
