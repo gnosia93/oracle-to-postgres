@@ -49,7 +49,7 @@
 
 - [PC 환경설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) 
 
-- [AWS API키 설정]()  
+- [AWS API키 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/aws-apikey.md)  
 
 
 ### 2. 인프라 빌드 ###
