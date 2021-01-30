@@ -61,11 +61,16 @@ export PATH=$PATH:$ZEPPELIN_HOME/bin
 complete -C /usr/local/bin/terraform terraform
 ```
 
-JAVA_HOME 환경 변수를 bash 프로파일에 등록한 후, 터미널 환경에서 해당 변수값이 제대로 설정되어 있는지 확인합니다.
+JAVA_HOME 환경 변수를 bash 프로파일에 등록한 후, 터미널 환경에서 환경변수 값과 java 의 버전을 아래와 같이 확인합니다. 
 ```
 $ . .bash_profile
 $ env | grep JAVA_HOME
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/Home
+
+$ java -version
+java version "11.0.10" 2021-01-19 LTS
+Java(TM) SE Runtime Environment 18.9 (build 11.0.10+8-LTS-162)
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.10+8-LTS-162, mixed mode)
 ```
 
 ## apache jmeter ##
