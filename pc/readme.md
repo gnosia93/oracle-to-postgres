@@ -22,7 +22,15 @@ Terraform v0.14.5
 
 * git 
 
+```
+$ brew install git
+$ git --version
+git version 2.29.1
+```
+
 * 버전 10 이상의 JRE 또는 JDK 
+
+
 
 * apache jmeter
 
