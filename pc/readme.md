@@ -97,8 +97,10 @@ Check : https://jmeter.apache.org/usermanual/best-practices.html
 ![jmeter-exec](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/apache-jmeter-exec.png)
 
 
-## Pgadmin4 (옵션) ##
+## Pgadmin4 ##
 
+
+![pgadmin4](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/pgadmin4.png)
 
 
 ## SQLDeveloper (옵션) ##
