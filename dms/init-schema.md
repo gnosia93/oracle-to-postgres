@@ -89,18 +89,25 @@ create table shop.tb_order_detail
 
 ### 스키마 생성하기 ###
 
-소스 DB 인 오라클데이터베이스에 실습용 스키마를 생성하고, 샘플 데이터를 로딩하기 위해서 tf_loadgen 서버로 로그인 한 후,  
-아래 명령어를 실행한다. 
+오라클 데이터베이스에 실습용 스키마를 생성하기 위해, tf_loadgen EC2 인스턴스로 로그인하여 아래와 명령어를 수행합니다. pyoracle 디렉토리 밑에 create-schema.sh 일 실행합니다. 
 
 ```
-(base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@<tf_loadgen IP>
+$ ssh -i ~/.ssh/tf_key ec2-user@<tf_loadgen IP>
+Last login: Fri Jan 29 10:50:02 2021 from 218.238.107.63
 
-[ec2-user@ip-172-31-37-6 ~]$ cd pyoracle
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+[ec2-user@ip-172-31-34-59 ~]$ cd pyoracle
 [ec2-user@ip-172-31-37-6 pyoracle]$ sh create-schema.sh 
-find and replace oracle ip ... /home/ec2-user/oracle/tnsnames.ora
-find and replace oracle ip ... /home/ec2-user/pyoracle/config.ini
 
-SQL*Plus: Release 21.0.0.0.0 - Production on Mon Jan 25 08:16:52 2021
+[ec2-user@ip-172-31-34-59 pyoracle]$ sh create-schema.sh 
+find and replace oracle ip ... /home/ec2-user/oracle/tnsnames.ora <11xe-oracle-private-ip> tf_oracle_11xe
+find and replace oracle ip ... /home/ec2-user/oracle/tnsnames.ora <19c-oracle-private-ip> tf_oracle_19c
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Sat Jan 30 14:13:31 2021
 Version 21.1.0.0.0
 
 Copyright (c) 1982, 2020, Oracle.  All rights reserved.
@@ -154,5 +161,73 @@ Table created.
 
 Table created.
 
-SQL> 
+Disconnected from Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Sat Jan 30 14:13:36 2021
+Version 21.1.0.0.0
+
+Copyright (c) 1982, 2020, Oracle.  All rights reserved.
+
+Last Successful login time: Fri Jan 29 2021 11:40:02 +00:00
+
+Connected to:
+Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+
+
+Session altered.
+
+
+Tablespace dropped.
+
+
+Tablespace created.
+
+
+User dropped.
+
+
+User created.
+
+
+Grant succeeded.
+
+
+Sequence created.
+
+
+Sequence created.
+
+
+Sequence created.
+
+
+Table created.
+
+
+Table created.
+
+
+Index created.
+
+
+Table created.
+
+
+Index created.
+
+
+Table created.
+
+
+Table created.
+
+Disconnected from Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
+Version 19.3.0.0.0
+find and replace oracle ip ... /home/ec2-user/pyoracle/config.ini <11xe-oracle-private-ip> tf_oracle_11xe
+ORACLE_11XE_URL = shop/shop@<11xe-oracle-private-ip>:1521/xe
+finding oracle ec2 private ip ....
+find and replace oracle ip ... /home/ec2-user/pyoracle/config.ini <19c-oracle-private-ip> tf_oracle_19c
+ORACLE_19C_URL = shop/shop@<19c-oracle-private-ip>:1521/pdb1
+finding oracle ec2 private ip ....
 ```
