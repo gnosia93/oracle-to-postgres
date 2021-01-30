@@ -66,12 +66,11 @@ JAVA_HOME 환경 변수를 bash 프로파일에 등록한 후, 터미널 환경�
 $ . .bash_profile
 $ env | grep JAVA_HOME
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/Home
-``
-
-
-
+```
 
 ## apache jmeter ##
+
+아파치 jmeter 를 설치하기 위해서,
 
 
 
