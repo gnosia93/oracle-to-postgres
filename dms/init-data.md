@@ -8,9 +8,16 @@
 
 ### 데이터 생성하기 ###
 ```
-[ec2-user@ip-172-31-34-59 pyoracle]$ pwd
-/home/ec2-user/pyoracle
+$ ssh -i ~/.ssh/tf_key ec2-user@<tf_loadgen IP>
+Last login: Fri Jan 29 10:50:02 2021 from 218.238.107.63
 
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+
+[ec2-user@ip-172-31-34-59 ~]$ cd pyoracle
 [ec2-user@ip-172-31-34-59 pyoracle]$ ls -la
 합계 52
 drwxr-xr-x 4 ec2-user ec2-user  270  1월 30 14:13 .
