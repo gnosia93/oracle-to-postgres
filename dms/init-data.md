@@ -48,9 +48,24 @@ initilize product table...
 ```
 
 
-### sqldeveloper로 생성 데이터 확인하기 ###
+### Sqldeveloper로 생성 데이터 확인하기 ###
+
+Sqldeveloper 를 실행한 후, 좌측 메뉴의 [Oracle 접속] 아이콘을 클릭한 후, 우클릭하여 나온 팝업 메뉴에서 [+ 새 접속(A)] 을 클릭합니다. 
 
 ![new](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-new-connection.png)
+
+팝업된 [새로 만들기/데이터베이스 접속 선택] 창에서 다음과 같이 설정하고, 아래 테스트 버튼을 눌러 접속 여부를 확인 한 후, [저장] 버튼을 클릭 합니다.  
+
+* Name : tf_oracle-19c 
+* 사용자 이름 : system 
+* 비밀번호는 : manager 
+* 호스트이름 : <tf-oracle-19c EC2 인스턴스 퍼블릭 IP>
+* 포트 : 1521
+* 서비스 이름(E) : pdb1
+
+저장이 완료 된 후, [접속] 버튼을 눌러 오라클 데이터베이스에 로그인 합니다. 
+
 ![result](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-new-connection-result.png)
+
 ![count](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-table-cnt.png)
 
