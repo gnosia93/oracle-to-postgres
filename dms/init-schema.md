@@ -1,6 +1,6 @@
 ## ERD ##
 
-
+![erd](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/migration-erd.png)
 
 
 
