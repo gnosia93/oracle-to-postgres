@@ -16,8 +16,8 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 ```
 $ brew install terraform
-
-
+$ terraform -version
+Terraform v0.14.5
 ```
 
 * git 
