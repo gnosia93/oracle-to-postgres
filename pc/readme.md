@@ -1,14 +1,17 @@
-튜토리얼을 진행하기 위해 테라폼, git 및 postgresql client 인 pgadmin4 와 오라클 접속을 위한 sql developer 설치가 필요합니다.   
+튜토리얼을 원할하게 진행하기 위해서는 아래 소트트웨어의 설치가 필요합니다. 
 
-## homebrew ##
+* homebrew
+
 https://november11tech.tistory.com/95?category=291164
 
-## 테라폼 ##
+* 테라폼 
 
-## Git ##
+* git 
 
-## Java 10 & apache jmeter ##
+* Java 10 
 
-## Pgadmin4 ##
+* apache jmeter
 
-## SQLDeveloper ##
+* Pgadmin4 (옵션)
+
+* SQLDeveloper (옵션)
