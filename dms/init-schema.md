@@ -2,7 +2,10 @@
 
 ### ERD ###
 
+워크샵에서는 아래의 ERD에 나와있는 테이블 5개와 시퀀스 3개 PK 인덱스와 더불어 추가적으로 3개의 인덱스를 생성합니다. 노란색으로 표시된 부분은 check 및 default contraint 입니다. 
+
 ![erd](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/migration-erd.png)
+
 
 
 ### DDL ###
