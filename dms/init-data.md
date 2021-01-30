@@ -50,5 +50,7 @@ initilize product table...
 
 ### sqldeveloper로 생성 데이터 확인하기 ###
 
-
+![new](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-new-connection.png)
+![result](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-new-connection-result.png)
+![count](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-table-cnt.png)
 
