@@ -10,7 +10,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 
 * git 
 
-* Java 10 
+* 버전 10 이상의 JRE 또는 JDK 
 
 * apache jmeter
 
