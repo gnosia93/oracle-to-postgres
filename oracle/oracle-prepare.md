@@ -1,17 +1,17 @@
-## 오라클 사전 준비 ##
+## 오라클 설정 ##
 
 DMS을 이용하여 CDC 방식으로 오라클 데이터베이스의 데이터를 복제해 오기 위해서는 아래의 두가지 요건을 충족해야 한다.
 
 * 아카이브 로그 모드 전환
 * supplemental 로깅 활성화
 
-오라클 설정을 위해서는 tf_oracle_19c 및 tf_oracle 11xe 서버로 ssh 를 이용하여 로그인 한 후, 아래의 가이드에 따라서 설정한다. 
+오라클 설정을 위해서는 tf_oracle_19c 및 tf_oracle 11xe 서버로 ssh 를 이용하여 로그인 한 후, 아래의 가이드에 따라 오라클 데이터베이스를 변경합니다. 
 
 #### 5-1. 아카이브 로그 모드 전환 ####
 
-아카이브 로그 모드로 전환하기 위해서는 데이테베이스를 shutdown 한 후, 아래와 같이 mount 모드에서 아카이브 로그를 활성화 해준다.
-운영 시스템의 경우 이미 아카이브 로그가 활성화 되어 있는 경우가 대부분이기 때문에 이 과정을 불필요할 수 있다
-데이터베이스가 아카이브 로그로 운영중인지 체크하기 위해서는 아래의 SQL 을 실행하면 된다. 
+오라클 데이터베이스를 아카이브 로그 모드로 전환하기 위해서는 해당 데이테베이스를 shutdown 한 후, mount 모드에서 아카이브 로그를 활성화 해줘야 합니다. 
+운영중인 시스템인 경우 이미 아카이브 로그가 활성화 되어 있는 경우가 대부분이기 때문에 이 과정을 불필요할 수 있습니다. 
+데이터베이스가 아카이브 로그로 운영중인지 확인이 필요한 경우 아래의 SQL 로 확인이 가능합니다. 
 ```
 SQL> select name, log_mode from v$database;
 
@@ -20,9 +20,14 @@ NAME	  LOG_MODE
 XE	  NOARCHIVELOG
 ```
 
-[아카이브 로그 전환 방법]
+[아카이브 로그 전환]
+
+아래의 예시는 오라클 11xe, 19c 별로 각각 아카이브 로그 모드로 데이터베이스를 전환하는 방법에 대한 예시입니다. 
+
 * 19c
 ```
+[ec2-user@ip-172-31-11-107 ~]$ sudo su - oracle
+
 [oracle@ip-172-31-11-107 ~]$ sqlplus "/ as sysdba"
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Tue Jan 26 10:53:17 2021
@@ -39,6 +44,7 @@ SQL> shutdown immediate;
 Database closed.
 Database dismounted.
 ORACLE instance shut down.
+
 SQL> startup mount
 ORACLE instance started.
 
@@ -48,12 +54,14 @@ Variable Size		  520093696 bytes
 Database Buffers	 1040187392 bytes
 Redo Buffers		    7639040 bytes
 Database mounted.
+
 SQL> archive log list
 Database log mode	       No Archive Mode
 Automatic archival	       Disabled
 Archive destination	       /app/oracle/product/19c/dbhome/dbs/arch
 Oldest online log sequence     23
 Current log sequence	       25
+
 SQL> alter database archivelog;
 
 Database altered.
@@ -65,6 +73,7 @@ Archive destination	       /app/oracle/product/19c/dbhome/dbs/arch
 Oldest online log sequence     23
 Next log sequence to archive   25
 Current log sequence	       25
+
 SQL> alter database open;
   
 Database altered.
@@ -72,6 +81,8 @@ Database altered.
 
 * 11g
 ```
+ubuntu@ip-172-31-32-20:~$ sudo su - oracle
+
 oracle@ip-172-31-32-20:~$ sqlplus "/ as sysdba"
 
 SQL*Plus: Release 11.2.0.2.0 Production on Mon Jan 25 07:37:09 2021
@@ -95,6 +106,7 @@ Variable Size		  822086656 bytes
 Database Buffers	  239075328 bytes
 Redo Buffers		    5541888 bytes
 Database mounted.
+
 SQL> alter database archivelog;
 
 Database altered.
@@ -116,7 +128,7 @@ Current log sequence	       5
 
 #### 5-2. supplemental 로깅 활성화 ####
 
-[오라클 설정 조회]
+[supplemental 로깅 상태 조회]
 ```
 SQL> col log_min format a10
 SQL> col log_pk format a10
@@ -156,10 +168,13 @@ NAME	  LOG_MODE     LOG_MIN	  LOG_PK     LOG_UI	LOG_ALL
 --------- ------------ ---------- ---------- ---------- ----------
 XE	  NOARCHIVELOG YES	  YES	     YES	NO
 ```
-CDC 방식을 이용하여 변경 데이터를 오라클로 부터 읽어오기 위해서는 suppplemental 로깅이 활성화 되어 있어야 한다. 
-로그 마이너를 위한 최소한의 로깅과 update 시 레코드를 식별하기 위해 필요한 PK 또는 유니크 인덱스에 대한 supplemental logging 기능을 활성화 한다.
-만약 복제 대상이 되는 테이블에 PK 또는 Non-NULL 유니크 인덱스 또는 제약조건이 없다면 전체 칼럼에 로깅된다. 
-supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조하도록 한다. 
+
+CDC 방식을 이용하여 변경 데이터를 오라클로 부터 읽어오기 위해서는 suppplemental 로깅이 활성화 되어 있어야 합니다. 
+로그 마이너를 위한 최소한의 로깅과 update 시 레코드를 식별하기 위해 필요한 PK 또는 유니크 인덱스에 대한 supplemental logging 기능의 활성화가 필요합니다.
+만약 복제 대상이 되는 테이블에 PK 또는 Non-NULL 유니크 인덱스 또는 제약조건이 없다면, update 수행시 레코드를 구분하기 위해 전체 칼럼이 로깅됩니다.  
+마이그레이션 대상 테이블이고, PK 또는 유니크 인덱스 또는 제약조건이 없는 테이블인 경우, 변경 로그량을 줄이기 위해서 PK 또는 유니크 인덱스를 만드는 것을 고려해야 합니다. 
+
+supplemental logging 에 대한 자세한 내용은 오라클 문서를 참조하도록 합니다. 
 
 * [Supplemental Logging](https://docs.oracle.com/database/121/SUTIL/GUID-D857AF96-AC24-4CA1-B620-8EA3DF30D72E.htm#SUTIL1582)
 * [Database-Level Supplemental Logging](https://docs.oracle.com/database/121/SUTIL/GUID-D2DDD67C-E1CC-45A6-A2A7-198E4C142FA3.htm#SUTIL1583)
