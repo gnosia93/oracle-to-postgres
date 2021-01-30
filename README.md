@@ -28,7 +28,7 @@
 
 ![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres-architecture.png)
 
-* 네트워크는 별도로 생성하지 않으며 계정별로 제공되는 기본 VPC 및 public 서브넷을 활용합니다. 
+* 네트워크는 별도로 생성하지 않으며 계정별로 기본 제공되는 VPC 와 Public 서브넷을 활용합니다. 
 
 * 마이그레이션 테스트를 위해 오라클, postgres, DMS 로 구성된 테스트 세트는 11xe 용과 19c 용으로 2세트로 구성되며, 테라폼에 의해 빌드됩니다. (아키텍처 다이어그램에는 19c만 표시)
 
