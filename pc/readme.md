@@ -26,7 +26,7 @@ $ git --version
 git version 2.29.1
 ```
 
-## 오라클 JDK 설치(버전 10 이상) ##
+## 오라클 JDK 설치(버전 11) ##
 
 오라클 JDK 를 다운로드 받기위해서 https://www.oracle.com/kr/java/technologies/javase-jdk11-downloads.html 로 방문합니다.  
 아래 리스트에서 macOS Installer 를 다운받아서 설치합니다. 이때 인스톨러를 로컬 PC 로 다운로드 받기 위해서는 오라클 로그인 계정이 필요합니다. 
