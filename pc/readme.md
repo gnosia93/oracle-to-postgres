@@ -75,11 +75,24 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.10+8-LTS-162, mixed mode)
 
 ## apache jmeter ##
 
-https://jmeter.apache.org/download_jmeter.cgi 로 방문하여 아파치 jmeter 최신 바이너리를 다운로드 받습니다. (apache-jmeter-5.4.1.zip)
-
+https://jmeter.apache.org/download_jmeter.cgi 로 방문하여 아파치 jmeter 최신 바이너리를 다운로드 받아 설치합니다. (현재 기준 apache-jmeter-5.4.1.zip 이 최신버전입니다.)
 
 ![jmeter](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/apache-jmeter.png)
 
+터미널 상에서 아래와 같이 다운로드 받아 설치된 아파치 jmeter 를 실행해 봅니다. 
+
+```
+$ cd apache-jmeter-5.4.1
+$ bin/jmeter.sh 
+================================================================================
+Don't use GUI mode for load testing !, only for Test creation and Test debugging.
+For load testing, use CLI Mode (was NON GUI):
+   jmeter -n -t [jmx file] -l [results file] -e -o [Path to web report folder]
+& increase Java Heap to meet your test requirements:
+   Modify current env variable HEAP="-Xms1g -Xmx1g -XX:MaxMetaspaceSize=256m" in the jmeter batch file
+Check : https://jmeter.apache.org/usermanual/best-practices.html
+================================================================================
+```
 
 
 
