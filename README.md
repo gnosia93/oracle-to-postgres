@@ -47,7 +47,7 @@
 
 ### 1. 사전 준비 ###
 
-- [PC 환경 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) 
+- [PC 환경설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/readme.md) 
 
 - [AWS API키 설정]()  
 
