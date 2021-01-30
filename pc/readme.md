@@ -7,7 +7,7 @@ apache jmeter 는 웹 및 JDBC 성능 테스트용으로 사용되는 오픈 소
 * homebrew
 
 ```
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
 ```
