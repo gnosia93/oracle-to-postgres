@@ -1,11 +1,18 @@
 # PC 환경설정 #
 
-튜토리얼을 원할하게 진행하기 위해서는 여러분들이 사용하는 PC 에 아래 소트트웨어의 설치되어야 합니다.  
-homebrew 는 mac 용 소프트웨어 패키지 매니저로 테라폼, git 설치에 사용되고, JDK, apache jmeter, pgadmin 4 및 sqldeveoper 는 별도로 설치가 필요합니다.  
+튜토리얼을 원할하게 진행하기 위해서는 여러분들의 PC에 아래에 나열된 소트트웨어가 사전에 설치되어져 있어야 합니다.  
+설치가 필요한 소프트웨어 목록중 오라클사에서 제공하는 JDK, sqldeveoper 는 오라클 계정을 이용하여 다운로드 받아야 합니다. 계정이 없는 경우 아래의 URL 에서도 다운로드 받을 수 있습니다.
+
+*
+*
+*
+*
+*
 
 
 ## homebrew ##
 
+homebrew 는 mac 용 소프트웨어 패키지 매니저로 테라폼, git 설치에 사용됩니다.
 ```
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
