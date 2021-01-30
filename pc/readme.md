@@ -108,6 +108,10 @@ https://www.pgadmin.org/download/pgadmin-4-macos/ 로 이동하여 mac 용 pgadm
 
 https://www.oracle.com/tools/downloads/sqldev-downloads.html 로 이동하여 mas 용 sqldeveoper를 다운로드 받은 후, 로컬 PC 에 설치합니다. 
 
-![sqldeveloper]()
-## SQLDeveloper ##이동
-## SQLDeveloper ##
+![sqldeveloper](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/sqldeveloper.png)
+
+
+## 설치 소프트웨어 목록(S3) ##
+
+
+
