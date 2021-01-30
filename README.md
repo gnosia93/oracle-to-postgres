@@ -1,5 +1,7 @@
 # Oracle to Postgres Migration Workshop #
 
+*Definitive guide from oracle to postgresql migration* 
+
 이 튜토리얼은 AWS DMS 서비스를 이용한 oracle to Postgres 마이그레이션 전체 과정에 대한 이해를 돕기 위해 만들어 졌습니다.   
 본 튜토리얼은 여러분이 사용하는 클라리언트 PC 가 Mac OS 임 가정하고 작성되었으며, 테스트에 필요한 인프라의 경우 테라폼 스크립트를 이용하여 자동빌드하며,
 반복적이고 빠른 테스트를 위해 AWS 콘솔을 통한 조작은 최소화 하였습니다.  
