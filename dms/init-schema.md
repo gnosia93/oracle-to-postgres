@@ -1,10 +1,11 @@
-## ERD ##
+## 스키마 생성하기 ##
+
+### ERD ###
 
 ![erd](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/migration-erd.png)
 
 
-
-## DDL ##
+### DDL ###
 
 ```
 create sequence shop.seq_product_product_id
@@ -84,7 +85,7 @@ create table shop.tb_order_detail
 ```
 
 
-## 스키마 생성하기 ##
+### 스키마 생성하기 ###
 
 소스 DB 인 오라클데이터베이스에 실습용 스키마를 생성하고, 샘플 데이터를 로딩하기 위해서 tf_loadgen 서버로 로그인 한 후,  
 아래 명령어를 실행한다. 
