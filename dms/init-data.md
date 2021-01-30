@@ -65,7 +65,16 @@ Sqldeveloper 를 실행한 후, 좌측 메뉴의 [Oracle 접속] 아이콘을 �
 
 저장이 완료 된 후, [접속] 버튼을 눌러 오라클 데이터베이스에 로그인 합니다. 
 
-<tf-oracle-19c EC2 인스턴스 퍼블릭 IP> 는 터미널에서 terraform output 명령어를 실행하거나 또는 AWS EC2 콘솔에 로그인하여 확인하실 수 있습니다. 
+<tf-oracle-19c EC2 인스턴스 퍼블릭 IP> 는 터미널에서 terraform output 명령어를 실행하거나 혹은 AWS EC2 콘솔에 로그인하여 확인하실 수 있습니다. 
+```
+$ terraform output
+key_pairs = tf_key
+load_gen_public_ip = 13.125.159.44
+oracle_11xe_public_ip = 3.36.120.133
+oracle_19c_public_ip = 3.34.193.175
+postgres_11xe_public_ip = 3.34.41.136
+postgres_19c_public_ip = 3.36.16.13
+```
 
 
 ![result](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-new-connection-result.png)
