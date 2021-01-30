@@ -11,7 +11,7 @@
 아래 명령어를 실행한다. 
 
 ```
-(base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@3.34.179.8
+(base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@<tf_loadgen서버 IP>
 
 [ec2-user@ip-172-31-37-6 ~]$ cd pyoracle
 [ec2-user@ip-172-31-37-6 pyoracle]$ sh create-schema.sh 
