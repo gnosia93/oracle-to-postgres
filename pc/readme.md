@@ -1,8 +1,8 @@
 # PC 환경설정 #
 
 튜토리얼을 원할하게 진행하기 위해서는 여러분들이 사용하는 PC 에 아래 소트트웨어의 설치되어야 합니다.  
-homebrew 는 mac 용 패키지 매니저로 테라폼, git 설치에 사용되고, JDK, apache jmeter, pgadmin 4 및 sqldeveoper 는 별도로 설치가 필요합니다.  
-apache jmeter 는 웹 및 JDBC 성능 테스트용으로 사용되는 오픈 소스 소프트웨어 이며, pgadmin 4 는 웹기반의 postgresql 클라이언트 툴 그리고, sqldeveloper는 오라클용 클라이언트 통합 환경입니다.
+homebrew 는 mac 용 소프트웨어 패키지 매니저로 테라폼, git 설치에 사용되고, JDK, apache jmeter, pgadmin 4 및 sqldeveoper 는 별도로 설치가 필요합니다.  
+
 
 ## homebrew ##
 
@@ -75,6 +75,8 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.10+8-LTS-162, mixed mode)
 
 ## apache jmeter ##
 
+apache jmeter 는 웹 및 JDBC 성능 테스트용으로 사용되는 오픈 소스 소프트웨어입니다.
+
 https://jmeter.apache.org/download_jmeter.cgi 로 방문하여 아파치 jmeter 최신 바이너리를 다운로드 받아 설치합니다. (현재 기준 apache-jmeter-5.4.1.zip 이 최신버전입니다.)
 
 ![jmeter](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/apache-jmeter.png)
@@ -99,6 +101,8 @@ Check : https://jmeter.apache.org/usermanual/best-practices.html
 
 ## Pgadmin4 ##
 
+pgadmin4 는 웹기반의 postgresql 용 SQL 클라이언트 입니다. 
+
 https://www.pgadmin.org/download/pgadmin-4-macos/ 로 이동하여 mac 용 pgadmin4 를 다운로드 받은 후, 로컬 PC 에 설치합니다. 
 
 ![pgadmin4](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/pgadmin4.png)
@@ -106,6 +110,8 @@ https://www.pgadmin.org/download/pgadmin-4-macos/ 로 이동하여 mac 용 pgadm
 
 ## SQLDeveloper ##
 
+sqldeveloper는 오라클사에서 개발된 개발자용 SQL 클라이언트 입니다. 
+ 
 https://www.oracle.com/tools/downloads/sqldev-downloads.html 로 이동하여 mas 용 sqldeveoper를 다운로드 받은 후, 로컬 PC 에 설치합니다. 
 
 ![sqldeveloper](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/sqldeveloper.png)
