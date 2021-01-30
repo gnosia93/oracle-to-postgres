@@ -101,10 +101,10 @@ Last login: Fri Jan 29 10:50:02 2021 from 218.238.107.63
       ___|\___|___|
 
 https://aws.amazon.com/amazon-linux-2/
+
 [ec2-user@ip-172-31-34-59 ~]$ cd pyoracle
 [ec2-user@ip-172-31-37-6 pyoracle]$ sh create-schema.sh 
 
-[ec2-user@ip-172-31-34-59 pyoracle]$ sh create-schema.sh 
 find and replace oracle ip ... /home/ec2-user/oracle/tnsnames.ora <11xe-oracle-private-ip> tf_oracle_11xe
 find and replace oracle ip ... /home/ec2-user/oracle/tnsnames.ora <19c-oracle-private-ip> tf_oracle_19c
 
