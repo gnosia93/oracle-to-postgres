@@ -48,12 +48,7 @@ initilize product table...
 ```
 
 
-### 생성 데이터 확인하기 ###
+### sqldeveloper로 생성 데이터 확인하기 ###
 
-sqldeveloper 를 이용하여 현재 데이터가 제대로 입력되는지 확인하는 과정입니다. 
 
-```
-SQL> select count(1) from shop.tb_product;
-SQL> select count(1) from shop.tb_order;
-```
 
