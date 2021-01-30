@@ -1,6 +1,6 @@
 ## 스키마 생성하기 ##
 
-### ERD ###
+### * ERD ###
 
 워크샵에서는 아래의 ERD에 나와있는 테이블 5개와 시퀀스 3개 PK 인덱스와 더불어 추가적으로 2개의 인덱스를 소스 데이터베이스인 오라클 DB에 생성합니다. 노란색으로 표시된 부분은 check 및 default contraint 로 postgresql 로 마이그레이션시 제약조건(constraint) 가 제대로 생성되는지 역시 확인할 예정입니다. 
 
@@ -8,7 +8,7 @@
 
 
 
-### DDL ###
+### * DDL ###
 
 ```
 create sequence shop.seq_product_product_id
@@ -87,7 +87,7 @@ create table shop.tb_order_detail
 ```
 
 
-### 스키마 생성하기 ###
+### * 스키마 빌드 ###
 
 오라클 데이터베이스에 실습용 스키마를 생성하기 위해, tf_loadgen EC2 인스턴스로 로그인하여 아래와 같은 명령어를 수행합니다. pyoracle 디렉토리로 이동한 후, create-schema.sh 쉘을 실행하면
 오라클 11xe 및 19c 데이터베이스에 각각 유저, 테이블스페이스 및 스키마를 생성합니다. 설치 대상인 오라클 데이베이스들의 IP는 자동으로 detection 됩니다. 
