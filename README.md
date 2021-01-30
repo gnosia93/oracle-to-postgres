@@ -116,9 +116,8 @@ Network 성능은.. EC2 인스턴스 타입에 따라 틀리다..
 * 클라이언트 수.
 * SQL 파싱 ??
 * 래치 / 경합..
-
-
-
+* IBM 이냐. SAN 성능.
+----------------------------
 * 어플리케이션 변환 가이드
 * [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/admin/readme.md)
 
