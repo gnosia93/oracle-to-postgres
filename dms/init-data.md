@@ -67,5 +67,14 @@ Sqldeveloper 를 실행한 후, 좌측 메뉴의 [Oracle 접속] 아이콘을 �
 
 ![result](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-new-connection-result.png)
 
+다음 SQL 들을 [워크쉬트] 탭에 입력하고 [스크립트 실행] 버튼을 클릭하거나 F5 키를 눌러 SQL 을 실행합니다. 
+```
+select count(1) as product_cnt from shop.tb_product;
+select count(1) as order_cnt from shop.tb_order;
+select count(1) as order_detail_cnt from shop.tb_order_detail;
+select count(1) as comment_cnt from shop.tb_comment;
+select count(1) as category_cnt from shop.tb_category;
+```
+
 ![count](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-table-cnt.png)
 
