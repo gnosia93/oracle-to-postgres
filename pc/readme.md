@@ -99,8 +99,9 @@ Check : https://jmeter.apache.org/usermanual/best-practices.html
 
 ## Pgadmin4 ##
 
+https://www.pgadmin.org/download/pgadmin-4-macos/ 이동하여 mac 용 pgadmin4 를 다운로드 받은 후, 로컬 PC 에 설치합니다. 
 
 ![pgadmin4](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/pgadmin4.png)
 
 
-## SQLDeveloper (옵션) ##
+## SQLDeveloper ##
