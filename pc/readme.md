@@ -33,7 +33,7 @@ git version 2.29.1
 
 ![oracle-jdk](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/oracle-jdk11.png)
 
-macOS Installer 를 설치한 이후, JDK Home 의 대한 변경이 필요합니다. 우선 아래의 명령어를 수행하여 현재 PC 에 설치된 오라클 JDK 버전을 조회한 후, bash profile 에 새롭게 설치된 JDK 11 에 대한 환경 변수를 등록합니다. 
+macOS Installer 를 설치한 이후, JDK Home 의 대한 변경이 필요합니다. 우선 java_home 명령어를 이용하여 현재 PC 에 설치된 오라클 JDK 버전을 조회한 후, bash profile 에 새롭게 설치된 JDK 11 에 대한 환경 변수를 등록합니다. 
 
 ```
 $ /usr/libexec/java_home -V
@@ -60,6 +60,14 @@ export PATH=$PATH:$ZEPPELIN_HOME/bin
 
 complete -C /usr/local/bin/terraform terraform
 ```
+
+JAVA_HOME 환경 변수를 bash 프로파일에 등록한 후, 터미널 환경에서 해당 변수값이 제대로 설정되어 있는지 확인합니다.
+```
+$ . .bash_profile
+$ env | grep JAVA_HOME
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/Home
+``
+
 
 
 
