@@ -2,7 +2,10 @@
 
 * homebrew
 
-https://november11tech.tistory.com/95?category=291164
+"""
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+"""
+
 
 * 테라폼 
 
