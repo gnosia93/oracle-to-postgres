@@ -54,7 +54,8 @@
 
 ### 2. 인프라 빌드 ###
 
-워크샵에 필요한 인프라를 빌드하기 위해서 git 허브로 부터 아래와 같이 clone 한 다음 default 부분의 IP 주소를 여러분들의 주소로 변경합니다. 
+워크샵에 필요한 인프라를 빌드하기 위해서 git 허브로 부터 아래와 같이 clone 받은 다음 default 부분의 IP 주소를 여러분들의 주소로 변경합니다. 
+해당 정보는 테라폼에 의해 생성되는 EC2 인스턴스들의 시큐리티 그룹(tf_sg_pub) 설정시 사용되는 정보로, 모든 IP 에 대한 허용이 필요한 경우 0.0.0.0/0 으로 설정합니다. 
 ```
 $ git clone https://github.com/gnosia93/postgres-terraform.git
 $ cd postgres-terraform/
