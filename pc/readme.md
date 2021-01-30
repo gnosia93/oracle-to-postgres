@@ -75,7 +75,10 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.10+8-LTS-162, mixed mode)
 
 ## apache jmeter ##
 
-아파치 jmeter 를 설치하기 위해서,
+https://jmeter.apache.org/download_jmeter.cgi 로 방문하여 아파치 jmeter 최신 버전을 다운로드 받습니다. 
+
+
+![]()
 
 
 
