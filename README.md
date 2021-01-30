@@ -74,20 +74,20 @@
 - [샘플 데이터 빌드하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/init-data.md)
 
 
-### 5. 스키마 변환(/w SCT) ###
-
-* [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
-
-* [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
-
-
-### 6. 데이터 복제하기(/w DMS) ###
+### 5. 데이터 복제하기 (/w DMS) ###
 
 * [DMS 설정하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-settings.md)
 
 * [DMS 태스크 실행하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-task-start.md)
 
 * [DMS 동작 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
+
+
+### 6. 스키마 변환 설정하기 (/w SCT) ###
+
+* [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
+
+* [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
 
 
 ### 7. 성능 테스트 및 진단 ###
