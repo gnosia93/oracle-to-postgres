@@ -117,7 +117,6 @@ https://www.oracle.com/tools/downloads/sqldev-downloads.html 로 이동하여 ma
 ![sqldeveloper](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/sqldeveloper.png)
 
 
-## 설치 소프트웨어 목록(S3) ##
 
 
 
