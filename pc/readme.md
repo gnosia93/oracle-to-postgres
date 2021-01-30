@@ -28,6 +28,11 @@ git version 2.29.1
 
 * 오라클 JDK 설치(버전 10 이상)
 
+오라클 JDK 를 다운로드 받기위해서 https://www.oracle.com/kr/java/technologies/javase-jdk11-downloads.html 로 방문합니다.
+
+
+
+
 
 * apache jmeter
 
