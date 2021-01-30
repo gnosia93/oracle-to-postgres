@@ -78,7 +78,7 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.10+8-LTS-162, mixed mode)
 https://jmeter.apache.org/download_jmeter.cgi 로 방문하여 아파치 jmeter 최신 버전을 다운로드 받습니다. 
 
 
-![]()
+![jmeter](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/apache-jmeter.png)
 
 
 
