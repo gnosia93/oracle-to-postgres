@@ -19,9 +19,8 @@ postgres 의 어드민 계정인 postgres 로 로그인 하여, 일반 유저인
 오라클의 DBA_USER 뷰에 해당하는 pg_shadow 뷰로 부터 shop 유저가 제대로 만들어 졌는지 확인한다.
 
 ```
-(base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@13.124.101.223
-
 [ec2-user@ip-172-31-42-82 ~]$ sudo su - postgres
+
 -bash-4.2$ psql
 psql (11.5)
 Type "help" for help.
