@@ -26,7 +26,7 @@ $ git --version
 git version 2.29.1
 ```
 
-* 버전 10 이상의 JRE 또는 JDK 
+* 오라클 JDK 설치(버전 10 이상)
 
 
 * apache jmeter
