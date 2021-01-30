@@ -18,4 +18,5 @@ $ vi .bash_profile
 
 export aws_access_key_id = AAaaaaaaaaaaaaa                          <--- 억세스키 추가
 export aws_secret_access_key = SSssssssssssssss                     <--- 시크리트 억세스키 추가 
+export aws_region = "ap-northeast-2"
 ```
