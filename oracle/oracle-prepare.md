@@ -79,7 +79,7 @@ SQL> alter database open;
 Database altered.
 ```
 
-* 11g
+* 11xe
 ```
 ubuntu@ip-172-31-32-20:~$ sudo su - oracle
 
