@@ -89,7 +89,8 @@ create table shop.tb_order_detail
 
 ### 스키마 생성하기 ###
 
-오라클 데이터베이스에 실습용 스키마를 생성하기 위해, tf_loadgen EC2 인스턴스로 로그인하여 아래와 명령어를 수행합니다. pyoracle 디렉토리 밑에 create-schema.sh 일 실행합니다. 
+오라클 데이터베이스에 실습용 스키마를 생성하기 위해, tf_loadgen EC2 인스턴스로 로그인하여 아래와 명령어를 수행합니다. pyoracle 디렉토리 하위로 이동하여 create-schema.sh 쉘을 실행하면
+오라클 11xe 및 19c 데이터베이스에 유저, 테이블스페이스 및 스키마를 생성합니다. 프로그램에 의해 스키마 빌드의 대상인 오라클 데이베이스들의 IP는 자동으로 설정됩니다. 
 
 ```
 $ ssh -i ~/.ssh/tf_key ec2-user@<tf_loadgen IP>
