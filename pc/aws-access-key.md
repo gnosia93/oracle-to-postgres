@@ -10,6 +10,8 @@
 아래와 같이 bash profile 에 억세스 키 정보를 추가하도록 합니다. 엑세스 키 정보는 AWS IAM 콘솔의 Users 메뉴의 유저별 Security Credentials 탭에서 확인 가능합니다.
 만약 해당 유저의 억세스키 값이 발급되어 있지 않다면 아래의 URL 을 참고하여 억세스키를 먼저 발급 하십시오
 
+* [억세스 키 생성하기](https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
+
 ```
 $ cd
 $ vi .bash_profile
