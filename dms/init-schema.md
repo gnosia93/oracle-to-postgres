@@ -2,7 +2,7 @@
 
 ### ERD ###
 
-워크샵에서는 아래의 ERD에 나와있는 테이블 5개와 시퀀스 3개 PK 인덱스와 더불어 추가적으로 2개의 인덱스를 생성합니다. 노란색으로 표시된 부분은 check 및 default contraint 로 postgresql 로 마이그레이션시 제약조건(constraint) 가 제대로 생성되는지 역시 확인할 예정입니다. 
+워크샵에서는 아래의 ERD에 나와있는 테이블 5개와 시퀀스 3개 PK 인덱스와 더불어 추가적으로 2개의 인덱스를 소스 데이터베이스인 오라클 DB에 생성합니다. 노란색으로 표시된 부분은 check 및 default contraint 로 postgresql 로 마이그레이션시 제약조건(constraint) 가 제대로 생성되는지 역시 확인할 예정입니다. 
 
 ![erd](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/migration-erd.png)
 
