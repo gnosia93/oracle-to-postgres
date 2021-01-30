@@ -12,15 +12,17 @@ postgresql는 여러개의 작은 데이터베이스들로 구성이 되어져 �
 생각해야 하며, 서로 다른 데이터베이스 테이블간의 조인은 불가능합니다. 
 오라클 12c 부터는 경우 PDB, CDB 구조로 되어 있어 postgresql 와 비슷한 형태로 구현되어 있지만, 오라클 11g 의 경우 하나의 데이터베이스로 구성되어 있어, postgresql 전환시 특정 데이터베이스로 매핑될 수 있도록 해야 합니다. 
 
-### 유저 생성 ###
-
-postgres 의 어드민 계정인 postgres 로 로그인 하여, 일반 유저인 shop 유저를 만든 후, 
-
-오라클의 DBA_USER 뷰에 해당하는 pg_shadow 뷰로 부터 shop 유저가 제대로 만들어 졌는지 확인한다.
-
+오라클의 sqlplus 에 해당하는 psql 이라는 postgresqql 클라이언트 프로그램을 사용하기 위해서, OS 계정인 postgres 로 아래와 같이 전환합니다.  
 ```
 [ec2-user@ip-172-31-42-82 ~]$ sudo su - postgres
+-bash-4.2$ 
+```
 
+### 유저 생성 ###
+
+psql 을 이용하여 postgresql DB 에 접속한 후, shop 이라는 이름의 유저를 생성합니다. 시스템 카탈로그 뷰 중 하나인 pg_shadow를 이용하여 생성된 유저 정보를 확인 하실 수 있습니다.
+
+```
 -bash-4.2$ psql
 psql (11.5)
 Type "help" for help.
