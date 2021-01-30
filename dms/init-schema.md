@@ -8,21 +8,14 @@
 
 ```
 create sequence shop.seq_product_product_id
-start with 1
-increment by 1
-cache 20;
+start with 1 increment by 1 cache 20;
 
 create sequence shop.seq_comment_comment_id
-start with 1
-increment by 1
-cache 20;
+start with 1 increment by 1 cache 20;
 
 create sequence shop.seq_order_order_id
-start with 1
-increment by 1
-nomaxvalue
-nocycle
-cache 20;
+start with 1 increment by 1 cache 20;
+
 
 create table shop.tb_category
 (
