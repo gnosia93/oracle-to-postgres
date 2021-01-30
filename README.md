@@ -74,9 +74,9 @@ $ terraform apply -auto-approve
 $ terraform output
 ```
 
-참고로 테라폼에 대한 튜토리얼은 아래 URL를 통해서 제공되고 있으며, 해당 내용을 사전에 숙지하는 경우 워크샵을 진행하는데 많은 도움이 됩니다. 
+워크샵을 진행하는데 있어 테라폼에 대한 사전 지식을 불필요하나, 좀 더 자세한 내용이 궁금한 경우 아래의 URL을 통해 확인하실 수 있습니다. 
 
-https://learn.hashicorp.com/collections/terraform/aws-get-started
+* https://learn.hashicorp.com/collections/terraform/aws-get-started
 
 
 ### 3. 복제를 위한 원본/타켓 DB 설정 ##
