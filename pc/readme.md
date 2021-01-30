@@ -44,6 +44,21 @@ Matching Java Virtual Machines (2):
 
 $ cd 
 $ vi .bash_profile
+
+export ORACLE_HOME=/Users/soonbeom/oracle
+export TNS_ADMIN=$ORACLE_HOME
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.10.jdk/Contents/Home               <--- JAVA_HOME 환경변수 추가
+export PATH=$PATH:/usr/local/Cellar/maven/3.6.3_1/bin
+# Add Visual Studio Code (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+export SPARK_HOME=/Users/soonbeom/bigdata/spark
+export ZEPPELIN_HOME=/Users/soonbeom/bigdata/zeppelin
+export PATH=$PATH:$SPARK_HOME/sbin:$SPARK_HOME/bin
+export PATH=$PATH:$ZEPPELIN_HOME/bin
+
+complete -C /usr/local/bin/terraform terraform
 ```
 
 
