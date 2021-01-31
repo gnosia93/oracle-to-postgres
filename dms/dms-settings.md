@@ -23,7 +23,7 @@ DMS에 대한 보다 자세한 내용은 https://docs.aws.amazon.com/ko_kr/dms/l
 
 ### 테라폼이 생성한 리소스 확인 ###
 
-DMS 인스턴스와 소스 및 타켓 데이터베이스에 대한 엔드포인트는 테라폼에 의해 자동으로 생성된다. 아래는 생성된 DMS 인스턴스와 엔드포인트에 대한 결과 화면이다. 
+AWS DMS 콘솔에 로그인하여 테라폼에 의해 생성된 리플리케이션 인스턴스와 엔드포인트를 아래와 같이 확인합니다. 
 
 [리플리케이션 인스턴스]
 ![rep-instance](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-replication-inst.png)
