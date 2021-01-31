@@ -20,6 +20,11 @@ where r.rolname = 'shop'
 ```
 
 
+### 인덱스 ###
+
+* https://blog.gaerae.com/2015/09/postgresql-index.html
+
+
 
 ### postgres 시스템 카탈로그 / 뷰 ###
 
