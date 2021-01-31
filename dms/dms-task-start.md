@@ -4,6 +4,12 @@
 
 
 
+![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-list.png)
+![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-overview.png)
+![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-table-stat.png)
+![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-mapping-rule.png)
+![task cloudwatch logs](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-cloudwatch.png)
+
 
 ### 1. 태스크 오버뷰 ###
 
