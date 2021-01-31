@@ -63,14 +63,11 @@ postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 
 
 ![create task](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-create-task.png)
 
-![task-configuration](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-configuration.png)
+![task-config](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-task-config.png)
 
-![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-setting.png)
+![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-task-setting.png)
 
-![task-mapping](https://github.com/gnosia93/postgres-terraform/blob/main/images/dms-task-table-mapping.png)
+![task-mapping](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-table-mapping.png)
 
 
 
-- binary reader
-
-- log miner
