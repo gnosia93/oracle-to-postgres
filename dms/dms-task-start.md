@@ -16,7 +16,7 @@
 ![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-table-stat.png)
 
 ### 이니셜 카피 확인 ###
-![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-initial-copy.png)
+![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-initiial-copy.png)
 
 ### 스키마 매핑룰 ###
 ![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-mapping-rule.png)
