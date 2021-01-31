@@ -93,7 +93,7 @@
 * [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
 
 
-### 7. 성능 테스트 및 진단 ###
+### 7. Postgresql 성능 테스트 및 진단 ###
 
 * [postgres 스트레스 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md)
 
