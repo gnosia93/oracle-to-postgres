@@ -13,7 +13,7 @@ select * from pg_roles;
 select t.relname, t.relpages, t.reltuples,
 	c.conrelid, c.confrelid, c.conname, c.contype, c.consrc 
 from pg_class t inner join pg_roles r on t.relowner = r.oid
-	      left outer join pg_constraint c on t.oid = c.conrelid
+	        left outer join pg_constraint c on t.oid = c.conrelid
 where r.rolname = 'shop' 
   and t.relkind = 'r'      -- r means ordinary table
   and t.relname like 'tb_%';	
