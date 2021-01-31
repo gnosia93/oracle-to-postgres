@@ -124,6 +124,9 @@ alter table tb_product alter column display_yn set default 'Y';
 alter table tb_product alter column reg_ymdt set default now();
 ```
 
+또한 check 제약조건 역시 DMS 는 원본의 제약조건을 타켓 DB로 이관해 주지 않았다. 
+<u>결국 DMS 는 데이터에 대한 복제만 지원할 뿐 제약조건과 같은 코드성 데이터에 대해서는 자동이관을 지원하지 않는것으로 나타났다. </u>
+
 
 ### 3. 인덱스 ###
 
