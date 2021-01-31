@@ -80,7 +80,7 @@
 
 * [DMS 태스크 실행하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-task-start.md)
 
-* [DMS 동작 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
+* [마이그레이션 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
 ### 6. 스키마 변환 설정하기 (/w SCT) ###
