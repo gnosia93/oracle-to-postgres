@@ -64,24 +64,21 @@ postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 
 [Create Task] 버튼을 클릭합니다.
 ![create task](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-start.png)
 
-tf-task-19c 태스크 이름으로 입력하고, tf-dms-19c를 리플리케이션 인스턴스로 설정한 후, 엔드포인트를 그림처럼 설정하고, Migration existing data and relicate ongoing changes 를 마이그레이션 타입으로 선택합니다. 
+태스크 이름을 mig-task-19c 으로 입력하고, tf-dms-19c를 리플리케이션 인스턴스로 선택한 후, 엔드포인트를 설정하고, Migration existing data and relicate ongoing changes 를 마이그레이션 타입으로 선택합니다. 
 ![task-config](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-conf.png)
 
-Full LOB mode 를 선택하고, Enable validation, Enable CloudWatch logs를 선택합니다. 
+Full LOB mode 를 선택하고, validation, CloudWatch logs 를 활성화 합니다. 
 ![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-setting.png)
 
 Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 합니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  
-
 ![task-mapping1](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-table-mapping.png)
 
 변형룰 설정시 스키마, 테이블, 칼럼을 타켓으로 해서 각각 룰을 만들어 적용해야 합니다. 스키마 명칭은 SHOP 으로 입력하고, Action 값은 lowercase 로 입력하시기 바랍니다.
-설정이 완료된 경우 [createe task] 버튼을 눌려 태스크를 생성합니다. 
 ![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-trans-rule.png)
 
-
+[Create Task] 버튼을 클릭합니다. 
 ![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-create-button.png)
+
+생성중인 마이그레이션 태스크를 확인할 수 있습니다. 
 ![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-result.png)
 
-### 생성된 마이그레이션 태스크 조회 ###
-
-## 오류 메시지 해결 ##
