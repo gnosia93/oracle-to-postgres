@@ -59,13 +59,18 @@ AWS DMS 콘솔에 로그인하여 테라폼에 의해 생성된 리플리케이�
 마이그레이션 태스크 매핑 설정시 스키마, 테이블 및 칼럼 명칭에 대한 lower case 매핑룰을 명시적으로 설정해서 이러한 문제를 사전에 방지하는 것이 좋습니다. lower case 룰을 설정하지 않는 경우
 postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 및 조회시 쌍따옴표를 이용하여 오브젝트 명칭을 감싸줘야 제대로 SQL 이 에러없이 동작하게 됩니다. 
 
-아래의 내용을 참고하여 마이그레이션 태스크를 설정하도록 하고, Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기하시기 바랍니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  
+아래의 내용을 참고하여 마이그레이션 태스크를 설정합니다. 
 
+[Create Task] 버튼을 
+아래의 내용을 참고하여 마이그레이션 태스크를 설정합니다.  하고, Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기하시기 바랍니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  클ㄹ
+아래의 내용을 참고하여 마이그레이션 태스크를 설정합니다.  하고, Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기하시기 바랍니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  
 ![create task](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-create-task.png)
 
 ![task-config](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-task-config.png)
 
 ![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-task-setting.png)
+
+Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 합니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  
 
 ![task-mapping1](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-table-mapping1.png)
 
