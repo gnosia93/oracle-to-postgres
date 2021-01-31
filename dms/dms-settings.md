@@ -47,7 +47,7 @@ AWS DMS 콘솔에 로그인하여 테라폼에 의해 생성된 리플리케이�
 ![post test](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-test-postgres.png)
 
 
-#### 3 마이그레이션 태스크 설정 ####
+### 마이그레이션 태스크 설정 ###
 
 마이그레이션 태스크 설정은 3단계로 구성되는데 태스크 설정과 셋팅 그리고 매핑이다. 본 워크샵에서 사용하는 오라클의 원본 테이블은 다양한 형태의 데이터 타입으로 구성되어져 있는데
 품(TB_PRODUCT) 테이블의 경우 상품 이미지를 저장하는 BLOB 및 상품 본문 HTML을 저장하기 위해 CLOB 칼럼을 사용하고 있다.
