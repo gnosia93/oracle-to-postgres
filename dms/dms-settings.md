@@ -23,7 +23,7 @@ DMS에 대한 보다 자세한 내용은 https://docs.aws.amazon.com/ko_kr/dms/l
 
 ### 테라폼이 생성한 리소스 확인 ###
 
-AWS DMS 콘솔에 로그인하여 테라폼에 의해 생성된 리플리케이션 인스턴스와 엔드포인트를 아래와 같이 확인합니다. 
+AWS DMS 콘솔에 로그인하여 테라폼에 의해 생성된 리플리케이션 인스턴스와 엔드포인트를 아래와 같이 확인합니다. 리플리케이션 인스턴스를 2대 엔드포인트는 4개가 생성되어져 있어야 합니다. 
 
 [리플리케이션 인스턴스]
 ![rep-instance](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-replication-inst.png)
