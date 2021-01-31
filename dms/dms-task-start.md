@@ -29,12 +29,12 @@
 DMS 동작시 문제가 될 만한 사항을 사전에 자동으로 체크해서 리포트 형식으로 보여주는데 리포트 결과를 출력할 S3버킷 필요하고, 이와관련하여 DMS 역시 해당 S3 버킷에 대한 Write 권한을 가지고 있어야 합니다.(서비스롤 생성 필요) 
 본 워크샵에서는 테라폼이 tf_dms_service_role 라는 이름의 서비스 권한이 만들어 줍니다. 리포트 생성시 해당 권한을 사용하면 사전 평가 리포트를 만들어 낼 수 있습니다. 
 
-### 사전 평가 생성하기 ###
+### 평가 생성하기 ###
 ![assessment](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-assessment.png)
 
-### 사전 평가 설정하기 ###
+### 평가 설정하기 ###
 ![assessment](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-assessment-conf.png)
 
-### 사전 평가 결과조회###
+### 평가 조회하기 ###
 ![assessment](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-premig-assessment.png)
 
