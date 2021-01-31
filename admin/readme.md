@@ -5,8 +5,6 @@
 
 ### 제약조건 ###
 
-https://www.postgresql.org/docs/10/catalog-pg-constraint.html
-
 ```
 select t.relname, t.relpages, t.reltuples,
 	c.conrelid, c.confrelid, c.conname, c.contype, c.consrc 
