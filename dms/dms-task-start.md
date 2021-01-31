@@ -8,14 +8,15 @@
 ### 태스크 오버뷰 ###
 ![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-overview.png)
 
+### 태스크 로그 ###
+![task cloudwatch logs](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-cloudwatch.png)
+
 ### 테이블 통계 ###
 ![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-table-stat.png)
 
 ### 스키마 매핑룰 ###
 ![task list](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-mapping-rule.png)
 
-### 태스크 로그 ###
-![task cloudwatch logs](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/task-cloudwatch.png)
 
 
 ### 4. 마이그레이션 사전 평가하기 ###
