@@ -61,11 +61,10 @@ postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 
 
 아래의 내용을 참고하여 마이그레이션 태스크를 설정합니다. 
 
-[Create Task] 버튼을 
-아래의 내용을 참고하여 마이그레이션 태스크를 설정합니다.  하고, Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기하시기 바랍니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  클ㄹ
-아래의 내용을 참고하여 마이그레이션 태스크를 설정합니다.  하고, Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기하시기 바랍니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  
+[Create Task] 버튼을 클릭합니다.
 ![create task](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-create-task.png)
 
+tf-task-19c 태스크 이름으로 입력하고, tf-dms-19c를 리플리케이션 인스턴스로 설정한 후, 엔드포인트를 그림처럼 설정하고, Migration existing data and relicate ongoing changes 를 마이그레이션 타입으로 선택합니다. 
 ![task-config](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-task-config.png)
 
 ![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-task-setting.png)
