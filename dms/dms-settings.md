@@ -67,7 +67,9 @@ postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 
 
 ![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-task-setting.png)
 
-![task-mapping](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-table-mapping.png)
+![task-mapping1](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-table-mapping1.png)
+
+![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-table-mapping2.png)
 
 
 
