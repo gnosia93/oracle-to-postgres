@@ -79,4 +79,6 @@ Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 �
 ![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-table-mapping2.png)
 
 
+### 생성된 마이그레이션 태스크 조회 ###
 
+## 오류 메시지 해결 ##
