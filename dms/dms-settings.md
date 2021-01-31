@@ -36,8 +36,10 @@ AWS DMS 콘솔에 로그인하여 테라폼에 의해 생성된 리플리케이�
 
 마이그레이션 태스크를 설정하기 전에 엔드포인트에 대한 접속 테스트는 필수이며, 접속 테스트에서 오류가 발생되는 경우 태스크 설정이 불능합니다. 19용 오라클 및 postgresql 에 대한 엔드포인트에 대한 접속 테스트를 진행합니다. 
 
-DMS > Endpoints > tf-dms-19c-ep-oracle > Connections 탭 > [Test Connections] 버튼클릭 > 콤보박스 tf-dms-19c 선택 > [Run Test] 버튼 클릭
+* DMS > Endpoints > tf-dms-19c-ep-oracle > Connections 탭 > [Test Connections] 버튼클릭 > 콤보박스 tf-dms-19c 선택 > [Run Test] 버튼클릭
 ![oracle test](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-test-oracle.png)
+
+* DMS > Endpoints > tf-dms-19c-ep-postgres > Connections 탭 > [Test Connections] 버튼클릭 > 콤보박스 tf-dms-19c 선택 > [Run Test] 버튼클릭
 ![post test](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/dms-test-postgres.png)
 
 
