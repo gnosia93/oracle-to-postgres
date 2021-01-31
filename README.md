@@ -102,22 +102,6 @@
 ## Appendix ##
 
 * 현행 시스템 평가 / 타켓 시스템 사이징
-
-원본이 싱글이냐, RAC 냐.. RAC 이면 A-S 모드이냐. A-A 모드이냐 에 따라 다르다... 경우에 따라서는 노드하나가 죽으면 fail-over 받을수 없을 정도로 용량을 꽉 채워서 쓰고 있는 경우도 있다. 
-CPU, Memory 용량은 위의 근거로 해서 본다.
-AWR Report 로 확인할 수 있는 사항은 ?
-Disk 용량에 대해서는 신경 쓸 필요가 없고, IOPS 에 대해서는 신경 써야 한다..
-Network 성능은.. EC2 인스턴스 타입에 따라 틀리다.. 
-
-* 실행되는 SQL 수
-* 데이터베이스 볼륨.
-* 리두 로그 사이즈..
-* SGA 사이즈.
-* 클라이언트 수.
-* SQL 파싱 ??
-* 래치 / 경합..
-* IBM 이냐. SAN 성능.
-----------------------------
 * 어플리케이션 변환 가이드
 * [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/admin/readme.md)
 
