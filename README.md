@@ -85,6 +85,9 @@
 
 ### 6. 스키마 변환 설정하기 (/w SCT) ###
 
+시퀀스, 제약조건 및 코드성 오브젝트 컴파일하기 ...
+
+
 * [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
 
 * [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
