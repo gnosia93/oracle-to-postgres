@@ -76,11 +76,11 @@ Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 �
 
 변형룰 설정시 스키마, 테이블, 칼럼을 타켓으로 해서 각각 룰을 만들어 적용해야 합니다. 스키마 명칭은 SHOP 으로 입력하고, Action 값은 lowercase 로 입력하시기 바랍니다.
 설정이 완료된 경우 [createe task] 버튼을 눌려 태스크를 생성합니다. 
-![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-tabsk-trans-rule.png)
+![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-trans-rule.png)
 
 
-![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-tabsk-create-button.png)
-![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-tabsk-result.png)
+![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-create-button.png)
+![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-result.png)
 
 ### 생성된 마이그레이션 태스크 조회 ###
 
