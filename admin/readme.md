@@ -28,8 +28,8 @@ where r.rolname = 'shop'
 
 ### 뷰 ###
 
+* 뷰 리스트 조회
 ```
-# 뷰 리스트 조회
 select * fromselect t.relname, t.relpages, t.reltuples,
 	c.conrelid, c.confrelid, c.conname, c.contype, c.consrc 
 from pg_class t inner join pg_roles r on t.relowner = r.oid
@@ -37,8 +37,9 @@ from pg_class t inner join pg_roles r on t.relowner = r.oid
 where r.rolname = 'shop' 
   and t.relkind = 'v'      -- r means ordinary table
   and t.relname like 'view_%';	
-  
-# 뷰 Definition 
+````
+* 뷰 Definition 조회
+```
 select definition from pg_views where viewname = 'view_recent_order_30';
 ```
 
