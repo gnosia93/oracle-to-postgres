@@ -29,7 +29,17 @@ where r.rolname = 'shop'
 ### 뷰 ###
 
 ```
-select * from pg_views;
+# 뷰 리스트 조회
+select * fromselect t.relname, t.relpages, t.reltuples,
+	c.conrelid, c.confrelid, c.conname, c.contype, c.consrc 
+from pg_class t inner join pg_roles r on t.relowner = r.oid
+	        left outer join pg_constraint c on t.oid = c.conrelid
+where r.rolname = 'shop' 
+  and t.relkind = 'v'      -- r means ordinary table
+  and t.relname like 'view_%';	
+  
+# 뷰 Definition 
+select definition from pg_views where viewname = 'view_recent_order_30';
 ```
 
 ### postgres 시스템 카탈로그 / 뷰 ###
