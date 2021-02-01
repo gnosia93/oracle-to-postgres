@@ -15,7 +15,7 @@ select t.relname, t.relpages, t.reltuples,
 from pg_class t inner join pg_roles r on t.relowner = r.oid
 	        left outer join pg_constraint c on t.oid = c.conrelid
 where r.rolname = 'shop' 
-  and t.relkind = 'r'      -- r means ordinary table
+  and t.relkind = 'r'      -- v means ordinary view
   and t.relname like 'tb_%';	
 ```
 
