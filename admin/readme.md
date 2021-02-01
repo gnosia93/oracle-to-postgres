@@ -8,7 +8,7 @@ select * from pg_roles;
 
 
 ### 제약조건 ###
-
+* https://www.postgresql.org/docs/9.3/ddl-constraints.html
 ```
 select t.relname, t.relpages, t.reltuples,
 	c.conrelid, c.confrelid, c.conname, c.contype, c.consrc 
