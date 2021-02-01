@@ -26,6 +26,12 @@ where r.rolname = 'shop'
 
 
 
+### 뷰 ###
+
+```
+select * from pg_views;
+```
+
 ### postgres 시스템 카탈로그 / 뷰 ###
 
 ```
