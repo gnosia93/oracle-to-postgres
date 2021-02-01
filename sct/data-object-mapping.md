@@ -1,13 +1,27 @@
-
-
 ### 설치 ###
 
-* https://docs.aws.amazon.com/ko_kr/SchemaConversionTool/latest/userguide/CHAP_Installing.html
+* sct : https://docs.aws.amazon.com/ko_kr/SchemaConversionTool/latest/userguide/CHAP_Installing.html
 
-* https://jdbc.postgresql.org/download.html  4.2 이상을 다운로드 받습니다.
+* postgres jdbc (4.2) : https://jdbc.postgresql.org/download.html 
+
+* oracle jdbc(ojdbc8) : https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html
 
 
-본 튜토리얼에서 SCT 를 사용하여 사전 스키마 매핑 작업을 수행하지 않고, DMS 자체의 스키마 생성 및 변환 기능만을 이용하여 데이터를 이관하였다.
+
+
+
+
+
+
+
+
+
+
+
+----------------
+
+
+SCT 를 사용하지 않고, DMS 만 사용하는 경우, 코드성 오브젝트들에 대해서는 수동을 만들어줘야 한다. 
 
 ## 1. 데이터 타입 매핑 ##
 
