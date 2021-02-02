@@ -174,8 +174,33 @@ postgres_19c_public_ip = 3.36.11.115
 
 ### 빌드 완료 여부 확인하기 ###
 
-tf_oracle_19c 서버로 로그인 한 후 아래와 같이 파일의 내용이 제대로 출력되는지 확인합니다. 
+tf_oracle_19c 서버로 로그인 한 후 아래와 같이 파일의 내용이 제대로 출력되는지 확인합니다. 인프라 구성은 보통 30분 정도 소요되오니, 아래와 같이 결과 메시지를 확인한 후 이후 과정을 진행하시기 바랍니다.  
 ```
+$ ssh -i ~/.ssh/tf_key ec2-user@3.35.170.8
+The authenticity of host '3.35.170.8 (3.35.170.8)' can't be established.
+ECDSA key fingerprint is SHA256:IojRVON+zk53PHmb2C6b1fHCtybJ4Q4UhE7sBG6B8OY.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '3.35.170.8' (ECDSA) to the list of known hosts.
 
+[ec2-user@ip-172-31-1-144 ~]$ sudo su - oracle
+Last login: Tue Feb  2 12:13:16 UTC 2021
+
+[oracle@ip-172-31-1-144 ~]$ ls -la
+total 28
+drwx------. 4 oracle oinstall  173 Feb  2 12:13 .
+drwxr-xr-x. 4 root   root       36 Feb  2 11:45 ..
+-rw-r--r--. 1 oracle oinstall   18 Jun 23  2020 .bash_logout
+-rw-r--r--. 1 oracle oinstall  652 Feb  2 11:46 .bash_profile
+-rw-r--r--. 1 oracle oinstall  376 Jun 23  2020 .bashrc
+-rw-r--r--. 1 root   root       37 Feb  2 12:13 build.result
+-rw-r--r--. 1 root   root     1553 Feb  2 12:13 dbca.out
+-rw-r--r--. 1 oracle oinstall  172 Feb  6  2020 .kshrc
+drwxr-x---. 2 oracle oinstall   40 Feb  2 11:56 .oracle_jre_usage
+-rw-r--r--. 1 root   root     1209 Feb  2 11:54 runInstaller.out
+drwx------. 2 oracle oinstall    6 Feb  2 11:53 .ssh
+
+[oracle@ip-172-31-1-144 ~]$ cat build.result 
+oracle 19c installation completed...
+[oracle@ip-172-31-1-144 ~]$ 
 ```
 
