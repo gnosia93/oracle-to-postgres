@@ -7,10 +7,10 @@
 ![download](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-download.png)
 
 
-* 오라클 및 postgresql 용 JDBC 드라이버를 로컬로 다운로드 받습니다.
+* 오라클 및 postgresql 용 JDBC 드라이버를 로컬 PC로 다운로드 받습니다.
 
   - https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/ojdbc8.jar
   - https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/postgresql-42.2.18.jar
 
 
-### 설정하기 ###
+### JDBC 경로 설정하기 ###
