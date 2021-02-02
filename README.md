@@ -78,7 +78,7 @@
 
 * [SCT 설치하기](https://github.com/gnosia93/postgres-terraform/blob/main/sct/sct-setup.md)
 
-* [변환하기](https://github.com/gnosia93/postgres-terraform/blob/main/sct/sct-convert.md)
+* [오브젝트 변환하기](https://github.com/gnosia93/postgres-terraform/blob/main/sct/sct-convert.md)
 
 * [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
 
