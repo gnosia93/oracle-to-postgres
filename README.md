@@ -104,7 +104,7 @@
 
 ## Appendix ##
 
-* 현행 시스템 평가 / 타켓 시스템 사이징(https://github.com/gnosia93/postgres-terraform/blob/main/migration/mig-asssessment.md)
+* [현행 시스템 평가 / 타켓 시스템 사이징](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-sizing.md)
 * [어플리케이션 변환 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/app-mig-guide.md)
 * [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/admin-guide.md)
 
