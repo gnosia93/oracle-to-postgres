@@ -24,4 +24,6 @@ SCT 를 실행한 후, 상단 Settings 메뉴밑에 Global Settings를 선택합
 ![setting](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-jdbc-driver.png)
 
 
-### 데이터베스 연결하기 ###
+### 프로젝트 생성하기 ###
+
+* [new-project](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-create.png)
