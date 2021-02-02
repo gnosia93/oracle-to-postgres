@@ -44,6 +44,8 @@ select definition from pg_views where viewname = 'view_recent_order_30';
 ```
 
 ### 프로시저 / 함수 ###
+
+* PostgreSQL 11 이하
 ```
 select n.nspname as function_schema,
        p.proname as function_name,
@@ -61,6 +63,31 @@ where n.nspname not in ('pg_catalog', 'information_schema', 'aws_oracle_ext')
 order by function_schema,
          function_name;
 ```
+* PostgreSQL 11 이상
+```
+select n.nspname as schema_name,
+       p.proname as specific_name,
+       case p.prokind 
+            when 'f' then 'FUNCTION'
+            when 'p' then 'PROCEDURE'
+            when 'a' then 'AGGREGATE'
+            when 'w' then 'WINDOW'
+            end as kind,
+       l.lanname as language,
+       case when l.lanname = 'internal' then p.prosrc
+            else pg_get_functiondef(p.oid)
+            end as definition,
+       pg_get_function_arguments(p.oid) as arguments,
+       t.typname as return_type
+from pg_proc p
+left join pg_namespace n on p.pronamespace = n.oid
+left join pg_language l on p.prolang = l.oid
+left join pg_type t on t.oid = p.prorettype 
+where n.nspname not in ('pg_catalog', 'information_schema', 'aws_oracle_ext')
+order by schema_name,
+         specific_name;
+```
+
 
 ### postgres 시스템 카탈로그 / 뷰 ###
 
