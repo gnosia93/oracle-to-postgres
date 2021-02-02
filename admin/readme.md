@@ -54,6 +54,10 @@ where r.rolname = 'shop'
 
 * https://blog.gaerae.com/2015/09/postgresql-index.html
 
+* 인덱스 리스트 조회
+```
+SELECT * FROM pg_indexes;
+```
 
 
 ### 뷰 ###
