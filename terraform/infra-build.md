@@ -42,10 +42,125 @@ The key's randomart image is:
 
 ```
 $ terraform init
+```
 
+```
 $ terraform apply -auto-approve
+data.aws_ami.amazon-linux-2: Refreshing state...
+data.aws_vpc.tf_vpc: Refreshing state...
+data.aws_ami.rhel-8: Refreshing state...
+data.aws_ami.ubuntu-20: Refreshing state...
+null_resource.previous: Creating...
+null_resource.previous: Creation complete after 0s [id=4074780709492097283]
+time_sleep.wait_10_seconds: Creating...
+aws_iam_role.tf_dms_service_role: Creating...
+aws_iam_role.dms-vpc-role: Creating...
+aws_iam_role.tf_ec2_service_role: Creating...
+aws_key_pair.tf_key: Creating...
+aws_security_group.tf_sg_pub: Creating...
+aws_key_pair.tf_key: Creation complete after 0s [id=tf_key]
+aws_security_group.tf_sg_pub: Creation complete after 1s [id=sg-00b4cc290e2517add]
+aws_instance.tf_postgres_11xe: Creating...
+aws_instance.tf_oracle_11xe: Creating...
+aws_instance.tf_postgres_19c: Creating...
+aws_instance.tf_oracle_19c: Creating...
+aws_iam_role.tf_dms_service_role: Creation complete after 1s [id=tf_dms_service_role]
+aws_iam_role_policy.tf_dms_service_role_policy: Creating...
+aws_iam_role.dms-vpc-role: Creation complete after 1s [id=dms-vpc-role]
+aws_iam_role.tf_ec2_service_role: Creation complete after 1s [id=tf_ec2_service_role]
+aws_iam_role_policy.tf_dms_policy: Creating...
+aws_iam_role_policy.tf_ec2_policy: Creating...
+aws_iam_instance_profile.tf_ec2_profile: Creating...
+aws_iam_role_policy.tf_dms_service_role_policy: Creation complete after 2s [id=tf_dms_service_role:tf_dms_service_role_policy]
+aws_iam_role_policy.tf_ec2_policy: Creation complete after 2s [id=tf_ec2_service_role:tf_ec2_policy]
+aws_iam_role_policy.tf_dms_policy: Creation complete after 2s [id=dms-vpc-role:tf_dms_policy]
+aws_iam_instance_profile.tf_ec2_profile: Creation complete after 3s [id=tf_ec2_profile]
+aws_instance.tf_loadgen: Creating...
+time_sleep.wait_10_seconds: Still creating... [10s elapsed]
+aws_instance.tf_oracle_19c: Still creating... [10s elapsed]
+aws_instance.tf_postgres_11xe: Still creating... [10s elapsed]
+aws_instance.tf_postgres_19c: Still creating... [10s elapsed]
+aws_instance.tf_oracle_11xe: Still creating... [10s elapsed]
+aws_instance.tf_oracle_11xe: Creation complete after 13s [id=i-066a13ebb400f9a02]
+aws_dms_endpoint.tf_dms_11xe_ep_oracle: Creating...
+aws_instance.tf_postgres_19c: Creation complete after 13s [id=i-06786c6c99bdb6152]
+aws_dms_endpoint.tf_dms_19c_ep_postgres: Creating...
+aws_instance.tf_postgres_11xe: Creation complete after 13s [id=i-0cbe48f0ecca16702]
+aws_instance.tf_oracle_19c: Creation complete after 13s [id=i-0e0bbefaf5e28fd33]
+aws_dms_endpoint.tf_dms_19c_ep_oracle: Creating...
+aws_dms_endpoint.tf_dms_11xe_ep_postgres: Creating...
+aws_instance.tf_loadgen: Still creating... [10s elapsed]
+aws_dms_endpoint.tf_dms_19c_ep_postgres: Creation complete after 0s [id=tf-dms-19c-ep-postgres]
+aws_dms_endpoint.tf_dms_11xe_ep_oracle: Creation complete after 0s [id=tf-dms-11xe-ep-oracle]
+aws_dms_endpoint.tf_dms_11xe_ep_postgres: Creation complete after 0s [id=tf-dms-11xe-ep-postgres]
+aws_dms_endpoint.tf_dms_19c_ep_oracle: Creation complete after 0s [id=tf-dms-19c-ep-oracle]
+time_sleep.wait_10_seconds: Still creating... [20s elapsed]
+aws_instance.tf_loadgen: Still creating... [20s elapsed]
+time_sleep.wait_10_seconds: Still creating... [30s elapsed]
+time_sleep.wait_10_seconds: Creation complete after 30s [id=2021-02-02T11:42:27Z]
+aws_dms_replication_instance.tf_dms_11xe: Creating...
+aws_dms_replication_instance.tf_dms_19c: Creating...
+aws_instance.tf_loadgen: Creation complete after 25s [id=i-01414c88106f3bc9f]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [10s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [10s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [20s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [20s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [30s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [30s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [40s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [40s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [50s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [50s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [1m0s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [1m0s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [1m10s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [1m10s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [1m20s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [1m20s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [1m30s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [1m30s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [1m40s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [1m40s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [1m50s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [1m50s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [2m0s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [2m0s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [2m10s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [2m10s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [2m20s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [2m20s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [2m30s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [2m30s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [2m40s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [2m40s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [2m50s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [2m50s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Still creating... [3m0s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [3m0s elapsed]
+aws_dms_replication_instance.tf_dms_19c: Creation complete after 3m4s [id=tf-dms-19c]
+aws_dms_replication_instance.tf_dms_11xe: Still creating... [3m10s elapsed]
+aws_dms_replication_instance.tf_dms_11xe: Creation complete after 3m14s [id=tf-dms-11xe]
 
+Apply complete! Resources: 22 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+key_pairs = tf_key
+load_gen_public_ip = 3.35.37.2
+oracle_11xe_public_ip = 13.124.141.251
+oracle_19c_public_ip = 3.35.170.8
+postgres_11xe_public_ip = 3.34.255.215
+postgres_19c_public_ip = 3.36.11.115
+```
+
+```
 $ terraform output
+key_pairs = tf_key
+load_gen_public_ip = 3.35.37.2
+oracle_11xe_public_ip = 13.124.141.251
+oracle_19c_public_ip = 3.35.170.8
+postgres_11xe_public_ip = 3.34.255.215
+postgres_19c_public_ip = 3.36.11.115
 ```
 
 워크샵을 진행하는데 있어 테라폼에 대한 사전 지식을 불필요하나, 좀 더 자세한 내용이 궁금한 경우 [aws-get-started](https://learn.hashicorp.com/collections/terraform/aws-get-started) 을 통해 확인하실 수 있습니다. 
