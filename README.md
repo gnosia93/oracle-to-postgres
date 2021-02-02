@@ -56,7 +56,7 @@
 
 ### 2. 인프라 빌드 ###
 
-- [테라폼으로 인프라 빌드하기](https://github.com/gnosia93/postgres-terraform/blob/main/terraform/infra-build.md)
+- [테라폼으로 인프라 구성하기](https://github.com/gnosia93/postgres-terraform/blob/main/terraform/infra-build.md)
 
 
 ### 3. 복제를 위한 원본/타켓 DB 설정 ##
