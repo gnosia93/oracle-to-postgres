@@ -30,4 +30,4 @@ SCT 를 실행한 후, 상단 Settings 메뉴밑에 Global Settings를 선택합
 * ![project-info](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-project.png)
 * ![oracle-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-oracle-connect.png)
 * ![postgres-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-postgres-connect.png)
-* ![sct-result](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-report.png)
+* ![sct-result](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-connect-result.png)
