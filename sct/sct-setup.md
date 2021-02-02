@@ -27,17 +27,17 @@ SCT 를 실행한 후, 상단 Settings 메뉴밑에 Global Settings를 선택합
 ### 프로젝트 생성하기 ###
 
 File 메뉴에서 New project 를 선택합니다. 
-* ![new-project](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-create.png)
+![new-project](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-create.png)
 
 프로젝트 명을 tf_oracle_to_postgres 로 입력하고 소스는 오라클, 타켓은 postgres RDS 를 선택합니다. 
-* ![project-info](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-project.png)
+![project-info](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-project.png)
 
 상단 메뉴에 [Connect to Oracle] 을 클릭한 후, 오라클 연결을 위한 설정 정보를 입력합니다. Type 을 Service Name 으로 변경한 후, Server name 은 오라클 데이터베이스의 공인 IP를 넣고, service name으로 pdb1 을 입력합니다. user name 은 system 이고, password 는 manager 입니다.
-* ![oracle-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-oracle-connect.png)
+![oracle-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-oracle-connect.png)
 
 postgres 역시 오라클과 동일한 과정을 거치게 됩니다. 상단 메뉴에 [Connect to Amazon RDS for PostgreSQL] 을 선택한 후, 각 필드에 해당하는 정보를 입력합니다.
 shop 유저의 패스워드는 shop 입니다. 
-* ![postgres-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-postgres-connect.png)
+![postgres-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-postgres-connect.png)
 
 오라클 및 postgresql 이 제대로 연결되는지 확인합니다. 
-* ![sct-result](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-connect-result.png)
+![sct-result](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-connect-result.png)
