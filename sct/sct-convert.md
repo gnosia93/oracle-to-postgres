@@ -5,6 +5,32 @@
 
 ## 오브젝트 변환하기 ##
 
+* DMS 데이터 변환 매핑 
+```
+number        ---> double precision
+number(n)     ---> numeric(n, 0)         n 의 범위의 1 ~ 39
+number(p, s)  ---> numeric(p, s)
+long          ---> text
+float         ---> double precision
+char(n)       ---> character(n)          n 의 범위는 1 ~ 2000
+varchar2(n)   ---> character varying(n)  n 의 범위는 1 ~ 4000
+date          ---> timestamp(0)
+timestamp     ---> timestamp(6)
+nchar(n)      ---> character(n)
+nvarchar2(n)  ---> character varying(n)
+bfile         ---> 지원안됨
+```
+
+* 
+
+
+
+
+
+
+
+
+
 ### 리포트 출력하기 ###
 
 오라클의 오브젝트를 postgresql 로 변환하기 전에 리포트를 뽑아서 발생가능 한 오류에 대해 확인할 수 있습니다. 
