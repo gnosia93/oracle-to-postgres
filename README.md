@@ -80,9 +80,6 @@
 
 * [오브젝트 변환하기](https://github.com/gnosia93/postgres-terraform/blob/main/sct/sct-convert.md)
 
-* [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
-
-* [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
 
 
 ### 6. 데이터 복제하기 (/w DMS) ###
