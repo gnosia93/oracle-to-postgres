@@ -43,6 +43,25 @@ where r.rolname = 'shop'
 select definition from pg_views where viewname = 'view_recent_order_30';
 ```
 
+### 프로시저 / 함수 ###
+```
+select n.nspname as function_schema,
+       p.proname as function_name,
+       l.lanname as function_language,
+       case when l.lanname = 'internal' then p.prosrc
+            else pg_get_functiondef(p.oid)
+            end as definition,
+       pg_get_function_arguments(p.oid) as function_arguments,
+       t.typname as return_type
+from pg_proc p
+left join pg_namespace n on p.pronamespace = n.oid
+left join pg_language l on p.prolang = l.oid
+left join pg_type t on t.oid = p.prorettype 
+where n.nspname not in ('pg_catalog', 'information_schema', 'aws_oracle_ext')
+order by function_schema,
+         function_name;
+```
+
 ### postgres 시스템 카탈로그 / 뷰 ###
 
 ```
