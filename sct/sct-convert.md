@@ -5,7 +5,7 @@
 
 ## 오브젝트 변환하기 ##
 
-* DMS 데이터 변환 매핑 
+* DMS 데이터 변환 (Oracle ---> postgres) 
 ```
 number        ---> double precision
 number(n)     ---> numeric(n, 0)             n 의 범위의 1 ~ 39
