@@ -74,7 +74,7 @@
 - [샘플 데이터 빌드하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/init-data.md)
 
 
-### 5. 스키마 변환 설정하기 (/w SCT) ###
+### 5. 스키마 변환하기 (/w SCT) ###
 
 * [SCT 설치하기](https://github.com/gnosia93/postgres-terraform/blob/main/sct/sct-setup.md)
 
