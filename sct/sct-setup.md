@@ -26,8 +26,8 @@ SCT 를 실행한 후, 상단 Settings 메뉴밑에 Global Settings를 선택합
 
 ### 프로젝트 생성하기 ###
 
-* [new-project](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-create.png)
-* [project-info](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-project.png)
-* [oracle-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-oracle-connect.png)
-* [postgres-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-postgres-connect.png)
-* [sct-result](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-report.png)
+* ![new-project](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-create.png)
+* ![project-info](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-new-project.png)
+* ![oracle-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-oracle-connect.png)
+* ![postgres-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-postgres-connect.png)
+* ![sct-result](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-report.png)
