@@ -5,7 +5,9 @@
 
 ## 오브젝트 변환하기 ##
 
-* DMS 데이터 변환 (Oracle ---> postgres) 
+### 오브젝트 매핑 (Oracle to Postgresql) ###
+
+* 데이터 타입 매핑 
 ```
 number        ---> double precision
 number(n)     ---> numeric(n, 0)             n 의 범위의 1 ~ 39
@@ -21,12 +23,11 @@ nvarchar2(n)  ---> character varying(n)
 bfile         ---> 지원하지 않음
 ```
 
-* 
+* 코드 오브젝트 매핑
 
+```
 
-
-
-
+```
 
 
 
