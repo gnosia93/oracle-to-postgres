@@ -9,7 +9,6 @@
 number        ---> double precision
 number(n)     ---> numeric(n, 0)             n 의 범위의 1 ~ 39
 number(p, s)  ---> numeric(p, s)
-long          ---> text
 float         ---> double precision
 char(n)       ---> character(n)              n 의 범위는 1 ~ 2000
 varchar2(n)   ---> character varying(n)      n 의 범위는 1 ~ 4000
@@ -17,6 +16,9 @@ date          ---> timestamp(0)
 timestamp     ---> timestamp(6)
 nchar(n)      ---> character(n)
 nvarchar2(n)  ---> character varying(n)
+blob          ---> bytea
+clob          ---> text
+long          ---> text
 bfile         ---> 지원하지 않음
 ```
 
