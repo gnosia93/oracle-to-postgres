@@ -39,6 +39,5 @@ postgres 역시 오라클과 동일한 과정을 거치게 됩니다. 상단 메
 shop 유저의 패스워드는 shop 입니다. 
 * ![postgres-connect](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-postgres-connect.png)
 
-최종적으로 
-
+오라클 및 postgresql 이 제대로 연결되는지 확인합니다. 
 * ![sct-result](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-connect-result.png)
