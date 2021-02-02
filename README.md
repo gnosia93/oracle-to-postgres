@@ -76,6 +76,10 @@
 
 ### 5. 스키마 변환 설정하기 (/w SCT) ###
 
+* [SCT 설치하기](https://github.com/gnosia93/postgres-terraform/blob/main/sct/sct-setup.md)
+
+* [리포트 작성하기]()
+
 * [데이터 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/data-object-mapping.md)
 
 * [코드 오브젝트 변환](https://github.com/gnosia93/postgres-terraform/blob/main/sct/code-object-mapping.md)
