@@ -117,3 +117,7 @@ LIMIT 30;
 ```
 
 
+![example1](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-1.png)
+![example2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-2.png)
+![example3](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-3.png)
+
