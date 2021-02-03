@@ -10,6 +10,8 @@
 
 ### DDL ###
 
+워크샵용 샘플 스키마는 테이블 8개, 뷰 1개, 프리서저 2개, 함수 1개, 트리거 1개, 시퀀스 3개 및 테이블별 인덱스로 구성되어 있습니다.
+
 ```
 --drop sequence shop.seq_product_product_id;
 create sequence shop.seq_product_product_id
