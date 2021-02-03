@@ -110,7 +110,7 @@ SELECT
     ORDER BY o.order_ymdt DESC;
 ```
 
-postgresql 의 View Definition 을 아래의 SQL 로 그림처럼 수정하고 [apply database] 버튼을 클릭합니다. 
+postgresql 의 View Definition 을 아래의 SQL 로 그림처럼 수정하고 [apply to database] 로 타켓 DB 에 적용합니다. 
 ```
 CREATE OR REPLACE VIEW shop.view_recent_order_30 (name, order_no, member_id, order_price, order_ymdt) AS
 SELECT
@@ -123,4 +123,7 @@ LIMIT 30;
 ![example3](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-3.png)
 
 ![example2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-2.png)
+
+![example2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-1.png)
+
 
