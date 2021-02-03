@@ -1,38 +1,49 @@
 
-아파치 Jmeter 를 이용하여 이관후 postgres 의 성능을 측정합니다. 
+아파치 Jmeter 를 이용하여 postgres 의 성능을 측정합니다. 실제 마이그레이션 프로젝트에서는 신규 데이터베이스로 이관하기 전에 성능 테스트가 진행된다고 생각하면 됩니다.  
 
-오라클사의 JDBC 드라이버가 필요하며, 오라클 홈페이지에 제공되는 드라이버들은 Java Version 10 (class file version 54.0) 으로 컴파일되어 있어서, 
+Jmeter 를 이용하여 테스트하시기 위해서는 postgres 용 JDBC 드라이버가 필요합니다.
 
-JDK 또는 JRE 10 버전 이상으로 설치가 필요합니다. 
 
-## 측정 대상 SQL ##
+### 대상 SQL 선정 ###
 
-성능 측정의 대상이 되는 SQL 은 오라클 v$sqlarea 에서 관찰되는 SQL 중 다음과 같은 우선순위로 선정합니다.
+성능 측정 대상 SQL 을 수집하기 위해서 오라클 데이터베이스의 v$sqlarea 를 조회합니다. 바인드 변수값이 필요한 경우 v$bind ?? 역시 조회하도록 합니다. 
 
-* Block IO / exec 가 높은 SQL
-* exec 수치가 높은 SQL
+SQL 중 다음과 같은 우선순위로 선정합니다.
+
+* Block IO / exec 가 높으면서 실행빈호가 높은 SQL 
 * physical IO 가 높은 SQL 
 
+[측정 대상 선정SQL]
 ```
-select * from v$sql;
+
+
 ```
 
-## 아피치 JMeter 설치 ##
+본 실습에서는 아래의 SQL 3개가 위의 조건으로 선정된 SQL 이라고 가정하고, 성능 측정을 하도록 하겠습니다.
+```
 
+```
 
-## JMeter 설정 ##
-
-
-
-
-
-
-
-## JMeter 스트레스 테스트 ##
+### 아피치 JMeter 설치 ###
 
 
 
-## 레퍼런스 ##
+
+
+
+### JMeter 설정 ###
+
+
+
+
+
+
+
+### 성능텍스트 ###
+
+
+
+### 레퍼런스 ###
 
 * [Proxy 사용법](https://sncap.tistory.com/547)
 
