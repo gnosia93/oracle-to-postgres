@@ -37,7 +37,28 @@ pg_views : 뷰
 ### 사용자 조회 ###
 
 ```
-select * from pg_roles;
+psql> select * from pg_roles;
+          rolname          | rolsuper | rolinherit | rolcreaterole | rolcreatedb | rolcanlogin | rolreplication | rolconnlimit | rolpassword | rolvaliduntil | rolbypassrls | rolconfig |  oid  
+---------------------------+----------+------------+---------------+-------------+-------------+----------------+--------------+-------------+---------------+--------------+-----------+-------
+ pg_signal_backend         | f        | t          | f             | f           | f           | f              |           -1 | ********    |               | f            |           |  4200
+ pg_read_server_files      | f        | t          | f             | f           | f           | f              |           -1 | ********    |               | f            |           |  4569
+ postgres                  | t        | t          | t             | t           | t           | t              |           -1 | ********    |               | t            |           |    10
+ pg_write_server_files     | f        | t          | f             | f           | f           | f              |           -1 | ********    |               | f            |           |  4570
+ pg_execute_server_program | f        | t          | f             | f           | f           | f              |           -1 | ********    |               | f            |           |  4571
+ pg_read_all_stats         | f        | t          | f             | f           | f           | f              |           -1 | ********    |               | f            |           |  3375
+ pg_monitor                | f        | t          | f             | f           | f           | f              |           -1 | ********    |               | f            |           |  3373
+ shop                      | f        | t          | f             | f           | t           | f              |           -1 | ********    |               | f            |           | 16384
+ pg_read_all_settings      | f        | t          | f             | f           | f           | f              |           -1 | ********    |               | f            |           |  3374
+ pg_stat_scan_tables       | f        | t          | f             | f           | f           | f              |           -1 | ********    |               | f            |           |  3377
+(10 rows)
+```
+
+```
+psql> select * from pg_shadow;
+ usename  | usesysid | usecreatedb | usesuper | userepl | usebypassrls |               passwd                | valuntil | useconfig 
+----------+----------+-------------+----------+---------+--------------+-------------------------------------+----------+-----------
+ postgres |       10 | t           | t        | t       | t            |                                     |          | 
+ shop     |    16384 | f           | f        | f       | f            | md5f0c1de5eb2934ac9f886a646a0a46ba4 |          | 
 ```
 
 
