@@ -47,10 +47,7 @@ bfile         ---> 지원하지 않음
 
 ### 스키마 변환하기 ###
 
-아래의 
-아래의 그림과 
-같
-
+아래의 그림과 같은 오라클의 스키마를 postgres 용으로 변환합니디다. 
 
 ![convert1](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-convert-schema1.png)
 
@@ -58,3 +55,5 @@ bfile         ---> 지원하지 않음
 
 ![convert3](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-convert-schema3.png)
 
+
+### 스미카 적용하기 ###
