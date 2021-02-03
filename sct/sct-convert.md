@@ -57,3 +57,7 @@ bfile         ---> 지원하지 않음
 
 
 ### 스미카 적용하기 ###
+
+![convert1](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-apply1.png)
+
+![convert2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-apply2.png)
