@@ -45,5 +45,5 @@ bfile         ---> 지원하지 않음
 ![action item](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-action-item.png)
 
 
-### 오브젝트 변환 / 적용하기 ###
+### 스키마 변환하기 ###
 
