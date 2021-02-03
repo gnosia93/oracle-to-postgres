@@ -66,11 +66,15 @@ psql> select * from pg_shadow;
  shop     |    16384 | f           | f        | f       | f            | md5f0c1de5eb2934ac9f886a646a0a46ba4 |          | 
 ```
 
-### 데이터베이스 리스트 조회 ###
-
+### 데이터베이스 ###
+```
+select * from pg_database;
+```
 
 ### 테이블 스페이스 리스트 조회 ###
-
+```
+select * from pg_tablespace;
+```
 
 ### 제약조건 ###
 * https://www.postgresql.org/docs/9.3/ddl-constraints.html
