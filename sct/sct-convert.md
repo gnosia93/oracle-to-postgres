@@ -67,6 +67,10 @@ bfile         ---> 지원하지 않음
 
 ### 오류 수정하기 ###
 
+지금부터는 postgresql 적용 과정에서 오류가 발생한 shop.view_recent_order_30 라는 뷰를 수동으로 수정하여 타켓 데이터베이스에 적용해 볼 예정입니다.
+
+아래는 오라클에 있는 원본 뷰의 내용으로 조인 결과를 정렬한 후 순서대로 30건만 출력하는 것을 확인할 수 있습니다. 
+
 [oracle view]
 ```
 create or replace view shop.view_recent_order_30 as
@@ -81,6 +85,7 @@ from (
 where rn between 1 and 30;
 ```
 
+SCT 를 이용하여 자동 코드 변경 적용결과를 보면 문법상 오류와 불필요한 LIMIT 문장 처리 부분이 있음을 확인 할 수 있습니다. 
 [sct에 의해 postgresql 에 생성된 뷰] 
 ```
 CREATE OR REPLACE VIEW shop.view_recent_order_30 (name, order_no, member_id, order_price, order_ymdt) AS
@@ -105,7 +110,7 @@ SELECT
     ORDER BY o.order_ymdt DESC;
 ```
 
-[수정된 뷰]
+postgresql 의 View Definition 을 아래의 SQL 로 그림처럼 수정하고 [apply database] 버튼을 클릭합니다. 
 ```
 CREATE OR REPLACE VIEW shop.view_recent_order_30 (name, order_no, member_id, order_price, order_ymdt) AS
 SELECT
@@ -115,9 +120,13 @@ WHERE o.order_no = d.order_no AND d.product_id = p.product_id
 ORDER BY o.order_ymdt DESC
 LIMIT 30;       
 ```
+![example3](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-3.png)
 
 
+
+
+---
+* 뷰 수정전 화면
 ![example1](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-1.png)
 ![example2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-2.png)
-![example3](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-3.png)
 
