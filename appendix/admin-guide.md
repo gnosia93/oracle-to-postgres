@@ -154,7 +154,17 @@ order by schema_name,
 
 
 ### 트리거 ###
-
+```
+select event_object_schema as table_schema,
+       event_object_table as table_name,
+       trigger_schema,
+       trigger_name,
+       string_agg(event_manipulation, ',') as event,
+       action_timing as activation,
+       action_condition as condition,
+       action_statement as definition
+from information_schema.triggers;
+```
 
 ## 레퍼런스 ##
 
