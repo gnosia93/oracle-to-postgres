@@ -69,8 +69,17 @@ bfile         ---> 지원하지 않음
 
 [oracle view]
 ```
-
-``
+create or replace view shop.view_recent_order_30 as
+select name, order_no, member_id, order_price, order_ymdt
+from (
+    select rownum as rn, p.name, o.order_no, o.member_id, o.order_price, o.order_ymdt
+    from shop.tb_order o, shop.tb_order_detail d, shop.tb_product p
+    where o.order_no = d.order_no
+      and d.product_id = p.product_id
+    order by o.order_ymdt desc
+)
+where rn between 1 and 30;
+```
 
 [sct에 의해 postgresql 에 생성된 뷰] 
 ```
@@ -95,4 +104,16 @@ SELECT
         END) AS var_sbq
     ORDER BY o.order_ymdt DESC;
 ```
+
+[수정된 뷰]
+```
+CREATE OR REPLACE VIEW shop.view_recent_order_30 (name, order_no, member_id, order_price, order_ymdt) AS
+SELECT
+   p.name, o.order_no, o.member_id, o.order_price, o.order_ymdt
+FROM shop.tb_order AS o, shop.tb_order_detail AS d, shop.tb_product AS p
+WHERE o.order_no = d.order_no AND d.product_id = p.product_id
+ORDER BY o.order_ymdt DESC
+LIMIT 30;       
+```
+
 
