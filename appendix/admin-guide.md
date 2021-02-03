@@ -175,6 +175,8 @@ from information_schema.triggers;
 
 ## 레퍼런스 ##
 
+* https://waspro.tistory.com/146?category=826974
+
 * https://stricky.tistory.com/367
 
 * https://aws.amazon.com/ko/blogs/korea/how-to-migrate-your-oracle-database-to-postgresql/
