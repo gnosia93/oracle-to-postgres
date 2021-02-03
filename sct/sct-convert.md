@@ -47,3 +47,8 @@ bfile         ---> 지원하지 않음
 
 ### 스키마 변환하기 ###
 
+
+![convert1](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-convert-schema1.png)
+![convert2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-convert-schema2.png)
+![convert3](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-convert-schema3.png)
+
