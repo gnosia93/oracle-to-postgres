@@ -47,7 +47,7 @@ bfile         ---> 지원하지 않음
 
 ### 스키마 변환하기 ###
 
-아래의 그림과 같은 오라클의 스키마를 postgres 용으로 변환합니디다. 
+아래의 그림과 같은 오라클의 스키마를 postgres 용으로 변환합니다. 
 
 ![convert1](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-convert-schema1.png)
 
@@ -58,6 +58,41 @@ bfile         ---> 지원하지 않음
 
 ### 스미카 적용하기 ###
 
+변환된 스키마를 확인하여 최종적으로 postgresql 에 적용합니다.
+
 ![convert1](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-apply1.png)
 
 ![convert2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-apply2.png)
+
+
+### 오류 수정하기 ###
+
+[oracle view]
+```
+
+``
+
+[sct에 의해 postgresql 에 생성된 뷰] 
+```
+CREATE OR REPLACE VIEW shop.view_recent_order_30 (name, order_no, member_id, order_price, order_ymdt) AS
+SELECT
+    name, order_no, member_id, order_price, order_ymdt
+    FROM (SELECT
+        p.name, o.order_no, o.member_id, o.order_price, o.order_ymdt
+        FROM shop.tb_order AS o, shop.tb_order_detail AS d, shop.tb_product AS p
+        WHERE o.order_no = d.order_no AND d.product_id = p.product_id
+        LIMIT
+        CASE
+            WHEN TRUNC(30) <= 0 THEN 0
+            WHEN TRUNC(1) < 0 THEN TRUNC(30)
+            WHEN (TRUNC(1) - 1) = 0 THEN TRUNC(30)
+            ELSE TRUNC(30) - 1
+        END OFFSET
+        CASE
+            WHEN TRUNC(1) <= 0 THEN 0
+            WHEN (TRUNC(1) - 1) < 0 THEN 0
+            ELSE TRUNC(1) - 1
+        END) AS var_sbq
+    ORDER BY o.order_ymdt DESC;
+```
+
