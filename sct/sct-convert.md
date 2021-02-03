@@ -85,7 +85,8 @@ from (
 where rn between 1 and 30;
 ```
 
-SCT 에 의한 자동 코드 변환 결과를 보면 문법상 오류와 깔끔하지 않은 LIMIT 문장 처리 부분을 확인할 수 있습니다. 
+SCT 에 의한 자동 코드 변환 결과를 보면 문법 오류와 깔끔하지 않은 LIMIT 문장 처리 부분을 확인할 수 있습니다. 
+
 [sct에 의해 postgresql 에 생성된 뷰] 
 ```
 CREATE OR REPLACE VIEW shop.view_recent_order_30 (name, order_no, member_id, order_price, order_ymdt) AS
