@@ -71,7 +71,7 @@ psql> select * from pg_shadow;
 select * from pg_database;
 ```
 
-### 테이블 스페이스 리스트 조회 ###
+### 테이블 스페이스 ###
 ```
 select * from pg_tablespace;
 ```
