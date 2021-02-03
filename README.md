@@ -1,4 +1,4 @@
-# Oracle to Postgres Migration Workshop #
+# Oracle to PostgreSQL Migration Workshop #
 
 *Definitive migration guide from oracle to postgresql*
 
@@ -92,9 +92,9 @@
 
 
 
-### 7. Postgresql 성능 테스트 및 진단 ###
+### 7. PostgreSQL 성능 테스트 및 진단 ###
 
-* [postgres 성능 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md)
+* [PostgreSQL 성능 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md)
 
 * performance assessment
 
