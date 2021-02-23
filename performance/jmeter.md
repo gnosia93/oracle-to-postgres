@@ -137,4 +137,6 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 
 * https://story.stevenlab.io/207
 
+* https://www.google.co.kr/search?source=hp&ei=jjU1YN6YMIuymAWwv5v4Ag&iflsig=AINFCbYAAAAAYDVDnvEjPLlVJL_f3p3FY-QuSWzoOWYe&q=apache+jmeter+%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98&oq=apache+jmeter+%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98&gs_lcp=Cgdnd3Mtd2l6EAM6BQgAELEDOggIABCxAxCDAToCCAA6BAgAEAo6BAgAEA06BQghEKABUIkCWNtRYNFTaA9wAHgDgAG-AYgB-h-SAQQwLjI4mAEAoAEBqgEHZ3dzLXdperABAA&sclient=gws-wiz&ved=0ahUKEwjel-jDvoDvAhULGaYKHbDfBi8Q4dUDCAc&uact=5
+
 * https://blog.naver.com/PostView.nhn?blogId=raonsql&logNo=220988925526&categoryNo=31&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search
