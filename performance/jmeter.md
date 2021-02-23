@@ -18,30 +18,12 @@ Jmeter 를 이용하여 테스트하시기 위해서는 postgres 용 JDBC 드라
 
 ```
 
-본 실습에서는 아래의 SQL 을 이용하여 성능 측정을 하도록 하겠습니다. 
+본 실습에서는 아래의 SQL 을 이용하여 성능 측정을 하도록 하겠습니다.  
+성능 측정 대상 SQL 은 회원ID 가 user100 인 사용자의 주문 이력(페이징 처리)과 579번 상품에 대한 상세 정보 조회 및 특정 주문번호에 대한 세부 주문 상품 조회로 구성됩니다.   
 ```
-SQL> select category_id, count(1) from shop.tb_product
-group by category_id
-order by 2 desc;
-
-CATEGORY_ID   COUNT(1)
------------ ----------
-          2        329
-          4        325
-          1        321
-         13        319
-
-SQL> select p.product_id, min(p.name) as product_name,
-    o.order_no, min(o.order_no), max(o.order_no),
-    count(1) as order_item_cnt
-from shop.tb_product p, 
-     shop.tb_order o,
-     shop.tb_order_detail d
-where p.product_id = d.product_id
-  and o.order_no = d.order_no
-  and p.category_id = 2
-group by p.product_id, o.order_no  
-order by 4 desc;  
+select * from (select rownum as rn, o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc) where rn <= 10;
+select * from shop.tb_product where product_id = 579;
+select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ```
 
 
