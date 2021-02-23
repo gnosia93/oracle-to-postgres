@@ -43,6 +43,9 @@ select * from shop.tb_product where product_id = 579;
 select * from shop.tb_order_detail where order_no = '<your generated order-no>';
 ```
 
+### JMeter 이해하기 ###
+
+
 
 ### JMeter 테스트 플랜 작성하기 ###
 
