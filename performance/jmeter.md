@@ -45,6 +45,8 @@ Filename 필드에는 성능 테스트시 실행할 SQL Query를 담고 있는 �
 ![CsvConfig2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig2.png)
 
 
+![CsvConfig3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig3.png)
+
 
 
 
