@@ -27,7 +27,7 @@ select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ```
 
 
-### JMeter 설정 ###
+### 테스트 플랜 설정하기 ###
 
 
 
@@ -35,7 +35,13 @@ select * from shop.tb_order_detail where order_no = '20210223000032789943';
 
 
 
-### 성능스트 ###
+
+
+
+
+
+
+
 
 
 
