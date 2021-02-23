@@ -78,6 +78,8 @@ Username 과 Password 란에는 shop 으로 입력합니다.
 
 아파치 Jmeter 는 성능 테스트 결과를 확인하기 위한 도구를 리스너(Listener)라는 형태로 지원해 주고 있습니다. 여기서는 여러개의 리스너중 Summary Report 와 ViewResultTable을 사용하도록 하겠습니다.
 아래 그림에서 보이는 바와 같이 두개의 리스너를 차례대로 등록하도록 합니다. 
+
+![ListenerViewResultTree](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ListenerViewResultTree.png)
 ![LIstenerSummaryReport](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/LIstenerSummaryReport.png)
 ![ListnerViewResultTable](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ListnerViewResultTable.png)
 
@@ -87,6 +89,10 @@ Username 과 Password 란에는 shop 으로 입력합니다.
 
 JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} 라는 텍스트 값을 입력하도록 합니다. 
 ![SamplerJDBCRequest2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/SamplerJDBCRequest2.png)
+
+
+### JMeter 테스트 실행하기 ###
+
 
 
 ### 레퍼런스 ###
