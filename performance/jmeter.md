@@ -4,20 +4,28 @@
 
 ### 측정 대상 SQL 선정 ###
 
-성능 측정의 대상이 되는 SQL 은 DBA 또는 어플리케이션 개발자로 부터 자주 사용되는 억세스 패턴에 대해 관련 SQL 정보를 수집할 수도 있지만, 원본 데이터베이스가 오라클인 경우 v$sqlarea 을 이용하여 관련 정보를 조회할 수 있습니다. 바인드 변수값이 필요한 경우 v$bind_parameter 뷰를 통해 정보를 조회할 수 있으며, 관련 SQL 및 수집 방법은 아래와 같습니다. 
+성능 측정의 대상이 되는 SQL 은 담당 DBA 또는 어플리케이션 개발자로 부터 자주 사용되는 억세스 패턴과 관련 SQL 리스트를 수집할 수도 있지만, 원본 데이터베이스가 오라클인 경우 v$sqlarea 을 조회한다거나, AWS Report 를 통해 관련 정보를 손쉽게 수집할 수 있습니다. 
+아래는 오라클의 v$sqlarea 뷰를 이용하여 실행빈도가 높으면서, 각각의 선정기준에 맞는 SQL 을 찾는 방법을 보여주고 있습니다. 
 
-* Block IO / exec 가 높으면서 실행빈도가 높은 SQL 
-* physical IO 가 높은 SQL 
+* buffer_gets/executions 값이 높은 SQL
+* disk_reads/executions 값이 높은 SQL
+* elapsed_time/executions 값이 높은 SQL
+* cpu_time/executions 값이 높은 SQL
 
-[측정 대상 선정SQL]
+[성능측정 후보 조회 SQL]
+```
+select module, sql_fulltext, executions,
+    round(buffer_gets/executions, 1) as gets_by_exec,
+    round(disk_reads/executions, 1) as gets_by_exec,
+    round(elapsed_time/executions, 1) as elaps_by_exec,
+    round(cpu_time/executions, 1) as cpu_by_exec
+from v$sqlarea
+where executions > 0
+  and module like 'SQL Developer%' or module like 'python3%'
+order by buffer_gets/executions desc, executions desc;
 ```
 
-```
 
-[바인드 변수 조회 SQL]
-```
-
-```
 
 본 실습에서는 아래의 3개의 SQL 을 이용하여 성능 측정을 하도록 하겠습니다.  
 성능 측정 대상 SQL 은 쇼핑몰의 전형 적인 쿼리 패턴중 사용자별 주문내역을 조회할때 실행되는 SQL로 아래의 경우 
