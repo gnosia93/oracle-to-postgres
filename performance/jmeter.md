@@ -30,9 +30,7 @@ CATEGORY_ID   COUNT(1)
           4        325
           1        321
          13        319
-```
 
-```
 SQL> select p.product_id, min(p.name) as product_name,
     o.order_no, min(o.order_no), max(o.order_no),
     count(1) as order_item_cnt
@@ -47,14 +45,6 @@ order by 4 desc;
 ```
 
 
-
-### 아피치 JMeter 설치 ###
-
-
-
-
-
-
 ### JMeter 설정 ###
 
 
@@ -63,7 +53,7 @@ order by 4 desc;
 
 
 
-### 성능텍스트 ###
+### 성능스트 ###
 
 
 
