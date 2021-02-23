@@ -17,7 +17,7 @@
 아래 SQL 은 실행횟수 대비 buffer_gets가 높은 SQL 을 찾아내는 쿼리로 만약 cpu_time 기준으로 후보 SQL 을 찾고자 한다면 아래의 order by 절의 buffer_gets/executions 구문을 cpu_time/executions 으로 수정한 후, 해당 쿼리를 실행하면 됩니다. 
 또한 이 예제에서는 SQL 을 실행하는 module 기준으로 쿼리를 필터링 하고는 있지만, SQL 을 실행하는 유저 기준으로도 후보 대상 SQL 을 찾아 볼 수도 있습니다. 
 
-v$sqlarea 동적 성능뷰에 대해서는 [URL](https://docs.oracle.com/cd/B19306_01/server.102/b14237/dynviews_2129.htm#REFRN30259
+v$sqlarea 뷰의 definitin 에 대해서는 [ URL](https://docs.oracle.com/cd/B19306_01/server.102/b14237/dynviews_2129.htm#REFRN30259
 )를 참조하시기 바랍니다. 
 
 ```
