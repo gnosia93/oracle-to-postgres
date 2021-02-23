@@ -31,16 +31,17 @@ select * from shop.tb_order_detail where order_no = '20210223000032789943';
 
 ### JMeter 테스트 플랜 작성하기 ###
 
-테스트 플랜을 작성하기 위해서는 먼저 부하를 발생시킬 쓰레드 그룹 생성이 필요합니다. 아래의 그림과 같이 Test Plan 을 우 클릭한 후, 쓰레드 그룹을 생성하고,
-에러 발생시 쓰레드를 정지 시키기 위해서 Stop Thread 를 선택한 후, Number of Threads, Ramp-up peroid 값을 1로 설정하고, Loop Count 는 Infinite 로 설정합니다.
+테스트 플랜을 작성하기 위해서는 먼저 부하를 발생시킬 쓰레드 그룹 생성이 필요합니다. 아래의 그림과 같이 Test Plan 을 우클릭한 후, 쓰레드 그룹을 생성하고,
+에러 발생시 쓰레드를 정지 시키기 위해서 Stop Thread 를 선택한 후, Number of Threads, Ramp-up peroid 값을 1로 설정하고, Loop Count 는 Infinite 로 설정합니다. 여기서 쓰레드의 수는 SQL 을 실행하는 유저수입니다.   
 
 ![ThreadGroup1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup1.png)
 ![ThreadGroup2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup2.png)
 
 하나의 쓰레드가 순차적으로 여러개의 SQL 을 실행하기 위해서는 CSV Data Set Config 설정이 필요합니다. 아래의 그림에서 보이는 바와 같이  
-
-
+Test Plan 을 우클릭한 후 CSV Data Set Config 를 하나 생성합니다. 
 ![CsvConfig1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig1.png)
+
+Filename 필드에는 성능 테스트시 실행할 SQL Query를 담고 있는 파일의 경로를 그림과 가티이 설정하도록 합니다.   
 ![CsvConfig2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig2.png)
 
 
