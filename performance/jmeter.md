@@ -54,8 +54,12 @@ select * from shop.tb_product where product_id = 579;
 select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ```
 
-
+테스트 대상 데이터베이스의 접속 정보를 설정하기 위해서 Thread Group 를 선택한 후 우클릭해서 JDBC Connection Configuration 을 선택합니다. 
 ![JdbcConnection1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection1.png)
+
+Variable Name for created pool 필드에 datasource 를 입력하고, Database URL 은 jdbc:oracle:thin:@<19c oracle public ip>:1521/pdb1 
+을 입력하고, JDBC Driver class 로는 oracle.jdbc.OracleDriver 를 선택합니다.
+Username 과 Password 란에는 shop 으로 입력합니다. 
 ![JdbcConnection2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection2.png)
 
 
