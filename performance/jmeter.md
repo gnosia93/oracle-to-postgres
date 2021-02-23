@@ -32,7 +32,7 @@ select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ### JMeter 테스트 플랜 작성하기 ###
 
 테스트 플랜을 작성하기 위해서는 먼저 부하를 발생시킬 쓰레드 그룹 생성이 필요합니다. 아래의 그림과 같이 Test Plan 을 우클릭한 후, 쓰레드 그룹을 생성하고,
-에러 발생시 쓰레드를 정지 시키기 위해서 Stop Thread 를 선택한 후, Number of Threads, Ramp-up peroid 값을 1로 설정하고, Loop Count 는 Infinite 로 설정합니다. 여기서 쓰레드의 수는 SQL 을 실행하는 유저수입니다.   
+에러 발생시 쓰레드를 정지 시키기 위해서 Stop Thread 를 선택한 후, Number of Threads, Ramp-up peroid 값을 1로 설정하고, Loop Count 는 Infinite 로 설정합니다. 여기서 쓰레드의 수는 SQL 을 실행하는 유저수에 해당 합니다. 
 
 ![ThreadGroup1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup1.png)
 ![ThreadGroup2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup2.png)
