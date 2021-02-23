@@ -55,6 +55,11 @@ select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ```
 
 
+![JdbcConnection1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection1.png)
+![JdbcConnection2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection2.png)
+
+
+
 
 
 
