@@ -93,10 +93,16 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 
 ### 테스트 실행 및 결과보기 ###
 
+상단메뉴의 녹색 시작 버튼을 눌러서 테스트를 시작합니다. 
 ![TestPlanStart](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/TestPlanStart.png)
 
+아래와 같이 테스트 도중 중간 결과값을 Summary 형태의 테이블로 확인할 수 있습니다. 
+![ResultSummary](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultSummary.png)
+
+아래와 같이 개별 SQL의 응답시간을 실행 순서대로 확인할 수 있습니다. 
 ![ResultTable](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultTable.png)
 
+트리뷰를 이용하여 실행되는 SQL 및 리턴되는 데이터베이스 레코드 또한 확인할 수 있습니다. 
 ![ResultTree1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultTree1.png)
 
 ![ResultTree2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultTree2.png)
