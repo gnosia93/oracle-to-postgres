@@ -94,7 +94,7 @@
 
 ### 7. PostgreSQL 성능 테스트 및 진단 ###
 
-* [PostgreSQL 성능 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md)
+* [JMeter를 활용한 PostgreSQL 성능 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md)
 
 * performance assessment
 
