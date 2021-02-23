@@ -41,7 +41,7 @@ select * from shop.tb_order_detail where order_no = '20210223000032789943';
 Test Plan 을 우클릭한 후 CSV Data Set Config 를 하나 생성합니다. 
 ![CsvConfig1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig1.png)
 
-Filename 필드에는 성능 테스트시 실행할 SQL Query를 담고 있는 파일의 경로를 그림과 가티이 설정하도록 합니다.   
+Filename 필드에는 성능 테스트시 실행할 SQL Query를 담고 있는 파일의 경로를 설정하도록 하고, 
 ![CsvConfig2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig2.png)
 
 
