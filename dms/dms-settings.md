@@ -74,7 +74,7 @@ Target table preparation mode 는 Do nothing 으로, Include LOB columns in repl
 Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 합니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다. [Add new Selection rule] 버튼을 눌러 아래와 같이 Selection rules 를 설정합니다. 
 ![task-mapping1](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-table-mapping.png)
 
-변형룰 설정시 스키마, 테이블, 칼럼을 타켓으로 해서 각각 룰을 만들어 적용해야 합니다. 스키마 명칭은 SHOP 으로 입력하고, Action 값은 lowercase 로 입력하시기 바랍니다.
+변형룰 설정시 스키마, 테이블, 칼럼을 타켓으로 해서 각각 룰을 만들어 적용해야 합니다. 스키마 명칭은 SHOP 으로 입력하고, Action 값은 lowercase 로 입력하시기 바랍니다. Transformation rules 버튼을 토글한 후 [Add transformation rule] 버튼을 클릭하여 아래와 같이 변형룰을 입력합니다. 
 ![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-trans-rule.png)
 
 [Create Task] 버튼을 클릭합니다. 
