@@ -81,7 +81,10 @@ Username 과 Password 란에는 shop 으로 입력합니다.
 ![LIstenerSummaryReport](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/LIstenerSummaryReport.png)
 ![ListnerViewResultTable](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ListnerViewResultTable.png)
 
-이제 남은 일은 실제 부하를 만들어낼 샘플러를 등록하는 일입니다. 아래의 그림에서 보이는 바와 같이 JDBC 샘플러를 등록하도록 합니다. 
+이제 마지막으로 할일은 실제 부하를 만들어낼 샘플러를 등록하는 일입니다. 아래의 그림에서 보이는 바와 같이 JDBC 샘플러를 등록하도록 합니다. 
+
+![SamplerJDBCRequest1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/SamplerJDBCRequest1.png)
+![SamplerJDBCRequest2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/SamplerJDBCRequest2.png)
 
 
 ### 레퍼런스 ###
