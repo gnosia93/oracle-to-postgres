@@ -131,7 +131,7 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 ![ResultTree2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultTree2.png)
 
 
-### PostgreSQl용 테스트 플랜 작성하기 ###
+### PostgreSQl 테스트 플랜 작성 및 실행하기 ###
 
 [SQL 파일]
 
