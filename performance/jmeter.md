@@ -59,6 +59,8 @@ order by 4 desc;
 
 ### 레퍼런스 ###
 
+* http://www.leeladharan.com/running-multiple-sql-queries-in-jmeter
+
 * https://sqa.stackexchange.com/questions/46305/jmeter-how-do-i-run-parallel-jdbc-requests-in-jmeter
 
 * [Proxy 사용법](https://sncap.tistory.com/547)
