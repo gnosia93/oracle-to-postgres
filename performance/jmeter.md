@@ -20,8 +20,22 @@ Jmeter 를 이용하여 테스트하시기 위해서는 postgres 용 JDBC 드라
 
 본 실습에서는 아래의 SQL 을 이용하여 성능 측정을 하도록 하겠습니다. 
 ```
+SQL> select category_id, count(1) from shop.tb_product
+group by category_id
+order by 2 desc;
+
+CATEGORY_ID   COUNT(1)
+----------- ----------
+          2        329
+          4        325
+          1        321
+         13        319
+
+
 
 ```
+
+
 
 ### 아피치 JMeter 설치 ###
 
