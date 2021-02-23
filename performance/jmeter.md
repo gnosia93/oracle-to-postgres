@@ -44,9 +44,15 @@ Test Plan 을 우클릭한 후 CSV Data Set Config 를 하나 생성합니다.
 Filename 필드에는 성능 테스트시 실행할 SQL Query를 담고 있는 파일의 경로를 설정하도록 하고, 
 ![CsvConfig2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig2.png)
 
-
+Variable Names 필드의 값으로는 sqlQuery 를 입력하고, Delimiter 필드에는 ;(세미콜론)을 입력하도록 합니다. 
 ![CsvConfig3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig3.png)
 
+[order-list.sql 파일 내용]
+```
+select * from (select rownum as rn, o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc) where rn <= 10;
+select * from shop.tb_product where product_id = 579;
+select * from shop.tb_order_detail where order_no = '20210223000032789943';
+```
 
 
 
