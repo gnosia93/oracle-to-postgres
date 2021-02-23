@@ -31,7 +31,7 @@ select * from shop.tb_order_detail where order_no = '<your generated order-no>';
 ```
 
 
-### JMeter 테스트 플랜 작성하기 (오라클) ###
+## JMeter 테스트 플랜 작성하기 (오라클) ##
 
 JMeter 처음 실행하면 아무런 설정이 없는 Test Plan를 확인하실 수 있습니다. Test Plan 에 대한 설정을 진행하기 전에 우선 테스트하고자 하는 데이터베이스의 JDBC 드라이버를 JMeter 에 등록해야 합니다.
 여기서 우리는 소스 데이터베이스인 오라클과 타켓 데이터베이스인 PostgreSQL 에 대해 동일 형태의 Test Plan를 생성하여 테스트를 진행할 예정이므로, 아래와 같이 오라클용 및 PostgreSQL 용 JDBC 드라이버를 등록하도록 합니다. JDBC 드라이버를 등록하기 위해서는 로컬 PC에 JDBC 드리어버 jar 파일이 다운로드 되어져 있어야 합니다. 드라이버가 없는 경우 ... 을 참조하여 드라이버를 로컬 PC 로 다운로드 받으십시오.
@@ -108,7 +108,7 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 ![ResultTree2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultTree2.png)
 
 
-### JMeter 테스트 플랜 작성하기 (PostgreSql) ###
+## JMeter 테스트 플랜 작성하기 (PostgreSQL) ##
 
 
 ### 레퍼런스 ###
