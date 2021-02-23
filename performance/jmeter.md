@@ -13,6 +13,9 @@
 * cpu_time/executions 값이 높은 SQL
 
 [성능측정 후보 조회 SQL]
+
+아래 SQL 은 실행횟수 대비 buffer_gets가 높은 SQL 을 찾아내는 쿼리로 만약 cpu_time 기준으로 후보 SQL 을 찾고자 한다면 아래의 order by 절의 buffer_gets/executions 구문을 cpu_time/executions 으로 수정한 후, 해당 쿼리를 실행하면 됩니다. 
+또한 이 예제에선ㄴ SQL 을 실행하는 module 기준으로 쿼리를 필터링 하고는 있지만, SQL 을 실행하는 유저 기준으로도 후보 대상 SQL 을 찾아 볼 수도 있습니다. 
 ```
 select module, sql_fulltext, executions,
     round(buffer_gets/executions, 1) as gets_by_exec,
