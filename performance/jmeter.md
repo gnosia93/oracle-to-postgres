@@ -52,7 +52,7 @@ JMeter 처음 실행하면 아무런 설정이 없는 Test Plan를 확인하실 
 * https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/ojdbc8.jar
 * https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/postgresql-42.2.18.jar
 
-좌측 메뉴의 Test Plan을 선택한 후, 화면하단의 [Browse...] 버튼을 클릭하여 오라클용 ojdbc8.jar 파일과 postgresql 용 postgresql-42.2.18.jar 파일을 로컬 경로에서 선택합니다. 
+좌측 메뉴의 Test Plan을 선택한 후, 화면하단의 [Browse...] 버튼을 클릭하여 PC에 저장된 ojdbc8.jar 파일과 postgresql-42.2.18.jar 파일을 선택합니다. 
 
 ![ThreadGroup1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/TestPlan.png)
 
