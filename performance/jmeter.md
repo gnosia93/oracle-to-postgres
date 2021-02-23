@@ -63,6 +63,15 @@ Username 과 Password 란에는 shop 으로 입력합니다.
 ![JdbcConnection2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection2.png)
 
 
+성능 테스트 결과를 확인하기 위해서 여러개의 리스너를 아래와 같이 등록합니다. 
+
+![JdbcConnection2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection2.png)
+
+![JdbcConnection2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection2.png)
+
+![JdbcConnection2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection2.png)
+
+
 
 
 
