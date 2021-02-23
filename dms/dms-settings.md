@@ -69,7 +69,7 @@ PostgreSQL 클라이언트를 사용하여 테이블에 대한 데이터 입력 
 ![task-config](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-conf.png)
 
 Target table preparation mode 는 Do nothing 으로, Include LOB columns in replication 은 Full LOB mode로 설정한 후, Enable validation a및 Enable CloudWatch logs 를 선택 합니다. 
-![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-setting.png)
+![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-setting1.png)
 
 Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 합니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  
 ![task-mapping1](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-table-mapping.png)
