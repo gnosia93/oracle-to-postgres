@@ -30,9 +30,20 @@ CATEGORY_ID   COUNT(1)
           4        325
           1        321
          13        319
+```
 
-
-
+```
+SQL> select p.product_id, min(p.name) as product_name,
+    o.order_no, min(o.order_no), max(o.order_no),
+    count(1) as order_item_cnt
+from shop.tb_product p, 
+     shop.tb_order o,
+     shop.tb_order_detail d
+where p.product_id = d.product_id
+  and o.order_no = d.order_no
+  and p.category_id = 2
+group by p.product_id, o.order_no  
+order by 4 desc;  
 ```
 
 
