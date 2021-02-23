@@ -33,9 +33,9 @@ order by buffer_gets/executions desc, executions desc;
 ```
 
 본 실습에서는 아래의 3개의 SQL 을 이용하여 성능 측정을 하도록 하겠습니다.  
-성능 측정 대상 SQL 은 쇼핑몰의 전형 적인 쿼리 패턴중 사용자별 주문내역을 조회할때 실행되는 SQL로 아래의 경우 
-회원ID 가 user100 인 사용자의 주문 이력(페이징 처리)과 579번 상품에 대한 상세 정보 조회 및 특정 주문번호에 대한 세부 주문 상품 조회로 구성됩니다.   
-세번째 SQL 의 경우 order_no 는 여러분들이 생성한 주문번호 중 아무거나 하나를 사용하기 바랍니다. 
+성능 측정 대상 SQL 은 쇼핑몰의 전형적인 쿼리 패턴중 사용자별 주문내역을 조회할때 실행되는 SQL의 간소화된 버전입니다.  
+회원ID 가 user100 인 사용자의 주문 이력(페이징 처리)과 579번 상품에 대한 상세 정보 조회 및 특정 주문의 세부 상품 구성 목록으로 구성되어 있으며,   
+세번째 SQL 의 경우 order_no 는 여러분들이 생성한 주문번호 중 아무거나 하나를 입력하기시 바랍니다. 
 
 ```
 select * from (select rownum as rn, o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc) where rn <= 10;
