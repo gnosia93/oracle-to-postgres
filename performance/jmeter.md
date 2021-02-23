@@ -32,8 +32,8 @@ select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ### JMeter 테스트 플랜 설정하기 ###
 
 * ThreadGroup 생성
-[ThreadGroup1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup1.png)
-[ThreadGroup2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup2.png)
+![ThreadGroup1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup1.png)
+![ThreadGroup2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup2.png)
 
 
 
