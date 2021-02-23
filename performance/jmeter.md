@@ -68,15 +68,12 @@ Variable Name for created pool 필드에 datasource 를 입력하고, Database U
 Username 과 Password 란에는 shop 으로 입력합니다. 
 ![JdbcConnection2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection2.png)
 
-아파치 Jmeter 는 성능 테스트 결과를 확인하기 위한 여러가지 도구를 Listner 라는 카테고리로 지원해 주고 있습니다. 여기서는 여러개의 리스너중 Summary Report 와 ViewResultTable을 등록합니다. 
+아파치 Jmeter 는 성능 테스트 결과를 확인하기 위한 도구를 리스너(Listener)라는 형태로 지원해 주고 있습니다. 여기서는 여러개의 리스너중 Summary Report 와 ViewResultTable을 사용하도록 하겠습니다.
+아래 그림에서 보이는 바와 같이 두개의 리스너를 차례대로 등록하도록 합니다. 
 ![LIstenerSummaryReport](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/LIstenerSummaryReport.png)
 ![ListnerViewResultTable](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ListnerViewResultTable.png)
 
-
-
-
-
-
+이제 남은 일은 실제 부하를 만들어낼 샘플러를 등록하는 일입니다. 아래의 그림에서 보이는 바와 같이 JDBC 샘플러를 등록하도록 합니다. 
 
 
 ### 레퍼런스 ###
