@@ -91,22 +91,15 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 ![SamplerJDBCRequest2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/SamplerJDBCRequest2.png)
 
 
-### JMeter 테스트 실행하기 ###
+### 테스트 실행 및 결과보기 ###
+
+![TestPlanStart](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/TestPlanStart.png)
+
+
 
 
 
 ### 레퍼런스 ###
 
-* http://www.leeladharan.com/running-multiple-sql-queries-in-jmeter
-
-* https://sqa.stackexchange.com/questions/46305/jmeter-how-do-i-run-parallel-jdbc-requests-in-jmeter
-
-* [Proxy 사용법](https://sncap.tistory.com/547)
-
-* [플러그인](https://huistorage.tistory.com/89?category=723808)
-
-* https://stackoverflow.com/questions/47457105/class-has-been-compiled-by-a-more-recent-version-of-the-java-environment
-
 * https://jmeter.apache.org/usermanual/build-db-test-plan.html
 
-* https://jongsma.wordpress.com/2019/08/08/oracle-stress-testing-using-apache-jmeter/
