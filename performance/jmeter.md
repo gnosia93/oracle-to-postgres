@@ -95,8 +95,11 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 
 ![TestPlanStart](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/TestPlanStart.png)
 
+![ResultTable](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultTable.png)
 
+![ResultTree1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultTree1.png)
 
+![ResultTree2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultTree2.png)
 
 
 ### 레퍼런스 ###
