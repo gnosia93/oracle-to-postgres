@@ -37,15 +37,10 @@ select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ![ThreadGroup1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup1.png)
 ![ThreadGroup2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup2.png)
 
-하나의 쓰레드가 순차적으로 여러개의 SQL 을 실행하기 위해서는 CSV Data Set Config 설정이 필요합니다. 아래의 그림에서 보이는 바와 같이  
-Test Plan 을 우클릭한 후 CSV Data Set Config 를 하나 생성합니다. 
-![CsvConfig1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig1.png)
 
-Filename 필드에는 성능 테스트시 실행할 SQL Query를 담고 있는 파일의 경로를 설정하도록 하고, 
-![CsvConfig2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig2.png)
-
-Variable Names 필드의 값으로는 sqlQuery 를 입력하고, Delimiter 필드에는 ;(세미콜론)을 입력하도록 합니다. 
-![CsvConfig3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig3.png)
+이번 테스트 플랜에서는 하나의 쓰레드가 여러개의 SQL을 순차적으로 실행할 예정입니다. 이는 실제 프로덕션 환경에서 발생하는 트래픽과 거의 흡사한 형태의 테스트를
+가능하게 하는 것으로, 여러분의 PC 에 order-list.sql 이라는 이름의 파일을 만들고, 해당 파일안에 아래의 SQL 을 입력합니다.
+SQL 문장 입력시 주의할 점은 모든 SQL 은 세미콜론으로 끝나야 하며, 하나의 SQL는 한 줄로 기술되어야 하고, 줄과 줄 사이에는 공백이 있어서는 안됩니다. 
 
 [order-list.sql 파일 내용]
 ```
@@ -54,7 +49,18 @@ select * from shop.tb_product where product_id = 579;
 select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ```
 
-테스트 대상 데이터베이스의 접속 정보를 설정하기 위해서 Thread Group 를 선택한 후 우클릭해서 JDBC Connection Configuration 을 선택합니다. 
+아파치 Jmeter 에서 하나의 쓰레드가 순차적으로 여러개의 SQL 을 순차적으로 실행하기 위해서는 CSV Data Set Config 설정이 필요합니다. 아래의 그림에서 보이는 바와 같이  
+Test Plan 을 우클릭한 후 CSV Data Set Config 를 하나 생성합니다. 
+![CsvConfig1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig1.png)
+
+Filename 필드에는 위에서 생성해 놓은 SQL Query를 담고 있는 파일의 경로를 설정하도록 하고, 
+![CsvConfig2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig2.png)
+
+Variable Names 필드의 값으로는 sqlQuery 를 입력하며, Delimiter 필드에는 ;(세미콜론)을 입력하도록 합니다. 
+![CsvConfig3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/CsvConfig3.png)
+
+다음 단계는 테스트 대상 데이터베이스를 등록하는 것입니다. 우선 오라클 데이터베이스를 먼저 등록한 후, 오라클 데이터베이스에 대한 성능 테스트를 진행한 후, 익숙해 지면
+postgreSQL 에 대해 등록하도록 하겠습니다. 테스트 대상 데이터베이스의 접속 정보를 설정하기 위해서 Thread Group 를 선택한 후 우클릭해서 JDBC Connection Configuration 을 선택합니다. 
 ![JdbcConnection1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection1.png)
 
 Variable Name for created pool 필드에 datasource 를 입력하고, Database URL 은 jdbc:oracle:thin:@<19c oracle public ip>:1521/pdb1 
@@ -62,11 +68,8 @@ Variable Name for created pool 필드에 datasource 를 입력하고, Database U
 Username 과 Password 란에는 shop 으로 입력합니다. 
 ![JdbcConnection2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection2.png)
 
-
-성능 테스트 결과를 확인하기 위해서 여러개의 리스너중 Summary Report 와 ViewResultTable을 등록합니다. 
-
+아파치 Jmeter 는 성능 테스트 결과를 확인하기 위한 여러가지 도구를 Listner 라는 카테고리로 지원해 주고 있습니다. 여기서는 여러개의 리스너중 Summary Report 와 ViewResultTable을 등록합니다. 
 ![LIstenerSummaryReport](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/LIstenerSummaryReport.png)
-
 ![ListnerViewResultTable](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ListnerViewResultTable.png)
 
 
