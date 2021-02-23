@@ -131,8 +131,13 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 ![ResultTree2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ResultTree2.png)
 
 
-### JMeter 테스트 플랜 작성하기 (PostgreSQL) ###
+### PostgreSQl용 테스트 플랜 작성하기 ###
 
+[SQL 파일]
+
+[그림1]
+
+[그림2] 변경.
 
 ### 레퍼런스 ###
 
