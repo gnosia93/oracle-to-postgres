@@ -48,7 +48,6 @@ select * from shop.tb_order_detail where order_no = '20210223000032789943';
 
 
 
-
 ### 레퍼런스 ###
 
 * http://www.leeladharan.com/running-multiple-sql-queries-in-jmeter
