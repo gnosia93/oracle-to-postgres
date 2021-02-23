@@ -135,4 +135,6 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 
 * https://jmeter.apache.org/usermanual/build-db-test-plan.html
 
+* https://story.stevenlab.io/207
+
 * https://blog.naver.com/PostView.nhn?blogId=raonsql&logNo=220988925526&categoryNo=31&parentCategoryNo=0&viewDate=&currentPage=1&postListTopCurrentPage=1&from=search
