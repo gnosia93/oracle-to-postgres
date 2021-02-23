@@ -71,7 +71,7 @@ PostgreSQL 클라이언트를 사용하여 테이블에 대한 데이터 입력 
 Target table preparation mode 는 Do nothing 으로, Include LOB columns in replication 은 Full LOB mode로 설정한 후, Enable validation a및 Enable CloudWatch logs 를 선택 합니다. 
 ![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-setting1.png)
 
-Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 합니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  
+Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 합니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다. [Add new Selection rule] 버튼을 눌러 아래와 같이 Selection rules 를 설정합니다. 
 ![task-mapping1](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-table-mapping.png)
 
 변형룰 설정시 스키마, 테이블, 칼럼을 타켓으로 해서 각각 룰을 만들어 적용해야 합니다. 스키마 명칭은 SHOP 으로 입력하고, Action 값은 lowercase 로 입력하시기 바랍니다.
