@@ -81,9 +81,11 @@ Username 과 Password 란에는 shop 으로 입력합니다.
 ![LIstenerSummaryReport](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/LIstenerSummaryReport.png)
 ![ListnerViewResultTable](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ListnerViewResultTable.png)
 
-이제 마지막으로 할일은 실제 부하를 만들어낼 샘플러를 등록하는 일입니다. 아래의 그림에서 보이는 바와 같이 JDBC 샘플러를 등록하도록 합니다. 
+이제 마지막으로 할일은 실제 부하를 만들어낼 샘플러를 등록하는 일입니다. 아래의 그림에서 보이는 바와 같이 Thread Group 을 선택한 후, 우클릭하여 JDBC Request 샘플러를 하나 등록하도록 합니다. 기본적으로 하나의 JDBC Request 샘플러는 하나의 SQL 만 실행하도록 구현되어 있으나, 이 예제에서는 CSV Data Set 를 이용하여 여러개의 SQL 을 하나의 JDBC Request 샘플러가 실행하도록 설정하였습니다. 
 
 ![SamplerJDBCRequest1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/SamplerJDBCRequest1.png)
+
+JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} 라는 텍스트 값을 입력하도록 합니다. 
 ![SamplerJDBCRequest2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/SamplerJDBCRequest2.png)
 
 
