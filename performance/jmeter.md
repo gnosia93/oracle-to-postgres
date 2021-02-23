@@ -33,7 +33,12 @@ select * from shop.tb_order_detail where order_no = '<your generated order-no>';
 
 ### JMeter 테스트 플랜 작성하기 ###
 
-테스트 플랜을 작성하기 위해서는 먼저 부하를 발생시킬 쓰레드 그룹 생성이 필요합니다. 아래의 그림과 같이 Test Plan 을 우클릭한 후, 쓰레드 그룹을 생성하고,
+JMeter 처음 실행하면 아무런 설정이 없는 Test Plan를 확인하실 수 있습니다. Test Plan 에 대한 설정을 진행하기 전에 우선 테스트하고자 하는 데이터베이스의 JDBC 드라이버를 아래와 같이 등록해야 합니다.
+여기서 우리는 소스 데이터베이스인 오라클과 타켓 데이터베이스인 PostgreSQL 에 대해 동일한 Test Plan를 생성하여 테스트를 진행할 예정이므로, 아래와 같이 오라클용 및 PostgreSQL 용 JDBC 드라이버를 등록하도록 합니다. 
+
+![ThreadGroup1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/TestPlan.png)
+
+테스트 플랜 설정의 첫번째 단계는 부하를 발생시킬 쓰레드 그룹 생성하는 일입니다. 아래의 그림과 같이 Test Plan 을 우클릭하여, 쓰레드 그룹을 생성하고,
 에러 발생시 쓰레드를 정지 시키기 위해서 Stop Thread 를 선택한 후, Number of Threads, Ramp-up peroid 값을 1로 설정하고, Loop Count 는 Infinite 로 설정합니다. 여기서 쓰레드의 수는 SQL 을 실행하는 유저수에 해당 합니다. 
 
 ![ThreadGroup1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/ThreadGroup1.png)
