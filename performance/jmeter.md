@@ -45,6 +45,7 @@ select * from shop.tb_order_detail where order_no = '<your generated order-no>';
 
 ### JMeter 이해하기 ###
 
+Apache JMeter는 웹어플리케이션의 성능 테스트를 위해서 만들어진 100% 순수 자바 프로그램으로, 단위/성능/스트레스 테스트 등 많은 곳에서 활용될 수 있습니다. JMeter 가 지원하는 프로토콜(Protocol)은 TCP, HTTP(S), FTP, JDBC, LDAP, SMTP, SAP/XML, RPC 등을 지원하고 있으며, GUI 형태 또는 CLI 기반으로 어플리케이션의 성능 테스트에 활용됩니다.
 
 
 ### JMeter 테스트 플랜 작성하기 ###
