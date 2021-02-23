@@ -1,4 +1,4 @@
-*DMS 은 데이터와 PK 및 UK 정보를 옮겨준다. 하나의 테이블에 UK 가 여러개 더라도 하나만 옮긴다. 기타 제약조건이나 코드성 오브젝트에 대해서는 이관해 주지 않는다. 그래서 이기종간 데이터베이스 이관시 SCT 를 사용해야 다.* 
+*DMS 은 데이터와 PK 및 UK 정보를 옮겨준다. 하나의 테이블에 UK 가 여러개 더라도 하나만 옮긴다. 기타 제약조건이나 코드성 오브젝트에 대해서는 이관해 주지 않는다. 그래서 이기종간 데이터베이스 이관시 SCT 를 사용해야 한다.* 
 ## DMS 설정하기 ##
 
 DMS 는 AWS 가 제공하는 CDC 방식의 데이터 복제 전용서비스로 동종 또는 이기종 데이터베이스 간 또는 S3 및 다이나모DB 와 같은 저장 스토리지로의 데이터 복제 기능을 지원하는 서비스로 아래와 같이 3가지의 요소로 구성이 되어 있습니다.
@@ -68,7 +68,7 @@ postgresql 클라이언트를 사용하여 테이블에 대한 데이터 입력 
 태스크 이름을 mig-task-19c 으로 입력하고, tf-dms-19c를 리플리케이션 인스턴스로 선택한 후, 엔드포인트를 설정하고, Migration existing data and relicate ongoing changes 를 마이그레이션 타입으로 선택합니다. 
 ![task-config](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-conf.png)
 
-Full LOB mode 를 선택하고, validation, CloudWatch logs 를 활성화 합니다. 
+Target table preparation mode 는 Do nothing 으로, Include LOB columns in replication 은 Full LOB mode로 설정한 후, Enable validation a및 Enable CloudWatch logs 를 선택 합니다. 
 ![task-setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-setting.png)
 
 Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 합니다. 소문자로 표기하는 경우 테이블 복제가 이뤄지지 않고 복제 대상이 없다는 에러가 발생하게 되므로 주의가 필요합니다.  
