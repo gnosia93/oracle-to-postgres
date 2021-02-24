@@ -9,6 +9,8 @@
 
 * https://browndwarf.tistory.com/51
 
+* https://brownbears.tistory.com/category/DB/PostgreSQL
+
 ## CRUD / Index 생성 ##
 
 
