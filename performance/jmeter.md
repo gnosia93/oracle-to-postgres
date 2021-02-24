@@ -98,7 +98,8 @@ postgreSQL 에 대해 등록하도록 하겠습니다. 테스트 대상 데이�
 
 Variable Name for created pool 필드에 datasource 를 입력하고, Database URL 은 jdbc:oracle:thin:@<19c oracle public ip>:1521/pdb1 
 을 입력하고, JDBC Driver class 로는 oracle.jdbc.OracleDriver 를 선택합니다.
-Username 과 Password 란에는 shop 으로 입력합니다. 
+Username 과 Password 란에는 shop 으로 입력합니다.   
+[그림 #1]
 ![JdbcConnection2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection2.png)
 
 아파치 Jmeter 는 성능 테스트 결과를 확인하기 위한 도구를 리스너(Listener)라는 형태로 지원해 주고 있습니다. 여기서는 여러개의 리스너중 Summary Report 와 ViewResultTable을 사용하도록 하겠습니다.
@@ -137,7 +138,7 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 
 [order-list.sql]
 ```
-select * from (selselect o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc limit 10 offset 0;
+select o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc limit 10 offset 0;
 select * from shop.tb_product where product_id = 579;
 select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ```
