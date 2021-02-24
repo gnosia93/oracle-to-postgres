@@ -75,7 +75,7 @@ JMeter 처음 실행하면 아무런 설정이 없는 Test Plan를 확인하실 
 가능하게 하는 것으로, 여러분의 PC 에 order-list.sql 이라는 이름의 파일을 만들고, 해당 파일안에 아래의 SQL 을 입력합니다.
 SQL 문장 입력시 주의할 점은 모든 SQL 은 세미콜론으로 끝나야 하며, 하나의 SQL는 한 줄로 기술되어야 하고, 줄과 줄 사이에는 공백이 있어서는 안됩니다. 
 
-[order-list.sql 파일 내용]
+[order-list.sql]
 ```
 select * from (select rownum as rn, o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc) where rn <= 10;
 select * from shop.tb_product where product_id = 579;
@@ -135,7 +135,12 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 
 ### PostgreSQl 테스트 플랜 작성 및 실행하기 ###
 
-[SQL 파일]
+[order-list.sql]
+```
+select * from (select rownum as rn, o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc) where rn <= 10;
+select * from shop.tb_product where product_id = 579;
+select * from shop.tb_order_detail where order_no = '20210223000032789943';
+```
 
 [그림1]
 
