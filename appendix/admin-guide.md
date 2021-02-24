@@ -188,6 +188,8 @@ select * from pg_stat_activity order by query_start asc;
 
 ## 레퍼런스 ##
 
+* https://www.db-book.com/db7/online-chapters-dir/32.pdf
+
 * https://waspro.tistory.com/146?category=826974
 
 * https://stricky.tistory.com/367
