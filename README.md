@@ -90,15 +90,15 @@
 * [마이그레이션 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
-
-
 ### 7. PostgreSQL 성능 테스트 및 진단 ###
 
 * [JMeter를 활용한 PostgreSQL 성능 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md)
 
 * [Slow Query 확인하기](https://github.com/gnosia93/postgres-terraform/blob/main/performance/slow-query.md)
 
-* performance assessment / tunning
+* [성능 진단/평가](https://github.com/gnosia93/postgres-terraform/blob/main/performance/performance-assessement.md)
+
+
 
 ## Appendix ##
 
