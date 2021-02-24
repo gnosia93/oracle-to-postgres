@@ -107,13 +107,6 @@
 * [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/admin-guide.md)
 
 
-----
-
-1. postgres 소개 
-2. dms 소개 / 실습소개
-3. 개인별 실습
-
-
 
 
 
