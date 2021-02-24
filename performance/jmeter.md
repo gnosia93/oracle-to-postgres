@@ -136,16 +136,21 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 
 ### PostgreSQl 테스트 플랜 작성 및 실행하기 ###
 
+PostgreSQL 용 테스트 플랜을 변경하기 위해서는 실행되는 order-list.sql 의 내용 변경 및 JDBC Connection 변경이 필요하다. 
+
 [order-list.sql]
 ```
 select o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc limit 10 offset 0;
 select * from shop.tb_product where product_id = 579;
 select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ```
+PostgreSQL으 경우 limit 와 offset 을 이용하여 오라클의 ROWNUM 를 이용한 페이징 처리를 대체할 수 있다. offset 은 레코드의 시작위치이고, limit 은 해당 위치에서 패치할 레코드의 갯수이다. 
 
-[그림1]
+[그림 #1] 의 JDBC Connection Configuration 화면에서 Database URL 과 JDBC Driver Class 값을 아래와 같이 수정한다.
 
-[그림2] 변경.
+![JdbcConnection3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/JdbcConnection3.png)
+
+위와 같이 두가지 항목에 대해 수정한 후, 메뉴 상단의 Start 버튼을 클릭하여 PostgreSQL 에 대한 SQL 성능 테스트를 수행한다.
 
 ### 레퍼런스 ###
 
