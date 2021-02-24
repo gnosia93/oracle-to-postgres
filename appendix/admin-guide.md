@@ -183,7 +183,7 @@ from information_schema.triggers;
 
 ```
 select * from pg_stat_activity order by query_start asc;
-``
+```
 
 
 ## 레퍼런스 ##
