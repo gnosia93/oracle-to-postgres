@@ -137,7 +137,7 @@ JDBC Request 샘플러를 새롭게 등록한 후, Query 섹션에 ${sqlQuery} �
 
 [order-list.sql]
 ```
-select * from (select rownum as rn, o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc) where rn <= 10;
+select * from (selselect o.* from shop.tb_order o where member_id = 'user100' order by order_ymdt desc limit 10 offset 0;
 select * from shop.tb_product where product_id = 579;
 select * from shop.tb_order_detail where order_no = '20210223000032789943';
 ```
