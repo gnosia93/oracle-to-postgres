@@ -3,7 +3,7 @@
 
 
 
-### RDS slow 쿼리 확인하기 ###
+### RDS Slow Query 확인하기 ###
 
 * https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-postgresql-query-logging/
 
