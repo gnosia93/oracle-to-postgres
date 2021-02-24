@@ -179,6 +179,13 @@ select event_object_schema as table_schema,
 from information_schema.triggers;
 ```
 
+### 실행중인 SQL 조회 ###
+
+```
+select * from pg_stat_activity order by query_start asc;
+``
+
+
 ## 레퍼런스 ##
 
 * https://waspro.tistory.com/146?category=826974
