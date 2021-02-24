@@ -85,8 +85,13 @@ https://jmeter.apache.org/download_jmeter.cgi 로 방문하여 아파치 jmeter 
 
 ![jmeter](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/apache-jmeter.png)
 
-터미널 상에서 아래와 같이 다운로드 받아 설치된 아파치 jmeter 를 실행해 봅니다. 
 
+jmeter 를 실행하기 전에 bin 디렉토리 밑에 있는 jmeter.sh 파일에 다음 항목 추가하여 JVM 에 할당되는 메모리 사이즈를 1GB 로 증가시키고, 출력되는 언어를 영어로 수정합니다. (jmeter.sh 파일의 33번째 라인에 추가) 
+```
+export JVM_ARGS="-Duser.language=en -Duser.region=EN -Xms1g -Xmx1g"
+```
+
+터미널 상에서 아래와 같이 다운로드 받아 설치된 아파치 jmeter 를 실행해 봅니다. 
 ```
 $ cd apache-jmeter-5.4.1
 $ bin/jmeter.sh 
