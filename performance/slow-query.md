@@ -194,8 +194,9 @@ pg_stat_statements 뷰는 admin 권한을 가지고 있는 유저만이 접근 �
 
 ![slowquery3-admin1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-admin1.png)
 
-Create-Server 
+Create-Server 팝업창의 General 탭의 Name 필드에 그림처럼 tf-postgres-19c-admin 로 입력한 후, 
 ![slowquery3-admin2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-admin2.png)
+Connection 탭으로 이동하여 Host name / address 필드에는 여러분들의 tf-postgres-19c EC2 인스턴스의 공인 IP를, Password 필드에는 어드민 유저 명칭과 동일하게 postgres 로 입력한 후, Save 버튼을 눌러서 설정을 저장하도록 합니다. 
 ![slowquery3-admin3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-admin3.png)
 
 
