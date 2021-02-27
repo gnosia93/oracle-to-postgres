@@ -124,8 +124,24 @@ drwx------ 20 postgres postgres    4096 Feb 27 01:21 ..
 
 ### auto_explain으로 실행 계획 확인 ###
 
+슬로우 쿼리 로그의 경우 해당 SQL의 실행계획 정보는 출력해 주지 않는다. 쿼리 로그와 더불어 실행계획까지 출력하고자 하는 경우 postgres.conf 설정 파일에 아래 내용을 추가하고,
+설정 파일을 reload 하도록 한다. 
 
+```
+-bash-4.2$ vi postgresql.conf 
+session_preload_libraries = 'auto_explain'
 
+-bash-4.2$ psql 
+psql (11.5)
+Type "help" for help.
+
+postgres=# select pg_reload_conf();
+ pg_reload_conf 
+----------------
+ t
+(1 row)
+postgres=# exit
+```
 
 ### 쿼리 실행 통계(pg_stat_statements)  ###
 
