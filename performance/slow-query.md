@@ -190,9 +190,11 @@ postgres=# alter user postgres with password 'postgres';
 postgres=# exit
 ```
 
-pg_stat_statements 뷰는 admin 권한을 가지고 있는 유저만이 접근 가능한 시스템 뷰입니다. pgadmin 툴에서 아래와 같이 postgres 어드민 유저용 connection 을 생성한 후, postgres 유저로 로그인 합니다.
+pg_stat_statements 뷰는 admin 권한을 가지고 있는 유저만이 접근 가능한 시스템 뷰입니다. pgadmin 툴에서 아래와 같이 postgres 어드민 유저용 connection 을 생성한 후, postgres 유저로 로그인 합니다. 새로운 connection 을 만들기 위해서는 좌측 메뉴의 Servers(1)를 선택한 후, 팝업메유에서 Create -> Server 순으로 선택합니다.
 
 ![slowquery3-admin1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-admin1.png)
+
+Create-Server 
 ![slowquery3-admin2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-admin2.png)
 ![slowquery3-admin3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-admin3.png)
 
