@@ -236,6 +236,7 @@ where s.userid = u.usesysid
 
 ![slowquery3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3.png)
 
+pg_stat_statements 뷰에 대한 상세한 정보를 https://www.postgresql.org/docs/9.4/pgstatstatements.html 에서 확인하실 수 있습니다. 
 
 
 ### 세션 SQL 관찰 ###
@@ -247,12 +248,3 @@ FROM pg_stat_activity
 WHERE state = 'active' AND current_timestamp - query_start > '3 sec'
 ORDER BY 1 DESC;
 ```
-
-
-### 레퍼런스 ###
-
-* [(PostgreSQL) 슬로우쿼리를 잡아내는 3가지 방법](https://americanopeople.tistory.com/288)
-
-* https://aws.amazon.com/ko/blogs/database/optimizing-and-tuning-queries-in-amazon-rds-postgresql-based-on-native-and-external-tools/
-
-* https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.PostgreSQL.CommonDBATasks.html
