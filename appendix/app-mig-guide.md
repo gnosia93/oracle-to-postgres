@@ -1,5 +1,7 @@
 -- https://info.crunchydata.com/blog/migrating-from-oracle-to-postgresql-questions-and-considerations
 
+-- https://severalnines.com/database-blog/migrating-oracle-postgresql-what-you-should-know
+
 ## 어플리케이션 변환 가이드 ##
 
 Oracle 데이터베이스를 PostgreSQL 로 변환시 어플리케이션 영역에서 고려가 필요한 내용에 대해 정리합니다. 
