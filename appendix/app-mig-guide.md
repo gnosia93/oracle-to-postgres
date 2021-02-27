@@ -162,6 +162,16 @@ select order_no, order_price from shop.tb_order ) as t;
 - https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_ExtensionPack.html
 - https://github.com/orafce/orafce
 
+[oracle]
+```
+sql> 
+```
+
+[postgresql]
+```
+psql> select aws_oracle_ext.add_months(date '2021-02-01', 1);
+```
+
 ### 내장 함수 ###
 
 - https://blog.daum.net/initdb/29
