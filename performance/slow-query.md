@@ -234,7 +234,7 @@ where s.userid = u.usesysid
 order by total_time / calls desc;
 ```
 
-![slowquery3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3.png)
+![slowquery4](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery4.png)
 
 pg_stat_statements 뷰에 대한 상세한 정보를 https://www.postgresql.org/docs/9.4/pgstatstatements.html 에서 확인하실 수 있습니다. 
 
