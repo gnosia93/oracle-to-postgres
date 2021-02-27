@@ -159,16 +159,6 @@ select order_no, order_price from shop.tb_order ) as t;
 
 ### AWS SCT extension pack ###
 
-The AWS SCT Extension Pack includes the following components:
-
-DB schema – Includes SQL functions, procedures, and tables for emulating some OLTP and OLAP objects (for example, sequence) or unsupported built-in-functions from the source database. This schema is named in the format aws_<database engine name>_ext.
-
-Custom Python library (for select OLAP databases) – Includes a set of Python functions that emulate unsupported built-in database functions. Use this library when you migrate from one of the supported databases to Amazon Redshift.
-
-For more information on this library, see Using the custom Python library for the AWS SCT extension pack.
-
-AWS Lambda functions (for select OLTP databases) – Includes AWS Lambda functions that emulate complex database functionality, such as job scheduling and sending emails.
-
 - PostgreSQL용 오라클 함수 구현체 
 - SCT 에 의해 타겟 데이터베이스의 aws_oracle_ext 스키마에 설치됨.
 - 오라클 프로시저 및 함수 등과 같은 코드성 오브젝트 변환시 사용됨.
@@ -193,6 +183,7 @@ psql> select aws_oracle_ext.add_months('2021-02-01', 1);
 
 psql> select aws_oracle_ext.add_months(date '2021-02-01', 1);
 ```
+![sct_extpack](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/app_sct_extpack.png)
 
 
 
