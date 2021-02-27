@@ -7,6 +7,9 @@ PostgreSQL 에서 슬로우 쿼리를 확인하는 방법은 아래와 같이 3�
 * auto_explain으로 실행 계획 확인
 * 쿼리 실행 통계(pg_stat_statements)
 
+아마존 RDS 를 사용하는 경우 [본 링크](https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-postgresql-query-logging/
+)를 통해서 슬로우 쿼리를 확인할 수 있는 방법을 배우실 수 있습니다.  
+
 
 ### Slow Query 로그 ###
 
@@ -131,11 +134,7 @@ drwx------ 20 postgres postgres    4096 Feb 27 01:21 ..
 
 
 
-### RDS Slow Query 확인하기 ###
 
-RDS 를 사용하는 경우 아래의 링크의 내용을 참고하면 슬로우 쿼리를 확인하실 수 있습니다. 
-
-https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-postgresql-query-logging/
 
 
 
