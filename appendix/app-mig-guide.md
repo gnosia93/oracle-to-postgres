@@ -169,7 +169,8 @@ SELECT a1.name1, a2.name2
 
 
 ### DELETE ###
-- ..
+
+- PostgreSQL 의 DELETE 문장은 FROM 키워드를 포함한다.
 
 [oracle]
 ```
@@ -178,7 +179,7 @@ sql> DELETE table_name WHERE column_name = 'Col_value';
 
 [postgresql]
 ```
-psql> DELETE table_name WHERE column_name = 'Col_value';
+psql> DELETE FROM table_name WHERE column_name = 'Col_value';
 ```
 
 
