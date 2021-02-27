@@ -9,6 +9,37 @@
 - Identity를 이용하여 ROWID 칼럼 생성.
 
 
+[oracle]
+```
+sql> select rowid, order_no, order_price from shop.tb_order;
+ROWID              ORDER_NO             ORDER_PRICE
+------------------ -------------------- -----------
+AAAR1oAAOAAAV/jAAA 20210202000000000061        2000
+AAAR1oAAOAAAV/jAAB 20210202000000000068        4000
+AAAR1oAAOAAAV/jAAC 20210202000000000060        5000
+AAAR1oAAOAAAV/jAAD 20210202000000000074        5000
+AAAR1oAAOAAAV/jAAE 20210202000000000087        4000
+```
+[postgresql]
+```
+psql> create table tb_order2
+(
+   order_no       varchar(20) not null primary key,
+   order_price    decimal(19,3) not null,
+   rowid	  bigint GENERATED ALWAYS AS IDENTITY
+);
+
+psql> insert into tb_order2(order_no, order_price) 
+select order_no, order_price from shop.tb_order;
+
+psql> select ROWID, order_no, order_price from tb_order2;
+```
+
+### ROWNUM, LIMIT & OFFSET ###
+
+- Oracle 에서 ROWNUM은 쿼리의 결과에 1부터 하나씩 값을 증가하여 출력 가상 컬럼(웹 페이징 처리시 사용).
+- PostgreSQL 의 경우 LIMIT 와 OFFSET 을 사용하여 동일한 결과를 출력함.
+- LIMIT 는 출력할 갯수 이며, OFFSET 시작 위치(페이지번호)를 나타냄.
 
 [oracle]
 ```
@@ -23,19 +54,7 @@ AAAR1oAAOAAAV/jAAE 20210202000000000087        4000
 ```
 [postgresql]
 ```
-create table tb_order2
-(
-   order_no       varchar(20) not null primary key,
-   order_price    decimal(19,3) not null,
-   rowid	  bigint GENERATED ALWAYS AS IDENTITY
-);
-
-insert into tb_order2(order_no, order_price) 
-select order_no, order_price from shop.tb_order;
-
-select ROWID, order_no, order_price from tb_order2;
-```
-
+psql> create table tb_order2
 
 
 
