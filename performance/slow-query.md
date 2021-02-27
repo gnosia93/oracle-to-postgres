@@ -1,6 +1,6 @@
 ## Slow Query 확인하기 ##
 
-PostgreSQL 에서 슬로우 쿼리를 확이한느 방법은 아래와 같이 3가지의 방법이 있습니다. 
+PostgreSQL 에서 슬로우 쿼리를 확인하는 방법은 아래와 같이 3가지의 방법이 있습니다. 
 
 * Slow Query 로그 
 * auto_explain으로 실행 계획 확인
