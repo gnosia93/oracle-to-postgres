@@ -1,4 +1,21 @@
+## 어플리케이션 변환 가이드 ##
 
+
+
+### ROWID, CTID and Identity columns ###
+
+
+
+
+
+
+
+
+
+
+
+
+-------------
 
 * https://www.pgcon.org/2008/schedule/track/Tutorial/62.en.html
 ------
