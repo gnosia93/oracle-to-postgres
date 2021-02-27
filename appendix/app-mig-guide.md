@@ -123,6 +123,11 @@ psql> select currval('shop.seq_order_order_id');
 ```
 ```
 
+### 내장 함수 ###
+
+- https://blog.daum.net/initdb/29
+
+
 
 -------------
 
