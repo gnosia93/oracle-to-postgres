@@ -225,13 +225,13 @@ select 'comment', count(1) from tb_comment;
 ```
 ![slowquery3-exec-sql](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-exec-sql.png)
 
-shop 유저에 의해 실행된 SQL 들의 통계정보를 조회하기 위해서 pg_stat_statements 뷰를 아래와 같이 조회합니다. 
+postgres 어드민 유저로 로그인하여 shop 유저에 의해 실행된 SQL 들의 통계정보를 조회 아래와 같이 조회합니다. 
 ```
-select s.* 
+select s.*
 from pg_stat_statements s, pg_shadow u
 where s.userid = u.usesysid
-  and s.query like '%tb_order%'
-  and u.usename = 'shop';
+  and u.usename = 'shop'
+order by total_time / calls desc;
 ```
 
 ![slowquery3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3.png)
