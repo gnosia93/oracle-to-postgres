@@ -159,6 +159,8 @@ select order_no, order_price from shop.tb_order ) as t;
 
 ### AWS SCT extension pack ###
 
+- 오라클 내장함수를 사용할 수 있도록 하는 PL/SQL 패키지임.
+- SCT 에 의해 aws_oracle_ext 스키마로 설치됨.
 - https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_ExtensionPack.html
 - https://github.com/orafce/orafce
 
@@ -171,6 +173,8 @@ sql>
 ```
 psql> select aws_oracle_ext.add_months(date '2021-02-01', 1);
 ```
+
+
 
 ### 내장 함수 ###
 
