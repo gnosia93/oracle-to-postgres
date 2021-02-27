@@ -217,13 +217,13 @@ group by b.product_id
 order by b.product_id 
 limit 10 offset 0;
 
-
-
-...
-...
-
-
+select 'order', count(1) from tb_order
+union all
+select 'order_detail', count(1) from tb_order_detail
+union all
+select 'comment', count(1) from tb_comment;
 ```
+![slowquery3-exec-sql](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-exec-sql.png)
 
 shop 유저에 의해 실행된 SQL 들의 통계정보를 조회하기 위해서 pg_stat_statements 뷰를 아래와 같이 조회합니다. 
 ```
