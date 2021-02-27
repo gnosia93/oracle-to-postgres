@@ -19,6 +19,8 @@ Oracle 데이터베이스를 PostgreSQL 로 변환시 어플리케이션 영역�
 
 ### NULL ###
 
+In Oracle, empty strings and NULL values in string context are the same. The concatenation of NULL and string obtain string as a result. In PostgreSQL the concatenation result is null in this case. In Oracle IS NULL operator is used to check whether string is empty or not but in PostgreSQL result is FALSE for empty string and TRUE for NULL.
+
 
 ### ROWID, CTID & Identity columns ###
 
