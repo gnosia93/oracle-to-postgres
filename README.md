@@ -94,7 +94,7 @@
 
 * [JMeter를 활용한 PostgreSQL 성능 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md)
 
-* [Slow Query 확인하기](https://github.com/gnosia93/postgres-terraform/blob/main/performance/slow-query.md)
+* [슬로우 쿼리 확인하기](https://github.com/gnosia93/postgres-terraform/blob/main/performance/slow-query.md)
 
 * [성능 진단/평가](https://github.com/gnosia93/postgres-terraform/blob/main/performance/performance-assessement.md)
 
