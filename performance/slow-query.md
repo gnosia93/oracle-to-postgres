@@ -7,6 +7,9 @@ PostgreSQL 는 아래 3가지 방법을 이용하여 Slow Query를 확인할 수
 * pg_stat_statements 
 
 
+### Slow Query 로그 사용 ###
+
+
 
 
 
