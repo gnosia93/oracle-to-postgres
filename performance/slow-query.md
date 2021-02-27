@@ -1,5 +1,16 @@
 ## Slow Query 확인하기 ##
 
+PostgreSQL 는 아래 3가지 방법을 이용하여 Slow Query를 확인할 수 있습니다. 
+
+* Slow Query 로그 사용
+* auto_explain으로 실행 계획 확인
+* pg_stat_statements 
+
+
+
+
+
+
 
 
 
