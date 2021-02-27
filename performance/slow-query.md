@@ -79,7 +79,7 @@ postgres=# exit
 ```
 log_min_duration_statement 파라미터의 값을 3000 으로 설정했기 때문에, 실행시간이 3초 이상 걸리는 SQL 에 대해서는 로그로 출력될 것입니다. 
 
-실제 테스트를 위해서 아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
+실제 테스트를 위해서 아래의 SQL을 pgadmin 을 이용하여 실행합니다.    
 [테스트 쿼리 #1]
 ```
 select b.product_id, min(a.order_no), max(a.order_no)
