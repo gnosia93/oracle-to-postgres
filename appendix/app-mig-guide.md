@@ -88,6 +88,11 @@ select shop.seq_order_order_id.currval from dual;
 ```
 [postgresql]
 ```
+create sequence  shop.seq_order_order_id
+start 1 increment 1 maxvalue 9223372036854775807 cache 20;
+
+select nextval('shop.seq_order_order_id');
+select currval('shop.seq_order_order_id');
 ```
 
 
