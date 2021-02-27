@@ -1,9 +1,9 @@
-## Slow Query 확인하기 ##
+## 슬로우 쿼리 확인하기 ##
 
 슬로우 쿼리의 확인은 오픈전 쿼리 성능 테스트 단계 또는 실제 서비스를 오픈 한 이후 시스템의 성능 저하의 원인을 찾는데 중요한 역할을 합니다. 
 PostgreSQL 에서 슬로우 쿼리를 확인하는 방법은 아래와 같이 3가지의 방법이 있습니다.
 
-* Slow Query 로그 
+* 슬로우 쿼리 로그 
 * auto_explain으로 실행 계획 확인
 * 쿼리 실행 통계(pg_stat_statements)
 
@@ -11,7 +11,7 @@ PostgreSQL 에서 슬로우 쿼리를 확인하는 방법은 아래와 같이 3�
 )를 통해서 슬로우 쿼리를 확인할 수 있는 방법을 배우실 수 있습니다.  
 
 
-### Slow Query 로그 ###
+### 슬로우 쿼리 로그 ###
 
 PostgreSQL 에서 슬로우 쿼리 로깅 기능은 기본적으로 활성화 되어 있지 않기 때문에 쿼리 확인하기 위해서는 postgres.conf 설정 파일을 변경이 필요합니다. 아래와 같이 PostgreSQL 가 설치된 tf_postgre_19c 인스턴스로 로그인해서 해당 파일을 변경하도록 합니다. tf_postgre_19c 의 공인 IP 는 AWS Console 또는 terraform 을 이용하여 확인할 수 있습니다. 
 
@@ -145,11 +145,44 @@ postgres=# exit
 
 ### 쿼리 실행 통계(pg_stat_statements)  ###
 
-postgres.conf 파일에 아래 내용을 추가하고, postgreSQL 서버를 재실행한다. 
+postgres.conf 파일에 아래 내용을 추가하고, postgreSQL 서버를 재시작해야 한다.
 ```
 shared_preload_libraries = 'pg_stat_statements' # (change requires restart)
 ```
 
+postgres OS 유저는 sudo 권한이 없으므로, ec2-user 로 스위치해서 postgresql 서버를 재기동한다. 
+```
+[ec2-user@ip-172-31-17-131 ~]$ sudo systemctl restart postgresql
+
+[ec2-user@ip-172-31-17-131 ~]$ sudo systemctl status postgresql
+● postgresql.service - PostgreSQL database server
+   Loaded: loaded (/usr/lib/systemd/system/postgresql.service; enabled; vendor preset: disabled)
+   Active: active (running) since 토 2021-02-27 02:12:49 UTC; 7s ago
+  Process: 30857 ExecStartPre=/usr/libexec/postgresql-check-db-dir %N (code=exited, status=0/SUCCESS)
+ Main PID: 30860 (postmaster)
+   CGroup: /system.slice/postgresql.service
+           ├─30860 /usr/bin/postmaster -D /var/lib/pgsql/data
+           ├─30862 postgres: logger   
+           ├─30864 postgres: checkpointer   
+           ├─30865 postgres: background writer   
+           ├─30866 postgres: walwriter   
+           ├─30867 postgres: autovacuum launcher   
+           ├─30868 postgres: stats collector   
+           ├─30869 postgres: logical replication launcher   
+           └─30870 postgres: shop shop_db 218.238.107.63(60363) idle
+
+ 2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal systemd[1]: Starting PostgreSQL database server...
+ 2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal postmaster[30860]: 2021-02-27 02:12:49.615 UTC [30860] LOG:  listening on IPv4 address ... 5432
+ 2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal postmaster[30860]: 2021-02-27 02:12:49.615 UTC [30860] LOG:  listening on IPv6 address ... 5432
+ 2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal postmaster[30860]: 2021-02-27 02:12:49.616 UTC [30860] LOG:  listening on Unix socket "...5432"
+ 2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal postmaster[30860]: 2021-02-27 02:12:49.618 UTC [30860] LOG:  listening on Unix socket "...5432"
+ 2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal postmaster[30860]: 2021-02-27 02:12:49.627 UTC [30860] LOG:  redirecting log output to ...ocess
+ 2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal postmaster[30860]: 2021-02-27 02:12:49.627 UTC [30860] HINT:  Future log output will ap...log".
+ 2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal systemd[1]: Started PostgreSQL database server.
+Hint: Some lines were ellipsized, use -l to show in full.
+
+
+```
 
 
 
