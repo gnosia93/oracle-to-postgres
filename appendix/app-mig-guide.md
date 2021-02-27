@@ -254,6 +254,10 @@ psql> select aws_oracle_ext.TO_DATE('20210227101259','yyyymmddhh24miss');
 - SCT 활용
 
 
+### 리모트 오브젝트 ###
+
+To access remote objects, the DBLINK module or Foreign Data Wrapper(Oracle_fdw) can be used to access any other database. 
+
 -------------
 
 * https://www.pgcon.org/2008/schedule/track/Tutorial/62.en.html
