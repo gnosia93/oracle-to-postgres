@@ -177,6 +177,11 @@ sql> select add_months(to_date('2021-02-01'), 1) from dual;
 ADD_MONT
 --------
 21/03/01
+
+sql> select TO_DATE('20210227101259','yyyymmddhh24miss') from dual;
+TO_DATE(
+--------
+21/02/27
 ```
 
 [postgresql]
@@ -184,6 +189,8 @@ ADD_MONT
 psql> select aws_oracle_ext.add_months('2021-02-01', 1);
 
 psql> select aws_oracle_ext.add_months(date '2021-02-01', 1);
+
+psql> select aws_oracle_ext.TO_DATE('20210227101259','yyyymmddhh24miss');
 ```
 ![sct_extpack](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/app_sct_extpack.png)
 
