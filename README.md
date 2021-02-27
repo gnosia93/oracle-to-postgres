@@ -118,8 +118,3 @@ Our team and the entire PostgreSQL industry depends on the quality and stability
 * [어플리케이션 변환 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/app-mig-guide.md)
 * [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/admin-guide.md)
 
-
-
-
-- https://www.cybertec-postgresql.com/en/services/migration-to-postgresql/migration-from-oracle-to-postgresql/?gclid=Cj0KCQiA-OeBBhDiARIsADyBcE4ffZVnlyX5_lm1Rzu06eZo_oSSdN6eXI-iqwIwj50qg1hH-5o4qWgaAlqxEALw_wcB
-
