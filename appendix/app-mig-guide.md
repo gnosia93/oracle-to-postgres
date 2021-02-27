@@ -6,8 +6,21 @@
 
 * https://info.crunchydata.com/blog/migrating-from-oracle-to-postgresql-questions-and-considerations
 
+[oracle]
+```
+sql> select rowid, order_no, order_price from shop.tb_order where rownum <= 5;
+ROWID              ORDER_NO             ORDER_PRICE
+------------------ -------------------- -----------
+AAAR1oAAOAAAV/jAAA 20210202000000000061        2000
+AAAR1oAAOAAAV/jAAB 20210202000000000068        4000
+AAAR1oAAOAAAV/jAAC 20210202000000000060        5000
+AAAR1oAAOAAAV/jAAD 20210202000000000074        5000
+AAAR1oAAOAAAV/jAAE 20210202000000000087        4000
+```
+[postgresql]
+```
 
-
+```
 
 
 
