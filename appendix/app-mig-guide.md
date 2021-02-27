@@ -64,7 +64,19 @@ order by order_no
 limit 5 offset 10;
 ```
 
-### Sequence, Serial ###
+### Sequence (시퀀스) ###
+
+- 시퀀스란 자동으로 순차적으로 증가하는 순번을 반환하는 데이터베이스 객체. 
+- 보통 PK 값에 중복값을 방지하기위해 사용.
+- Oracle / PostgreSQL 모두 시퀀스 지원.
+
+[oracle]
+```
+```
+[postgresql]
+```
+```
+
 
 
 
