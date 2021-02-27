@@ -2,7 +2,7 @@
 
 
 
-### ROWID, CTID and Identity columns ###
+### ROWID, CTID & Identity columns ###
 
 - Oracle 에서 ROWID 는 테이블의 행 주소를 반환하는 Peudo 칼럼(유니크함). 
 - PostgreSQL에는 트랜잭션ID 를 관리하기 위한 CTID 라고하는 내부 칼럼이 있으나 VACUUM 기능 후에 CTID가 변경됨 (CTID 는 4byte)/
