@@ -6,7 +6,6 @@ Oracle 데이터베이스를 PostgreSQL 로 변환시 어플리케이션 영역�
 
 ![datatypes](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/app_datatypes.png)
 
-- https://severalnines.com/database-blog/migrating-oracle-postgresql-what-you-should-know
 
 ### NULL ###
 
