@@ -185,6 +185,7 @@ Hint: Some lines were ellipsized, use -l to show in full.
 psql (11.5)
 Type "help" for help.
 
+[ec2-user@ip-172-31-17-131 ~]$ sudo su - postgres
 postgres=# CREATE EXTENSION pg_stat_statements;
 postgres=# exit
 ```
