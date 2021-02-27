@@ -228,6 +228,24 @@ PostgreSQL:
 SELECT TO_TIMESTAMP ('20180314121212','yyyymmddhh24miss')::TIMESTAMP(0);
 
 
+### SYSDATE ###
+
+[oracle]
+```
+sql> select sysdate, to_char(sysdate, 'yyyy/mm/dd hh24:mi:ss') from dual;
+SYSDATE  TO_CHAR(SYSDATE,'YY
+-------- -------------------
+21/02/27 2021/02/27 14:20:53
+```
+
+[postgresql]
+```
+psql> select sysdate, to_char(sysdate, 'yyyy/mm/dd hh24:mi:ss') from dual;
+
+```
+
+
+
 ### AWS SCT extension pack (내장함수) ###
 
 - 오라클 내장 함수를 PostgreSQL에서 그대로 사용할 수 있도록 구현해 놓은 코드 확장팩. 
