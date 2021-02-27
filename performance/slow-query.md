@@ -200,6 +200,7 @@ where s.userid = u.usesysid
   and u.usename = 'shop';
 ```
 
+![slowquery3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3.png)
 
 
 
