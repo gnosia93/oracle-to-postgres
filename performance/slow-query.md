@@ -69,7 +69,23 @@ postgres=# select pg_reload_conf();
  t
 (1 row)
 postgres=# exit
+```
 
+아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
+```
+select b.product_id, min(a.order_no), max(a.order_no)
+from tb_order a, tb_order_detail b
+where a.order_no = b.order_no
+  and a.member_id = 'user001'
+  and a.order_price >= 10000
+group by b.product_id
+order by b.product_id 
+limit 10 offset 0;
+```
+
+로그 출력을 확인하기 위해서 아래와 같이 /var/lib/pgsql/data/log 디렉토리로 이동하여 해당 요일에 맞는 로그 파일을 tail 로 확인 합니다.
+아래 출력 결과로 볼때 우리가 실행한 SQL 의 실행시간은 약 4.4초 정도 소요된 것을 확인 할 수 있습니다. 
+```
 -bash-4.2$ cd log
 -bash-4.2$ pwd
 /var/lib/pgsql/data/log
@@ -86,18 +102,15 @@ drwx------ 20 postgres postgres    4096 Feb 27 01:21 ..
 -rw-------  1 postgres postgres 1063308 Feb 24 12:00 postgresql-Wed.log
 
 -bash-4.2$ tail -f postgresql-Sat.log
-```
 
-아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
-```
-select b.product_id, min(a.order_no), max(a.order_no)
-from tb_order a, tb_order_detail b
-where a.order_no = b.order_no
-  and a.member_id = 'user001'
-  and a.order_price >= 10000
-group by b.product_id
-order by b.product_id 
-limit 10 offset 0;
+2021-02-27 01:28:01.148 UTC [29030] LOG:  duration: 4466.196 ms  statement: select b.product_id, min(a.order_no), max(a.order_no)
+	from tb_order a, tb_order_detail b
+	where a.order_no = b.order_no
+	  and a.member_id = 'user001'
+	  and a.order_price >= 10000
+	group by b.product_id
+	order by b.product_id 
+	limit 10 offset 0;
 ```
 
 
