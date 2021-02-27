@@ -157,9 +157,9 @@ SELECT restaurant_name, city_name FROM tmp;
 
 ### Outer 조인 ###
 
-- PostgreSQL 은 ANSI Outer 조인만 
-- ..지원
-- ..
+- PostgreSQL 은 SQL 표준 조인만 지원.
+- 오라클의 경우 Orale-specific 문법 및 SQL 표준 모두 지원.
+- LEFT / RIGHT / FULL OUTER JOIN
 
 [oracle]
 ```
