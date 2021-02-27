@@ -179,6 +179,8 @@ ADD_MONT
 
 [postgresql]
 ```
+psql> select aws_oracle_ext.add_months('2021-02-01', 1);
+
 psql> select aws_oracle_ext.add_months(date '2021-02-01', 1);
 ```
 
