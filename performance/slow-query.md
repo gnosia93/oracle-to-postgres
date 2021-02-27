@@ -191,6 +191,15 @@ postgres=# exit
 ```
 
 
+생성된 pg_stat_statements 뷰를 아래의 SQL 을 이용하여 조회합니다. 아래 SQL d은 shop 유저가 실행한 전체 쿼리 리스트의 통계 정보를 SQL 단위로 출력합니다. 
+```
+select s.* 
+from pg_stat_statements s, pg_shadow u
+where s.userid = u.usesysid
+  and s.query like '%tb_order%'
+  and u.usename = 'shop';
+```
+
 
 
 
