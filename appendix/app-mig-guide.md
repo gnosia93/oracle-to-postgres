@@ -8,14 +8,6 @@ Oracle 데이터베이스를 PostgreSQL 로 변환시 어플리케이션 영역�
 
 - https://severalnines.com/database-blog/migrating-oracle-postgresql-what-you-should-know
 
-
-### Objects Comparison ###
-
-지원되는 코드성 오브젝트를 비교한다. 
-
-
-
-
 ### NULL ###
 
 In Oracle, empty strings and NULL values in string context are the same. The concatenation of NULL and string obtain string as a result. In PostgreSQL the concatenation result is null in this case. In Oracle IS NULL operator is used to check whether string is empty or not but in PostgreSQL result is FALSE for empty string and TRUE for NULL.
@@ -285,8 +277,14 @@ psql> select aws_oracle_ext.TO_DATE('20210227101259','yyyymmddhh24miss');
 
 ### PLSQL 변환 ###
 
-- https://www.postgresql.org/docs/current/plpgsql-porting.html
-- SCT 활용
+- 기본적으로 AWS SCT 를 이용하여 오라클의 PLSQL 코드를 PostgreSQL 로 자동 변환함. 
+- 자동 변환이 실패하는 경우 [PostgreSQL plpgsql 포팅가이드](https://www.postgresql.org/docs/current/plpgsql-porting.html) 를 참조하여 수정. 
+
+
+### 패키지 / Synonyms ###
+
+- PostgreSQL 은 오라클 패키지와 Synonyms를 지원하지 않는다.
+- 오라클 패키지는 PostgreSQL 의 스키마로 대체한다. 즉 스키마를 먼저 만들고 해당 스키마 안에 프로시저 및 함수와 같은 코드성 오브젝트를 생성한다.
 
 
 ### 리모트 오브젝트 ###
