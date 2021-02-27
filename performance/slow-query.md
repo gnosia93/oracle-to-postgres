@@ -145,11 +145,11 @@ postgres=# exit
 
 ### 쿼리 실행 통계(pg_stat_statements)  ###
 
-postgres.conf 파일에 아래 내용을 추가하고, postgreSQL 서버를 재시작합니다.
+pg_stat_statements 는 오라클의 v$sqlarea 와 비슷한 정보를 제공하는 쿼리실행 통계 뷰입니다. 해당 뷰는 기본적으로 비활성화 상태이기 때문에 활성화 하기위해서는 아래와 같이 postgres.conf 설정 파일의 shared_preload_libraries 부분을 수정한 후, 서버를 재기동 해야 합니다.
 ```
 shared_preload_libraries = 'pg_stat_statements' # (change requires restart)
 ```
-postgresql 서버를 재기동을 위해서는 sudo 권한이 있는 ec2-user 로 스위칭 한후, systemctl 명령어를 이용하여 재시작합니다. 또한 psql 을 이용하여 extension 를 생성합니다. 
+postgresql 서버를 재기동을 위해서는 sudo 권한이 있는 ec2-user 로 스위칭 한후, systemctl 명령어를 이용하여 재시작합니다. 재시작이 완료되면 psql 커맨드라인 툴을 이용하여 extension를 생성하고, 데이터베이스 어드민 유저인 postgres 유저의 remote 로그인이 가능하게 하기위해 아래와 같이 패스워드를 설정 합니다. 
 ```
 [ec2-user@ip-172-31-17-131 ~]$ sudo systemctl restart postgresql
 
@@ -186,15 +186,16 @@ psql (11.5)
 Type "help" for help.
 
 postgres=# CREATE EXTENSION pg_stat_statements;
+postgres=# alter user postgres with password 'postgres';
 postgres=# exit
 ```
 
-pg_stat_statements 뷰에 admin 권한을 가지고 있는 유저만이 접근가능한 시스템 뷰입니다. pgadmin 툴에서 아래와 같이 postgres 유저용 connection 을 생성한 후, postgres 유저로 로그인 합니다.
+pg_stat_statements 뷰는 admin 권한을 가지고 있는 유저만이 접근 가능한 시스템 뷰입니다. pgadmin 툴에서 아래와 같이 postgres 어드민 유저용 connection 을 생성한 후, postgres 유저로 로그인 합니다.
 
 .. 그림..
 
 
-먼저 아래의 SQL 들을 순차적으로 실행 합니다. 이때 실행 유저는 postgres 어드민 유저가 아닌, shop 유저입니다. 
+먼저 아래의 SQL 들을 shop 유저로 로그인해서 순차적으로 실행 합니다. 
 ```
 select b.product_id, min(a.order_no), max(a.order_no)
 from tb_order a, tb_order_detail b
