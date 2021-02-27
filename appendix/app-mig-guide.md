@@ -230,6 +230,8 @@ SELECT TO_TIMESTAMP ('20180314121212','yyyymmddhh24miss')::TIMESTAMP(0);
 
 ### SYSDATE ###
 
+- [PostgreSQL날짜 및 시간관련 함수 및 연산자](https://m.blog.naver.com/PostView.nhn?blogId=dev4unet&logNo=220602540023&proxyReferer=https:%2F%2Fwww.google.com%2F)
+
 [oracle]
 ```
 sql> select sysdate, to_char(sysdate, 'yyyy/mm/dd hh24:mi:ss') from dual;
@@ -240,8 +242,7 @@ SYSDATE  TO_CHAR(SYSDATE,'YY
 
 [postgresql]
 ```
-psql> select sysdate, to_char(sysdate, 'yyyy/mm/dd hh24:mi:ss') from dual;
-
+psql> select date(current_timestamp), current_timestamp;
 ```
 
 
