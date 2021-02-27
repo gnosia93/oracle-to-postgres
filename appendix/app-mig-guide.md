@@ -4,6 +4,10 @@
 
 ### ROWID, CTID and Identity columns ###
 
+* https://info.crunchydata.com/blog/migrating-from-oracle-to-postgresql-questions-and-considerations
+
+
+
 
 
 
