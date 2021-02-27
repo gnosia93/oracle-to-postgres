@@ -145,6 +145,10 @@ postgres=# exit
 
 ### 쿼리 실행 통계(pg_stat_statements)  ###
 
+postgres.conf 파일에 아래 내용을 추가하고, postgreSQL 서버를 재실행한다. 
+```
+shared_preload_libraries = 'pg_stat_statements' # (change requires restart)
+```
 
 
 
