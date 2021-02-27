@@ -127,18 +127,67 @@ psql> select currval('shop.seq_order_order_id');
 ```
 ```
 
-
-### Outer 조인 ###
-
+### START WITH..CONNECT BY ###
 - ..
 
 [oracle]
 ```
+sql> SELECT
+    restaurant_name, 
+    city_name 
+FROM
+    restaurants rs 
+START WITH rs.city_name = 'TOKYO'
+CONNECT BY PRIOR rs.restaurant_name = rs.city_name;
 ```
 
 [postgresql]
 ```
+psql> WITH RECURSIVE tmp AS (SELECT restaurant_name, city_name
+                                 FROM restaurants
+                                WHERE city_name = 'TOKYO'
+                                UNION
+                               SELECT m.restaurant_name, m.city_name
+                                 FROM restaurants m
+                                 JOIN tmp ON tmp.restaurant_name = m.city_name)
+SELECT restaurant_name, city_name FROM tmp;
 ```
+
+
+
+
+### Outer 조인 ###
+- ..
+
+[oracle]
+```
+SELECT a1.name1, a2.name2
+     FROM a1, a2
+     WHERE a1.code = a2.code (+);
+```
+
+[postgresql]
+```
+SELECT a1.name1, a2.name2
+    FROM a1
+    LEFT OUTER JOIN a2 ON a1.code = a2.code;
+```
+
+
+### DELETE ###
+- ..
+
+[oracle]
+```
+sql> DELETE table_name WHERE column_name = 'Col_value';
+```
+
+[postgresql]
+```
+psql> DELETE table_name WHERE column_name = 'Col_value';
+```
+
+
 
 ### SubQuery (서브쿼리) ###
 
