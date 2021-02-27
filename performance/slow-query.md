@@ -73,6 +73,9 @@ postgres=# exit
 ```
 
 아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
+
+![slowquery](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery1.png)
+
 ```
 select b.product_id, min(a.order_no), max(a.order_no)
 from tb_order a, tb_order_detail b
