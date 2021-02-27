@@ -1,5 +1,6 @@
 ## 어플리케이션 변환 가이드 ##
 
+Oracle 데이터베이스를 PostgreSQL 로 변환시 어플리케이션 영역에서 고려가 필요한 내용에 대해 정리합니다. 
 
 
 ### ROWID, CTID & Identity columns ###
@@ -72,6 +73,18 @@ limit 5 offset 10;
 
 [oracle]
 ```
+create sequence shop.seq_order_order_id
+start with 1 increment by 1 nomaxvalue nocycle cache 20;
+
+select shop.seq_order_order_id.nextval from dual;
+   NEXTVAL
+----------
+  32790982
+
+select shop.seq_order_order_id.currval from dual;
+   CURRVAL
+----------
+  32790982
 ```
 [postgresql]
 ```
