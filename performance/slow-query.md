@@ -24,8 +24,40 @@ https://aws.amazon.com/amazon-linux-2/
 Run "sudo yum update" to apply all updates.
 
 [ec2-user@ip-172-31-17-131 ~]$ sudo su - postgres
+-bash-4.2$ cd /var/lib/pgsql/data
+-bash-4.2$ ls -la
+total 68
+drwx------ 20 postgres postgres  4096 Feb 27 00:00 .
+drwx------  5 postgres postgres   143 Feb  3 02:22 ..
+drwx------  6 postgres postgres    58 Feb 27 00:45 base
+-rw-------  1 postgres postgres    30 Feb 27 00:00 current_logfiles
+drwx------  2 postgres postgres  4096 Feb  3 01:26 global
+drwx------  2 postgres postgres   188 Feb  8 00:00 log
+drwx------  2 postgres postgres     6 Feb  2 11:44 pg_commit_ts
+drwx------  2 postgres postgres     6 Feb  2 11:44 pg_dynshmem
+-rw-------  1 postgres postgres  4393 Feb  2 11:44 pg_hba.conf
+-rw-------  1 postgres postgres  1636 Feb  2 11:44 pg_ident.conf
+drwx------  4 postgres postgres    68 Feb 24 01:09 pg_logical
+drwx------  4 postgres postgres    36 Feb  2 11:44 pg_multixact
+drwx------  2 postgres postgres    18 Feb  2 11:44 pg_notify
+drwx------  2 postgres postgres     6 Feb  2 11:44 pg_replslot
+drwx------  2 postgres postgres     6 Feb  2 11:44 pg_serial
+drwx------  2 postgres postgres     6 Feb  2 11:44 pg_snapshots
+drwx------  2 postgres postgres     6 Feb  2 11:44 pg_stat
+drwx------  2 postgres postgres    84 Feb 27 01:13 pg_stat_tmp
+drwx------  2 postgres postgres    18 Feb  2 11:44 pg_subtrans
+drwx------  2 postgres postgres    19 Feb  3 00:09 pg_tblspc
+drwx------  2 postgres postgres     6 Feb  2 11:44 pg_twophase
+-rw-------  1 postgres postgres     3 Feb  2 11:44 PG_VERSION
+drwx------  3 postgres postgres  4096 Feb 23 14:43 pg_wal
+drwx------  2 postgres postgres    18 Feb  2 11:44 pg_xact
+-rw-------  1 postgres postgres    88 Feb  2 11:44 postgresql.auto.conf
+-rw-------  1 postgres postgres 23867 Feb  2 11:44 postgresql.conf
+-rw-------  1 postgres postgres    45 Feb  2 11:44 postmaster.opts
+-rw-------  1 postgres postgres    92 Feb  2 11:44 postmaster.pid
 
-
+-bash-4.2$ vi postgresql.conf 
+log_min_duration_statement = 3000
 ```
 
 아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
