@@ -1,8 +1,8 @@
 
 
 * https://www.pgcon.org/2008/schedule/track/Tutorial/62.en.html
-
-* 
+------
+* https://wiki.postgresql.org/wiki/Converting_from_other_Databases_to_PostgreSQL#Oracle
 
 
 -------------
