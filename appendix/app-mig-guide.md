@@ -157,6 +157,10 @@ psql> select order_no, order_price from (
 select order_no, order_price from shop.tb_order ) as t;
 ```
 
+### AWS SCT extension pack ###
+
+- https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_ExtensionPack.html
+- https://github.com/orafce/orafce
 
 ### 내장 함수 ###
 
