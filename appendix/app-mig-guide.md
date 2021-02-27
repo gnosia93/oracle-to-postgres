@@ -43,19 +43,23 @@ psql> select ROWID, order_no, order_price from tb_order2;
 
 [oracle]
 ```
-sql> select rowid, order_no, order_price from shop.tb_order;
-ROWID              ORDER_NO             ORDER_PRICE
------------------- -------------------- -----------
-AAAR1oAAOAAAV/jAAA 20210202000000000061        2000
-AAAR1oAAOAAAV/jAAB 20210202000000000068        4000
-AAAR1oAAOAAAV/jAAC 20210202000000000060        5000
-AAAR1oAAOAAAV/jAAD 20210202000000000074        5000
-AAAR1oAAOAAAV/jAAE 20210202000000000087        4000
+sql> select order_no, order_price from ( 
+    select rownum as rn, order_no, order_price 
+    from shop.tb_order 
+    order by order_no 
+) where rn between 11 and 15;
+ORDER_NO             ORDER_PRICE
+-------------------- -----------
+20210202000000000109        1000
+20210202000000000112        3000
+20210202000000000131        2000
+20210202000000000132        1000
+20210202000000000135        4000
 ```
 [postgresql]
 ```
-psql> create table tb_order2
-
+psql> 
+```
 
 
 
