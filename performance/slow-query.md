@@ -145,12 +145,12 @@ postgres=# exit
 
 ### 쿼리 실행 통계(pg_stat_statements)  ###
 
-postgres.conf 파일에 아래 내용을 추가하고, postgreSQL 서버를 재시작해야 한다.
+postgres.conf 파일에 아래 내용을 추가하고, postgreSQL 서버를 재시작해야 한다.  
+아래와 같이 postgres.conf 파일을 수정하고
 ```
 shared_preload_libraries = 'pg_stat_statements' # (change requires restart)
 ```
-
-postgres OS 유저는 sudo 권한이 없으므로, ec2-user 로 스위치해서 postgresql 서버를 재기동한다. 
+ec2-user 유저로 로그인해서 postgresql 서버를 재기동하고, extension 를 메모리로 로드한다. 
 ```
 [ec2-user@ip-172-31-17-131 ~]$ sudo systemctl restart postgresql
 
@@ -181,7 +181,12 @@ postgres OS 유저는 sudo 권한이 없으므로, ec2-user 로 스위치해서 
  2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal systemd[1]: Started PostgreSQL database server.
 Hint: Some lines were ellipsized, use -l to show in full.
 
+-bash-4.2$ psql 
+psql (11.5)
+Type "help" for help.
 
+postgres=# CREATE EXTENSION pg_stat_statements;
+postgres=# exit
 ```
 
 
