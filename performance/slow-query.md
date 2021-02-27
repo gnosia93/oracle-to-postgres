@@ -9,7 +9,7 @@ PostgreSQL 에서 슬로우 쿼리를 확이한느 방법은 아래와 같이 3�
 
 ### Slow Query 로그 ###
 
-슬로우 쿼리 로그를 확인하기 위해서는 postgres.conf 파일을 변경해야 합니다. 아래와 같이 PostgreSQL 가 설치된 tf_postgre_19c 인스턴스로 로그인해서 해당 파일을 변경하도록 합니다. tf_postgre_19c 의 공인 IP 는 AWS Console 또는 terraform 을 이용하여 확인할 수 있습니다. 
+슬로우 쿼리 로깅 기능은 기본적으로 활성화 되어 있지 않기 때문에 슬로우 쿼리 확인하기 위해서는 postgres.conf 설정 파일을 변경한 한후, reload 해야 합니다. 아래와 같이 PostgreSQL 가 설치된 tf_postgre_19c 인스턴스로 로그인해서 해당 파일을 변경하도록 합니다. tf_postgre_19c 의 공인 IP 는 AWS Console 또는 terraform 을 이용하여 확인할 수 있습니다. 
 
 ```
 (base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@3.36.11.115
@@ -58,6 +58,16 @@ drwx------  2 postgres postgres    18 Feb  2 11:44 pg_xact
 
 -bash-4.2$ vi postgresql.conf 
 log_min_duration_statement = 3000
+
+-bash-4.2$ psql 
+psql (11.5)
+Type "help" for help.
+
+postgres=# select pg_reload_conf();
+ pg_reload_conf 
+----------------
+ t
+(1 row)
 ```
 
 아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
