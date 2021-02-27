@@ -10,6 +10,16 @@ PostgreSQL 에서 슬로우 쿼리를 확이한느 방법은 아래와 같이 3�
 ### Slow Query 로그 ###
 
 
+```
+select b.product_id, min(a.order_no), max(a.order_no)
+from tb_order a, tb_order_detail b
+where a.order_no = b.order_no
+  and a.member_id = 'user001'
+  and a.order_price >= 10000
+group by b.product_id
+order by b.product_id 
+limit 10 offset 0;
+```
 
 
 
