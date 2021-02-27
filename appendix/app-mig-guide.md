@@ -169,10 +169,10 @@ For more information on this library, see Using the custom Python library for th
 
 AWS Lambda functions (for select OLTP databases) – Includes AWS Lambda functions that emulate complex database functionality, such as job scheduling and sending emails.
 
-- 오라클 내장함수를 사용할 수 있도록 하는 PL/SQL 패키지임.
+- PostgreSQL용 오라클 함수 구현체 
 - SCT 에 의해 타겟 데이터베이스의 aws_oracle_ext 스키마에 설치됨.
-- SCT 의 자동 프로시저 및 함수 코드 변환시에도 사용됨
-- https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_ExtensionPack.html / https://github.com/orafce/orafce
+- 오라클 프로시저 및 함수 등과 같은 코드성 오브젝트 변환시 사용됨.
+- https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_ExtensionPack.html (https://github.com/orafce/orafce)
 
 [oracle]
 ```
