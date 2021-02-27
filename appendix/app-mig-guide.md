@@ -24,7 +24,7 @@ create table tb_order2
 (
  	order_no                varchar(20) not null primary key,
  	order_price             decimal(19,3) not null,
-	rowid					bigint GENERATED ALWAYS AS IDENTITY
+	rowid			bigint GENERATED ALWAYS AS IDENTITY
 );
 
 insert into tb_order2(order_no, order_price)  
