@@ -192,7 +192,9 @@ postgres=# exit
 
 pg_stat_statements 뷰는 admin 권한을 가지고 있는 유저만이 접근 가능한 시스템 뷰입니다. pgadmin 툴에서 아래와 같이 postgres 어드민 유저용 connection 을 생성한 후, postgres 유저로 로그인 합니다.
 
-.. 그림..
+![slowquery3-admin1](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-admin1.png)
+![slowquery3-admin2](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-admin2.png)
+![slowquery3-admin3](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery3-admin3.png)
 
 
 먼저 아래의 SQL 들을 shop 유저로 로그인해서 순차적으로 실행 합니다. 
