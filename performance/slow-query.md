@@ -9,6 +9,8 @@ PostgreSQL 에서 슬로우 쿼리를 확이한느 방법은 아래와 같이 3�
 
 ### Slow Query 로그 ###
 
+슬로우 쿼리 로그를 확인하기 위해서는 postgres.conf 파일을 변경해야 합니다. 아래와 같이 PostgreSQL 가 설치된 tf_postgre_19c 인스턴스로 로그인해서 해당 파일을 변경하도록 합니다. tf_postgre_19c 의 공인 IP 는 AWS Console 또는 terraform 을 이용하여 확인할 수 있습니다. 
+
 ```
 (base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@3.36.11.115
 Last login: Wed Feb  3 01:16:53 2021 from 218.238.107.63
@@ -20,6 +22,8 @@ Last login: Wed Feb  3 01:16:53 2021 from 218.238.107.63
 https://aws.amazon.com/amazon-linux-2/
 20 package(s) needed for security, out of 31 available
 Run "sudo yum update" to apply all updates.
+
+[ec2-user@ip-172-31-17-131 ~]$ sudo su - postgres
 
 
 ```
