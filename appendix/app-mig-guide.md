@@ -156,6 +156,9 @@ SELECT restaurant_name, city_name FROM tmp;
 
 
 ### Outer 조인 ###
+
+- PostgreSQL 은 ANSI Outer 조인만 
+- ..지원
 - ..
 
 [oracle]
