@@ -145,12 +145,11 @@ postgres=# exit
 
 ### 쿼리 실행 통계(pg_stat_statements)  ###
 
-postgres.conf 파일에 아래 내용을 추가하고, postgreSQL 서버를 재시작해야 한다.  
-아래와 같이 postgres.conf 파일을 수정하고
+postgres.conf 파일에 아래 내용을 추가하고, postgreSQL 서버를 재시작합니다.
 ```
 shared_preload_libraries = 'pg_stat_statements' # (change requires restart)
 ```
-ec2-user 유저로 로그인해서 postgresql 서버를 재기동하고, extension 를 메모리로 로드한다. 
+postgresql 서버를 재기동을 위해서는 sudo 권한이 있는 ec2-user 로 스위칭 한후, systemctl 명령어를 이용하여 재시작합니다. 또한 psql 을 이용하여 extension 를 생성합니다. 
 ```
 [ec2-user@ip-172-31-17-131 ~]$ sudo systemctl restart postgresql
 
@@ -181,17 +180,40 @@ ec2-user 유저로 로그인해서 postgresql 서버를 재기동하고, extensi
  2월 27 02:12:49 ip-172-31-17-131.ap-northeast-2.compute.internal systemd[1]: Started PostgreSQL database server.
 Hint: Some lines were ellipsized, use -l to show in full.
 
+[ec2-user@ip-172-31-17-131 ~]$ sudo su - postgres
 -bash-4.2$ psql 
 psql (11.5)
 Type "help" for help.
 
-[ec2-user@ip-172-31-17-131 ~]$ sudo su - postgres
 postgres=# CREATE EXTENSION pg_stat_statements;
 postgres=# exit
 ```
 
+pg_stat_statements 뷰에 admin 권한을 가지고 있는 유저만이 접근가능한 시스템 뷰입니다. pgadmin 툴에서 아래와 같이 postgres 유저용 connection 을 생성한 후, postgres 유저로 로그인 합니다.
 
-생성된 pg_stat_statements 뷰를 아래의 SQL 을 이용하여 조회합니다. 아래 SQL d은 shop 유저가 실행한 전체 쿼리 리스트의 통계 정보를 SQL 단위로 출력합니다. 
+.. 그림..
+
+
+먼저 아래의 SQL 들을 순차적으로 실행 합니다. 이때 실행 유저는 postgres 어드민 유저가 아닌, shop 유저입니다. 
+```
+select b.product_id, min(a.order_no), max(a.order_no)
+from tb_order a, tb_order_detail b
+where a.order_no = b.order_no
+  and a.member_id = 'user001'
+  and a.order_price >= 10000
+group by b.product_id
+order by b.product_id 
+limit 10 offset 0;
+
+
+
+...
+...
+
+
+```
+
+shop 유저에 의해 실행된 SQL 들의 통계정보를 조회하기 위해서 pg_stat_statements 뷰를 아래와 같이 조회합니다. 
 ```
 select s.* 
 from pg_stat_statements s, pg_shadow u
