@@ -68,6 +68,24 @@ postgres=# select pg_reload_conf();
 ----------------
  t
 (1 row)
+postgres=# exit
+
+-bash-4.2$ cd log
+-bash-4.2$ pwd
+/var/lib/pgsql/data/log
+-bash-4.2$ ls -la
+total 2440
+drwx------  2 postgres postgres     188 Feb  8 00:00 .
+drwx------ 20 postgres postgres    4096 Feb 27 01:21 ..
+-rw-------  1 postgres postgres       0 Feb 26 00:00 postgresql-Fri.log
+-rw-------  1 postgres postgres       0 Feb 22 00:00 postgresql-Mon.log
+-rw-------  1 postgres postgres    3264 Feb 27 01:24 postgresql-Sat.log
+-rw-------  1 postgres postgres       0 Feb 21 00:00 postgresql-Sun.log
+-rw-------  1 postgres postgres       0 Feb 25 00:00 postgresql-Thu.log
+-rw-------  1 postgres postgres 1422660 Feb 23 23:59 postgresql-Tue.log
+-rw-------  1 postgres postgres 1063308 Feb 24 12:00 postgresql-Wed.log
+
+-bash-4.2$ tail -f postgresql-Sat.log
 ```
 
 아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
