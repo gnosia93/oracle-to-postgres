@@ -123,6 +123,28 @@ psql> select currval('shop.seq_order_order_id');
 ```
 ```
 
+### SubQuery (서브쿼리) ###
+
+- PostgreSQL 의 서브쿼리는 오라클과는 달리 명시적으로 서브쿼리 결과값에 대한 alias 를 지정해야 함.
+- 서브쿼리 절의 as 는 생략가능.
+
+[oracle]
+
+```
+sql> select order_no, order_price from (
+select order_no, order_price from shop.tb_order );
+```
+
+[postgresql]
+```
+psql> select order_no, order_price from (
+select order_no, order_price from shop.tb_order ) t;
+
+psql> select order_no, order_price from (
+select order_no, order_price from shop.tb_order ) as t;
+```
+
+
 ### 내장 함수 ###
 
 - https://blog.daum.net/initdb/29
