@@ -166,7 +166,15 @@ select order_no, order_price from shop.tb_order ) as t;
 
 [oracle]
 ```
-sql> 
+sql> select add_months('2021-02-01', 1) from dual;
+ADD_MONT
+--------
+21/03/01
+
+sql> select add_months(to_date('2021-02-01'), 1) from dual;
+ADD_MONT
+--------
+21/03/01
 ```
 
 [postgresql]
