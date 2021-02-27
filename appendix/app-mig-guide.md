@@ -108,14 +108,26 @@ psql> select currval('shop.seq_order_order_id');
 
 ### DUAL 테이블 ###
 
-- ..
+- PostgreSQL 은 오라클과 달리 DUAL 테이블이 존재하지 않고, SELECT 시 칼럼명만 나열함.
+- DUAL 테이블이 필요하다면, 아래와 같이 dummy 테이블 하나 만들어서 사용. 
 
 [oracle]
 ```
+sql> select sysdate from dual;
 ```
 
 [postgresql]
 ```
+psql>create table dual 
+(
+	x int,
+	y timestamp
+);
+
+psql>insert into dual values(1, now());
+
+psql>select current_timestamp, now();
+psql>select current_timestamp, now() from dual;
 ```
 
 ### START WITH..CONNECT BY ###
