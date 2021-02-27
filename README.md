@@ -19,6 +19,17 @@
 - 데이터 이행 / 서비스 오픈
 - 성능 모니터링 / 튜닝
 
+### Advantages of migrating from Oracle to PostgreSQL. ### 
+
+No licensing costs
+Reduction of support costs by 80% or more
+
+### Database stability and data security. ###
+The main concerns raised by many who have already migrated from Oracle to PostgreSQL are the questions of security, stability and quality.
+PostgreSQL is a rock solid database, which has been proven repeatedly over the years. It has been adopted in critical environments such as banking, government, defense, medicine and in the automotive industry (to mention just a few).
+
+Our team and the entire PostgreSQL industry depends on the quality and stability of the PostgreSQL code base, which means that everybody is working hard to maintain good quality, superior stability and high standards of development. Remember: It is not only your data which is at stake – the same applies to our reputation and the existence of the entire industry, which means PostgreSQL contributors will do everything to protect your data by every possible means available.
+
 
 
 ## Revision History 
