@@ -9,6 +9,21 @@ PostgreSQL 에서 슬로우 쿼리를 확이한느 방법은 아래와 같이 3�
 
 ### Slow Query 로그 ###
 
+```
+(base) f8ffc2077dc2:~ soonbeom$ ssh -i ~/.ssh/tf_key ec2-user@3.36.11.115
+Last login: Wed Feb  3 01:16:53 2021 from 218.238.107.63
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+20 package(s) needed for security, out of 31 available
+Run "sudo yum update" to apply all updates.
+
+
+```
+
 아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
 ```
 select b.product_id, min(a.order_no), max(a.order_no)
