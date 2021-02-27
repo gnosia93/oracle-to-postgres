@@ -133,7 +133,9 @@ drwx------ 20 postgres postgres    4096 Feb 27 01:21 ..
 
 ### RDS Slow Query 확인하기 ###
 
-* https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-postgresql-query-logging/
+RDS 를 사용하는 경우 아래의 링크의 내용을 참고하면 슬로우 쿼리를 확인하실 수 있습니다. 
+
+https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-postgresql-query-logging/
 
 
 
