@@ -9,6 +9,9 @@ Oracle 데이터베이스를 PostgreSQL 로 변환시 어플리케이션 영역�
 - https://severalnines.com/database-blog/migrating-oracle-postgresql-what-you-should-know
 
 
+### Code Objects Comparison ###
+
+지원되는 코드성 오브젝트를 비교한다. 
 
 
 
