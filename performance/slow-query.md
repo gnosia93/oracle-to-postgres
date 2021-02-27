@@ -9,7 +9,7 @@ PostgreSQL 에서 슬로우 쿼리를 확이한느 방법은 아래와 같이 3�
 
 ### Slow Query 로그 ###
 
-
+아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
 ```
 select b.product_id, min(a.order_no), max(a.order_no)
 from tb_order a, tb_order_detail b
