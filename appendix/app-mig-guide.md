@@ -247,7 +247,7 @@ psql> select date(current_timestamp), current_timestamp;
 
 
 
-### AWS SCT extension pack (내장함수) ###
+### AWS SCT extension pack (확장내장함수) ###
 
 - 오라클 내장 함수를 PostgreSQL에서 그대로 사용할 수 있도록 구현해 놓은 코드 확장팩. 
 - SCT 에 의해 타겟 데이터베이스의 aws_oracle_ext 스키마에 설치됨.
