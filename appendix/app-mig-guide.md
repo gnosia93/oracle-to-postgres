@@ -4,11 +4,15 @@
 
 ### ROWID, CTID and Identity columns ###
 
-* https://info.crunchydata.com/blog/migrating-from-oracle-to-postgresql-questions-and-considerations
+- Oracle 에서 ROWID 는 테이블의 행 주소를 반환하는 Peudo 칼럼(유니크함). 
+- PostgreSQL에는 트랜잭션ID 를 관리하기 위한 CTID 라고하는 내부 칼럼이 있으나 VACUUM 기능 후에 CTID가 변경됨 (CTID 는 4byte)/
+- Identity를 이용하여 ROWID 칼럼 생성.
+
+
 
 [oracle]
 ```
-sql> select rowid, order_no, order_price from shop.tb_order where rownum <= 5;
+sql> select rowid, order_no, order_price from shop.tb_order;
 ROWID              ORDER_NO             ORDER_PRICE
 ------------------ -------------------- -----------
 AAAR1oAAOAAAV/jAAA 20210202000000000061        2000
@@ -19,16 +23,15 @@ AAAR1oAAOAAAV/jAAE 20210202000000000087        4000
 ```
 [postgresql]
 ```
-drop table tb_order2;
 create table tb_order2
 (
- 	order_no                varchar(20) not null primary key,
- 	order_price             decimal(19,3) not null,
-	rowid			bigint GENERATED ALWAYS AS IDENTITY
+   order_no       varchar(20) not null primary key,
+   order_price    decimal(19,3) not null,
+   rowid	  bigint GENERATED ALWAYS AS IDENTITY
 );
 
-insert into tb_order2(order_no, order_price)  
-select order_no, order_price from shop.tb_order limit 5;
+insert into tb_order2(order_no, order_price) 
+select order_no, order_price from shop.tb_order;
 
 select ROWID, order_no, order_price from tb_order2;
 ```
