@@ -96,11 +96,22 @@ psql> select nextval('shop.seq_order_order_id');
 psql> select currval('shop.seq_order_order_id');
 ```
 
-### DUAL ###
+### DUAL 테이블 ###
 
-- 시퀀스란 자동으로 순차적으로 증가하는 순번을 반환하는 데이터베이스 객체. 
-- 보통 PK 값에 중복값을 방지하기위해 사용.
-- Oracle / PostgreSQL 모두 시퀀스 지원.
+- ..
+
+[oracle]
+```
+```
+
+[postgresql]
+```
+```
+
+
+### Outer 조인 ###
+
+- ..
 
 [oracle]
 ```
