@@ -128,6 +128,11 @@ psql> select currval('shop.seq_order_order_id');
 - https://blog.daum.net/initdb/29
 
 
+### PLSQL 변환 ###
+
+- https://www.postgresql.org/docs/current/plpgsql-porting.html
+- SCT 활용
+
 
 -------------
 
