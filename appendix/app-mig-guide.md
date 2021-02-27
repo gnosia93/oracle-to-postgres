@@ -212,6 +212,22 @@ psql> select order_no, order_price from (
 select order_no, order_price from shop.tb_order ) as t;
 ```
 
+### TO_DATE ###
+
+The to_date() function in both Oracle and PostgreSQL return the date data type. However, PostgreSQL’s date data type provides the date (year, month, day), while Oracle’s date data type value provides the date and time (year, month, day, hour, minute, second). To avoid this incompatibility, use PostgreSQL’s to_timestamp(). 
+
+The solution for this incompatibility is to convert TO_DATE() to TO_TIMESTAMP(). If you use Orafce tool then it is not necessary to change anything because Orafce implemented this function so we get the same result as Oracle.
+
+
+Oracle:
+
+SELECT TO_DATE ('20180314121212','yyyymmddhh24miss') FROM dual;
+
+PostgreSQL:
+
+SELECT TO_TIMESTAMP ('20180314121212','yyyymmddhh24miss')::TIMESTAMP(0);
+
+
 ### AWS SCT extension pack (내장함수) ###
 
 - 오라클 내장 함수를 PostgreSQL에서 그대로 사용할 수 있도록 구현해 놓은 코드 확장팩. 
@@ -258,30 +274,13 @@ psql> select aws_oracle_ext.TO_DATE('20210227101259','yyyymmddhh24miss');
 
 To access remote objects, the DBLINK module or Foreign Data Wrapper(Oracle_fdw) can be used to access any other database. 
 
--------------
-
-* https://www.pgcon.org/2008/schedule/track/Tutorial/62.en.html
-------
-* https://wiki.postgresql.org/wiki/Converting_from_other_Databases_to_PostgreSQL#Oracle
-
-
--------------
-
-
-* SQL변환 가이드
-
-  - 데이터타입 비교.
-  - SQL syntax 비교
-  - query.
-
-
-;  https://uple.net/1601
-
-* 오브젝트 변환가이드.
-
-- 오라클과 오브젝트 비교..
-
 
 ## 레퍼런스 ##
 
-https://www.enterprisedb.com/blog/the-complete-oracle-to-postgresql-migration-guide-tutorial-move-convert-database-oracle-alternative?gclid=CjwKCAiAouD_BRBIEiwALhJH6EYfjIYgfljHPqXSBbnmgypKWRxzegJ7hbYfSb_vAxrj2ywcVu1C7xoCOpwQAvD_BwE&utm_campaign=Q42020_APAC&utm_medium=cpc&utm_source=google
+- https://uple.net/1601
+ 
+- https://www.pgcon.org/2008/schedule/track/Tutorial/62.en.html
+
+- https://wiki.postgresql.org/wiki/Converting_from_other_Databases_to_PostgreSQL#Oracle
+
+- [The Complete Oracle to PostgreSQL Migration Guide: Move and convert Schema, Application & Data](https://www.enterprisedb.com/blog/the-complete-oracle-to-postgresql-migration-guide-tutorial-move-convert-database-oracle-alternative?gclid=CjwKCAiAouD_BRBIEiwALhJH6EYfjIYgfljHPqXSBbnmgypKWRxzegJ7hbYfSb_vAxrj2ywcVu1C7xoCOpwQAvD_BwE&utm_campaign=Q42020_APAC&utm_medium=cpc&utm_source=google)
