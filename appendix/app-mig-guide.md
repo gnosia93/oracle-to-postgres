@@ -1,4 +1,13 @@
 
+
+* https://www.pgcon.org/2008/schedule/track/Tutorial/62.en.html
+
+* 
+
+
+-------------
+
+
 * SQL변환 가이드
 
   - 데이터타입 비교.
