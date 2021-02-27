@@ -161,9 +161,9 @@ select order_no, order_price from shop.tb_order ) as t;
 
 ### AWS SCT extension pack ###
 
-- PostgreSQL용 오라클 함수 구현체 
+- 오라클 빌트인 함수를 PostgreSQL에서 그대로 사용할 수 있도록 구현해 놓은 코드 확장팩. 
 - SCT 에 의해 타겟 데이터베이스의 aws_oracle_ext 스키마에 설치됨.
-- 오라클 프로시저 및 함수 등과 같은 코드성 오브젝트 변환시 사용됨.
+- SCT 는 오라클의 사용자 정의 코드성 오브젝트(프로시저, 함수 등)를 PostgreSQL 용으로 변환시 이 확장팩을 사용함.
 - https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_ExtensionPack.html (https://github.com/orafce/orafce)
 
 [oracle]
