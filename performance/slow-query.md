@@ -74,8 +74,6 @@ postgres=# exit
 
 아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
 
-![slowquery](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery1.png)
-
 ```
 select b.product_id, min(a.order_no), max(a.order_no)
 from tb_order a, tb_order_detail b
@@ -86,6 +84,9 @@ group by b.product_id
 order by b.product_id 
 limit 10 offset 0;
 ```
+
+![slowquery](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery1.png)
+
 
 로그 출력을 확인하기 위해서 아래와 같이 /var/lib/pgsql/data/log 디렉토리로 이동하여 해당 요일에 맞는 로그 파일을 tail 로 확인 합니다.
 아래 출력 결과로 볼때 우리가 실행한 SQL 의 실행시간은 약 4.4초 정도 소요된 것을 확인 할 수 있습니다. 
