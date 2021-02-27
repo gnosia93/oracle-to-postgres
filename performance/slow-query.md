@@ -77,9 +77,10 @@ postgres=# select pg_reload_conf();
 (1 row)
 postgres=# exit
 ```
+log_min_duration_statement 파라미터의 값을 3000 으로 설정했기 때문에, 실행시간이 3초 이상 걸리는 SQL 에 대해서는 로그로 출력될 것입니다. 
 
-아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
-
+실제 테스트를 위해서 아래의 SQL을 pgadmin 을 이용하여 실행합니다. 
+[테스트 쿼리 #1]
 ```
 select b.product_id, min(a.order_no), max(a.order_no)
 from tb_order a, tb_order_detail b
@@ -94,8 +95,9 @@ limit 10 offset 0;
 ![slowquery](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/slowquery1.png)
 
 
-로그 출력을 확인하기 위해서 아래와 같이 /var/lib/pgsql/data/log 디렉토리로 이동하여 해당 요일에 맞는 로그 파일을 tail 로 확인 합니다.
+로그 출력을 확인하기 위해서 아래와 같이 /var/lib/pgsql/data/log 디렉토리로 이동하여 당일 요일에 맞는 로그 파일을 tail 로 확인 합니다.
 아래 출력 결과로 볼때 우리가 실행한 SQL 의 실행시간은 약 4.4초 정도 소요된 것을 확인 할 수 있습니다. 
+실행로그가 관찰되지 않는 경우, 한번 더 [테스트 쿼리 #1] 을 실행해 봅니다. 
 ```
 -bash-4.2$ cd log
 -bash-4.2$ pwd
