@@ -6,7 +6,7 @@ PostgreSQL 에서 슬로우 쿼리를 확인하는 방법은 아래와 같이 3�
 * 슬로우 쿼리 로그 
 * auto_explain으로 실행 계획 확인
 * 쿼리 실행 통계(pg_stat_statements)
-* pg_stat_activity를 세션 SQL 관찰 
+* 세션 SQL 관찰 
 
 이중 실제 운영 단계에서도 많이 사용되고 있는 슬로우 쿼리로그 방식과 쿼리 실행 통계 방식에 대해서 한번 자세하게 살펴볼 것입니다.
 auto_explain 방식의 경우 슬로우 쿼리로그와 기본적으로 동일하며, 추가적으로 실행계획까지 로그 파일에 출력해 주는 기능합니다. 하지만 실행계획을 출력하기 위해서 내부적으로 동일한 SQL 을 한번더 실행하게 되므로, 필요하다면 성능 테스트 단계에서만 활용하고 운영단계에서는 되도록 쓰지 않는 것이 좋습니다. 
@@ -238,8 +238,9 @@ where s.userid = u.usesysid
 
 
 
-### pg_stat_activity를 세션 SQL 관찰 ###
+### 세션 SQL 관찰 ###
 
+pg_stat_activity 뷰를 이용하면 실시간으로 실행되는 SQL 을 권찰할 수 있습니다. 
 ```
 SELECT current_timestamp - query_start AS runtime, datname, usename, query
 FROM pg_stat_activity
