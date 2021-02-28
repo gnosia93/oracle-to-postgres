@@ -351,6 +351,9 @@ shop_db=# SELECT query, calls, total_time, rows, 100.0 * shared_blks_hit /
 (3 rows)
 ```
 
+### 10. QPS ###
+
+
 ## 레퍼런스 ##
 
 * [세션/시스템 기본정보확인](https://www.postgresql.org/docs/current/functions-info.html)
