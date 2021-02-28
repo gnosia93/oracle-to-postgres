@@ -1,4 +1,7 @@
 * https://blog.daum.net/initdb/category/PostgreSQL/PG.-%20Configuration
+
+* https://blog.daum.net/initdb/category/PostgreSQL/PG.-%20Configuration
+* 
 ## 아키텍처 ##
 
 ## 설정파일 ##
