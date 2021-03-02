@@ -2,6 +2,8 @@
 
 * https://sungthcom.tistory.com/entry/%EA%B4%80%EB%A6%AC%EC%9E%90%EA%B0%80-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Postgresql
 
+* https://momjian.us/main/writings/pgsql/administration.pdf
+
 
 ## 아키텍처 ##
 
