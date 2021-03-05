@@ -1,3 +1,5 @@
+https://m.blog.naver.com/PostView.nhn?blogId=geartec82&logNo=221144534637&proxyReferer=https:%2F%2Fwww.google.com%2F
+
 ### 1. 파라미터 확인 ###
 
 postgresql 주요 파라미터에 대한 설명을 나열한 후, 이를 조회하는 방법을 설명한다. 
