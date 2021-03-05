@@ -120,4 +120,4 @@ Our team and the entire PostgreSQL industry depends on the quality and stability
 
 * [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/admin-guide.md)
 
-* [SQL 튜닝가이드]()
+* [SQL 튜닝가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/tunning-guide.md)
