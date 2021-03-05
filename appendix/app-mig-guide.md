@@ -45,7 +45,7 @@ select order_no, order_price from shop.tb_order;
 psql> select ROWID, order_no, order_price from tb_order2;
 ```
 
-### ROWNUM, LIMIT & OFFSET ###
+### ROWNUM, LIMIT & OFFSET (페이징처리) ###
 
 - Oracle 에서 ROWNUM은 쿼리의 결과에 1부터 하나씩 값을 증가하여 출력 가상 컬럼(웹 페이징 처리시 사용).
 - PostgreSQL 의 경우 LIMIT 와 OFFSET 을 사용하여 동일한 결과를 출력함.
@@ -73,6 +73,15 @@ from shop.tb_order
 order by order_no
 limit 5 offset 10;
 ```
+
+
+### ROWNUM 사용하기 ###
+
+* http://www.devkuma.com/books/pages/860
+
+
+
+
 
 ### Sequence (시퀀스) ###
 
