@@ -4,6 +4,7 @@
 
 * https://momjian.us/main/writings/pgsql/administration.pdf
 
+* https://postgresql.kr/docs/9.6/admin.html
 
 ## 아키텍처 ##
 
