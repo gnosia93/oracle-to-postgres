@@ -6,6 +6,8 @@
 
 * https://postgresql.kr/docs/9.6/admin.html
 
+* https://m.blog.naver.com/PostView.nhn?blogId=geartec82&logNo=221144534637&proxyReferer=https:%2F%2Fwww.google.com%2F
+
 ## 아키텍처 ##
 
 ## 설정파일 ##
