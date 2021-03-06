@@ -5,7 +5,8 @@
 ### PG_ACTIVITY 을 이용한 성능 모니터링 ###
 
 - https://github.com/dalibo/pg_activity
-
+- https://dba.stackexchange.com/questions/44084/troubleshooting-high-cpu-usage-from-postgres-and-postmaster-services
+ 
 ![pg_activity](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/perf_pg_activity.png)
 
 
