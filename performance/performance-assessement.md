@@ -14,7 +14,7 @@ TOP 와 비슷한 인터페이스를 제공하는 커맨드 라인툴로 실시�
 
 ###  pgBadger ###
 
-오라클의 AWR 리포트와 비슷한 형태의 프로그램으로 PostgreSQL 의 로그를 수집하여 HTML 형태의 데이터베이스 성능 지표와 연관된 정보를 출력합니다.
+pgBadger는 PostgreSQL의 Log를 기반으로 수집된 로그를 분석하여 HTML 형태로 분석 결과를 보여주는 Perl 스크리트 기반의 클라이언트 툴입니다. 
 
 - https://aws.amazon.com/ko/blogs/database/optimizing-and-tuning-queries-in-amazon-rds-postgresql-based-on-native-and-external-tools/
 - http://pgbadger.darold.net/samplev7.html [샘플 데모 화면]
