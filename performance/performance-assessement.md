@@ -401,6 +401,8 @@ postgres=# \d pg_stat_database;
 * [PostgreSQL 모니터링 SQL 모음](https://m.blog.naver.com/PostView.nhn?blogId=geartec82&logNo=221144534637&proxyReferer=https:%2F%2Fwww.google.com%2F
 )
 
+* [Auto Vacuum 최적화하기](https://nrise.github.io/posts/postgresql-autovacuum/)
+
 
 
 ## 레퍼런스 ##
