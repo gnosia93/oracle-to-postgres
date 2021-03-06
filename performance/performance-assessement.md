@@ -364,6 +364,31 @@ postgres=# SELECT sum(xact_commit+xact_rollback) FROM pg_stat_database;
 --------
  636535
 (1 row)
+
+postgres=# \d pg_stat_database;
+                     View "pg_catalog.pg_stat_database"
+     Column     |           Type           | Collation | Nullable | Default 
+----------------+--------------------------+-----------+----------+---------
+ datid          | oid                      |           |          | 
+ datname        | name                     |           |          | 
+ numbackends    | integer                  |           |          | 
+ xact_commit    | bigint                   |           |          | 
+ xact_rollback  | bigint                   |           |          | 
+ blks_read      | bigint                   |           |          | 
+ blks_hit       | bigint                   |           |          | 
+ tup_returned   | bigint                   |           |          | 
+ tup_fetched    | bigint                   |           |          | 
+ tup_inserted   | bigint                   |           |          | 
+ tup_updated    | bigint                   |           |          | 
+ tup_deleted    | bigint                   |           |          | 
+ conflicts      | bigint                   |           |          | 
+ temp_files     | bigint                   |           |          | 
+ temp_bytes     | bigint                   |           |          | 
+ deadlocks      | bigint                   |           |          | 
+ blk_read_time  | double precision         |           |          | 
+ blk_write_time | double precision         |           |          | 
+ stats_reset    | timestamp with time zone |           |          | 
+
 ```
 
 
