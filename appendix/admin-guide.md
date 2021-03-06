@@ -25,6 +25,25 @@
 
 
 
+### 데이터 디렉토리 조회 ###
+
+```
+postgres=# show data_directory;
+   data_directory    
+---------------------
+ /var/lib/pgsql/data
+(1 row)
+```
+
+### 데이터 사이즈 조회 ###
+```
+postgres=# select pg_database_size('shop_db');
+ pg_database_size 
+------------------
+      15937761951
+(1 row)
+```
+
 ## 카탈로그 정보 조회 ##
 
 postgres 데이터베이스 역시 오라클의 fixed 또는 동적 뷰에 해당하는 시스템 카탈로그 및 뷰를 지원하고 있으며, 이를 통해 여러가지 데이터베이스 오브젝트 정보를 조회할 수 있습니다. 
