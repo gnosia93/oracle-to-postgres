@@ -252,7 +252,7 @@ pg_stat_statements 뷰에 대한 상세한 정보를 https://www.postgresql.org/
 
 ### 세션 SQL 관찰 ###
 
-pg_stat_activity 뷰를 이용하면 실시간으로 실행되는 SQL 을 권찰할 수 있습니다. 
+또한 pg_stat_activity 뷰를 이용하면 실시간으로 실행되는 SQL 을 권찰할 수 있습니다. 
 ```
 SELECT current_timestamp - query_start AS runtime, datname, usename, query
 FROM pg_stat_activity
