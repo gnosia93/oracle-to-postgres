@@ -14,6 +14,9 @@
 - https://aws.amazon.com/ko/blogs/database/optimizing-and-tuning-queries-in-amazon-rds-postgresql-based-on-native-and-external-tools/
 
 
+
+## psql 을 이용한 정보 확인 ##
+
 ### 1. 파라미터 확인 ###
 
 postgresql 주요 파라미터에 대한 설명을 나열한 후, 이를 조회하는 방법을 설명한다. 
