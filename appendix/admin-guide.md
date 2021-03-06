@@ -12,6 +12,11 @@
 
 ## 설정파일 ##
 
+* https://kimdubi.github.io/postgresql/psql_conf/
+
+
+
+
 ## 기본 명령어 ##
 
 
