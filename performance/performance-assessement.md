@@ -391,6 +391,10 @@ postgres=# \d pg_stat_database;
 
 ```
 
+## 유용한 링크 ##
+
+* [PostgreSQL Log로 DB 성능 분석(pgBadger)](https://browndwarf.tistory.com/23?category=803646)
+
 
 ## 레퍼런스 ##
 
