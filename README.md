@@ -19,7 +19,7 @@
 - 데이터 이행 / 서비스 오픈
 - 성능 모니터링 / 튜닝
 
-### Advantages of migrating from Oracle to PostgreSQL. ### 
+### PostgreSQL 전환시 이점 ### 
 
 No licensing costs
 Reduction of support costs by 80% or more
