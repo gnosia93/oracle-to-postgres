@@ -17,7 +17,9 @@ Network 성능은.. EC2 인스턴스 타입에 따라 틀리다..
   - 오라클 진단/평가
       - 어느 정도 사용하고 있는지 ? (성능/용량)
       
-      
+-----
+
+* https://aws.amazon.com/ko/blogs/database/best-practices-for-migrating-an-oracle-database-to-amazon-rds-postgresql-or-amazon-aurora-postgresql-migration-process-and-infrastructure-considerations/
 -----
 https://wiki.postgresql.org/wiki/Oracle_to_Postgres_Conversion
 
