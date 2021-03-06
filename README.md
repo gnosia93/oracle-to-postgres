@@ -120,9 +120,7 @@ Our team and the entire PostgreSQL industry depends on the quality and stability
 
 * [postgresql 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/admin-guide.md)
 
-* [SQL 튜닝가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/tunning-guide.md)
-
-* [psql 명령어정리](https://browndwarf.tistory.com/51)
+* [PSQL 명령어정리](https://browndwarf.tistory.com/51)
 
 * [PostgreSQL Tutorial](https://www.tutorialspoint.com/postgresql/index.htm)
 
