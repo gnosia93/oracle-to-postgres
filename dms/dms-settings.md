@@ -83,3 +83,7 @@ Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 �
 생성중인 마이그레이션 태스크를 확인할 수 있습니다. 
 ![task-mapping2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/mig-task-result.png)
 
+
+## 참고자료 ##
+
+* https://aws.amazon.com/ko/blogs/database/a-quick-introduction-to-migrating-from-an-oracle-database-to-an-amazon-aurora-postgresql-database/
