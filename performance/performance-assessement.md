@@ -11,8 +11,11 @@
 
 
 ###  pgBadger ###
+
 - https://aws.amazon.com/ko/blogs/database/optimizing-and-tuning-queries-in-amazon-rds-postgresql-based-on-native-and-external-tools/
 - http://pgbadger.darold.net/samplev7.html [샘플 데모 화면]
+
+![pgBadger](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/perf_pg_badger.png)
 
 
 ## psql 을 이용한 정보 확인 ##
