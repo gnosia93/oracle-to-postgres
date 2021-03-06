@@ -23,6 +23,17 @@ sql> select nvl(user_id, 0) from tb_user;
 psql> select coalesce(user_id, 0) from tb_user;
 ```
 
+### DECODE, CASE ###
+
+[oracle]
+```
+sql> select decode
+```
+
+[postgresql]
+```
+psql> select case when  ~ then
+```
 
 ### ROWID, CTID & Identity columns ###
 
