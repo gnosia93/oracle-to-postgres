@@ -104,18 +104,7 @@ host    replication     all             127.0.0.1/32            trust
 host    replication     all             ::1/128                 trust
 ```
 
-
-
-## 기본 명령어 ##
-
-
-## psql 사용법 ##
-
-* https://browndwarf.tistory.com/51
-
-* https://brownbears.tistory.com/category/DB/PostgreSQL
-
-## CRUD / Index 생성 ##
+### 데이터베이스 생성 ###
 
 
 
@@ -289,7 +278,7 @@ order by schema_name,
 ```
 
 
-### 트리거 ###
+### 트리거 조회 ###
 ```
 select event_object_schema as table_schema,
        event_object_table as table_name,
