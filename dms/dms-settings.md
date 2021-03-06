@@ -88,3 +88,4 @@ Table Mapping 설정시 SHOP 은 소문자가 아닌 대문자로 표기해야 �
 
 * https://aws.amazon.com/ko/blogs/korea/how-to-migrate-your-oracle-database-to-postgresql/
 * https://aws.amazon.com/ko/blogs/database/a-quick-introduction-to-migrating-from-an-oracle-database-to-an-amazon-aurora-postgresql-database/
+* https://aws.amazon.com/ko/blogs/database/how-to-solve-some-common-challenges-faced-while-migrating-from-oracle-to-postgresql/
