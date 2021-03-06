@@ -310,9 +310,9 @@ shop_db=# select checkpoints_timed, checkpoints_req from pg_stat_bgwriter;
 
 ### 7. Waitevent ###
 
-* https://www.postgresql.org/docs/10/monitoring-stats.html
-
 오라클과 비슷한 개념의 WaitEvent 를 제공한다. 이벤트 타입으로는 LWLock, Lock, BufferPin, Activity, Client, IPC, Timeout, IO 등이 있다. 
+
+* https://www.postgresql.org/docs/10/monitoring-stats.html
 
 ```
 psql> SELECT pid, wait_event_type, wait_event FROM pg_stat_activity WHERE wait_event is NOT NULL;
