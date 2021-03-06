@@ -417,6 +417,8 @@ postgres=# \d pg_stat_database;
 
 * [Performance impact of idle PostgreSQL connections](https://aws.amazon.com/blogs/database/performance-impact-of-idle-postgresql-connections/)
  
+* [PostgreSQL CPU contention](https://stackoverflow.com/questions/22672453/why-is-my-postgresql-server-cpu-constrained)
+
 
 ## 레퍼런스 ##
 
