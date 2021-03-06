@@ -1,5 +1,7 @@
 ## 아키텍처 ##
 
+* https://www.tutorialdba.com/p/postgresql-architecture.html
+
 ![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/Architect%20Postgresql.png)
 
 ![server](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/Postgresql%20Server.png)
