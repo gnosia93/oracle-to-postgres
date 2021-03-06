@@ -126,3 +126,4 @@ Our team and the entire PostgreSQL industry depends on the quality and stability
 
 * [PostgreSQL Tutorial](https://www.tutorialspoint.com/postgresql/index.htm)
 
+* [AWS SCT 메뉴얼](https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/Schema-Conversion-Tool.pdf)
