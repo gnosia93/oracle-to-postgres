@@ -355,7 +355,16 @@ shop_db=# SELECT query, calls, total_time, rows, 100.0 * shared_blks_hit /
 (3 rows)
 ```
 
-### 10. QPS ###
+### 10. QPS / TX ###
+
+- 트랜잭션 수 조회(누적값)
+```
+postgres=# SELECT sum(xact_commit+xact_rollback) FROM pg_stat_database;
+  sum   
+--------
+ 636535
+(1 row)
+```
 
 
 ## 레퍼런스 ##
