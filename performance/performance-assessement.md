@@ -4,7 +4,9 @@
 
 ### 0. pg_activity 을 이용한 성능 모니터링 ###
 
-* https://github.com/dalibo/pg_activity
+https://github.com/dalibo/pg_activity
+
+![pg_activity](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/perf_pg_activity.png)
 
 
 ### 1. 파라미터 확인 ###
