@@ -415,7 +415,8 @@ postgres=# \d pg_stat_database;
 
 * [Auto Vacuum 최적화하기](https://nrise.github.io/posts/postgresql-autovacuum/)
 
-
+* [Performance impact of idle PostgreSQL connections](https://aws.amazon.com/blogs/database/performance-impact-of-idle-postgresql-connections/)
+ 
 
 ## 레퍼런스 ##
 
