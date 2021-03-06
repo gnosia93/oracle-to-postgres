@@ -1,13 +1,3 @@
-* https://blog.daum.net/initdb/category/PostgreSQL/PG.-%20Configuration
-
-* https://sungthcom.tistory.com/entry/%EA%B4%80%EB%A6%AC%EC%9E%90%EA%B0%80-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Postgresql
-
-* https://momjian.us/main/writings/pgsql/administration.pdf
-
-* https://postgresql.kr/docs/9.6/admin.html
-
-* https://m.blog.naver.com/PostView.nhn?blogId=geartec82&logNo=221144534637&proxyReferer=https:%2F%2Fwww.google.com%2F
-
 ## 아키텍처 ##
 
 ## 설정파일 (예시) ##
@@ -89,8 +79,23 @@ lc_time = 'en_US.UTF-8'
 default_text_search_config = 'pg_catalog.english'
 ```
 
-* https://kimdubi.github.io/postgresql/psql_conf/
+### pg_hba.conf ####
+postgresql 접속 인증 관련 설정으로 oracle 의 sqlnet.ora 에 해당.
+```
+# TYPE  DATABASE        USER            ADDRESS                 METHOD
 
+# "local" is for Unix domain socket connections only
+local   all             all                                     trust
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            trust
+# IPv6 local connections:
+host    all             all             ::1/128                 trust
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+local   replication     all                                     trust
+host    replication     all             127.0.0.1/32            trust
+host    replication     all             ::1/128                 trust
+```
 
 
 
@@ -311,3 +316,13 @@ select * from pg_stat_activity order by query_start asc;
 
 * https://www.enterprisedb.com/blog/the-complete-oracle-to-postgresql-migration-guide-tutorial-move-convert-database-oracle-alternative?gclid=CjwKCAiAouD_BRBIEiwALhJH6EYfjIYgfljHPqXSBbnmgypKWRxzegJ7hbYfSb_vAxrj2ywcVu1C7xoCOpwQAvD_BwE&utm_campaign=Q42020_APAC&utm_medium=cpc&utm_source=google
 
+
+* https://blog.daum.net/initdb/category/PostgreSQL/PG.-%20Configuration
+
+* https://sungthcom.tistory.com/entry/%EA%B4%80%EB%A6%AC%EC%9E%90%EA%B0%80-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Postgresql
+
+* https://momjian.us/main/writings/pgsql/administration.pdf
+
+* https://postgresql.kr/docs/9.6/admin.html
+
+* https://m.blog.naver.com/PostView.nhn?blogId=geartec82&logNo=221144534637&proxyReferer=https:%2F%2Fwww.google.com%2F
