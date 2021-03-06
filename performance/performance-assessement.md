@@ -22,7 +22,7 @@ pgBadger는 PostgreSQL의 Log를 기반으로 수집된 로그를 분석하여 H
 ![pgBadger](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/perf_pg_badger.png)
 
 
-## psql 을 이용한 정보 확인 ##
+## psql 을 이용한 카탈로그 정보 조회 ##
 
 psql 을 이용하여 데이터베이스 성능 및 상태를 관찰하고자 하는 경우 필요한 SQL과 관련 시스템 뷰에 대해 다루도록 합니다.   
 
