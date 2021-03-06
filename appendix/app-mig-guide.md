@@ -339,9 +339,15 @@ psql> select aws_oracle_ext.TO_DATE('20210227101259','yyyymmddhh24miss');
 - 오라클 패키지는 PostgreSQL 의 스키마로 대체한다. 즉 스키마를 먼저 만들고 해당 스키마 안에 프로시저 및 함수와 같은 코드성 오브젝트를 생성한다.
 
 
-### 리모트 오브젝트 ###
 
-To access remote objects, the DBLINK module or Foreign Data Wrapper(Oracle_fdw) can be used to access any other database. 
+## 유용한 링크 ##
+
+* [MERGE INTO 구현](https://m.blog.naver.com/wiseyoun07/221146431131)
+
+* [계층쿼리](https://m.blog.naver.com/wiseyoun07/221135850258)
+
+* [열을 행으로 전환](https://m.blog.naver.com/wiseyoun07/221136671840)
+
 
 
 ## 레퍼런스 ##
