@@ -327,7 +327,7 @@ psql> select aws_oracle_ext.TO_DATE('20210227101259','yyyymmddhh24miss');
 ![sct_extpack](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/app_sct_extpack.png)
 
 
-### PLSQL 변환 ###
+### PL/SQL 변환 ###
 
 - 기본적으로 AWS SCT 를 이용하여 오라클의 PLSQL 코드를 PostgreSQL 로 자동 변환함. 
 - 자동 변환이 실패하는 경우 [PostgreSQL plpgsql 포팅가이드](https://www.postgresql.org/docs/current/plpgsql-porting.html) 를 참조하여 수정. 
