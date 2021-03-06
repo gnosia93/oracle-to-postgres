@@ -24,12 +24,9 @@
 No licensing costs
 Reduction of support costs by 80% or more
 
-### Database stability and data security. ###
-The main concerns raised by many who have already migrated from Oracle to PostgreSQL are the questions of security, stability and quality.
-PostgreSQL is a rock solid database, which has been proven repeatedly over the years. It has been adopted in critical environments such as banking, government, defense, medicine and in the automotive industry (to mention just a few).
+### 데이터베이스 운영 안정성 및 데이터 보안 ###
 
-Our team and the entire PostgreSQL industry depends on the quality and stability of the PostgreSQL code base, which means that everybody is working hard to maintain good quality, superior stability and high standards of development. Remember: It is not only your data which is at stake – the same applies to our reputation and the existence of the entire industry, which means PostgreSQL contributors will do everything to protect your data by every possible means available.
-
+이미 Oracle에서 PostgreSQL로 마이그레이션 한 많은 사람들이 제기하는 주요 우려 사항은 보안, 안정성 및 품질 문제입니다. PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베이스입니다. 은행, 정부, 국방, 의학 및 자동차 산업과 같은 중요한 환경에서 채택되었습니다.
 
 
 ## Revision History 
