@@ -17,7 +17,7 @@ TOP 와 비슷한 인터페이스를 제공하는 커맨드 라인툴로 실시�
 pgBadger는 PostgreSQL의 Log를 기반으로 수집된 로그를 분석하여 HTML 형태로 분석 결과를 보여주는 Perl 스크리트 기반의 클라이언트 툴입니다. 
 
 - https://aws.amazon.com/ko/blogs/database/optimizing-and-tuning-queries-in-amazon-rds-postgresql-based-on-native-and-external-tools/
-- http://pgbadger.darold.net/samplev7.html [샘플 데모 화면]
+- [pgBadger 샘플 데모 화면](http://pgbadger.darold.net/samplev7.html)
 
 ![pgBadger](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/perf_pg_badger.png)
 
