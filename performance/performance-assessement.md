@@ -438,16 +438,3 @@ postgres=# \d pg_stat_database;
 * [Amazon RDS 또는 Amazon Aurora PostgreSQL의 높은 CPU 사용률 문제를 해결하려면 어떻게 해야 하나요?](https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-aurora-postgresql-high-cpu/)
 
 
-## 레퍼런스 ##
-
-* [세션/시스템 기본정보확인](https://www.postgresql.org/docs/current/functions-info.html)
-
-* [모니터링](https://semode.tistory.com/6)
-
-* [세모데](https://semode.tistory.com/category/RDB/PostreSQL)
-
-* [이런디비~저런디비](http://blog.daum.net/initdb/category/PostgreSQL)
-
-* [postgres wiki](https://wiki.postgresql.org/wiki/Monitoring)
-
-* https://github.com/gnosia93/aws-mbp/blob/master/tutorials/postgres/postgres-monitoring.md
