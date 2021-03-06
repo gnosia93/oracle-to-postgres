@@ -419,6 +419,8 @@ postgres=# \d pg_stat_database;
  
 * [PostgreSQL CPU contention](https://stackoverflow.com/questions/22672453/why-is-my-postgresql-server-cpu-constrained)
 
+* [Amazon RDS 또는 Amazon Aurora PostgreSQL의 높은 CPU 사용률 문제를 해결하려면 어떻게 해야 하나요?](https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-aurora-postgresql-high-cpu/)
+
 
 ## 레퍼런스 ##
 
