@@ -12,7 +12,7 @@
 
 ###  pgBadger ###
 - https://aws.amazon.com/ko/blogs/database/optimizing-and-tuning-queries-in-amazon-rds-postgresql-based-on-native-and-external-tools/
-
+- http://pgbadger.darold.net/samplev7.html [샘플 데모 화면]
 
 
 ## psql 을 이용한 정보 확인 ##
