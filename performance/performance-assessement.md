@@ -4,13 +4,17 @@
 
 ### PG_ACTIVITY 을 이용한 성능 모니터링 ###
 
+TOP 와 비슷한 인터페이스를 제공하는 커맨드 라인툴로 실시간으로 실행되는 SQL 을 관찰할 수 있습니다. 
+
 - https://github.com/dalibo/pg_activity
 - https://dba.stackexchange.com/questions/44084/troubleshooting-high-cpu-usage-from-postgres-and-postmaster-services
- 
+
 ![pg_activity](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/perf_pg_activity.png)
 
 
 ###  pgBadger ###
+
+오라클의 AWR 리포트와 비슷한 형태의 프로그램으로 PostgreSQL 의 로그를 수집하여 HTML 형태의 데이터베이스 성능 지표와 연관된 정보를 출력합니다.
 
 - https://aws.amazon.com/ko/blogs/database/optimizing-and-tuning-queries-in-amazon-rds-postgresql-based-on-native-and-external-tools/
 - http://pgbadger.darold.net/samplev7.html [샘플 데모 화면]
