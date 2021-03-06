@@ -115,10 +115,11 @@
 
 * [어플리케이션 변환 가이드(SQL/프로시저 변환가이드)](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/app-mig-guide.md)
 
+* [AWS SCT 메뉴얼](https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/Schema-Conversion-Tool.pdf)
+
 * [PostgreSQL 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/admin-guide.md)
+
+* [PostgreSQL 개발자 가이드](https://www.tutorialspoint.com/postgresql/index.htm)
 
 * [PSQL 명령어정리](https://browndwarf.tistory.com/51)
 
-* [PostgreSQL Tutorial](https://www.tutorialspoint.com/postgresql/index.htm)
-
-* [AWS SCT 메뉴얼](https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/Schema-Conversion-Tool.pdf)
