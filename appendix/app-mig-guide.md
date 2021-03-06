@@ -348,6 +348,8 @@ psql> select aws_oracle_ext.TO_DATE('20210227101259','yyyymmddhh24miss');
 
 * [열을 행으로 전환](https://m.blog.naver.com/wiseyoun07/221136671840)
 
+* [Orafce - Oracle’s compatibility functions and packages](https://access.crunchydata.com/documentation/orafce/3.11.1/)
+
 
 
 ## 레퍼런스 ##
