@@ -288,6 +288,13 @@ shop_db=# select checkpoints_timed, checkpoints_req from pg_stat_bgwriter;
 
 ### 8. Vacuum ###
 
+```
+psql> select * from  pg_stat_progress_vacuum;
+
+```
+
+
+
 * https://m.blog.naver.com/PostView.nhn?blogId=geartec82&logNo=221144534637&proxyReferer=https:%2F%2Fwww.google.com%2F
 
 * https://nrise.github.io/posts/postgresql-autovacuum/  - autovaccum 최적화하기
