@@ -21,7 +21,7 @@ Network 성능은.. EC2 인스턴스 타입에 따라 틀리다..
 -----
 https://wiki.postgresql.org/wiki/Oracle_to_Postgres_Conversion
 
-#### Oracle Enterprise and RAC Considerations ####  
+#### Oracle Enterprise and RAC Considerations ####
 Oracle Enterprise has a more direct migration to PostgreSQL than does Oracle Real Application Clusters (RAC) in some cases. With RAC you may have multiple, separate, heavy-hitting, DML applications usually of the OLTP type connected to the same RAC Cluster, where RAC serves as a type of application farm. A common mistake with migrations from Oracle RAC farms is to associate all of the farm applications with one PostgreSQL Instance. The big picture that is missed here is ACTIVE-ACTIVE (Oracle RAC) and ACTIVE-PASSIVE (PG). While Oracle RAC can divvy up the applications and load balance them across the Nodes in the cluster, there is no such thing in PostgreSQL. So, the "right" solution without some re-architecture and/or use of 3rd party tools and extensions is to migrate the applications off of Oracle RAC one at a time to separate PostgreSQL instances, one heavy-hitting application per PostgreSQL Instance. The next two sections illustrate CPU and Memory factors that come into play with PostgreSQL being a host to 2 or more heavy-hitting applications.
 
 CPU Contention  
