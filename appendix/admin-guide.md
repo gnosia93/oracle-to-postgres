@@ -10,7 +10,84 @@
 
 ## 아키텍처 ##
 
-## 설정파일 ##
+## 설정파일 (예시) ##
+
+### postgres.conf ###
+
+```
+#------------------------------------------------------------------------------
+# CONNECTIONS AND AUTHENTICATION
+#------------------------------------------------------------------------------
+
+# - Connection Settings -
+listen_addresses = '*'
+port = 3000
+max_connections = 1000
+
+#------------------------------------------------------------------------------
+# RESOURCE USAGE (except WAL)
+#------------------------------------------------------------------------------
+
+# - Memory -
+shared_buffers = 1024MB    
+work_mem = 4MB   
+maintenance_work_mem = 512MB 
+
+dynamic_shared_memory_type = posix
+effective_io_concurrency = 200
+
+max_worker_processes=8
+max_parallel_workers_per_gather = 2
+max_parallel_workers = 8
+
+#------------------------------------------------------------------------------
+# WRITE AHEAD LOG
+#------------------------------------------------------------------------------
+
+# - Settings -
+wal_level = logical
+wal_buffers = 2MB
+max_wal_size = 1GB
+
+# - Archiving -
+archive_mode = on
+archive_command = 'cp %p /home/ec2-user/arch/%f'
+
+#------------------------------------------------------------------------------
+# QUERY TUNING
+#------------------------------------------------------------------------------
+
+random_page_cost = 1.1
+default_statistics_target = 100
+effective_cache_size = 3GB   # max. Physical M * 0.75
+
+#------------------------------------------------------------------------------
+# ERROR REPORTING AND LOGGING
+#------------------------------------------------------------------------------
+
+# - Where to Log -
+log_destination = 'stderr'
+logging_collector = on
+log_filename = 'alert_db.log'
+
+# - What to Log -
+log_line_prefix = '%t '
+
+#------------------------------------------------------------------------------
+# CLIENT CONNECTION DEFAULTS
+#------------------------------------------------------------------------------
+
+# - Statement Behavior -
+search_path = '"$user"'
+temp_tablespaces = 'TS_TEMP'
+
+timezone='Asia/Seoul'
+lc_messages = 'en_US.UTF-8' 
+lc_monetary = 'en_US.UTF-8' 
+lc_numeric = 'en_US.UTF-8' 
+lc_time = 'en_US.UTF-8' 
+default_text_search_config = 'pg_catalog.english'
+```
 
 * https://kimdubi.github.io/postgresql/psql_conf/
 
