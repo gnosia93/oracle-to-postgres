@@ -21,8 +21,8 @@
 
 ### PostgreSQL 전환시 이점 ### 
 
-No licensing costs
-Reduction of support costs by 80% or more
+- No licensing costs  
+- Reduction of support costs by 80% or more
 
 ### 데이터베이스 운영 안정성 및 데이터 보안 ###
 
