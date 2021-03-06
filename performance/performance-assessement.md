@@ -2,7 +2,7 @@
 
 이번 챕터에서는 PostgreSQL 의 성능을 진단하고 평가하는 방법에 대해 설명합니다. 
 
-### 0. pg_activity 을 이용한 성능 모니터링 ###
+### PG_ACTIVITY 을 이용한 성능 모니터링 ###
 
 https://github.com/dalibo/pg_activity
 
