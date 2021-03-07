@@ -433,6 +433,12 @@ postgres=# \d pg_stat_database;
 
 ```
 
+## PostgreSQL Query flow ##
+
+* https://www.tutorialdba.com/p/postgresql-query-flow.html
+
+
+
 ## 유용한 링크 ##
 
 * [PostgreSQL Log로 DB 성능 분석(pgBadger)](https://browndwarf.tistory.com/23?category=803646)
