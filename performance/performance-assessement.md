@@ -437,6 +437,7 @@ postgres=# \d pg_stat_database;
 
 * https://www.tutorialdba.com/p/postgresql-query-flow.html
 
+![query flow](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/postgresql-query-flow.png)
 
 
 ## 유용한 링크 ##
