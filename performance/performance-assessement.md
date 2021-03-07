@@ -436,7 +436,8 @@ postgres=# \d pg_stat_database;
 ## PostgreSQL Query flow ##
 
 * https://www.tutorialdba.com/p/postgresql-query-flow.html
-
+* https://madusudanan.com/blog/understanding-postgres-caching-in-depth/
+ 
 ![query flow](https://github.com/gnosia93/postgres-terraform/blob/main/performance/images/postgresql-query-flow.png)
 
 
