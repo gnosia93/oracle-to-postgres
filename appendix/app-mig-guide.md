@@ -23,6 +23,19 @@ sql> select nvl(user_id, 0) from tb_user;
 psql> select coalesce(user_id, 0) from tb_user;
 ```
 
+### UNIQUE, DISTINCT ###
+
+[oracle]
+```
+sql> select unique 
+```
+
+[postgresql]
+```
+psql> select distinct
+```
+
+
 ### DECODE, CASE ###
 
 [oracle]
