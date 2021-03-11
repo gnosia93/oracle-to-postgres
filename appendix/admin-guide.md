@@ -315,28 +315,3 @@ from information_schema.triggers;
 select * from pg_stat_activity order by query_start asc;
 ```
 
-
-## 레퍼런스 ##
-
-* https://www.db-book.com/db7/online-chapters-dir/32.pdf
-
-* https://waspro.tistory.com/146?category=826974
-
-* https://stricky.tistory.com/367
-
-* https://aws.amazon.com/ko/blogs/korea/how-to-migrate-your-oracle-database-to-postgresql/
-
-* https://github.com/experdb/eXperDB-DB2PG
-
-* https://www.enterprisedb.com/blog/the-complete-oracle-to-postgresql-migration-guide-tutorial-move-convert-database-oracle-alternative?gclid=CjwKCAiAouD_BRBIEiwALhJH6EYfjIYgfljHPqXSBbnmgypKWRxzegJ7hbYfSb_vAxrj2ywcVu1C7xoCOpwQAvD_BwE&utm_campaign=Q42020_APAC&utm_medium=cpc&utm_source=google
-
-
-* https://blog.daum.net/initdb/category/PostgreSQL/PG.-%20Configuration
-
-* https://sungthcom.tistory.com/entry/%EA%B4%80%EB%A6%AC%EC%9E%90%EA%B0%80-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-Postgresql
-
-* https://momjian.us/main/writings/pgsql/administration.pdf
-
-* https://postgresql.kr/docs/9.6/admin.html
-
-* https://m.blog.naver.com/PostView.nhn?blogId=geartec82&logNo=221144534637&proxyReferer=https:%2F%2Fwww.google.com%2F
