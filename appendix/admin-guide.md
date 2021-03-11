@@ -106,6 +106,14 @@ host    replication     all             ::1/128                 trust
 
 ### 데이터베이스 생성 ###
 
+### 버전 조회 ###
+```
+postgres=# select version();
+                                                 version                                                  
+----------------------------------------------------------------------------------------------------------
+ PostgreSQL 11.5 on x86_64-koji-linux-gnu, compiled by gcc (GCC) 7.3.1 20180712 (Red Hat 7.3.1-6), 64-bit
+(1 row)
+```
 
 
 ### 데이터 디렉토리 조회 ###
