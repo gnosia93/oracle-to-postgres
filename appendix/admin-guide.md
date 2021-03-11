@@ -115,6 +115,16 @@ postgres=# select version();
 (1 row)
 ```
 
+### 데이터베이스 블록 사이즈 조회 ###
+- 블록사이즈는 기본 8K 이며, 소스 코드를 이용하여 컴파일 하는 경우 변경할 수 있다. 
+(https://stackoverflow.com/questions/56147727/how-to-change-set-the-block-size-in-postgres-is-there-any-file-to-make-the-conf)
+```
+postgres=# SELECT current_setting('block_size');
+ current_setting 
+-----------------
+ 8192
+(1 row)
+```
 
 ### 데이터 디렉토리 조회 ###
 
