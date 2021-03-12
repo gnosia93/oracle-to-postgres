@@ -171,9 +171,25 @@ pgbench 의 각 파라미터 값은 다음과 같다.
 $ which pgbench
 /usr/bin/pgbench
 
+$ sudo su - postgres
 
-
--bash-4.2$ pgbench -U postgres -c 64 -t 10000 -M extended -j 64 -P 3 -d pgbenchtest
+-bash-4.2$ pgbench -U postgres -c 64 -t 10000 -M extended -j 64 -P 10 pgbenchtest
+starting vacuum...end.
+progress: 10.0 s, 15169.8 tps, lat 4.213 ms stddev 2.453
+progress: 20.0 s, 15080.2 tps, lat 4.244 ms stddev 2.752
+progress: 30.0 s, 15761.9 tps, lat 4.060 ms stddev 2.371
+progress: 40.0 s, 14164.8 tps, lat 4.517 ms stddev 2.870
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 100
+query mode: extended
+number of clients: 64
+number of threads: 64
+number of transactions per client: 10000
+number of transactions actually processed: 640000/640000
+latency average = 4.263 ms
+latency stddev = 2.620 ms
+tps = 14921.995811 (including connections establishing)
+tps = 14924.836465 (excluding connections establishing)
 ```
 
 
