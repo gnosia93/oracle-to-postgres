@@ -81,7 +81,14 @@ postgres=# select version();
  PostgreSQL 11.5 on aarch64-koji-linux-gnu, compiled by gcc (GCC) 7.3.1 20180712 (Red Hat 7.3.1-6), 64-bit
 (1 row)
 
+postgres=# CREATE DATABASE pgbenchtest OWNER postgres;
+CREATE DATABASE
 
+postgres=# \c pgbenchtest postgres
+You are now connected to database "pgbenchtest" as user "postgres".
+
+pgbenchtest=# \dt
+Did not find any relations.
 ```
 
 
