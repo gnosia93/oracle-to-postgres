@@ -92,57 +92,6 @@ Did not find any relations.
 
 pgbenchtest=# \q
 
--bash-4.2$ pgbench -i pgbenchtest
-dropping old tables...
-NOTICE:  table "pgbench_accounts" does not exist, skipping
-NOTICE:  table "pgbench_branches" does not exist, skipping
-NOTICE:  table "pgbench_history" does not exist, skipping
-NOTICE:  table "pgbench_tellers" does not exist, skipping
-creating tables...
-generating data...
-100000 of 100000 tuples (100%) done (elapsed 0.06 s, remaining 0.00 s)
-vacuuming...
-creating primary keys...
-done.
-
--bash-4.2$ psql
-psql (11.5)
-Type "help" for help.
-
-postgres=# \c pgbenchtest postgres
-You are now connected to database "pgbenchtest" as user "postgres".
-
-pgbenchtest=# \dt+
-                          List of relations
- Schema |       Name       | Type  |  Owner   |  Size   | Description 
---------+------------------+-------+----------+---------+-------------
- public | pgbench_accounts | table | postgres | 13 MB   | 
- public | pgbench_branches | table | postgres | 40 kB   | 
- public | pgbench_history  | table | postgres | 0 bytes | 
- public | pgbench_tellers  | table | postgres | 40 kB   |
-
-pgbenchtest=# SELECT schemaname,relname,n_live_tup FROM pg_stat_user_tables;
- schemaname |     relname      | n_live_tup 
-------------+------------------+------------
- public     | pgbench_tellers  |         10
- public     | pgbench_accounts |     100000
- public     | pgbench_history  |          0
- public     | pgbench_branches |          1
-(4 rows)
-
-pgbenchtest=# \l+
-                                                                     List of databases
-    Name     |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   |  Size   | Tablespace |                Description                 
--------------+----------+----------+-------------+-------------+-----------------------+---------+------------+--------------------------------------------
- pgbenchtest | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                       | 23 MB   | pg_default | 
- postgres    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                       | 7989 kB | pg_default | default administrative connection database
- template0   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7849 kB | pg_default | unmodifiable empty database
-             |          |          |             |             | postgres=CTc/postgres |         |            | 
- template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7849 kB | pg_default | default template for new databases
-             |          |          |             |             | postgres=CTc/postgres |         |            | 
-(4 rows)
-
-
 -bash-4.2$  pgbench -U postgres -i -s 100 pgbenchtest
 dropping old tables...
 creating tables...
@@ -156,6 +105,43 @@ generating data...
 700000 of 10000000 tuples (7%) done (elapsed 0.62 s, remaining 8.28 s)
 800000 of 10000000 tuples (8%) done (elapsed 0.71 s, remaining 8.15 s)
 ...
+
+
+-bash-4.2$ psql -U postgres pgbenchtest
+psql (11.5)
+Type "help" for help.
+
+pgbenchtest=# \dt+
+                          List of relations
+ Schema |       Name       | Type  |  Owner   |  Size   | Description 
+--------+------------------+-------+----------+---------+-------------
+ public | pgbench_accounts | table | postgres | 1281 MB | 
+ public | pgbench_branches | table | postgres | 40 kB   | 
+ public | pgbench_history  | table | postgres | 0 bytes | 
+ public | pgbench_tellers  | table | postgres | 80 kB   | 
+(4 rows)
+
+pgbenchtest=# SELECT schemaname,relname,n_live_tup FROM pg_stat_user_tables;
+ schemaname |     relname      | n_live_tup 
+------------+------------------+------------
+ public     | pgbench_tellers  |       1000
+ public     | pgbench_branches |        100
+ public     | pgbench_history  |          0
+ public     | pgbench_accounts |   10000035
+(4 rows)
+
+pgbenchtest=# \l+
+                                                                     List of databases
+    Name     |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   |  Size   | Tablespace |                Description                 
+-------------+----------+----------+-------------+-------------+-----------------------+---------+------------+--------------------------------------------
+ pgbenchtest | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                       | 1503 MB | pg_default | 
+ postgres    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                       | 7989 kB | pg_default | default administrative connection database
+ template0   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7849 kB | pg_default | unmodifiable empty database
+             |          |          |             |             | postgres=CTc/postgres |         |            | 
+ template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7849 kB | pg_default | default template for new databases
+             |          |          |             |             | postgres=CTc/postgres |         |            | 
+(4 rows)
+
 
 
 ```
