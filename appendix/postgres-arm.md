@@ -259,6 +259,57 @@ latency stddev = 3.084 ms
 tps = 12648.108408 (including connections establishing)
 tps = 12648.476329 (excluding connections establishing)
 
+-bash-4.2$ pgbench -U postgres -c 64 -t 70000 -M extended -j 64 -P 10 pgbenchtest
+starting vacuum...end.
+progress: 10.0 s, 15215.9 tps, lat 4.200 ms stddev 2.471
+progress: 20.0 s, 15099.7 tps, lat 4.239 ms stddev 2.495
+progress: 30.0 s, 14715.7 tps, lat 4.348 ms stddev 2.757
+progress: 40.0 s, 15056.6 tps, lat 4.250 ms stddev 2.673
+progress: 50.0 s, 15291.6 tps, lat 4.187 ms stddev 2.444
+progress: 60.0 s, 14909.9 tps, lat 4.292 ms stddev 2.685
+progress: 70.0 s, 13888.4 tps, lat 4.608 ms stddev 2.892
+progress: 80.0 s, 13741.3 tps, lat 4.657 ms stddev 2.527
+progress: 90.0 s, 12678.0 tps, lat 5.047 ms stddev 2.625
+progress: 100.0 s, 11735.8 tps, lat 5.455 ms stddev 2.763
+progress: 110.0 s, 10728.4 tps, lat 5.965 ms stddev 3.171
+progress: 120.0 s, 10410.1 tps, lat 6.148 ms stddev 2.910
+progress: 130.0 s, 9794.3 tps, lat 6.535 ms stddev 2.978
+progress: 140.0 s, 9273.7 tps, lat 6.899 ms stddev 2.999
+progress: 150.0 s, 8706.1 tps, lat 7.353 ms stddev 3.234
+progress: 160.0 s, 8369.2 tps, lat 7.647 ms stddev 3.204
+progress: 170.0 s, 7979.8 tps, lat 8.019 ms stddev 3.216
+progress: 180.0 s, 8987.5 tps, lat 7.123 ms stddev 3.676
+progress: 190.0 s, 14290.2 tps, lat 4.479 ms stddev 2.882
+progress: 200.0 s, 13588.3 tps, lat 4.710 ms stddev 2.936
+progress: 210.0 s, 13654.3 tps, lat 4.688 ms stddev 2.498
+progress: 220.0 s, 12474.1 tps, lat 5.130 ms stddev 2.542
+progress: 230.0 s, 11464.0 tps, lat 5.583 ms stddev 2.681
+progress: 240.0 s, 10438.3 tps, lat 6.130 ms stddev 2.872
+progress: 250.0 s, 9754.6 tps, lat 6.562 ms stddev 2.883
+progress: 260.0 s, 9159.1 tps, lat 6.987 ms stddev 3.027
+progress: 270.0 s, 11015.7 tps, lat 5.810 ms stddev 3.075
+progress: 280.0 s, 13990.8 tps, lat 4.575 ms stddev 2.578
+progress: 290.0 s, 14346.6 tps, lat 4.460 ms stddev 2.892
+progress: 300.0 s, 14880.3 tps, lat 4.302 ms stddev 2.692
+progress: 310.0 s, 14322.8 tps, lat 4.468 ms stddev 2.561
+progress: 320.0 s, 13492.9 tps, lat 4.743 ms stddev 2.496
+progress: 330.0 s, 12290.0 tps, lat 5.207 ms stddev 2.592
+progress: 340.0 s, 11399.7 tps, lat 5.614 ms stddev 2.679
+progress: 350.0 s, 10650.1 tps, lat 6.008 ms stddev 2.752
+progress: 360.0 s, 10092.1 tps, lat 6.343 ms stddev 2.800
+progress: 370.0 s, 9496.6 tps, lat 6.702 ms stddev 2.981
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 100
+query mode: extended
+number of clients: 64
+number of threads: 64
+number of transactions per client: 70000
+number of transactions actually processed: 4480000/4480000
+latency average = 5.290 ms
+latency stddev = 2.978 ms
+tps = 12071.751449 (including connections establishing)
+tps = 12072.078778 (excluding connections establishing)
+
 ```
 
 
