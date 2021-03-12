@@ -150,6 +150,49 @@ pgbenchtest=# \l+
 
 * https://browndwarf.tistory.com/52
 
+아래는 하나의 pgbench 트랜잭션이 실행하는 SQL 정보로, BEGIN ~ END 사이에 있는 SQL 을 하나의 트랜잭션으로 실행한다. 
+```
+-bash-4.2$ pgbench -U postgres -c 1 -t 1 -j 64 -d pgbenchtest
+pghost:  pgport:  nclients: 1 nxacts: 1 dbName: pgbenchtest
+starting vacuum...end.
+client 0 executing script "<builtin: TPC-B (sort of)>"
+client 0 executing \set aid
+client 0 executing \set bid
+client 0 executing \set tid
+client 0 executing \set delta
+client 0 sending BEGIN;
+client 0 receiving
+client 0 receiving
+client 0 sending UPDATE pgbench_accounts SET abalance = abalance + -2238 WHERE aid = 6979803;
+client 0 receiving
+client 0 receiving
+client 0 sending SELECT abalance FROM pgbench_accounts WHERE aid = 6979803;
+client 0 receiving
+client 0 receiving
+client 0 sending UPDATE pgbench_tellers SET tbalance = tbalance + -2238 WHERE tid = 23;
+client 0 receiving
+client 0 receiving
+client 0 sending UPDATE pgbench_branches SET bbalance = bbalance + -2238 WHERE bid = 73;
+client 0 receiving
+client 0 receiving
+client 0 sending INSERT INTO pgbench_history (tid, bid, aid, delta, mtime) VALUES (23, 73, 6979803, -2238, CURRENT_TIMESTAMP);
+client 0 receiving
+client 0 receiving
+client 0 sending END;
+client 0 receiving
+client 0 receiving
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 100
+query mode: simple
+number of clients: 1
+number of threads: 1
+number of transactions per client: 1
+number of transactions actually processed: 1/1
+latency average = 3.398 ms
+tps = 294.291972 (including connections establishing)
+tps = 546.979225 (excluding connections establishing)
+```
+
 pgbench 의 각 파라미터 값은 다음과 같다. 
 
 * -c : 클라이언트 수
@@ -158,9 +201,13 @@ pgbench 의 각 파라미터 값은 다음과 같다.
 * -d : 디버깅
 * pgbenchtest : 데이터베이스명 
 
+
+
 ```
 $ which pgbench
 /usr/bin/pgbench
+
+
 
 -bash-4.2$ pgbench -U postgres -c 64 -t 10000 -j 64 -d pgbenchtest
 ```
