@@ -41,5 +41,7 @@ postgres (PostgreSQL) 11.5
 
 * https://www.enterprisedb.com/blog/pgbench-performance-benchmark-postgresql-12-and-edb-advanced-server-12
 
+* https://browndwarf.tistory.com/52
+
 
 
