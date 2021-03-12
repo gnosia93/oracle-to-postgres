@@ -34,5 +34,12 @@ $ sudo yum install postgresql-server postgresql-contrib postgresql-devel -y
 
 $ postgres --version
 postgres (PostgreSQL) 11.5
-
 ```
+
+
+### 성능테스트(pgbench) ###
+
+* https://www.enterprisedb.com/blog/pgbench-performance-benchmark-postgresql-12-and-edb-advanced-server-12
+
+
+
