@@ -272,6 +272,7 @@ pgbench 의 각 파라미터 값은 다음과 같다.
 * pgbenchtest : 데이터베이스명 
 
 
+* 메뉴얼 - https://www.postgresql.org/docs/10/pgbench.html
 
 ```
 $ which pgbench
