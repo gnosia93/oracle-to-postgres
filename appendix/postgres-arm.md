@@ -176,7 +176,7 @@ pgbench 의 각 파라미터 값은 다음과 같다.
 
 * 메뉴얼 - https://www.postgresql.org/docs/10/pgbench.html
 
-# ARM64 측정
+#### ARM64 측정 ####
 ```
 $ which pgbench
 /usr/bin/pgbench
@@ -318,6 +318,75 @@ latency average = 5.290 ms
 latency stddev = 2.978 ms
 tps = 12071.751449 (including connections establishing)
 tps = 12072.078778 (excluding connections establishing)
+
+-bash-4.2$ pgbench -U postgres -c 64 -t 90000 -M extended -j 64 -P 10 pgbenchtest
+starting vacuum...end.
+progress: 10.0 s, 15484.4 tps, lat 4.127 ms stddev 2.515
+progress: 20.0 s, 15689.8 tps, lat 4.079 ms stddev 2.487
+progress: 30.0 s, 15687.1 tps, lat 4.080 ms stddev 2.495
+progress: 40.0 s, 14532.0 tps, lat 4.404 ms stddev 3.046
+progress: 50.0 s, 16061.4 tps, lat 3.985 ms stddev 2.437
+progress: 60.0 s, 15589.0 tps, lat 4.105 ms stddev 2.481
+progress: 70.0 s, 15074.6 tps, lat 4.245 ms stddev 2.829
+progress: 80.0 s, 15283.0 tps, lat 4.188 ms stddev 2.714
+progress: 90.0 s, 15651.0 tps, lat 4.089 ms stddev 2.439
+progress: 100.0 s, 15021.3 tps, lat 4.260 ms stddev 2.471
+progress: 110.0 s, 13793.8 tps, lat 4.640 ms stddev 2.923
+progress: 120.0 s, 13725.9 tps, lat 4.663 ms stddev 2.787
+progress: 130.0 s, 11618.9 tps, lat 5.508 ms stddev 3.965
+progress: 140.0 s, 10927.1 tps, lat 5.857 ms stddev 4.453
+progress: 150.0 s, 11327.8 tps, lat 5.649 ms stddev 3.483
+progress: 160.0 s, 11745.2 tps, lat 5.448 ms stddev 2.598
+progress: 170.0 s, 10993.7 tps, lat 5.823 ms stddev 2.711
+progress: 180.0 s, 10337.6 tps, lat 6.191 ms stddev 2.797
+progress: 190.0 s, 10659.5 tps, lat 6.005 ms stddev 3.033
+progress: 200.0 s, 15489.1 tps, lat 4.132 ms stddev 2.521
+progress: 210.0 s, 15499.3 tps, lat 4.129 ms stddev 2.583
+progress: 220.0 s, 14768.1 tps, lat 4.334 ms stddev 2.855
+progress: 230.0 s, 15056.4 tps, lat 4.250 ms stddev 2.398
+progress: 240.0 s, 13979.8 tps, lat 4.577 ms stddev 2.488
+progress: 250.0 s, 14784.6 tps, lat 4.329 ms stddev 2.628
+progress: 260.0 s, 14170.1 tps, lat 4.517 ms stddev 2.842
+progress: 270.0 s, 14272.0 tps, lat 4.485 ms stddev 2.467
+progress: 280.0 s, 13203.0 tps, lat 4.847 ms stddev 2.539
+progress: 290.0 s, 12277.7 tps, lat 5.212 ms stddev 2.569
+progress: 300.0 s, 11397.3 tps, lat 5.615 ms stddev 2.580
+progress: 310.0 s, 10605.4 tps, lat 6.035 ms stddev 2.743
+progress: 320.0 s, 9922.3 tps, lat 6.450 ms stddev 2.895
+progress: 330.0 s, 9259.9 tps, lat 6.911 ms stddev 3.061
+progress: 340.0 s, 8755.3 tps, lat 7.310 ms stddev 3.236
+progress: 350.0 s, 8370.5 tps, lat 7.645 ms stddev 3.338
+progress: 360.0 s, 7914.1 tps, lat 8.087 ms stddev 3.462
+progress: 370.0 s, 7677.1 tps, lat 8.337 ms stddev 3.361
+progress: 380.0 s, 7328.8 tps, lat 8.732 ms stddev 3.544
+progress: 390.0 s, 13175.4 tps, lat 4.858 ms stddev 3.199
+progress: 400.0 s, 14831.3 tps, lat 4.316 ms stddev 2.754
+progress: 410.0 s, 15484.4 tps, lat 4.133 ms stddev 2.460
+progress: 420.0 s, 15308.1 tps, lat 4.181 ms stddev 2.432
+progress: 430.0 s, 14760.9 tps, lat 4.335 ms stddev 2.786
+progress: 440.0 s, 14834.0 tps, lat 4.315 ms stddev 2.626
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 100
+query mode: extended
+number of clients: 64
+number of threads: 64
+number of transactions per client: 90000
+number of transactions actually processed: 5760000/5760000
+latency average = 4.913 ms
+latency stddev = 3.019 ms
+tps = 13004.251277 (including connections establishing)
+tps = 13004.536353 (excluding connections establishing)
+```
+
+#### X86-64 측정 ####
+```
+$ which pgbench
+/usr/bin/pgbench
+
+$ sudo su - postgres
+
+-bash-4.2$ pgbench -U postgres -c 64 -t 10000 -M extended -j 64 -P 10 pgbenchtest
+
 
 ```
 
