@@ -183,6 +183,22 @@ $ which pgbench
 
 $ sudo su - postgres
 
+-bash-4.2$ pgbench -U postgres -c 64 -t 5000 -M extended -j 64 -P 10 pgbenchtest
+starting vacuum...end.
+progress: 10.0 s, 15344.0 tps, lat 4.166 ms stddev 2.496
+progress: 20.0 s, 15826.2 tps, lat 4.043 ms stddev 2.430
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 100
+query mode: extended
+number of clients: 64
+number of threads: 64
+number of transactions per client: 5000
+number of transactions actually processed: 320000/320000
+latency average = 4.093 ms
+latency stddev = 2.453 ms
+tps = 15502.717309 (including connections establishing)
+tps = 15509.394300 (excluding connections establishing)
+
 -bash-4.2$ pgbench -U postgres -c 64 -t 10000 -M extended -j 64 -P 10 pgbenchtest
 starting vacuum...end.
 progress: 10.0 s, 15169.8 tps, lat 4.213 ms stddev 2.453
