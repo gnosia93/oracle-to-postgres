@@ -19,6 +19,44 @@ Network 성능은.. EC2 인스턴스 타입에 따라 틀리다..
       
 -----
 
+## 전환공수 산정하기 ##
+
+* 어플리케이션 - JPA, SQLMapper, Procedure / Function
+
+* 아키텍처 - Lift & Shift, CQRS, Microservice.
+
+* 용량 - 데이터베이스 볼륨 및 QPS / TPS 볼륨..
+* 진단/평가 (1주일)
+* SCT / DMS (1주일)
+* 어플리케이션 변경 ( 어플리케이션 아키텍처에 따라 다름 )
+* 기간 산정의 주요 이슈는 
+ 
+   1. Procedure 가 얼마나 많으냐 ?
+   2. SCT 에 의해 Conversion 되지 않는 프로그램이 얼마나 많으가 ? 
+   3. Oracle 고유의 쿼리를 얼마나 많이 사용하느냐에 따라 다름..
+
+* 통상적으로 짧게는 1개월 길게는 1년 정도 소요됨.
+
+------------
+
+## PostgreSQL 특화된 워크로드 ##
+
+* GIS
+* INSERT 위주
+* Migrated from MySQL. 등등.
+
+
+
+
+
+
+
+
+
+-------
+
+
+
 * https://aws.amazon.com/ko/blogs/database/best-practices-for-migrating-an-oracle-database-to-amazon-rds-postgresql-or-amazon-aurora-postgresql-migration-process-and-infrastructure-considerations/
 -----
 https://wiki.postgresql.org/wiki/Oracle_to_Postgres_Conversion
