@@ -22,9 +22,13 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 CLI 
 
 ### PostgreSQL 설치하기(aarch64) ###
+* https://docs.aws.amazon.com/ko_kr/corretto/latest/corretto-11-ug/what-is-corretto-11.html
+
 ```
 $ uname -a
 Linux ip-172-31-43-151.ap-northeast-2.compute.internal 4.14.219-164.354.amzn2.aarch64 #1 SMP Mon Feb 22 21:18:49 UTC 2021 aarch64 aarch64 aarch64 GNU/Linux
+
+$ sudo yum install java-11-amazon-corretto
 
 $ sudo amazon-linux-extras list | grep post
   4  postgresql9.6            available    [ =9.6.8  =stable ]
