@@ -148,6 +148,8 @@ pgbenchtest=# \l+
  template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7849 kB | pg_default | default template for new databases
              |          |          |             |             | postgres=CTc/postgres |         |            | 
 (4 rows)
+
+pgbenchtest=# \q
 ```
 
 
