@@ -172,7 +172,7 @@ $ which pgbench
 
 
 
--bash-4.2$ pgbench -U postgres -c 64 -t 10000 -j 64 -d pgbenchtest
+-bash-4.2$ pgbench -U postgres -c 64 -t 10000 -M extended -j 64 -d pgbenchtest
 ```
 
 
