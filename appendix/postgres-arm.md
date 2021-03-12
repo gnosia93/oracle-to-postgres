@@ -220,6 +220,44 @@ latency stddev = 2.842 ms
 tps = 13467.872840 (including connections establishing)
 tps = 13468.617551 (excluding connections establishing)
 
+-bash-4.2$ pgbench -U postgres -c 64 -t 50000 -M extended -j 64 -P 10 pgbenchtest
+starting vacuum...end.
+progress: 10.0 s, 15853.2 tps, lat 4.032 ms stddev 2.032
+progress: 20.0 s, 14850.3 tps, lat 4.310 ms stddev 2.829
+progress: 30.0 s, 15474.0 tps, lat 4.135 ms stddev 2.498
+progress: 40.0 s, 15131.8 tps, lat 4.229 ms stddev 2.686
+progress: 50.0 s, 15192.2 tps, lat 4.214 ms stddev 2.711
+progress: 60.0 s, 15122.9 tps, lat 4.232 ms stddev 2.477
+progress: 70.0 s, 13880.9 tps, lat 4.610 ms stddev 3.051
+progress: 80.0 s, 14777.8 tps, lat 4.331 ms stddev 2.527
+progress: 90.0 s, 15199.6 tps, lat 4.211 ms stddev 2.488
+progress: 100.0 s, 14645.3 tps, lat 4.370 ms stddev 2.864
+progress: 110.0 s, 15431.5 tps, lat 4.147 ms stddev 2.466
+progress: 120.0 s, 14557.9 tps, lat 4.396 ms stddev 2.664
+progress: 130.0 s, 13318.7 tps, lat 4.806 ms stddev 2.993
+progress: 140.0 s, 12826.4 tps, lat 4.989 ms stddev 2.681
+progress: 150.0 s, 11649.7 tps, lat 5.494 ms stddev 3.264
+progress: 160.0 s, 11225.0 tps, lat 5.701 ms stddev 2.751
+progress: 170.0 s, 10069.1 tps, lat 6.342 ms stddev 3.231
+progress: 180.0 s, 9621.3 tps, lat 6.665 ms stddev 3.011
+progress: 190.0 s, 9028.6 tps, lat 7.090 ms stddev 2.962
+progress: 200.0 s, 8456.9 tps, lat 7.568 ms stddev 3.153
+progress: 210.0 s, 7899.3 tps, lat 8.098 ms stddev 3.439
+progress: 220.0 s, 7553.7 tps, lat 8.476 ms stddev 3.514
+progress: 230.0 s, 7297.8 tps, lat 8.770 ms stddev 3.389
+progress: 240.0 s, 13642.5 tps, lat 4.692 ms stddev 2.930
+progress: 250.0 s, 14191.3 tps, lat 4.510 ms stddev 2.510
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 100
+query mode: extended
+number of clients: 64
+number of threads: 64
+number of transactions per client: 50000
+number of transactions actually processed: 3200000/3200000
+latency average = 5.048 ms
+latency stddev = 3.084 ms
+tps = 12648.108408 (including connections establishing)
+tps = 12648.476329 (excluding connections establishing)
 
 ```
 
