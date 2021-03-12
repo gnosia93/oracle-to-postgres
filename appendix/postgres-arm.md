@@ -167,6 +167,7 @@ pgbench 의 각 파라미터 값은 다음과 같다.
 
 * 메뉴얼 - https://www.postgresql.org/docs/10/pgbench.html
 
+# ARM64 측정
 ```
 $ which pgbench
 /usr/bin/pgbench
@@ -190,6 +191,36 @@ latency average = 4.263 ms
 latency stddev = 2.620 ms
 tps = 14921.995811 (including connections establishing)
 tps = 14924.836465 (excluding connections establishing)
+
+-bash-4.2$ pgbench -U postgres -c 64 -t 30000 -M extended -j 64 -P 10 pgbenchtest
+starting vacuum...end.
+progress: 10.0 s, 15924.1 tps, lat 4.014 ms stddev 2.127
+progress: 20.0 s, 15247.3 tps, lat 4.198 ms stddev 2.618
+progress: 30.0 s, 15013.3 tps, lat 4.263 ms stddev 2.474
+progress: 40.0 s, 14855.5 tps, lat 4.308 ms stddev 2.826
+progress: 50.0 s, 15732.2 tps, lat 4.068 ms stddev 2.359
+progress: 60.0 s, 15266.7 tps, lat 4.192 ms stddev 2.542
+progress: 70.0 s, 15272.1 tps, lat 4.191 ms stddev 2.632
+progress: 80.0 s, 15000.5 tps, lat 4.266 ms stddev 2.426
+progress: 90.0 s, 12970.9 tps, lat 4.934 ms stddev 3.198
+progress: 100.0 s, 12442.5 tps, lat 5.143 ms stddev 2.879
+progress: 110.0 s, 11592.0 tps, lat 5.522 ms stddev 3.118
+progress: 120.0 s, 10792.0 tps, lat 5.931 ms stddev 3.095
+progress: 130.0 s, 10220.9 tps, lat 6.261 ms stddev 3.006
+progress: 140.0 s, 9595.0 tps, lat 6.658 ms stddev 2.884
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 100
+query mode: extended
+number of clients: 64
+number of threads: 64
+number of transactions per client: 30000
+number of transactions actually processed: 1920000/1920000
+latency average = 4.734 ms
+latency stddev = 2.842 ms
+tps = 13467.872840 (including connections establishing)
+tps = 13468.617551 (excluding connections establishing)
+
+
 ```
 
 
