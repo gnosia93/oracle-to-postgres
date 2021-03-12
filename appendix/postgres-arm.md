@@ -18,6 +18,8 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 
 ### ARM / X86 EC2 생성하기 ###
 
+컴퓨팅 최적화 – 현재 세대
+
 - X86: c5.4xlarge (16vCPU, 32G Memory, EBS, 시간당 0.68 USD) 
 - ARM: c6g.4xlarge (16vCPU, 32G Memory, EBS, 시간당 0.544 USD)
 
