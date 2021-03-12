@@ -2,6 +2,11 @@ PostgreSQL 은 ARM 아키텍처를 지원한다. 아마존 EC2 인스턴스를 �
 이와는 달리 RDS 의 경우는 현재 ARM 은 지원이 되지 않는 것으로 보이며, Amazon Linux2 버전에서 지원되는 PostgreSQL 의 최신버전은 PostgreSQL 11.5 이다.
 RDS 가 아닌 ARM EC2 위에서 PostgreSQL 운영이 가능한 것으로 보인다.  
 
+### ARM EC2 생성하기 ###
+
+화면덤프..
+CLI 
+
 ### PostgreSQL 설치하기(aarch64) ###
 ```
 $ sudo amazon-linux-extras list | grep post
