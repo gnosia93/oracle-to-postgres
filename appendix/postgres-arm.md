@@ -178,10 +178,8 @@ pgbench 의 각 파라미터 값은 다음과 같다.
 
 #### ARM64 측정 ####
 ```
-$ which pgbench
+-bash-4.2$ which pgbench
 /usr/bin/pgbench
-
-$ sudo su - postgres
 
 -bash-4.2$ pgbench -U postgres -c 64 -t 5000 -M extended -j 64 -P 10 pgbenchtest
 starting vacuum...end.
