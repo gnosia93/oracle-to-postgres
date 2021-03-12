@@ -123,3 +123,5 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 
 * [PSQL 명령어정리](https://browndwarf.tistory.com/51)
 
+* [PostgreSQL on ARM](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-arm.md)
+
