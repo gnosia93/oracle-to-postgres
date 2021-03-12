@@ -16,10 +16,17 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
   Amazon Linux2 버전에서 지원되는 PostgreSQL 의 최신버전은 PostgreSQL 11.5 이다.
 
 
-### ARM EC2 생성하기 ###
+### ARM / X86 EC2 생성하기 ###
 
-화면덤프..
-CLI 
+- X86: c5.4xlarge (16vCPU, 32G Memory, EBS, 시간당 0.68 USD) 
+- ARM: c6g.4xlarge (16vCPU, 32G Memory, EBS, 시간당 0.544 USD)
+
+* https://aws.amazon.com/ko/ec2/pricing/on-demand/
+
+
+
+
+
 
 ### PostgreSQL 설치하기(aarch64) ###
 
