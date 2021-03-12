@@ -47,3 +47,5 @@ PostgreSQL ARM vs X86
 
 PostgreSQL X86 vs Oracle 
 
+* http://creedonlake.com/black-sails-bbx/e7c65b-postgresql-vs-oracle-performance-benchmark
+
