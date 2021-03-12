@@ -141,9 +141,6 @@ pgbenchtest=# \l+
  template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7849 kB | pg_default | default template for new databases
              |          |          |             |             | postgres=CTc/postgres |         |            | 
 (4 rows)
-
-
-
 ```
 
 
@@ -153,10 +150,19 @@ pgbenchtest=# \l+
 
 * https://browndwarf.tistory.com/52
 
-````
+pgbench 의 각 파라미터 값은 다음과 같다. 
+
+* -c : 클라이언트 수
+* -t : 클라이언트 당 트랜잭션 수
+* -j : pgbench 프로세스의 쓰레드 수
+* -d : 디버깅
+* pgbenchtest : 데이터베이스명 
+
+```
 $ which pgbench
 /usr/bin/pgbench
 
+-bash-4.2$ pgbench -U postgres -c 64 -t 10000 -j 64 -d pgbenchtest
 ```
 
 
