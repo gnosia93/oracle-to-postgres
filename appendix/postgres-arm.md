@@ -28,7 +28,8 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 * https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/ebs-volume-types.html
 
 
-
+-- 이거 테스트해야 함. 
+https://aws.amazon.com/ec2/instance-types/r6/
 
 
 
