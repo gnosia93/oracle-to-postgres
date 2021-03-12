@@ -75,7 +75,11 @@ ec2-user  1622  0.0  0.0 113164  1872 pts/0    S+   11:18   0:00 grep --color=au
 psql (11.5)
 Type "help" for help.
 
-postgres=# 
+postgres=# select version();
+                                                  version                                                  
+-----------------------------------------------------------------------------------------------------------
+ PostgreSQL 11.5 on aarch64-koji-linux-gnu, compiled by gcc (GCC) 7.3.1 20180712 (Red Hat 7.3.1-6), 64-bit
+(1 row)
 
 
 ```
