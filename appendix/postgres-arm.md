@@ -59,10 +59,6 @@ postgres (PostgreSQL) 11.5
  * Initializing database in '/var/lib/pgsql/data'
  * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log
 
-[ec2-user@ip-172-31-43-151 ~]$ sudo postgresql-setup --initdb
- * Initializing database in '/var/lib/pgsql/data'
- * Initialized, logs are in /var/lib/pgsql/initdb_postgresql.log
-
 [ec2-user@ip-172-31-43-151 ~]$ sudo systemctl enable postgresql
 Created symlink from /etc/systemd/system/multi-user.target.wants/postgresql.service to /usr/lib/systemd/system/postgresql.service.
 
