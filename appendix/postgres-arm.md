@@ -161,6 +161,7 @@ pgbench 의 각 파라미터 값은 다음과 같다.
 * -t : 클라이언트 당 트랜잭션 수
 * -j : pgbench 프로세스의 쓰레드 수
 * -d : 디버깅
+* -P : report 간격
 * pgbenchtest : 데이터베이스명 
 
 
@@ -172,7 +173,7 @@ $ which pgbench
 
 
 
--bash-4.2$ pgbench -U postgres -c 64 -t 10000 -M extended -j 64 -d pgbenchtest
+-bash-4.2$ pgbench -U postgres -c 64 -t 10000 -M extended -j 64 -P 3 -d pgbenchtest
 ```
 
 
