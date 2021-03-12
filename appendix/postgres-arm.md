@@ -153,7 +153,7 @@ pgbenchtest=# \q
 ```
 
 
-### 성능테스트(pgbench) ###
+### PostgreSQL ARM vs X86-64 성능 테스트 (pgbench) ###
 
 * https://www.enterprisedb.com/blog/pgbench-performance-benchmark-postgresql-12-and-edb-advanced-server-12
 
@@ -173,8 +173,15 @@ pgbench 의 각 파라미터 값은 다음과 같다.
 * -P : report 간격
 * pgbenchtest : 데이터베이스명 
 
+```
+$ pgbench -U postgres -c 64 -t 5000 -M extended -j 64 -P 10 pgbenchtest
+```
 
 * 메뉴얼 - https://www.postgresql.org/docs/10/pgbench.html
+
+
+
+### PostgreSQL ARM vs X86-64 성능 테스트 결과 (pgbench) ###
 
 #### ARM64 측정 ####
 ```
@@ -551,10 +558,67 @@ tps = 14011.292694 (including connections establishing)
 tps = 14011.836340 (excluding connections establishing)
 -bash-4.2$ 
 
+-bash-4.2$ pgbench -U postgres -c 64 -t 90000 -M extended -j 64 -P 10 pgbenchtest
+starting vacuum...end.
+progress: 10.0 s, 15884.3 tps, lat 4.015 ms stddev 2.705
+progress: 20.0 s, 15942.0 tps, lat 4.022 ms stddev 2.784
+progress: 30.0 s, 15759.0 tps, lat 4.061 ms stddev 2.906
+progress: 40.0 s, 15266.0 tps, lat 4.193 ms stddev 3.309
+progress: 50.0 s, 15998.4 tps, lat 4.000 ms stddev 2.752
+progress: 60.0 s, 15725.4 tps, lat 4.070 ms stddev 2.914
+progress: 70.0 s, 14976.0 tps, lat 4.273 ms stddev 3.243
+progress: 80.0 s, 15556.8 tps, lat 4.114 ms stddev 2.848
+progress: 90.0 s, 14606.7 tps, lat 4.382 ms stddev 2.717
+progress: 100.0 s, 13276.9 tps, lat 4.820 ms stddev 2.920
+progress: 110.0 s, 12325.8 tps, lat 5.193 ms stddev 3.105
+progress: 120.0 s, 15198.6 tps, lat 4.211 ms stddev 3.119
+progress: 130.0 s, 15989.6 tps, lat 4.003 ms stddev 2.669
+progress: 140.0 s, 15616.1 tps, lat 4.098 ms stddev 2.996
+progress: 150.0 s, 15335.1 tps, lat 4.174 ms stddev 3.139
+progress: 160.0 s, 15751.9 tps, lat 4.063 ms stddev 2.750
+progress: 170.0 s, 15553.0 tps, lat 4.115 ms stddev 3.004
+progress: 180.0 s, 15400.9 tps, lat 4.156 ms stddev 3.177
+progress: 190.0 s, 15969.8 tps, lat 4.007 ms stddev 2.755
+progress: 200.0 s, 15261.9 tps, lat 4.193 ms stddev 2.865
+progress: 210.0 s, 14996.8 tps, lat 4.268 ms stddev 3.238
+progress: 220.0 s, 15004.5 tps, lat 4.265 ms stddev 2.748
+progress: 230.0 s, 13916.1 tps, lat 4.599 ms stddev 2.740
+progress: 240.0 s, 12893.5 tps, lat 4.963 ms stddev 2.778
+progress: 250.0 s, 11686.1 tps, lat 5.469 ms stddev 3.098
+progress: 260.0 s, 10708.3 tps, lat 5.985 ms stddev 3.210
+progress: 270.0 s, 10063.1 tps, lat 6.353 ms stddev 3.195
+progress: 280.0 s, 9219.3 tps, lat 6.950 ms stddev 3.388
+progress: 290.0 s, 8651.1 tps, lat 7.398 ms stddev 3.429
+progress: 300.0 s, 8144.6 tps, lat 7.857 ms stddev 3.601
+progress: 310.0 s, 7775.0 tps, lat 8.231 ms stddev 3.745
+progress: 320.0 s, 7269.0 tps, lat 8.805 ms stddev 3.981
+progress: 330.0 s, 12769.0 tps, lat 5.014 ms stddev 3.609
+progress: 340.0 s, 14583.8 tps, lat 4.388 ms stddev 2.870
+progress: 350.0 s, 13859.2 tps, lat 4.618 ms stddev 3.091
+progress: 360.0 s, 15044.7 tps, lat 4.254 ms stddev 2.883
+progress: 370.0 s, 13826.7 tps, lat 4.629 ms stddev 2.761
+progress: 380.0 s, 12598.0 tps, lat 5.080 ms stddev 2.756
+progress: 390.0 s, 11301.6 tps, lat 5.663 ms stddev 2.904
+progress: 400.0 s, 10431.3 tps, lat 6.135 ms stddev 3.092
+progress: 410.0 s, 9710.1 tps, lat 6.591 ms stddev 3.213
+progress: 420.0 s, 9046.2 tps, lat 7.074 ms stddev 3.401
+progress: 430.0 s, 8564.5 tps, lat 7.473 ms stddev 3.559
+progress: 440.0 s, 8020.5 tps, lat 7.855 ms stddev 3.580
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 100
+query mode: extended
+number of clients: 64
+number of threads: 64
+number of transactions per client: 90000
+number of transactions actually processed: 5760000/5760000
+latency average = 4.890 ms
+latency stddev = 3.267 ms
+tps = 13057.520122 (including connections establishing)
+tps = 13057.908124 (excluding connections establishing)
 ```
 
 
-PostgreSQL ARM vs X86
+
 
 PostgreSQL X86 vs Oracle 
 
