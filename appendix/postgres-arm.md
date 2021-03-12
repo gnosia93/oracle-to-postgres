@@ -22,7 +22,7 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 
 - X86: c5.4xlarge (16vCPU, 32G Memory, EBS, 시간당 0.68 USD) 
 - ARM: c6g.4xlarge (16vCPU, 32G Memory, EBS, 시간당 0.544 USD)
-- EBS: 50000 IOPS, 100GB
+- EBS: io2 50,000 IOPS, 100GB
  
 * https://aws.amazon.com/ko/ec2/pricing/on-demand/
 
