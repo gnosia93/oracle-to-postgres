@@ -105,6 +105,59 @@ vacuuming...
 creating primary keys...
 done.
 
+-bash-4.2$ psql
+psql (11.5)
+Type "help" for help.
+
+postgres=# \c pgbenchtest postgres
+You are now connected to database "pgbenchtest" as user "postgres".
+
+pgbenchtest=# \dt+
+                          List of relations
+ Schema |       Name       | Type  |  Owner   |  Size   | Description 
+--------+------------------+-------+----------+---------+-------------
+ public | pgbench_accounts | table | postgres | 13 MB   | 
+ public | pgbench_branches | table | postgres | 40 kB   | 
+ public | pgbench_history  | table | postgres | 0 bytes | 
+ public | pgbench_tellers  | table | postgres | 40 kB   |
+
+pgbenchtest=# SELECT schemaname,relname,n_live_tup FROM pg_stat_user_tables;
+ schemaname |     relname      | n_live_tup 
+------------+------------------+------------
+ public     | pgbench_tellers  |         10
+ public     | pgbench_accounts |     100000
+ public     | pgbench_history  |          0
+ public     | pgbench_branches |          1
+(4 rows)
+
+pgbenchtest=# \l+
+                                                                     List of databases
+    Name     |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   |  Size   | Tablespace |                Description                 
+-------------+----------+----------+-------------+-------------+-----------------------+---------+------------+--------------------------------------------
+ pgbenchtest | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                       | 23 MB   | pg_default | 
+ postgres    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |                       | 7989 kB | pg_default | default administrative connection database
+ template0   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7849 kB | pg_default | unmodifiable empty database
+             |          |          |             |             | postgres=CTc/postgres |         |            | 
+ template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +| 7849 kB | pg_default | default template for new databases
+             |          |          |             |             | postgres=CTc/postgres |         |            | 
+(4 rows)
+
+
+-bash-4.2$  pgbench -U postgres -i -s 100 pgbenchtest
+dropping old tables...
+creating tables...
+generating data...
+100000 of 10000000 tuples (1%) done (elapsed 0.08 s, remaining 8.11 s)
+200000 of 10000000 tuples (2%) done (elapsed 0.16 s, remaining 7.74 s)
+300000 of 10000000 tuples (3%) done (elapsed 0.25 s, remaining 8.05 s)
+400000 of 10000000 tuples (4%) done (elapsed 0.35 s, remaining 8.41 s)
+500000 of 10000000 tuples (5%) done (elapsed 0.43 s, remaining 8.14 s)
+600000 of 10000000 tuples (6%) done (elapsed 0.53 s, remaining 8.29 s)
+700000 of 10000000 tuples (7%) done (elapsed 0.62 s, remaining 8.28 s)
+800000 of 10000000 tuples (8%) done (elapsed 0.71 s, remaining 8.15 s)
+...
+
+
 ```
 
 
