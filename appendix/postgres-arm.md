@@ -89,6 +89,22 @@ You are now connected to database "pgbenchtest" as user "postgres".
 
 pgbenchtest=# \dt
 Did not find any relations.
+
+pgbenchtest=# \q
+
+-bash-4.2$ pgbench -i pgbenchtest
+dropping old tables...
+NOTICE:  table "pgbench_accounts" does not exist, skipping
+NOTICE:  table "pgbench_branches" does not exist, skipping
+NOTICE:  table "pgbench_history" does not exist, skipping
+NOTICE:  table "pgbench_tellers" does not exist, skipping
+creating tables...
+generating data...
+100000 of 100000 tuples (100%) done (elapsed 0.06 s, remaining 0.00 s)
+vacuuming...
+creating primary keys...
+done.
+
 ```
 
 
