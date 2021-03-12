@@ -23,6 +23,9 @@ CLI
 
 ### PostgreSQL 설치하기(aarch64) ###
 ```
+$ uname -a
+Linux ip-172-31-43-151.ap-northeast-2.compute.internal 4.14.219-164.354.amzn2.aarch64 #1 SMP Mon Feb 22 21:18:49 UTC 2021 aarch64 aarch64 aarch64 GNU/Linux
+
 $ sudo amazon-linux-extras list | grep post
   4  postgresql9.6            available    [ =9.6.8  =stable ]
   5  postgresql10             available    [ =10  =stable ]
