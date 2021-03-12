@@ -52,6 +52,13 @@ postgres (PostgreSQL) 11.5
 
 * https://browndwarf.tistory.com/52
 
+````
+$ which pgbench
+/usr/bin/pgbench
+
+```
+
+
 PostgreSQL ARM vs X86
 
 PostgreSQL X86 vs Oracle 
