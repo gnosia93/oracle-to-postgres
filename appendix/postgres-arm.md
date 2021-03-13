@@ -29,6 +29,18 @@ R6g instances are also available with local NVMe-based SSD block-level storage o
 ```
 $ SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
 
+$ ARM_AMI_ID=`aws ec2 describe-images \
+                  --owners amazon \
+                  --filters "Name=name, Values=amzn2-ami-hvm-2.0.20210303.0-arm64-gp2" \
+                  --query "Images[0].{ImageId:ImageId}" --output text`; \
+                  echo $ARM_AMI_ID
+
+$ X64_AMI_ID=`aws ec2 describe-images \
+                  --owners amazon \
+                  --filters "Name=name, Values=amzn2-ami-hvm-2.0.20210303.0-x86_64-gp2" \
+                  --query "Images[0].{ImageId:ImageId}" --output text`; \
+                  echo $X64_AMI_ID
+
 $ USER_DATA=`cat <<EOF | base64
 #! /bin/bash
 sudo amazon-linux-extras install postgresql11 epel -y
@@ -46,7 +58,7 @@ sudo -u ec2-user ps aux | grep postgres >> /home/ec2-user/postgres.out
 EOF`
 
 $ aws ec2 run-instances \
-  --image-id ami-05b616430d239765b \
+  --image-id $ARM_AMI_ID \
   --count 1 \
   --instance-type c6g.8xlarge \
   --key-name tf_key \
