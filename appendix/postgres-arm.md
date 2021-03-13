@@ -67,15 +67,20 @@ $ aws ec2 run-instances \
   --monitoring Enabled=true \
   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cli_postgres_arm64}]' \
   --user-data $USER_DATA
+  
+$ aws ec2 run-instances \
+  --image-id $X64_AMI_ID \
+  --count 1 \
+  --instance-type r5.8xlarge \
+  --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=300, VolumeType=io2, Iops=50000}'   \
+  --key-name tf_key \
+  --security-group-ids $SG_ID \
+  --monitoring Enabled=true \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cli_postgres_arm64}]' \
+  --user-data $USER_DATA
+  
 ```
 
-
-
-
-
-
-
-ami-0e17ad9abf7e5c818
 
 
 
