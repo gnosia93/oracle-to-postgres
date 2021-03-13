@@ -22,9 +22,8 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 aws ec2 describe-images --image-ids ami-00f1068284b9eca92
 ```
 
-아키텍처 다이어그램에 나와 있는 것 처럼, 리소스를 프로비저닝하기 위해 아래의 명령어를 순차적으로 실행합니다. 
-벤치마크시 사용할 PostgreSQL 11 을 Graviton2 및 X86 머신에 빌드합니다. R6g 타입의 인스턴스는 AWS 그라비톤2 프로세스를 탑재하고 있으며, X86 대비 40% 까지 저렴합니다.   
-(https://aws.amazon.com/ko/ec2/instance-types/r6/)
+Graviton2 과 X86 용 PostgreSQL 11 의 성능 비교를 위해 아키텍처 다이어그램에 나와 있는 것 처럼, 아래 스크립트를 이용하여 인프라를 준비합니다.
+R6g 타입의 인스턴스는 AWS 그라비톤2 프로세스를 탑재하고 있는데, X86 대비 40% 까지 저렴합니다.(https://aws.amazon.com/ko/ec2/instance-types/r6/),
 
  - c6g.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (Graviton2)
  - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
