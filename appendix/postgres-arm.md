@@ -162,14 +162,29 @@ sysbench 1.0.20
 ```
 
 ### 성능 테스트 하기 ###
-아래의 스크립트를 실행하여 각 데이터베이스의 성능을 측정합니다. 이 때 TARGET_DB 는 성능 측정의 대상이 되는 PostgreSQL 의 IP로 반드시 EC2 인스턴스의 사설 IP 를 입력해야 합니다.
+
+성능 테스트 대상 데이터베이스 인스턴스는 cl_postgres_x86-64 와 cl_postgres_arm64 입니다. 아래와 같이 AWS CLI 명령어를 이용하여 대상 서버들의 사설 IP를 조회하거나 AWS EC2 콘솔을 이용하여
+사설 IP 를 조회합니다. 
+```
+$ aws ec2 describe-instances --filters "Name=tag:Name,Values=cl_postgres_arm64,cl_postgres_x86-64"  --query "Reservations[].Instances[*].{InstanceId:InstanceId, PrivateIpAddress:PrivateIpAddress, Name:Tags[0].Value}" --output table
+------------------------------------------------------------------
+|                        DescribeInstances                       |
++---------------------+----------------------+-------------------+
+|     InstanceId      |        Name          |  PrivateIpAddress  |
++---------------------+----------------------+-------------------+
+|  i-09448b53c5f22c9df|  cl_postgres_x86-64  |  172.31.9.169     |
+|  i-03a75f2694036edd1|  cl_postgres_arm64   |  172.31.37.85     |
++---------------------+----------------------+-------------------+
+```
+
+아래의 스크립트를 실행하여 각 데이터베이스별 성능을 측정합니다. 이 때 TARGET_DB 는 성능 측정의 대상이 되는 PostgreSQL 의 IP로 반드시 위에서 찾은 EC2 인스턴스의 사설 IP 를 입력해야 합니다.
 THREAD_COUNT 는 sysbench 가 테스트를 위해 내부적으로 생성하는 쓰레드의 수로, 데이터베이스 커넥션수와 같습니다.
 쓰레드 수를 32 을 시작으로 64, 128, 256, 512 까지 두배씩 증가 시키면서 두 데이터베이스의 성능을 측정한 후 비교하도록 합니다.   
 참고로 아래 테스트 스크립트를 보면 prepare, run, cleanup 이라는 키워드를 볼 수 있은데, prepare 은 테스트를 위한 스키마 빌드 작업을 하는 단계이고, 실제 테스트는 run 단계에서 
 수행됩니다. cleanup 명령어를 사용하면 prepare 단계에서 생성한 각종 DB오브젝트를 삭제합니다.
 ```
-export TARGET_DB=172.31.21.182
-export THREAD_COUNT = 64
+export TARGET_DB=172.31.37.85  
+export THREAD_COUNT = 32
 
 $ sysbench \
 --db-driver=pgsql \
