@@ -17,15 +17,18 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 
 ### EC2 생성하기 ###
 
-다음과 같이 AWS CLI 를 이용하여 아키텍처 다이그램에 나와 있는 인스턴스들을 생성합니다.
+- 이미지 정보 조회
+```
+aws ec2 describe-images --image-ids ami-00f1068284b9eca92
+```
 
-* https://aws.amazon.com/ko/ec2/instance-types/r6/   
-Amazon EC2 R6g instances are powered by Arm-based AWS Graviton2 processors. They deliver up to 40% better price performance over current generation R5 instances1 and are ideal for running memory-intensive workloads such as open-source databases, in-memory caches, and real time big data analytics. Developers can also use these instances to build Arm-based applications natively in the cloud, eliminating the need for cross-compilation and emulation, and improving time to market.
-R6g instances are also available with local NVMe-based SSD block-level storage option (R6gd) for applications that need high-speed, low latency local storage.
+아키텍처 다이어그램에 나와 있는 것 처럼, 리소스를 프로비저닝하기 위해 아래의 명령어를 순차적으로 실행합니다. 
+벤치마크시 사용할 PostgreSQL 11 을 Graviton2 및 X86 머신에 빌드합니다. R6g 타입의 인스턴스는 AWS 그라비톤2 프로세스를 탑재하고 있으며, X86 대비 40% 까지 저렴합니다.   
+(https://aws.amazon.com/ko/ec2/instance-types/r6/)
 
-  - c6g.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (Graviton2)
-  - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
-  
+ - c6g.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (Graviton2)
+ - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
+
 ```
 $ SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
 
@@ -60,7 +63,7 @@ EOF`
 $ aws ec2 run-instances \
   --image-id $ARM_AMI_ID \
   --count 1 \
-  --instance-type c6g.8xlarge \
+  --instance-type r6g.8xlarge \
   --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=300, VolumeType=io2, Iops=50000}'   \
   --key-name tf_key \
   --security-group-ids $SG_ID \
