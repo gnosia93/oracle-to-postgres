@@ -203,7 +203,7 @@ ubuntu@ip-172-31-1-64:~$ sysbench \
 --db-driver=pgsql \
 --table-size=5000000 \
 --tables=32 \
---threads=1 \
+--threads=32 \
 --pgsql-host=$TARGET_DB \
 --pgsql-port=5432 \
 --pgsql-user=sbtest \
