@@ -312,3 +312,18 @@ Threads fairness:
     execution time (avg/stddev):   299.9914/0.01
 ```
 
+### 테스트 자동화하기 ###
+
+```
+#! /bin/sh
+TARGET_DB=172.31.37.85  
+TEST_TIME=300
+
+THREA="16 32 64 128 256 512 1024"
+for i in $THREAD
+do
+  echo "-----------------------------------------------$i"
+done
+```
+
+
