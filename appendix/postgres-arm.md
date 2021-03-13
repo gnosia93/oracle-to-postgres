@@ -19,14 +19,20 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 
 다음과 같이 AWS CLI 를 이용하여 아키텍처 다이그램에 나와 있는 인스턴스들을 생성합니다.
 
+* https://aws.amazon.com/ko/ec2/instance-types/r6/   
+Amazon EC2 R6g instances are powered by Arm-based AWS Graviton2 processors. They deliver up to 40% better price performance over current generation R5 instances1 and are ideal for running memory-intensive workloads such as open-source databases, in-memory caches, and real time big data analytics. Developers can also use these instances to build Arm-based applications natively in the cloud, eliminating the need for cross-compilation and emulation, and improving time to market.
+R6g instances are also available with local NVMe-based SSD block-level storage option (R6gd) for applications that need high-speed, low latency local storage.
+
+  - c6g.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (Graviton2)
+  - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
+  
 ```
 $ aws ec2 run-instances 
   --image-id ami-0e17ad9abf7e5c818 \
   --count 1 \
-  --instance-type t2.micro 
+  --instance-type c6g.8xlarge 
   --key-name tf_key 
   --security-group-ids sg-903004f8 
-
 
 ```
 
