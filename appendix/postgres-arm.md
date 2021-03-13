@@ -314,6 +314,7 @@ Threads fairness:
 
 ### 테스트 자동화하기 ###
 
+아래의 내용으로 perf.sh 이라는 파일을 만든 후, 실행한다. 
 ```
 #! /bin/sh
 TARGET_DB=172.31.37.85  
@@ -356,4 +357,7 @@ sysbench --db-driver=pgsql --report-interval=$REPORT_INTERVAL \
 /usr/share/sysbench/oltp_read_write.lua cleanup
 ```
 
+```
+ubuntu@ip-172-31-1-64:~$ sh perf.sh
+```
 
