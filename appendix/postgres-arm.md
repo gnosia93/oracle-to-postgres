@@ -38,11 +38,18 @@ $ ARM_AMI_ID=`aws ec2 describe-images \
                   --query "Images[0].{ImageId:ImageId}" --output text`; \
                   echo $ARM_AMI_ID
 
-$ X64_AMI_ID=`aws ec2 describe-images \
+$ X64_AMI_AMZN2_ID=`aws ec2 describe-images \
                   --owners amazon \
                   --filters "Name=name, Values=amzn2-ami-hvm-2.0.20210303.0-x86_64-gp2" \
                   --query "Images[0].{ImageId:ImageId}" --output text`; \
-                  echo $X64_AMI_ID
+                  echo $X64_AMI_AMZN2_ID
+
+$ X64_AMI_UBUNTU_ID=`aws ec2 describe-images \
+                  --owners 099720109477 \
+                  --filters "Name=name, Values=ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20210223" \
+                  --query "Images[0].{ImageId:ImageId}" --output text`; \
+                  echo $X64_AMI_UBUNTU_ID
+
 
 $ USER_DATA=`cat <<EOF | base64
 #! /bin/bash
@@ -72,7 +79,7 @@ $ aws ec2 run-instances \
   --user-data $USER_DATA
   
 $ aws ec2 run-instances \
-  --image-id $X64_AMI_ID \
+  --image-id $X64_AMI_AMZN2_ID \
   --count 1 \
   --instance-type r5.8xlarge \
   --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=300, VolumeType=io2, Iops=50000}'   \
@@ -81,6 +88,17 @@ $ aws ec2 run-instances \
   --monitoring Enabled=true \
   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cl_postgres_x86-64}]' \
   --user-data $USER_DATA
+  
+$ aws ec2 run-instances \
+  --image-id $X64_AMI_UBUNTU_ID \
+  --count 1 \
+  --instance-type r5.8xlarge \
+  --block-device-mappings 'DeviceName=/dev/sda1,Ebs={VolumeSize=50}'   \
+  --key-name tf_key \
+  --security-group-ids $SG_ID \
+  --monitoring Enabled=true \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cl_postgres_x86-64}]' \
+  --user-data $USER_DATA  
   
 ```
 
