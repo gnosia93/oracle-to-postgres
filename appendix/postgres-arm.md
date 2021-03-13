@@ -119,7 +119,7 @@ aws ec2 run-instances \
 
 ### PostgreSQL 초기화 하기 ###
 
-우선 그라비톤2 및 X86용 EC2 인스턴스로 ssh 로그인 한 후, sbtest 라는 이름의 데이터베이스와 유저를 생성합니다. 
+우선 cl_postgres_arm64 와 cl_postgres_x86-64 로 접속하여, sbtest 라는 이름의 데이터베이스와 유저를 생성합니다. 
 ```
 [ec2-user@ip-172-31-43-151 etc]$ sudo su - postgres
 -bash-4.2$ psql
