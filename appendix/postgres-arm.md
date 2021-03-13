@@ -138,8 +138,57 @@ postgres=# \q
 ### sysbench 설치하기 ###
 
 * https://severalnines.com/database-blog/how-benchmark-postgresql-performance-using-sysbench  
-아래의 명령어를 참고하여 테스트 트래픽을 생성하는 cl_stress-gen 인스턴스에 sysbench를 설치합니다. 
+아래의 명령어를 참고하여 테스트 트래픽을 발생시키는 cl_stress-gen 인스턴스에 sysbench를 설치합니다. PostgreSQL 설치되는 EC2 가 amazon linux2 를 사용하는데 반해, 스트레스 트패릭을
+생성하는 cl_stress-gen 서버는 우분투 입니다.
+
 ```
+$ aws ec2 describe-instances --filters "Name=tag:Name,Values=cl_stress-gen"  --query "Reservations[].Instances[*].{InstanceId:InstanceId, PublicIpAddress:PublicIpAddress, Name:Tags[0].Value}" --output table
+-------------------------------------------------------------
+|                     DescribeInstances                     |
++---------------------+-----------------+-------------------+
+|     InstanceId      |      Name       |  PublicIpAddress  |
++---------------------+-----------------+-------------------+
+|  i-01296b0081a5a653d|  cl_stress-gen  |  3.35.131.217     |
++---------------------+-----------------+-------------------+
+
+$ ssh -i ~/.ssh/tf_key ubuntu@3.35.131.217
+The authenticity of host '3.35.131.217 (3.35.131.217)' can't be established.
+ECDSA key fingerprint is SHA256:Ty+NUA3nUWZ1Bi20ZVmVHo/eJx60Ezvka//mrc/BIAs.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '3.35.131.217' (ECDSA) to the list of known hosts.
+Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-1038-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Mar 13 09:02:37 UTC 2021
+
+  System load:  0.0               Processes:             317
+  Usage of /:   2.6% of 48.41GB   Users logged in:       0
+  Memory usage: 0%                IPv4 address for ens5: 172.31.1.64
+  Swap usage:   0%
+
+1 update can be installed immediately.
+0 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-1-64:~$ 
 
 
 ```
