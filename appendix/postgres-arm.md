@@ -372,3 +372,13 @@ sysbench --db-driver=pgsql --report-interval=$REPORT_INTERVAL \
 ubuntu@ip-172-31-1-64:~$ sh perf.sh
 ```
 
+
+
+## 참고자료 ##
+
+* [sysbench oracle](https://www.programmersought.com/article/70115806537/)
+
+
+
+
+
