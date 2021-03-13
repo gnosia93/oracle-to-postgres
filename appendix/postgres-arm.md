@@ -319,10 +319,18 @@ Threads fairness:
 TARGET_DB=172.31.37.85  
 TEST_TIME=300
 
-THREA="16 32 64 128 256 512 1024"
-for i in $THREAD
+THREAD="16 32 64 128 256 512"
+for THREAD_COUNT in $THREAD
 do
   echo "-----------------------------------------------$i"
+  
+  sysbench --db-driver=pgsql --report-interval=60 \
+  --table-size=5000000 --tables=32 \
+  --threads=$THREAD_COUNT \
+  --time=$TEST_TIME \
+  --pgsql-host=$TARGET_DB --pgsql-port=5432 \
+  --pgsql-user=sbtest --pgsql-password=sbtest --pgsql-db=sbtest \
+  /usr/share/sysbench/oltp_read_write.lua run 
 done
 ```
 
