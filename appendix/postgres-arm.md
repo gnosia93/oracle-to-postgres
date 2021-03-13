@@ -27,7 +27,7 @@ R6g instances are also available with local NVMe-based SSD block-level storage o
   - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
   
 ```
-$ aws ec2 describe-security-groups
+$ aws ec2 describe-security-groups --group-names tf_sg_pub
 
 $ aws ec2 run-instances \
   --image-id ami-0e17ad9abf7e5c818 \
