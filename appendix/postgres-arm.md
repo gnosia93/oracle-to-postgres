@@ -30,7 +30,7 @@ Graviton2 과 X86 용 PostgreSQL 11 의 성능 비교를 위해 아키텍처 다
 R6g 타입의 인스턴스는 AWS 그라비톤2 프로세스를 탑재하고 있는데, X86 대비 40% 까지 저렴합니다.(https://aws.amazon.com/ko/ec2/instance-types/r6/),
 
  - r6g.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (Graviton2)
- - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
+ - r5.8xlarge: 32 vCPU / 256 GB / 10 Gigabit (X86-64) 
 
 로컬 PC 에서 신규 터미널을 오픈한 후, 아래의 스크립트를 copy 하여 AWS 클라우드에 인프라를 빌드합니다. 
 
