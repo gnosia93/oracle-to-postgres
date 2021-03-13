@@ -103,9 +103,9 @@ aws ec2 run-instances \
   --user-data $USER_DATA    
 ```
 
-### sysbench 준비하기 ###
+### PostgreSQL 초기화 하기 ###
 
-우선 각각의 데이터베이스 EC2 인스턴스로 ssh 로그인 한 후, sbtest 라는 이름의 데이터베이스와 유저를 생성합니다. 
+우선 그라비톤2 및 X86용 EC2 인스턴스로 ssh 로그인 한 후, sbtest 라는 이름의 데이터베이스와 유저를 생성합니다. 
 ```
 [ec2-user@ip-172-31-43-151 etc]$ sudo su - postgres
 -bash-4.2$ psql
@@ -121,6 +121,16 @@ GRANT
 postgres=# \q
 ```
 
+### sysbench 설치하기 ###
+
+아래의 명령어를 참고하여 스트레스 테스트 트래픽을 생성하는 cl_stress-gen 인스턴스로 로그인 한 후, sysbench 를 인스톨합니다.
+```
+
+
+```
+
+
+### 성능 테스트 하기 ###
 아래의 스크립트를 실행하여 각 데이터베이스의 성능을 측정합니다. TARGET_DB 는 성능 측정의 대상이 되는 PostgreSQL 11의 사설 IP 이며, THREAD_COUNT 는 데이터베이스 커넥션수와 같습니다. 
 ```
 export TARGET_DB=172.31.21.182
