@@ -37,6 +37,9 @@ $ aws ec2 run-instances \
   --security-group-ids $SG_ID \
   --monitoring Enabled=true \
   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cli_postgres_arm64}]'
+  --user-data <<EOF
+
+EOF
 ```
 
 
