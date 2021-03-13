@@ -29,7 +29,7 @@ R6g instances are also available with local NVMe-based SSD block-level storage o
 ```
 $ SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
 
-$ USER_DATA=`cat <<EOF | base64`
+$ USER_DATA=`cat <<EOF | base64
 #! /bin/bash
 sudo amazon-linux-extras install postgresql11 epel -y
 sudo yum install postgresql-server postgresql-contrib postgresql-devel -y
@@ -43,7 +43,7 @@ sudo -u postgres echo "host    all             all             0.0.0.0/0        
 sudo systemctl enable postgresql
 sudo systemctl start postgresql
 sudo -u ec2-user ps aux | grep postgres >> /home/ec2-user/postgres.out
-EOF
+EOF`
 
 $ aws ec2 run-instances \
   --image-id ami-05b616430d239765b \
