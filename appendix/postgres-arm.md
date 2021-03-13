@@ -31,16 +31,18 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 
 ### 테스트 인프라 빌드하기 ###
 
-- 이미지 정보 조회
-```
-aws ec2 describe-images --image-ids ami-00f1068284b9eca92
-```
-
-Graviton2 과 X86 용 PostgreSQL 11 의 성능 비교를 위해 아키텍처 다이어그램에 나와 있는 것 처럼, 아래 스크립트를 이용하여 인프라를 준비합니다.
+Graviton2 과 X86 용 PostgreSQL 11 의 성능 비교를 위해 아키텍처 다이어그램에 나와 있는 것 처럼, 아래 스크립트를 이용하여 인프라를 빌드합니다.
 R6g 타입의 인스턴스는 AWS 그라비톤2 프로세스를 탑재하고 있는데, X86 대비 40% 까지 저렴합니다.(https://aws.amazon.com/ko/ec2/instance-types/r6/),
 
  - c6g.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (Graviton2)
  - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
+
+로컬 PC 에서 신규 터미널을 오픈한 후, 아래의 스크립트를 copy 하여 AWS 클라우드에 인프라를 빌드합니다. 
+
+(참고) 이미지 정보 조회
+```
+aws ec2 describe-images --image-ids ami-00f1068284b9eca92
+```
 
 ```
 SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
@@ -82,7 +84,6 @@ sudo systemctl start postgresql
 sudo -u ec2-user ps aux | grep postgres >> /home/ec2-user/postgres.out
 EOF`
 
-
 aws ec2 run-instances \
   --image-id $ARM_AMI_ID \
   --count 1 \
@@ -121,6 +122,16 @@ aws ec2 run-instances \
 
 우선 cl_postgres_arm64 와 cl_postgres_x86-64 로 각각 접속하여, sbtest 라는 이름의 데이터베이스와 DB 유저를 생성합니다. 
 ```
+$ aws ec2 describe-instances --filters "Name=tag:Name,Values=cl_postgres_arm64,cl_postgres_x86-64"  --query "Reservations[].Instances[*].{InstanceId:InstanceId, PublicIpAddress:PublicIpAddress, Name:Tags[0].Value}" --output table
+------------------------------------------------------------------
+|                        DescribeInstances                       |
++---------------------+----------------------+-------------------+
+|     InstanceId      |        Name          |  PublicIpAddress  |
++---------------------+----------------------+-------------------+
+|  i-09448b53c5f22c9df|  cl_postgres_x86-64  |  13.125.223.230   |
+|  i-03a75f2694036edd1|  cl_postgres_arm64   |  3.35.4.152       |
++---------------------+----------------------+-------------------+
+
 $ ssh -i ~/.ssh/tf_key ec2-user@3.35.4.152
 
        __|  __|_  )
