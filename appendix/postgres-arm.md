@@ -146,7 +146,10 @@ postgres=# \q
 
 
 ### 성능 테스트 하기 ###
-아래의 스크립트를 실행하여 각 데이터베이스의 성능을 측정합니다. TARGET_DB 는 성능 측정의 대상이 되는 PostgreSQL 11의 사설 IP 이며, THREAD_COUNT 는 데이터베이스 커넥션수와 같습니다. 
+아래의 스크립트를 실행하여 각 데이터베이스의 성능을 측정합니다. 이 때 TARGET_DB 는 성능 측정의 대상이 되는 PostgreSQL 의 IP로 반드시 EC2 인스턴스의 사설 IP 를 입력해야 합니다.
+THREAD_COUNT 는 sysbench 가 테스트를 위해 내부적으로 생성하는 쓰레드의 수로, 데이터베이스 커넥션수와 같습니다.
+쓰레드 수를 32, 64, 128, 256, 512 까지 증가 시키면서 두 데이터베이스의 성능을 측정한 후 비교하도록 합니다. 
+
 ```
 export TARGET_DB=172.31.21.182
 export THREAD_COUNT = 64
@@ -176,7 +179,6 @@ $ sysbench \
 --pgsql-password=sbtest \
 --pgsql-db=sbtest \
 /usr/share/sysbench/oltp_read_write.lua run
-
 
 $ sysbench \
 --db-driver=pgsql \
