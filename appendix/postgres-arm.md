@@ -345,7 +345,7 @@ sysbench --db-driver=pgsql \
 THREAD="16 32 64 128 256 512"
 for THREAD_COUNT in $THREAD
 do
-  echo "-----------------------------------------------$i"
+  echo "-----------------------------------------------$THREAD_COUNT"
   
   sysbench --db-driver=pgsql --report-interval=$REPORT_INTERVAL \
   --table-size=$TABLE_SIZE --tables=32 \
