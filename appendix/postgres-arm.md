@@ -1,7 +1,7 @@
 PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마존 EC2 Graviton2 인스턴스를 생성해서 ARM 용 PostgreSQL 을 설치할 수 있다.
 이와는 달리 RDS 의 경우는 현재 ARM 은 지원이 되지 않는 것으로 보인다. 
 
-### Supported Version of Linux Distributions ###
+#### Supported Version of Linux Distributions ####
 
 * Unbutu 의 경우 - PostgreSQL 12 까지 지원
 
@@ -123,6 +123,7 @@ postgres=# \q
 
 ### sysbench 설치하기 ###
 
+* https://severalnines.com/database-blog/how-benchmark-postgresql-performance-using-sysbench
 아래의 명령어를 참고하여 스트레스 테스트 트래픽을 생성하는 cl_stress-gen 인스턴스로 로그인 한 후, sysbench 를 인스톨합니다.
 ```
 
