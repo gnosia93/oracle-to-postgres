@@ -65,7 +65,7 @@ $ aws ec2 run-instances \
   --key-name tf_key \
   --security-group-ids $SG_ID \
   --monitoring Enabled=true \
-  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cli_postgres_arm64}]' \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cl_postgres_arm64}]' \
   --user-data $USER_DATA
   
 $ aws ec2 run-instances \
@@ -76,7 +76,7 @@ $ aws ec2 run-instances \
   --key-name tf_key \
   --security-group-ids $SG_ID \
   --monitoring Enabled=true \
-  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cli_postgres_arm64}]' \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cl_postgres_x86-64}]' \
   --user-data $USER_DATA
   
 ```
