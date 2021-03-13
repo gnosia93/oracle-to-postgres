@@ -27,15 +27,16 @@ R6g instances are also available with local NVMe-based SSD block-level storage o
   - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
   
 ```
-$ aws ec2 describe-security-groups --group-names tf_sg_pub
+$ SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
 
 $ aws ec2 run-instances \
-  --image-id ami-0e17ad9abf7e5c818 \
+  --image-id ami-05b616430d239765b \
   --count 1 \
   --instance-type c6g.8xlarge \
   --key-name tf_key \
-  --security-group-ids sg-903004f8 \
-
+  --security-group-ids $SG_ID \
+  --monitoring Enabled=true \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cli_postgres_arm64}]'
 ```
 
 
@@ -44,7 +45,7 @@ $ aws ec2 run-instances \
 
 
 
-
+ami-0e17ad9abf7e5c818
 
 
 
