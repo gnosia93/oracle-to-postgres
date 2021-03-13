@@ -183,10 +183,10 @@ THREAD_COUNT 는 sysbench 가 테스트를 위해 내부적으로 생성하는 �
 참고로 아래 테스트 스크립트를 보면 prepare, run, cleanup 이라는 키워드를 볼 수 있은데, prepare 은 테스트를 위한 스키마 빌드 작업을 하는 단계이고, 실제 테스트는 run 단계에서 
 수행됩니다. cleanup 명령어를 사용하면 prepare 단계에서 생성한 각종 DB오브젝트를 삭제합니다.
 ```
-export TARGET_DB=172.31.37.85  
-export THREAD_COUNT = 32
+ubuntu@ip-172-31-1-64:~$ export TARGET_DB=172.31.37.85  
+ubuntu@ip-172-31-1-64:~$ export THREAD_COUNT = 32
 
-$ sysbench \
+ubuntu@ip-172-31-1-64:~$ sysbench \
 --db-driver=pgsql \
 --table-size=5000000 \
 --tables=32 \
@@ -198,7 +198,7 @@ $ sysbench \
 --pgsql-db=sbtest \
 /usr/share/sysbench/oltp_read_write.lua prepare
 
-$ sysbench \
+ubuntu@ip-172-31-1-64:~$ sysbench \
 --db-driver=pgsql \
 --report-interval=10 \
 --table-size=5000000 \
@@ -212,7 +212,7 @@ $ sysbench \
 --pgsql-db=sbtest \
 /usr/share/sysbench/oltp_read_write.lua run
 
-$ sysbench \
+ubuntu@ip-172-31-1-64:~$ sysbench \
 --db-driver=pgsql \
 --report-interval=10 \
 --table-size=5000000 \
