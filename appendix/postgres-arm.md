@@ -378,6 +378,7 @@ ubuntu@ip-172-31-1-64:~$ sh perf.sh
 
 * [sysbench oracle](https://www.programmersought.com/article/70115806537/)
 
+* [hammer DB oracle/postgresql](https://opendatabase.tistory.com/entry/DBMS-comparison-Oracle-vs-SQL-server-vs-MySQLinnodb-vs-MariaDBAria-vs-Postgres-part1)
 
 
 
