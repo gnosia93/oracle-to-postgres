@@ -318,20 +318,42 @@ Threads fairness:
 #! /bin/sh
 TARGET_DB=172.31.37.85  
 TEST_TIME=300
+TABLE_SIZE=5000000
+REPORT_INTERVAL=60
 
+# prepare
+sysbench --db-driver=pgsql \
+--table-size=$TABLE_SIZE --tables=32 \
+--threads=32 \
+--pgsql-host=$TARGET_DB --pgsql-port=5432 \
+--pgsql-user=sbtest \
+--pgsql-password=sbtest \
+--pgsql-db=sbtest \
+/usr/share/sysbench/oltp_read_write.lua prepare
+
+# run
 THREAD="16 32 64 128 256 512"
 for THREAD_COUNT in $THREAD
 do
   echo "-----------------------------------------------$i"
   
-  sysbench --db-driver=pgsql --report-interval=60 \
-  --table-size=5000000 --tables=32 \
+  sysbench --db-driver=pgsql --report-interval=$REPORT_INTERVAL \
+  --table-size=$TABLE_SIZE --tables=32 \
   --threads=$THREAD_COUNT \
   --time=$TEST_TIME \
   --pgsql-host=$TARGET_DB --pgsql-port=5432 \
   --pgsql-user=sbtest --pgsql-password=sbtest --pgsql-db=sbtest \
   /usr/share/sysbench/oltp_read_write.lua run 
 done
+
+# cleanup
+sysbench --db-driver=pgsql --report-interval=$REPORT_INTERVAL \
+--table-size=$TABLE_SIZE --tables=32 \
+--threads=$THREAD_COUNT \
+--time=$TEST_TIME \
+--pgsql-host=$TARGET_DB --pgsql-port=5432 \
+--pgsql-user=sbtest --pgsql-password=sbtest --pgsql-db=sbtest \
+/usr/share/sysbench/oltp_read_write.lua cleanup
 ```
 
 
