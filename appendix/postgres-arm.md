@@ -36,7 +36,7 @@ $ aws ec2 run-instances \
   --key-name tf_key \
   --security-group-ids $SG_ID \
   --monitoring Enabled=true \
-  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cli_postgres_arm64}]'
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cli_postgres_arm64}]' \
   --user-data <<EOF
 #! /bin/bash
 sudo amazon-linux-extras install postgresql11 epel -y
