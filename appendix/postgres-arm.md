@@ -197,7 +197,7 @@ THREAD_COUNT 는 sysbench 가 테스트를 위해 내부적으로 생성하는 �
 수행됩니다. cleanup 명령어를 사용하면 prepare 단계에서 생성한 각종 DB오브젝트를 삭제합니다.
 ```
 ubuntu@ip-172-31-1-64:~$ export TARGET_DB=172.31.37.85  
-ubuntu@ip-172-31-1-64:~$ export THREAD_COUNT = 32
+ubuntu@ip-172-31-1-64:~$ export THREAD_COUNT=32
 
 ubuntu@ip-172-31-1-64:~$ sysbench \
 --db-driver=pgsql \
