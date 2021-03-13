@@ -30,28 +30,28 @@ aws ec2 describe-images --image-ids ami-00f1068284b9eca92
  - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
 
 ```
-$ SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
+SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
 
-$ ARM_AMI_ID=`aws ec2 describe-images \
+ARM_AMI_ID=`aws ec2 describe-images \
                   --owners amazon \
                   --filters "Name=name, Values=amzn2-ami-hvm-2.0.20210303.0-arm64-gp2" \
                   --query "Images[0].{ImageId:ImageId}" --output text`; \
                   echo $ARM_AMI_ID
 
-$ X64_AMI_AMZN2_ID=`aws ec2 describe-images \
+X64_AMI_AMZN2_ID=`aws ec2 describe-images \
                   --owners amazon \
                   --filters "Name=name, Values=amzn2-ami-hvm-2.0.20210303.0-x86_64-gp2" \
                   --query "Images[0].{ImageId:ImageId}" --output text`; \
                   echo $X64_AMI_AMZN2_ID
 
-$ X64_AMI_UBUNTU_ID=`aws ec2 describe-images \
+X64_AMI_UBUNTU_ID=`aws ec2 describe-images \
                   --owners 099720109477 \
                   --filters "Name=name, Values=ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-20210223" \
                   --query "Images[0].{ImageId:ImageId}" --output text`; \
                   echo $X64_AMI_UBUNTU_ID
 
 
-$ USER_DATA=`cat <<EOF | base64
+USER_DATA=`cat <<EOF | base64
 #! /bin/bash
 sudo amazon-linux-extras install postgresql11 epel -y
 sudo yum install postgresql-server postgresql-contrib postgresql-devel -y
@@ -67,7 +67,8 @@ sudo systemctl start postgresql
 sudo -u ec2-user ps aux | grep postgres >> /home/ec2-user/postgres.out
 EOF`
 
-$ aws ec2 run-instances \
+
+aws ec2 run-instances \
   --image-id $ARM_AMI_ID \
   --count 1 \
   --instance-type r6g.8xlarge \
@@ -78,7 +79,7 @@ $ aws ec2 run-instances \
   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cl_postgres_arm64}]' \
   --user-data $USER_DATA
   
-$ aws ec2 run-instances \
+aws ec2 run-instances \
   --image-id $X64_AMI_AMZN2_ID \
   --count 1 \
   --instance-type r5.8xlarge \
@@ -89,7 +90,7 @@ $ aws ec2 run-instances \
   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cl_postgres_x86-64}]' \
   --user-data $USER_DATA
   
-$ aws ec2 run-instances \
+aws ec2 run-instances \
   --image-id $X64_AMI_UBUNTU_ID \
   --count 1 \
   --instance-type r5.8xlarge \
@@ -98,8 +99,7 @@ $ aws ec2 run-instances \
   --security-group-ids $SG_ID \
   --monitoring Enabled=true \
   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cl_postgres_x86-64}]' \
-  --user-data $USER_DATA  
-  
+  --user-data $USER_DATA    
 ```
 
 
