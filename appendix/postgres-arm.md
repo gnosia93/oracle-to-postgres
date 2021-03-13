@@ -27,7 +27,10 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 
 
 
-
+(참고) 이미지 조회하기
+```
+aws ec2 describe-images --image-ids ami-00f1068284b9eca92
+```
 
 ### 테스트 인프라 빌드하기 ###
 
@@ -38,11 +41,6 @@ R6g 타입의 인스턴스는 AWS 그라비톤2 프로세스를 탑재하고 있
  - r5.8xlarge: 32 vCPU / 256 GB / 12 Gigabit (X86-64) 
 
 로컬 PC 에서 신규 터미널을 오픈한 후, 아래의 스크립트를 copy 하여 AWS 클라우드에 인프라를 빌드합니다. 
-
-(참고) 이미지 정보 조회
-```
-aws ec2 describe-images --image-ids ami-00f1068284b9eca92
-```
 
 ```
 SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
