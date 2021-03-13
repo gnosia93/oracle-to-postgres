@@ -198,6 +198,7 @@ THREAD_COUNT 는 sysbench 가 테스트를 위해 내부적으로 생성하는 �
 ```
 ubuntu@ip-172-31-1-64:~$ export TARGET_DB=172.31.37.85  
 ubuntu@ip-172-31-1-64:~$ export THREAD_COUNT=32
+ubuntu@ip-172-31-1-64:~$ export TEST_TIME=300
 
 ubuntu@ip-172-31-1-64:~$ sysbench \
 --db-driver=pgsql \
@@ -217,7 +218,7 @@ ubuntu@ip-172-31-1-64:~$ sysbench \
 --table-size=5000000 \
 --tables=32 \
 --threads=$THREAD_COUNT \
---time=120 \
+--time=$TEST_TIME \
 --pgsql-host=$TARGET_DB \
 --pgsql-port=5432 \
 --pgsql-user=sbtest \
@@ -231,7 +232,7 @@ ubuntu@ip-172-31-1-64:~$ sysbench \
 --table-size=5000000 \
 --tables=32 \
 --threads=$THREAD_COUNT \
---time=120 \
+--time=$TEST_TIME \
 --pgsql-host=$TARGET_DB \
 --pgsql-port=5432 \
 --pgsql-user=sbtest \
