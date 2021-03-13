@@ -152,44 +152,12 @@ $ aws ec2 describe-instances --filters "Name=tag:Name,Values=cl_stress-gen"  --q
 +---------------------+-----------------+-------------------+
 
 $ ssh -i ~/.ssh/tf_key ubuntu@3.35.131.217
-The authenticity of host '3.35.131.217 (3.35.131.217)' can't be established.
-ECDSA key fingerprint is SHA256:Ty+NUA3nUWZ1Bi20ZVmVHo/eJx60Ezvka//mrc/BIAs.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added '3.35.131.217' (ECDSA) to the list of known hosts.
-Welcome to Ubuntu 20.04.2 LTS (GNU/Linux 5.4.0-1038-aws x86_64)
 
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
+ubuntu@ip-172-31-1-64:~$ curl -s https://packagecloud.io/install/repositories/akopytov/sysbench/script.deb.sh | sudo bash
 
-  System information as of Sat Mar 13 09:02:37 UTC 2021
+ubuntu@ip-172-31-1-64:~$ sudo apt -y install sysbench
 
-  System load:  0.0               Processes:             317
-  Usage of /:   2.6% of 48.41GB   Users logged in:       0
-  Memory usage: 0%                IPv4 address for ens5: 172.31.1.64
-  Swap usage:   0%
-
-1 update can be installed immediately.
-0 of these updates are security updates.
-To see these additional updates run: apt list --upgradable
-
-
-The list of available updates is more than a week old.
-To check for new updates run: sudo apt update
-
-
-The programs included with the Ubuntu system are free software;
-the exact distribution terms for each program are described in the
-individual files in /usr/share/doc/*/copyright.
-
-Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
-applicable law.
-
-To run a command as administrator (user "root"), use "sudo <command>".
-See "man sudo_root" for details.
-
-ubuntu@ip-172-31-1-64:~$ 
-
+ubuntu@ip-172-31-1-64:~$ sysbench --version
 
 ```
 
