@@ -61,6 +61,7 @@ $ aws ec2 run-instances \
   --image-id $ARM_AMI_ID \
   --count 1 \
   --instance-type c6g.8xlarge \
+  --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=300, VolumeType=io2, Iops=50000}'   \
   --key-name tf_key \
   --security-group-ids $SG_ID \
   --monitoring Enabled=true \
