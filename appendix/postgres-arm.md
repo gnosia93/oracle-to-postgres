@@ -1,4 +1,4 @@
-## PostgreSQL on AWS Graviton ##
+## PostgreSQL Performance on AWS Graviton ##
 
 https://aws.amazon.com/ko/ec2/graviton/
 
