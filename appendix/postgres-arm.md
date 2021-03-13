@@ -121,7 +121,17 @@ aws ec2 run-instances \
 
 우선 cl_postgres_arm64 와 cl_postgres_x86-64 로 접속하여, sbtest 라는 이름의 데이터베이스와 유저를 생성합니다. 
 ```
-[ec2-user@ip-172-31-43-151 etc]$ sudo su - postgres
+$ ssh -i ~/.ssh/tf_key ec2-user@3.35.4.152
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-2/
+No packages needed for security; 1 packages available
+Run "sudo yum update" to apply all updates.
+
+[ec2-user@ip-172-31-37-85 ~]$ sudo su - postgres
 -bash-4.2$ psql
 psql (11.5)
 Type "help" for help.
