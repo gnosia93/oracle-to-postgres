@@ -119,7 +119,7 @@ aws ec2 run-instances \
 
 ### PostgreSQL 초기화 하기 ###
 
-우선 cl_postgres_arm64 와 cl_postgres_x86-64 로 접속하여, sbtest 라는 이름의 데이터베이스와 유저를 생성합니다. 
+우선 cl_postgres_arm64 와 cl_postgres_x86-64 로 각각 접속하여, sbtest 라는 이름의 데이터베이스와 DB 유저를 생성합니다. 
 ```
 $ ssh -i ~/.ssh/tf_key ec2-user@3.35.4.152
 
@@ -130,6 +130,9 @@ $ ssh -i ~/.ssh/tf_key ec2-user@3.35.4.152
 https://aws.amazon.com/amazon-linux-2/
 No packages needed for security; 1 packages available
 Run "sudo yum update" to apply all updates.
+
+[ec2-user@ip-172-31-37-85 ~]$ uname -a
+Linux ip-172-31-37-85.ap-northeast-2.compute.internal 4.14.219-164.354.amzn2.aarch64 #1 SMP Mon Feb 22 21:18:49 UTC 2021 aarch64 aarch64 aarch64 GNU/Linux
 
 [ec2-user@ip-172-31-37-85 ~]$ sudo su - postgres
 -bash-4.2$ psql
