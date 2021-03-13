@@ -137,8 +137,8 @@ postgres=# \q
 
 ### sysbench 설치하기 ###
 
-* https://severalnines.com/database-blog/how-benchmark-postgresql-performance-using-sysbench
-아래의 명령어를 참고하여 스트레스 테스트 트래픽을 생성하는 cl_stress-gen 인스턴스로 로그인 한 후, sysbench 를 인스톨합니다.
+* https://severalnines.com/database-blog/how-benchmark-postgresql-performance-using-sysbench  
+아래의 명령어를 참고하여 테스트 트래픽을 생성하는 cl_stress-gen 인스턴스에 sysbench를 설치합니다. 
 ```
 
 
