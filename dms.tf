@@ -1,5 +1,8 @@
 resource "null_resource" "previous" {}
 
+# dms_vpc_role 이 먼저 생성될 수 있도록 기다린다. 
+# AWS 콘솔화면에서는 dms_vpc_role 이 자동으로 생성되지만, CLI, API 에서는 생성해줘야 한다. 
+# 해당 role은 security.tf 에서 생성함.
 resource "time_sleep" "wait_10_seconds" {
   depends_on = [null_resource.previous]
   create_duration = "60s"
@@ -15,7 +18,7 @@ resource "aws_dms_replication_instance" "tf_dms_11xe" {
     engine_version = "3.4.3"
     multi_az = false
     publicly_accessible = true
-    replication_instance_class = "dms.t3.medium"
+    replication_instance_class = "dms.c5.xlarge"
     replication_instance_id = "tf-dms-11xe"
 
     depends_on = [time_sleep.wait_10_seconds]       # delay resource creation 
@@ -27,7 +30,7 @@ resource "aws_dms_replication_instance" "tf_dms_19c" {
     engine_version = "3.4.3"
     multi_az = false
     publicly_accessible = true
-    replication_instance_class = "dms.t3.medium"
+    replication_instance_class = "dms.c5.xlarge"
     replication_instance_id = "tf-dms-19c"
 
     depends_on = [time_sleep.wait_10_seconds]

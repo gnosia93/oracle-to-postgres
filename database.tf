@@ -1,5 +1,6 @@
 # AMI 정보를 어떻게 출력하는지 ?
 # amzn2-ami-hvm-2.0.20210303.0-x86_64-gp2 (ami-0e17ad9abf7e5c818)
+# 이미지가 update되는 경우 최신 버전의 AMI 를 받아오게 된다. 
 data "aws_ami" "amazon-linux-2" {
     most_recent = true
     owners = [ "amazon" ]
@@ -63,7 +64,7 @@ resource "aws_instance" "tf_postgres_11xe" {
     monitoring = true
     root_block_device {
         volume_size = "300"
-        volume_type = "io2"
+        volume_type = "io1"
         iops = "10000"
     }
     key_name = aws_key_pair.tf_key.id
@@ -99,7 +100,7 @@ resource "aws_instance" "tf_postgres_19c" {
     monitoring = true
     root_block_device {
         volume_size = "300"
-        volume_type = "io2"
+        volume_type = "io1"
         iops = "10000"
     }
     key_name = aws_key_pair.tf_key.id
@@ -134,7 +135,7 @@ resource "aws_instance" "tf_oracle_11xe" {
     monitoring = true
     root_block_device {
         volume_size = "300"
-        volume_type = "io2"
+        volume_type = "io1"
         iops = "10000"
     }
     key_name = aws_key_pair.tf_key.id
@@ -221,7 +222,7 @@ resource "aws_instance" "tf_oracle_19c" {
     monitoring = true
     root_block_device {
         volume_size = "300"
-        volume_type = "io2"
+        volume_type = "io1"
         iops = "10000"
     }
     key_name = aws_key_pair.tf_key.id
