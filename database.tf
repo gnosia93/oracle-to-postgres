@@ -1,4 +1,5 @@
 # AMI 정보를 어떻게 출력하는지 ?
+# amzn2-ami-hvm-2.0.20210303.0-x86_64-gp2 (ami-0e17ad9abf7e5c818)
 data "aws_ami" "amazon-linux-2" {
     most_recent = true
     owners = [ "amazon" ]
@@ -17,6 +18,7 @@ data "aws_ami" "amazon-linux-2" {
 
 # How to list the latest available RHEL images on Amazon Web Services (AWS)
 # https://access.redhat.com/solutions/15356
+# RHEL-8.3.0_HVM-20201031-x86_64-0-Hourly2-GP2 (ami-07270d166cdf39adc)
 data "aws_ami" "rhel-8" {
     most_recent = true
     owners = [ "309956199498" ]            # owner 309956199498 means redhat inc.
