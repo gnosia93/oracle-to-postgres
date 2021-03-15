@@ -330,7 +330,7 @@ Threads fairness:
 TARGET_DB=172.31.37.85  
 TEST_TIME=300
 TABLE_SIZE=5000000
-REPORT_INTERVAL=60
+REPORT_INTERVAL=10
 
 # prepare
 sysbench --db-driver=pgsql \
@@ -355,7 +355,7 @@ do
   --time=$TEST_TIME \
   --pgsql-host=$TARGET_DB --pgsql-port=5432 \
   --pgsql-user=sbtest --pgsql-password=sbtest --pgsql-db=sbtest \
-  /usr/share/sysbench/oltp_read_write.lua run > $filename
+  /usr/share/sysbench/oltp_read_write.lua run > $filename >> sysbench.log
 
   while read line
   do
