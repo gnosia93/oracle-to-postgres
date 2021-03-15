@@ -358,19 +358,19 @@ do
   while read line
   do
    #echo "..."$line
-        case "$line" in
-           *read:*)  read=$(echo $line | cut -d ' ' -f2) ;;
-                *write:*) write=$(echo $line | cut -d ' ' -f2) ;;
-                *other:*) other=$(echo $line | cut -d ' ' -f2) ;;
-                *transactions:*) tps=$(echo $line | cut -d ' ' -f3 | cut -d '(' -f2) ;;
-                *queries:*) qps=$(echo $line | cut -d ' ' -f3 | cut -d '(' -f2) ;;
-                *ignored" "errors:*) err=$(echo $line | cut -d ' ' -f3) ;;
-                *total" "time:*) ttime=$(echo $line | cut -d ' ' -f3) ;;
-           *min:*)  min=$(echo $line | cut -d ' ' -f2) ;;
-           *avg:*)  avg=$(echo $line | cut -d ' ' -f2) ;;
-           *max:*)  max=$(echo $line | cut -d ' ' -f2) ;;
-                *95th" "percentile:*) p95=$(echo $line | cut -d ' ' -f3) ;;
-        esac
+   case "$line" in
+      *read:*)  read=$(echo $line | cut -d ' ' -f2) ;;
+      *write:*) write=$(echo $line | cut -d ' ' -f2) ;;
+      *other:*) other=$(echo $line | cut -d ' ' -f2) ;;
+      *transactions:*) tps=$(echo $line | cut -d ' ' -f3 | cut -d '(' -f2) ;;
+      *queries:*) qps=$(echo $line | cut -d ' ' -f3 | cut -d '(' -f2) ;;
+      *ignored" "errors:*) err=$(echo $line | cut -d ' ' -f3) ;;
+      *total" "time:*) ttime=$(echo $line | cut -d ' ' -f3) ;;
+      *min:*)  min=$(echo $line | cut -d ' ' -f2) ;;
+      *avg:*)  avg=$(echo $line | cut -d ' ' -f2) ;;
+      *max:*)  max=$(echo $line | cut -d ' ' -f2) ;;
+      *95th" "percentile:*) p95=$(echo $line | cut -d ' ' -f3) ;;
+   esac 
   done < $filename
 
   #echo $THREAD_COUNT $ttime $read $write $other $tps $qps $err $min $avg $max $p95 
