@@ -381,7 +381,7 @@ done
 # cleanup
 sysbench --db-driver=pgsql --report-interval=$REPORT_INTERVAL \
 --table-size=$TABLE_SIZE --tables=32 \
---threads=$THREAD_COUNT \
+--threads=1 \
 --time=$TEST_TIME \
 --pgsql-host=$TARGET_DB --pgsql-port=5432 \
 --pgsql-user=sbtest --pgsql-password=sbtest --pgsql-db=sbtest \
