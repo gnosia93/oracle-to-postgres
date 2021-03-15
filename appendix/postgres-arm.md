@@ -74,6 +74,7 @@ sudo postgresql-setup --initdb
 
 sudo -u postgres sed -e "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" -i /var/lib/pgsql/data/postgresql.conf
 sudo -u postgres sed -e "s/max_connections = 100/max_connections = 2000/" -i /var/lib/pgsql/data/postgresql.conf
+sudo -u postgres sed -e "s/max_wal_size = 1GB/max_wal_size = 30GB/" -i /var/lib/pgsql/data/postgresql.conf
 
 sudo -u postgres sed -i -e "/is for Unix domain socket connections only/a\local   all             shop                        md5" /var/lib/pgsql/data/pg_hba.conf
 sudo -u postgres echo "host    all             all             0.0.0.0/0               md5" >> /var/lib/pgsql/data/pg_hba.conf
