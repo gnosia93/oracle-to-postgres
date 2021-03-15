@@ -470,6 +470,9 @@ thc   elaptime      reads     writes   others       tps        qps    errs      
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
+또한 pgbench 를 이용하여 percona 사에서 PostgreSQL 13 버전을 대상으로 테스트 한 자료는 아래의 URL 에서 확인하실 수 있습니다.   
+https://www.percona.com/blog/2021/01/22/postgresql-on-arm-based-aws-ec2-instances-is-it-any-good/
+
 
 ### 인프라 삭제하기 ###
 
@@ -488,4 +491,3 @@ $ aws ec2 terminate-instances --instance-ids i-0d443b5abcaaa67a3 i-05e2c3aead577
 
 * [hammer DB 사용법](https://opendatabase.tistory.com/entry/Hammer-db-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%8A%A4%ED%82%A4%EB%A7%88-%EC%83%9D%EC%84%B1)
 
-* https://www.percona.com/blog/2021/01/22/postgresql-on-arm-based-aws-ec2-instances-is-it-any-good/
