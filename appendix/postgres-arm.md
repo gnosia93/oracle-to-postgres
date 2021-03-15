@@ -340,10 +340,9 @@ sysbench --db-driver=pgsql \
 --pgsql-db=sbtest \
 /usr/share/sysbench/oltp_read_write.lua prepare
 
-
 # run
 THREAD="2 4 16 24 32 64 128 256 512 1024"
-printf "%4s %10s %10s %10s %8s %12s %12s %5s %7s %10s %10s %10s\n" "thc" "elaptime" "reads" "writes" "others" "tps" "qps" "errs" "min" "avg" "max" "p95"
+printf "%4s %10s %10s %10s %8s %9s %10s %7s %10s %10s %10s %10s\n" "thc" "elaptime" "reads" "writes" "others" "tps" "qps" "errs" "min" "avg" "max" "p95"
 for THREAD_COUNT in $THREAD
 do
   filename=result_$THREAD_COUNT
@@ -357,7 +356,7 @@ do
   /usr/share/sysbench/oltp_read_write.lua run > $filename
 
   while read line
-  do 
+  do
    #echo "..."$line
         case "$line" in
            *read:*)  read=$(echo $line | cut -d ' ' -f2) ;;
@@ -375,11 +374,9 @@ do
   done < $filename
 
   #echo $THREAD_COUNT $ttime $read $write $other $tps $qps $err $min $avg $max $p95 
-  printf "%4s %10s %10s %10s %8s %12s %12s %5s %7s %10s %10s %10s\n" $THREAD_COUNT $ttime $read $write $other $tps $qps $err $min $avg $max $p95
+  printf "%4s %10s %10s %10s %8s %9s %10s %7s %10s %10s %10s %10s\n" $THREAD_COUNT $ttime $read $write $other $tps $qps $err $min $avg $max $p95
 
 done
-
-
 
 # cleanup
 sysbench --db-driver=pgsql --report-interval=$REPORT_INTERVAL \
