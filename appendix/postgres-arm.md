@@ -28,6 +28,10 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
   max_connections = 2000
 ```
 
+too many open files..
+* https://sarc.io/index.php/os/1708-too-many-open-files
+
+
 (참고) 이미지 조회하기
 ```
 aws ec2 describe-images --image-ids ami-00f1068284b9eca92
