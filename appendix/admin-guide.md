@@ -322,6 +322,8 @@ from information_schema.triggers;
 select * from pg_stat_activity order by query_start asc;
 ```
 
-### WAL SIZE ###
+### postgres log ###
 
-* https://database.sarang.net/?inc=read&criteria=pgsql&subcrit=qna&aid=9764
+* [Consider increasing the configuration parameter "max_wal_size](https://database.sarang.net/?inc=read&criteria=pgsql&subcrit=qna&aid=9764)
+
+* [ERROR:  canceling autovacuum task](https://www.postgresql.org/message-id/20080210234756.GA7093%40alvh.no-ip.org)
