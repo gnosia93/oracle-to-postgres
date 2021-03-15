@@ -343,7 +343,7 @@ sysbench --db-driver=pgsql \
 /usr/share/sysbench/oltp_read_write.lua prepare
 
 # run
-THREAD="2 4 16 24 32 64 128 256 512 1024"
+THREAD="2 4 8 16 32 64 128 256 512 1024"
 printf "%4s %10s %10s %10s %8s %9s %10s %7s %10s %10s %10s %10s\n" "thc" "elaptime" "reads" "writes" "others" "tps" "qps" "errs" "min" "avg" "max" "p95"
 for THREAD_COUNT in $THREAD
 do
