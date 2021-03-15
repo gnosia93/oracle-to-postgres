@@ -189,6 +189,31 @@ ubuntu@ip-172-31-1-64:~$ sudo apt -y install sysbench
 
 ubuntu@ip-172-31-1-64:~$ sysbench --version
 sysbench 1.0.20
+
+
+ubuntu@ip-172-31-1-64:~$ vi .bash_profile
+#! /bin/sh
+ulimit -n 40960
+
+ubuntu@ip-172-31-1-64:~$ . .bash_profile
+
+ubuntu@ip-172-31-1-64:~$ ulimit -a
+core file size          (blocks, -c) 0
+data seg size           (kbytes, -d) unlimited
+scheduling priority             (-e) 0
+file size               (blocks, -f) unlimited
+pending signals                 (-i) 509408
+max locked memory       (kbytes, -l) 65536
+max memory size         (kbytes, -m) unlimited
+open files                      (-n) 40960
+pipe size            (512 bytes, -p) 8
+POSIX message queues     (bytes, -q) 819200
+real-time priority              (-r) 0
+stack size              (kbytes, -s) 8192
+cpu time               (seconds, -t) unlimited
+max user processes              (-u) 509408
+virtual memory          (kbytes, -v) unlimited
+file locks                      (-x) unlimited
 ```
 
 ### 성능 테스트 하기 ###
