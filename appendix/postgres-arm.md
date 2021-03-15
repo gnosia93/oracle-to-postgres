@@ -342,6 +342,9 @@ sysbench --db-driver=pgsql \
 --pgsql-db=sbtest \
 /usr/share/sysbench/oltp_read_write.lua prepare
 
+# remove old sysbench.log
+rm sysbench.log 2> /dev/null
+
 # run
 THREAD="2 4 8 16 32 64 128 256 512 1024"
 printf "%4s %10s %10s %10s %8s %9s %10s %7s %10s %10s %10s %10s\n" "thc" "elaptime" "reads" "writes" "others" "tps" "qps" "errs" "min" "avg" "max" "p95"
@@ -355,11 +358,10 @@ do
   --time=$TEST_TIME \
   --pgsql-host=$TARGET_DB --pgsql-port=5432 \
   --pgsql-user=sbtest --pgsql-password=sbtest --pgsql-db=sbtest \
-  /usr/share/sysbench/oltp_read_write.lua run > $filename >> sysbench.log
+  /usr/share/sysbench/oltp_read_write.lua run | tee -a $filename >> sysbench.log
 
   while read line
   do
-   #echo "..."$line
    case "$line" in
       *read:*)  read=$(echo $line | cut -d ' ' -f2) ;;
       *write:*) write=$(echo $line | cut -d ' ' -f2) ;;
