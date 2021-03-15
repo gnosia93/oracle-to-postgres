@@ -28,10 +28,6 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
   max_connections = 2000
 ```
 
-too many open files..
-* https://sarc.io/index.php/os/1708-too-many-open-files
-
-
 (참고) 이미지 조회하기
 ```
 aws ec2 describe-images --image-ids ami-00f1068284b9eca92
@@ -168,8 +164,10 @@ postgres=# \q
 ### sysbench 설치하기 ###
 
 * https://severalnines.com/database-blog/how-benchmark-postgresql-performance-using-sysbench  
+* https://sarc.io/index.php/os/1708-too-many-open-files
+
 아래의 명령어를 참고하여 테스트 트래픽을 발생시키는 cl_stress-gen 인스턴스에 sysbench를 설치합니다. PostgreSQL 설치되는 EC2 가 amazon linux2 를 사용하는데 반해, 스트레스 트패릭을
-생성하는 cl_stress-gen 서버는 우분투 입니다.
+생성하는 cl_stress-gen 서버는 우분투 입니다. 또한 아래와 같이 .bash_profile 에 ulimit 를 이용하여 최대로 열수 있는 파일 갯수를 증가시켜 줍니다. 우분투의 기본값은 1024 입니다.  
 
 ```
 $ aws ec2 describe-instances --filters "Name=tag:Name,Values=cl_stress-gen"  --query "Reservations[].Instances[*].{InstanceId:InstanceId, PublicIpAddress:PublicIpAddress, Name:Tags[0].Value}" --output table
@@ -189,7 +187,6 @@ ubuntu@ip-172-31-1-64:~$ sudo apt -y install sysbench
 
 ubuntu@ip-172-31-1-64:~$ sysbench --version
 sysbench 1.0.20
-
 
 ubuntu@ip-172-31-1-64:~$ vi .bash_profile
 #! /bin/sh
