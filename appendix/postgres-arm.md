@@ -328,7 +328,7 @@ Threads fairness:
 ```
 #! /bin/sh
 TARGET_DB=172.31.37.85  
-TEST_TIME=300
+TEST_TIME=60
 TABLE_SIZE=5000000
 REPORT_INTERVAL=10
 
@@ -411,7 +411,7 @@ ubuntu@ip-172-31-1-64:~$ sh perf.sh
 ```
 $ aws ec2 describe-instances --filters "Name=tag:Name,Values=cl_postgres_arm64,cl_postgres_x86-64, cl_stress-gen"  --query "Reservations[].Instances[*].{InstanceId:InstanceId}" --output text
 
-$> delete-instance --instance-id <value>
+$ delete-instance --instance-id <value>
 ```
 
 
