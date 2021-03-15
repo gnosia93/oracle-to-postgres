@@ -145,6 +145,13 @@ postgres=# select pg_database_size('shop_db');
 (1 row)
 ```
 
+### 메모리 조회 ###
+```
+postgres=# select * from pg_settings where name like 'shared_buffer%';
+
+```
+
+
 ## 카탈로그 정보 조회 ##
 
 postgres 데이터베이스 역시 오라클의 fixed 또는 동적 뷰에 해당하는 시스템 카탈로그 및 뷰를 지원하고 있으며, 이를 통해 여러가지 데이터베이스 오브젝트 정보를 조회할 수 있습니다. 
