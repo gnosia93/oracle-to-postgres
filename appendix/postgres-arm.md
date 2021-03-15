@@ -88,7 +88,7 @@ aws ec2 run-instances \
   --image-id $ARM_AMI_ID \
   --count 1 \
   --instance-type r6g.4xlarge \
-  --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=300, VolumeType=io1, Iops=30000}'   \
+  --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=600, VolumeType=io1, Iops=30000}'   \
   --key-name tf_key \
   --security-group-ids $SG_ID \
   --monitoring Enabled=true \
@@ -99,7 +99,7 @@ aws ec2 run-instances \
   --image-id $X64_AMI_AMZN2_ID \
   --count 1 \
   --instance-type r5.4xlarge \
-  --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=300, VolumeType=io1, Iops=30000}'   \
+  --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=600, VolumeType=io1, Iops=30000}'   \
   --key-name tf_key \
   --security-group-ids $SG_ID \
   --monitoring Enabled=true \
