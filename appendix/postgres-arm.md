@@ -19,6 +19,7 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
 
 ![pef_architecture](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/postgres_perf_graviton2.png)
 
+성능 테스트시 적용되는 PostgreSQL 데이터베이스의 파리미터 값입니다. 인프라 빌드시 아래의 파라미터값은 자동으로 설정됩니다. 
 ```
 [postgresql.conf]
   shared_buffers = 40GB
