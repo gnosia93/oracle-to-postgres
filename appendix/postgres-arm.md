@@ -26,6 +26,7 @@ PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마�
   max_wal_size = 30GB
   min_wal_size = 30GB
   max_connections = 2000
+  listen_addresses = '*'
 ```
 
 (참고) 이미지 조회하기
