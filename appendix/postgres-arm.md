@@ -379,4 +379,4 @@ ubuntu@ip-172-31-1-64:~$ sh perf.sh
 
 * [hammer DB 사용법](https://opendatabase.tistory.com/entry/Hammer-db-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%8A%A4%ED%82%A4%EB%A7%88-%EC%83%9D%EC%84%B1)
 
-
+* https://www.percona.com/blog/2021/01/22/postgresql-on-arm-based-aws-ec2-instances-is-it-any-good/
