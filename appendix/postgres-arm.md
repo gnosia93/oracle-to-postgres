@@ -409,7 +409,7 @@ ubuntu@ip-172-31-1-64:~$ sh perf.sh
 ### 인프라 삭제하기 ###
 
 ```
-$ aws ec2 describe-instances --filters "Name=tag:Name,Values=cl_postgres_arm64,cl_postgres_x86-64, cl_stress-gen"  --query "Reservations[].Instances[*].{InstanceId:InstanceId, PrivateIpAddress:PrivateIpAddress, Name:Tags[0].Value}" --output table
+$ aws ec2 describe-instances --filters "Name=tag:Name,Values=cl_postgres_arm64,cl_postgres_x86-64, cl_stress-gen"  --query "Reservations[].Instances[*].{InstanceId:InstanceId}" --output text
 
 $> delete-instance --instance-id <value>
 ```
