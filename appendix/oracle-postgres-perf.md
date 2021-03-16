@@ -10,6 +10,13 @@ ubuntu@ip-172-31-1-141:~$ sudo apt-get install -y tcl-dev tk-dev unzip
 
 ubuntu@ip-172-31-1-141:~$ wget download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
 
+ubuntu@ip-172-31-1-141:~$ unzip instantclient-basic-linux.x64-21.1.0.0.0.zip 
+
+ubuntu@ip-172-31-1-141:~$ vi .bash_profile
+export ORACLE_HOME=/home/ubuntu/instantclient_21_1
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+export TNS_ADMIN=$ORACLE_HOME
+
 ubuntu@ip-172-31-1-141:~$ wget https://github.com/TPC-Council/HammerDB/releases/download/v4.0/HammerDB-4.0-Linux.tar.gz
 ubuntu@ip-172-31-1-141:~$ tar xvfz HammerDB-4.0-Linux.tar.gz
 ubuntu@ip-172-31-1-141:~$ cd HammerDB-4.0
