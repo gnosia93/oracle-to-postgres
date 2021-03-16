@@ -12,4 +12,6 @@ hammerdb(https://www.hammerdb.com/download.html) 라는 데이터베이스 성�
 
 * https://unioneinc.tistory.com/65
 
+* https://www.hammerdb.com/blog/uncategorized/hammerdb-command-line-build-and-test-examples/
+
 * [아마존 리눅스2 GUI 설치](https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-linux-2-install-gui/)
