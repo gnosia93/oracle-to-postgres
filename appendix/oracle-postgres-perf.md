@@ -49,6 +49,8 @@ ubuntu@ip-172-31-1-141:~$ cd HammerDB-4.0
 ### 테스트 시나리오 만들기 ###
 
 ```
+#!/usr/bin/tclsh
+
 dbset db ora
 
 diset connection instance pdb1
@@ -63,6 +65,10 @@ diset tpcc total_iterations 1000000
 diset tpcc ora_driver timed
 diset tpcc rampup 2
 diset tpcc duration 5
+
+print dict
+buildschema
+waittocomplete
 
 loadscript
 
