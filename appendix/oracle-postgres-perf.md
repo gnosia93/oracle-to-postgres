@@ -11,3 +11,5 @@ hammerdb(https://www.hammerdb.com/download.html) 라는 데이터베이스 성�
 * https://cloud.google.com/compute/docs/tutorials/load-testing-sql-server-hammerdb?hl=ko
 
 * https://unioneinc.tistory.com/65
+
+* [아마존 리눅스2 GUI 설치](https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-linux-2-install-gui/)
