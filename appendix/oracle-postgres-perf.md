@@ -4,7 +4,7 @@ hammerdb(https://www.hammerdb.com/download.html) 라는 데이터베이스 성�
 
 * https://www.c-sharpcorner.com/article/top-database-performance-testing-tools/
 
-
+* https://cloud.google.com/compute/docs/tutorials/load-testing-sql-server-hammerdb?hl=ko
 
 
 ### 이슈 해결 ###
