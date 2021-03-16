@@ -8,13 +8,11 @@ Amazon Linux 2 에 GUI 를 구동시키기 위한 정보는 https://aws.amazon.c
 ```
 ubuntu@ip-172-31-1-141:~$ sudo apt-get install -y tcl-dev tk-dev unzip
 
-ubuntu@ip-172-31-1-141:~$ wget download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
-
-ubuntu@ip-172-31-1-141:~$ unzip instantclient-basic-linux.x64-21.1.0.0.0.zip 
+ubuntu@ip-172-31-1-141:~$ mkdir -p oracle/lib
 
 ubuntu@ip-172-31-1-141:~$ vi .bash_profile
 ulimit -n 40960
-export ORACLE_HOME=/home/ubuntu/instantclient_21_1
+export ORACLE_HOME=/home/ubuntu/oracle
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 export TNS_ADMIN=$ORACLE_HOME
 
@@ -34,7 +32,13 @@ pdb1 =
             (SERVICE_NAME = pdb1)
         )
     )
-    
+
+ubuntu@ip-172-31-1-141:~$ wget download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
+
+ubuntu@ip-172-31-1-141:~$ unzip instantclient-basic-linux.x64-21.1.0.0.0.zip lib
+
+ubuntu@ip-172-31-1-141:~$ cd
+
 ubuntu@ip-172-31-1-141:~$ wget https://github.com/TPC-Council/HammerDB/releases/download/v4.0/HammerDB-4.0-Linux.tar.gz
 
 ubuntu@ip-172-31-1-141:~$ tar xvfz HammerDB-4.0-Linux.tar.gz
@@ -56,7 +60,7 @@ ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ vi oracle.xml
   9     <tpcc>
  10         <schema>
  11             <count_ware>16</count_ware>                  <--- 16 으로 수정 
- 12             <num_vu>1</num_vu>
+ 12             <num_vu>16</num_vu>                          <--- 16 으로  
  13             <tpcc_user>tpcc</tpcc_user>
  14             <tpcc_pass>tpcc</tpcc_pass>
  15             <tpcc_def_tab>tpcctab</tpcc_def_tab>
@@ -85,7 +89,7 @@ ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ vi oracle.xml
  38     </tpcc>
  39     <tpch>
  40         <schema>
- 41             <scale_fact>16</scale_fact>                   <--- 16 으로 수정
+ 41             <scale_fact>1</scale_fact>                   
  42             <tpch_user>tpch</tpch_user>
  43             <tpch_pass>tpch</tpch_pass>
  44             <tpch_def_tab>tpchtab</tpch_def_tab>
@@ -108,11 +112,22 @@ ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ vi oracle.xml
  61 </oracle>
 ```
 
+
+```
+ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ /home/ubuntu/HammerDB-4.0
+
 ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ ./hammerdbcli 
 HammerDB CLI v4.0
 Copyright (C) 2003-2020 Steve Shaw
 Type "help" for a list of commands
 The xml is well-formed, applying configuration
+
+hammerdb>print db
+Database Oracle set.
+To change do: dbset db prefix, one of:
+Oracle = ora MSSQLServer = mssqls Db2 = db2 MySQL = mysql PostgreSQL = pg 
+
+
 
 hammerdb>quit
 Shutting down HammerDB CLI
