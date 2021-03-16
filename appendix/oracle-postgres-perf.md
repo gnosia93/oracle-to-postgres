@@ -13,6 +13,7 @@ ubuntu@ip-172-31-1-141:~$ wget download.oracle.com/otn_software/linux/instantcli
 ubuntu@ip-172-31-1-141:~$ unzip instantclient-basic-linux.x64-21.1.0.0.0.zip 
 
 ubuntu@ip-172-31-1-141:~$ vi .bash_profile
+ulimit -n 40960
 export ORACLE_HOME=/home/ubuntu/instantclient_21_1
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 export TNS_ADMIN=$ORACLE_HOME
