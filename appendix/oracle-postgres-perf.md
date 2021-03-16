@@ -48,6 +48,7 @@ ubuntu@ip-172-31-1-141:~$ cd HammerDB-4.0
 
 ### 테스트 시나리오 만들기 ###
 
+[oracle_test.tcl]
 ```
 #!/usr/bin/tclsh
 
@@ -83,6 +84,13 @@ vurun
 
 ### 테스트 실행하기 ###
 ```
+#!/bin/bash
+
+echo "hammerdb start ..."
+./hammerdbcli <<!
+source oracle_test.tcl
+!
+echo "hammerdb end ..."
 
 ```
 
