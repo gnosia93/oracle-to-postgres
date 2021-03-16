@@ -132,14 +132,13 @@ diset tpcc duration 5
 
 loadscript
 
+vuset vu 16
+vuset showoutput 1
+vuset logtotemp 1
 
-
-
-
-
-librarycheck
-
-
+vucreate
+vustatus
+vurun
 ```
 
 
