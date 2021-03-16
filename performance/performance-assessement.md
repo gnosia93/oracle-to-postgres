@@ -458,4 +458,5 @@ postgres=# \d pg_stat_database;
 
 * [Amazon RDS 또는 Amazon Aurora PostgreSQL의 높은 CPU 사용률 문제를 해결하려면 어떻게 해야 하나요?](https://aws.amazon.com/ko/premiumsupport/knowledge-center/rds-aurora-postgresql-high-cpu/)
 
+* [WALWriteLock](https://www.percona.com/blog/2018/10/30/postgresql-locking-part-3-lightweight-locks/)
 
