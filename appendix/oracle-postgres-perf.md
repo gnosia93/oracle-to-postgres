@@ -113,9 +113,8 @@ ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ vi oracle.xml
 
 ```
 
+### 스키마 빌드 하기 ###
 ```
-ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ /home/ubuntu/HammerDB-4.0
-
 ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ ./hammerdbcli 
 HammerDB CLI v4.0
 Copyright (C) 2003-2020 Steve Shaw
@@ -127,10 +126,8 @@ Database Oracle set.
 To change do: dbset db prefix, one of:
 Oracle = ora MSSQLServer = mssqls Db2 = db2 MySQL = mysql PostgreSQL = pg 
 
+hammerdb>buildschema
 
-
-hammerdb>quit
-Shutting down HammerDB CLI
 ```
 
 ### 이슈 해결 ###
