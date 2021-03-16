@@ -48,8 +48,8 @@ ubuntu@ip-172-31-1-141:~$ cd HammerDB-4.0
 ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ cd config/
 
 ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ vi oracle.xml
-```
- 1 <?xml version="1.0" encoding="utf-8"?>
+
+  1 <?xml version="1.0" encoding="utf-8"?>
   2 <oracle>
   3     <connection>
   4         <system_user>system</system_user>
@@ -110,8 +110,8 @@ ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ vi oracle.xml
  59         </driver>
  60     </tpch>
  61 </oracle>
-```
 
+```
 
 ```
 ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ /home/ubuntu/HammerDB-4.0
