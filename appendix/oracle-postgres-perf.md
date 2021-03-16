@@ -86,17 +86,11 @@ vurun
 
 ```
 
-### 이슈 해결 ###
-
-* https://stackoverflow.com/questions/40779757/connect-postgresql-to-hammerdb
-
-* https://www.c-sharpcorner.com/article/top-database-performance-testing-tools/
-
-* https://cloud.google.com/compute/docs/tutorials/load-testing-sql-server-hammerdb?hl=ko
-
-* https://unioneinc.tistory.com/65
+### 레퍼런스 ###
 
 * https://www.hammerdb.com/docs/
+
+* https://cloud.google.com/compute/docs/tutorials/load-testing-sql-server-hammerdb?hl=ko
 
 * https://www.hammerdb.com/blog/uncategorized/hammerdb-command-line-build-and-test-examples/
 
