@@ -54,11 +54,14 @@ ubuntu@ip-172-31-1-141:~$ cd HammerDB-4.0
 
 dbset db ora
 
+diset connection system_user system
+diset connection system_password manager
 diset connection instance pdb1
+
 diset tpcc count_ware 16
 diset tpcc num_vu 16
-diset tpcc tpcc_user tpcc
-diset tpcc tpcc_pass tpcc
+diset tpcc tpcc_user tpcc7
+diset tpcc tpcc_pass tpcc7
 diset tpcc tpcc_def_tab tpcctab
 diset tpcc tpcc_ol_tab tpcctab
 diset tpcc tpcc_def_temp temp
