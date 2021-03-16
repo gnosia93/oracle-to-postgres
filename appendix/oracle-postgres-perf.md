@@ -110,8 +110,48 @@ ubuntu@ip-172-31-1-141:~/HammerDB-4.0$ vi oracle.xml
  59         </driver>
  60     </tpch>
  61 </oracle>
+```
+
+### 테스트 시나리오 만들기 ###
 
 ```
+dbset db ora
+
+diset connection instance pdb1
+diset tpcc count_ware 16
+diset tpcc num_vu 16
+diset tpcc tpcc_user tpcc
+diset tpcc tpcc_pass tpcc
+diset tpcc tpcc_def_tab tpcctab
+diset tpcc tpcc_ol_tab tpcctab
+diset tpcc tpcc_def_temp temp
+diset tpcc total_iterations 1000000
+diset tpcc ora_driver timed
+diset tpcc rampup 2
+diset tpcc duration 5
+
+loadscript
+
+
+
+
+
+
+librarycheck
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
 
 ### 스키마 빌드 하기 ###
 ```
