@@ -18,6 +18,25 @@ export ORACLE_HOME=/home/ubuntu/instantclient_21_1
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 export TNS_ADMIN=$ORACLE_HOME
 
+ubuntu@ip-172-31-1-141:~$ . .bash_profile
+
+ubuntu@ip-172-31-1-141:~$ cd $ORACLE_HOME
+
+ubuntu@ip-172-31-1-141:~$ vi tnsnames.ora
+# <19c-oracle-private-ip> 를 오라클 사설 IP 로 수정해 주세요.
+pdb1 =
+    (DESCRIPTION =
+        (ADDRESS_LIST =
+            (ADDRESS = (PROTOCOL = TCP)(HOST = <19c-oracle-private-ip>)(PORT = 1521))
+        )
+        (CONNECT_DATA =
+            (SERVER = DEDICATED)
+            (SERVICE_NAME = pdb1)
+        )
+    )
+    
+ubuntu@ip-172-31-1-141:~$
+
 ubuntu@ip-172-31-1-141:~$ wget https://github.com/TPC-Council/HammerDB/releases/download/v4.0/HammerDB-4.0-Linux.tar.gz
 ubuntu@ip-172-31-1-141:~$ tar xvfz HammerDB-4.0-Linux.tar.gz
 ubuntu@ip-172-31-1-141:~$ cd HammerDB-4.0
