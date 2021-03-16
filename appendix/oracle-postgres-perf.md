@@ -3,3 +3,10 @@
 hammerdb(https://www.hammerdb.com/download.html) 라는 데이터베이스 성능 분석툴을 이용하여 Oracle 데이터베이스와 PostgreSQL 간의 성능을 비교하도록 하겠습니다. 
 
 * https://www.c-sharpcorner.com/article/top-database-performance-testing-tools/
+
+
+
+
+### 이슈 해결 ###
+
+* https://stackoverflow.com/questions/40779757/connect-postgresql-to-hammerdb
