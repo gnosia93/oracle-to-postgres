@@ -4,9 +4,8 @@
 
 Amazon Linux 2 에 GUI 를 구동시키기 위한 정보는 https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-linux-2-install-gui/ 를 참고하세요.
 
-### GUI 설치 ###
+### GUI 설치 및 VNC 설정 ###
 
-* 우분투 VNC 설정
 ```
 ubuntu@ip-172-31-8-174:~$ sudo apt-get update; sudo apt-get upgrade
 
@@ -47,22 +46,24 @@ X DISPLAY #	RFB PORT #	PROCESS ID
 :1		5901		13208
 ```
 
-* 로컬 PC 터널링 및 VNC 뷰어 실행
+### 터널링을 통한 GUI 서버 접속 ###
 
-먼저 로컬 PC 에 vnc viewer 를 다운로드 받습니다. 
+먼저 로컬 PC 에 vnc viewer 를 다운로드 받습니다. (https://www.realvnc.com/en/connect/download/viewer/) 
 ![vnc-viwer](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/vnc-viewer.png)
 
-
+ssh 를 이용하여 서버와 터널링을 맺어 줍니다. 
 ```
 $ ssh -L 5901:localhost:5901 -i ~/.ssh/tf_key ubuntu@3.35.13.129
-
-로컬 컴퓨터에서 VNC 클라이언트를 열어서 VNC 서버의 호스트 이름을 묻는 메시지가 표시되면 localhost: 1을 입력한 다음 여기에 연결합니다.
-
-TigerVNC 설치 섹션의 2단계에서 설정한 VNC 암호를 입력합니다. 연결이 안전하지 않다는 알림이 표시되면 무시하세요. VNC 데이터는 기본적으로 암호화되지 않지만 암호화된 SSH 터널을 사용하여 VNC 서버에 액세스합니다.
 ```
+
+로컬 PC 에서 VNC 클라이언트를 실행한 후 VNC 서버의 호스트 이름을 묻는 메시지가 표시되면 localhost: 1을 입력하여 서버로 연결합니다. 
+
+vncpasswd 를 이용해서 설정했던 패스워드를 입력합니다. VNC 데이터는 기본적으로 암호화되지 않지만 여기에서는 SSH 터널을 사용하므로, 안전합니다. 
+
 
 ### HammerDB 설치하기 ###
 
+아래 명령어를 참고하여 HammerDB 를 설치하고, 오라클 TNS 설정을 하도록 합니다. 
 ```
 ubuntu@ip-172-31-8-174:~$ mkdir -p oracle
 
@@ -112,6 +113,8 @@ ubuntu@ip-172-31-8-174:~$ cd HammerDB-4.0
 
 ubuntu@ip-172-31-8-174:~$ ./Hammerdb
 ```
+
+
 
 
 ### 테스트 시나리오 만들기 ###
