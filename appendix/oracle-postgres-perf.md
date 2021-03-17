@@ -49,6 +49,8 @@ Verify:
 Would you like to enter a view-only password (y/n)? n
 A view-only password is not used
 
+[ec2-user@ip-172-31-41-48 ~]$ sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@.service
+
 
 ```
 
