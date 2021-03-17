@@ -29,10 +29,28 @@ aws ec2 run-instances \
   --monitoring Enabled=true \
   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=bm_hammerdb}]' \
   --user-data $USER_DATA
-  
-
 ```
 
+### 패키지 설치 ###
+
+```
+[ec2-user@ip-172-31-41-48 ~]$ sudo yum update
+
+[ec2-user@ip-172-31-41-48 ~]$ sudo amazon-linux-extras install mate-desktop1.x
+
+[ec2-user@ip-172-31-41-48 ~]$ echo "/usr/bin/mate-session" > ~/.Xclients && chmod +x ~/.Xclients
+
+[ec2-user@ip-172-31-41-48 ~]$ sudo yum install tigervnc-server
+
+[ec2-user@ip-172-31-41-48 ~]$ vncpasswd
+vncpasswd
+Password:
+Verify:
+Would you like to enter a view-only password (y/n)? n
+A view-only password is not used
+
+
+```
 
 
 
