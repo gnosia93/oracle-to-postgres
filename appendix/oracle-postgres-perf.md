@@ -91,30 +91,22 @@ ssh 터널링을 통해서 VNC 클라이언트로 접속한다. 자세한 내용
 https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-linux-2-install-gui/
 
 
-
-
-
-
-
-
-### 설치하기 ###
+### HammerDB 설치하기 ###
 
 ```
-ubuntu@ip-172-31-1-141:~$ sudo apt-get install -y tcl-dev tk-dev unzip
+[ec2-user@ip-172-31-41-48 ~]$ mkdir -p oracle/lib
 
-ubuntu@ip-172-31-1-141:~$ mkdir -p oracle/lib
-
-ubuntu@ip-172-31-1-141:~$ vi .bash_profile
+[ec2-user@ip-172-31-41-48 ~]$ vi .bash_profile
 ulimit -n 40960
-export ORACLE_HOME=/home/ubuntu/oracle
+export ORACLE_HOME=/home/ec2-user/oracle
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 export TNS_ADMIN=$ORACLE_HOME
 
-ubuntu@ip-172-31-1-141:~$ . .bash_profile
+[ec2-user@ip-172-31-41-48 ~]$ . .bash_profile
 
-ubuntu@ip-172-31-1-141:~$ cd $ORACLE_HOME
+[ec2-user@ip-172-31-41-48 ~]$ cd $ORACLE_HOME
 
-ubuntu@ip-172-31-1-141:~$ vi tnsnames.ora
+[ec2-user@ip-172-31-41-48 oracle]$ vi tnsnames.ora
 # <19c-oracle-private-ip> 를 오라클 사설 IP 로 수정해 주세요.
 pdb1 =
     (DESCRIPTION =
@@ -127,17 +119,19 @@ pdb1 =
         )
     )
 
-ubuntu@ip-172-31-1-141:~$ wget download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
+[ec2-user@ip-172-31-41-48 oracle]$ wget download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
 
-ubuntu@ip-172-31-1-141:~$ unzip instantclient-basic-linux.x64-21.1.0.0.0.zip lib
+[ec2-user@ip-172-31-41-48 oracle]$ unzip instantclient-basic-linux.x64-21.1.0.0.0.zip 
 
-ubuntu@ip-172-31-1-141:~$ cd
+[ec2-user@ip-172-31-41-48 oracle]$ mv instantclient_21_1/ lib
 
-ubuntu@ip-172-31-1-141:~$ wget https://github.com/TPC-Council/HammerDB/releases/download/v4.0/HammerDB-4.0-Linux.tar.gz
+[ec2-user@ip-172-31-41-48 oracle]$ cd
 
-ubuntu@ip-172-31-1-141:~$ tar xvfz HammerDB-4.0-Linux.tar.gz
+[ec2-user@ip-172-31-41-48 ~]$ wget https://github.com/TPC-Council/HammerDB/releases/download/v4.0/HammerDB-4.0-Linux.tar.gz
 
-ubuntu@ip-172-31-1-141:~$ cd HammerDB-4.0
+[ec2-user@ip-172-31-41-48 ~]$ tar xvfz HammerDB-4.0-Linux.tar.gz
+
+[ec2-user@ip-172-31-41-48 ~]$ cd HammerDB-4.0
 ```
 
 ### 테스트 시나리오 만들기 ###
