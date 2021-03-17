@@ -102,11 +102,14 @@ ubuntu@ip-172-31-8-174:~$ tar xvfz HammerDB-4.0-Linux.tar.gz
 ```
 
 ### HammerDB 실행하기 ###
-```
+
+![hammerdb-vnc](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/hammerdb-vnc.png)
 
 ```
+ubuntu@ip-172-31-8-174:~$ cd HammerDB-4.0
 
-
+ubuntu@ip-172-31-8-174:~$ ./Hammerdb
+```
 
 
 ### 테스트 시나리오 만들기 ###
