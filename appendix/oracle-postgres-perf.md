@@ -10,6 +10,7 @@ UBUNTU GUI 설치.
 
 * https://z-wony.tistory.com/19
 
+* 우분투 VNC 설정
 ```
 ubuntu@ip-172-31-8-174:~$ sudo apt-get update; sudo apt-get upgrade
 
@@ -49,6 +50,13 @@ TigerVNC server sessions:
 X DISPLAY #	RFB PORT #	PROCESS ID
 :1		5901		13208
 ```
+
+* 로컬 PC 터널링 설정
+```
+$ ssh -L 5901:localhost:5901 -i ~/.ssh/tf_key ubuntu@3.35.13.129
+
+```
+
 
 ### GUI 설치 ###
 
