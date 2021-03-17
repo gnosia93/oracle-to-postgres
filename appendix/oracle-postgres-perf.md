@@ -31,7 +31,8 @@ aws ec2 run-instances \
   --user-data $USER_DATA
 ```
 
-### 패키지 설치 ###
+### GUI 설치 ###
+* https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-linux-2-install-gui/
 
 ```
 [ec2-user@ip-172-31-41-48 ~]$ sudo yum update
