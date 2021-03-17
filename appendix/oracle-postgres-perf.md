@@ -24,12 +24,31 @@ Verify:
 Would you like to enter a view-only password (y/n)? n
 A view-only password is not used
 
+ubuntu@ip-172-31-8-174:~$ vi .vnc/xstartup
+#!/bin/sh
+# Start Gnome 3 Desktop
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+vncconfig -iconic &
+dbus-launch --exit-with-session gnome-session &
 
+ubuntu@ip-172-31-8-174:~$ vncserver -localhost no
+/usr/bin/xauth:  file /home/ubuntu/.Xauthority does not exist
 
+New 'ip-172-31-8-174.ap-northeast-2.compute.internal:1 (ubuntu)' desktop at :1 on machine ip-172-31-8-174.ap-northeast-2.compute.internal
 
+Starting applications specified in /home/ubuntu/.vnc/xstartup
+Log file is /home/ubuntu/.vnc/ip-172-31-8-174.ap-northeast-2.compute.internal:1.log
+
+Use xtigervncviewer -SecurityTypes VncAuth,TLSVnc -passwd /home/ubuntu/.vnc/passwd ip-172-31-8-174.ap-northeast-2.compute.internal:1 to connect to the VNC server.
+
+ubuntu@ip-172-31-8-174:~$ vncserver -list
+
+TigerVNC server sessions:
+
+X DISPLAY #	RFB PORT #	PROCESS ID
+:1		5901		13208
 ```
-
-
 
 ### GUI 설치 ###
 
