@@ -63,19 +63,19 @@ TigerVNC 설치 섹션의 2단계에서 설정한 VNC 암호를 입력합니다.
 ### HammerDB 설치하기 ###
 
 ```
-[ec2-user@ip-172-31-41-48 ~]$ mkdir -p oracle/lib
+ubuntu@ip-172-31-8-174:~$ mkdir -p oracle
 
-[ec2-user@ip-172-31-41-48 ~]$ vi .bash_profile
+ubuntu@ip-172-31-8-174:~$ vi .bash_profile
 ulimit -n 40960
 export ORACLE_HOME=/home/ec2-user/oracle
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib
 export TNS_ADMIN=$ORACLE_HOME
 
-[ec2-user@ip-172-31-41-48 ~]$ . .bash_profile
+ubuntu@ip-172-31-8-174:~$ . .bash_profile
 
-[ec2-user@ip-172-31-41-48 ~]$ cd $ORACLE_HOME
+ubuntu@ip-172-31-8-174:~$ cd $ORACLE_HOME
 
-[ec2-user@ip-172-31-41-48 oracle]$ vi tnsnames.ora
+ubuntu@ip-172-31-8-174:~/oracle$ vi tnsnames.ora
 # <19c-oracle-private-ip> 를 오라클 사설 IP 로 수정해 주세요.
 pdb1 =
     (DESCRIPTION =
@@ -88,35 +88,18 @@ pdb1 =
         )
     )
 
-[ec2-user@ip-172-31-41-48 oracle]$ wget download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
+ubuntu@ip-172-31-8-174:~/oracle$ wget download.oracle.com/otn_software/linux/instantclient/211000/instantclient-basic-linux.x64-21.1.0.0.0.zip
 
-[ec2-user@ip-172-31-41-48 oracle]$ unzip instantclient-basic-linux.x64-21.1.0.0.0.zip 
+ubuntu@ip-172-31-8-174:~/oracle$ unzip instantclient-basic-linux.x64-21.1.0.0.0.zip 
 
-[ec2-user@ip-172-31-41-48 oracle]$ mv instantclient_21_1/ lib
+ubuntu@ip-172-31-8-174:~/oracle$ mv instantclient_21_1/ lib
 
-[ec2-user@ip-172-31-41-48 oracle]$ cd
+ubuntu@ip-172-31-8-174:~/oracle$ cd
 
-[ec2-user@ip-172-31-41-48 ~]$ wget https://github.com/TPC-Council/HammerDB/releases/download/v4.0/HammerDB-4.0-Linux.tar.gz
+ubuntu@ip-172-31-8-174:~$ wget https://github.com/TPC-Council/HammerDB/releases/download/v4.0/HammerDB-4.0-Linux.tar.gz
 
-[ec2-user@ip-172-31-41-48 ~]$ tar xvfz HammerDB-4.0-Linux.tar.gz
-
-[ec2-user@ip-172-31-41-48 ~]$ cd HammerDB-4.0
+ubuntu@ip-172-31-8-174:~$ tar xvfz HammerDB-4.0-Linux.tar.gz
 ```
-
-### TCL / TK 설치하기 ###
-
-```
-wget https://prdownloads.sourceforge.net/tcl/tcl8.6.11-src.tar.gz
-wget https://prdownloads.sourceforge.net/tcl/tk8.6.11.1-src.tar.gz
-
-```
-
-
-
-
-
-
-
 
 
 
