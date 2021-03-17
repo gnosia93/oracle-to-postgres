@@ -17,6 +17,15 @@ ubuntu@ip-172-31-8-174:~$ sudo apt-get install --no-install-recommends ubuntu-de
 
 ubuntu@ip-172-31-8-174:~$ sudo apt-get install tigervnc-standalone-server tigervnc-xorg-extension
 
+ubuntu@ip-172-31-8-174:~$ vncpasswd
+vncpasswd
+Password:
+Verify:
+Would you like to enter a view-only password (y/n)? n
+A view-only password is not used
+
+
+
 
 ```
 
