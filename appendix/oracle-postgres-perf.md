@@ -38,6 +38,8 @@ aws ec2 run-instances \
 ```
 [ec2-user@ip-172-31-41-48 ~]$ sudo yum update
 
+[ec2-user@ip-172-31-41-48 ~]$ sudo yum groupinstall "Development tools"
+
 [ec2-user@ip-172-31-41-48 ~]$ sudo amazon-linux-extras install mate-desktop1.x
 
 [ec2-user@ip-172-31-41-48 ~]$ echo "/usr/bin/mate-session" > ~/.Xclients && chmod +x ~/.Xclients
