@@ -32,6 +32,7 @@ aws ec2 run-instances \
 ```
 
 ### GUI 설치 ###
+
 * https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-linux-2-install-gui/
 
 ```
@@ -83,8 +84,11 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/vncserver@:1.se
 Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
+### 내 PC 설정하기 ###
 
+ssh 터널링을 통해서 VNC 클라이언트로 접속한다. 자세한 내용은 아래 URL 을 참고.
 
+https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-linux-2-install-gui/
 
 
 
