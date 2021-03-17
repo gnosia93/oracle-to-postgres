@@ -101,6 +101,10 @@ ubuntu@ip-172-31-8-174:~$ wget https://github.com/TPC-Council/HammerDB/releases/
 ubuntu@ip-172-31-8-174:~$ tar xvfz HammerDB-4.0-Linux.tar.gz
 ```
 
+### HammerDB 실행하기 ###
+```
+
+```
 
 
 
