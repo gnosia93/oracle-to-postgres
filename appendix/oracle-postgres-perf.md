@@ -136,6 +136,25 @@ pdb1 =
 [ec2-user@ip-172-31-41-48 ~]$ cd HammerDB-4.0
 ```
 
+### TCL / TK 설치하기 ###
+
+```
+wget https://prdownloads.sourceforge.net/tcl/tcl8.6.11-src.tar.gz
+wget https://prdownloads.sourceforge.net/tcl/tk8.6.11.1-src.tar.gz
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
 ### 테스트 시나리오 만들기 ###
 
 [oracle_test.tcl]
