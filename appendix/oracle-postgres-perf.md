@@ -15,6 +15,8 @@ ubuntu@ip-172-31-8-174:~$ sudo apt-get update; sudo apt-get upgrade
 
 ubuntu@ip-172-31-8-174:~$ sudo apt-get install --no-install-recommends ubuntu-desktop
 
+ubuntu@ip-172-31-8-174:~$ sudo apt-get install tigervnc-standalone-server tigervnc-xorg-extension
+
 
 ```
 
