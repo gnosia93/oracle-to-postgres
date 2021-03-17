@@ -117,9 +117,10 @@ ubuntu@ip-172-31-8-174:~$ ./Hammerdb
 
 
 
-### 테스트 시나리오 만들기 ###
+### CLI 로 실행하기  ###
 
-[oracle_test.tcl]
+* 시나리오 작성하기 
+oracle_test.tcl 을 아래의 내용을 생성합니다. 
 ```
 #!/usr/bin/tclsh
 
@@ -155,8 +156,7 @@ vucreate
 vustatus
 vurun
 ```
-
-### 테스트 실행하기 ###
+* 테스트 실행하기 
 ```
 #!/bin/bash
 
@@ -167,6 +167,7 @@ source oracle_test.tcl
 echo "hammerdb end ..."
 
 ```
+
 
 ### 레퍼런스 ###
 
