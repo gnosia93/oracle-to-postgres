@@ -1,6 +1,6 @@
 ## PostgreSQL Performance on AWS Graviton ##
 
-PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마존 EC2 역시 Graviton2 인스턴스를 통해서 ARM 아키텍처를 지원하고 있고, RDS 의 경우 또한 Graviton2 에 설치가 가능하다. 이번 챕터에서는 그라비톤 상의 PostgreSQL의 성능을 테스트하여 X86 과 비교하고 비용 효율성을 검증하고자 한다.  
+PostgreSQL 은 ARM 아키텍처를 오래전 부터 지원하고 있다. 아마존 EC2 역시 Graviton2 인스턴스를 통해서 ARM 아키텍처를 지원하고 있고, RDS for Aurora 역시 graviton2 를 지원하고 있다. 이번 챕터에서는 그라비톤 상의 PostgreSQL의 성능을 테스트하여 X86 과 비교하고 비용 효율성을 검증하고자 한다.  
 
 - https://aws.amazon.com/ko/about-aws/whats-new/2020/10/achieve-up-to-52-percent-better-price-performance-with-amazon-rds-using-new-graviton2-instances/
 
