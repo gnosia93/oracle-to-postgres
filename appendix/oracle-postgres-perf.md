@@ -51,6 +51,8 @@ A view-only password is not used
 
 [ec2-user@ip-172-31-41-48 ~]$ sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@.service
 
+[ec2-user@ip-172-31-41-48 system]$ sudo sed -i 's/<USER>/ec2-user/' /etc/systemd/system/vncserver@.service
+
 
 ```
 
