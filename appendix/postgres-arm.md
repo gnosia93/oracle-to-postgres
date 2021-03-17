@@ -483,6 +483,10 @@ $ aws ec2 describe-instances --filters "Name=tag:Name,Values=cl_postgres_arm64,c
 $ aws ec2 terminate-instances --instance-ids i-0d443b5abcaaa67a3 i-05e2c3aead57755a4 i-09d6fc9492658bda9
 ```
 
+## 비용 비교 ##
+
+
+
 
 ## 참고자료 ##
 
