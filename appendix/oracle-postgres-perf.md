@@ -105,6 +105,7 @@ ubuntu@ip-172-31-8-174:~$ tar xvfz HammerDB-4.0-Linux.tar.gz
 
 ![hammerdb-vnc](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/hammerdb-vnc.png)
 
+VNC 클라이언트 상에서 아래의 명령으로 HammerDB GUI 버전을 실행합니다. 
 ```
 ubuntu@ip-172-31-8-174:~$ cd HammerDB-4.0
 
