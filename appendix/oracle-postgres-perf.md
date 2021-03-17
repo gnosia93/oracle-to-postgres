@@ -6,7 +6,9 @@ Amazon Linux 2 에 GUI 를 구동시키기 위한 정보는 https://aws.amazon.c
 UBUNTU GUI 설치.
 * https://velog.io/@kyoung99u/Ubuntu-GUI-%EC%84%A4%EC%B9%98
 
-### 인프라 빌드하기 ###
+### GUI 설치 ###
+
+* https://z-wony.tistory.com/19
 
 ```
 ubuntu@ip-172-31-8-174:~$ sudo apt-get update; sudo apt-get upgrade
