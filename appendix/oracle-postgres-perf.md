@@ -9,30 +9,14 @@ UBUNTU GUI 설치.
 ### 인프라 빌드하기 ###
 
 ```
-SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
+ubuntu@ip-172-31-8-174:~$ sudo apt-get update; sudo apt-get upgrade
 
-ARM_AMI_ID=`aws ec2 describe-images \
-                  --owners amazon \
-                  --filters "Name=name, Values=amzn2-ami-hvm-2.0.20210303.0-arm64-gp2" \
-                  --query "Images[0].{ImageId:ImageId}" --output text`; \
-                  echo $ARM_AMI_ID
+ubuntu@ip-172-31-8-174:~$ sudo apt-get install --no-install-recommends ubuntu-desktop
 
-USER_DATA=`cat <<EOF | base64
-#! /bin/bash
-sudo amazon-linux-extras install postgresql11 epel -y
-EOF`
 
-aws ec2 run-instances \
-  --image-id $ARM_AMI_ID \
-  --count 1 \
-  --instance-type r6g.4xlarge \
-  --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=600, VolumeType=io1, Iops=30000}'   \
-  --key-name tf_key \
-  --security-group-ids $SG_ID \
-  --monitoring Enabled=true \
-  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=bm_hammerdb}]' \
-  --user-data $USER_DATA
 ```
+
+
 
 ### GUI 설치 ###
 
