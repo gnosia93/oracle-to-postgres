@@ -489,13 +489,3 @@ $ aws ec2 terminate-instances --instance-ids i-0d443b5abcaaa67a3 i-05e2c3aead577
 ![r6g](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/cost_r6g_4x.png)
 ![r5](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/cost_r5_4x.png)
 
-
-
-## 참고자료 ##
-
-* [sysbench oracle](https://www.programmersought.com/article/70115806537/)
-
-* [hammer DB oracle/postgresql](https://opendatabase.tistory.com/entry/DBMS-comparison-Oracle-vs-SQL-server-vs-MySQLinnodb-vs-MariaDBAria-vs-Postgres-part1)
-
-* [hammer DB 사용법](https://opendatabase.tistory.com/entry/Hammer-db-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-%EC%8A%A4%ED%82%A4%EB%A7%88-%EC%83%9D%EC%84%B1)
-
