@@ -485,6 +485,8 @@ $ aws ec2 terminate-instances --instance-ids i-0d443b5abcaaa67a3 i-05e2c3aead577
 
 ## 비용 비교 ##
 
+[r6g](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/cost_r6g_4x.png)
+[r5](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/cost_r5_4x.png)
 
 
 
