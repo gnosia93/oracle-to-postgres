@@ -6,8 +6,8 @@ Amazon Linux 2 에 GUI 를 구동시키기 위한 정보는 https://aws.amazon.c
 
 ### GUI 설치 ###
 
-* https://velog.io/@kyoung99u/Ubuntu-GUI-%EC%84%A4%EC%B9%98
-* https://z-wony.tistory.com/19
+    * https://velog.io/@kyoung99u/Ubuntu-GUI-%EC%84%A4%EC%B9%98
+    * https://z-wony.tistory.com/19
 
 * 우분투 VNC 설정
 ```
