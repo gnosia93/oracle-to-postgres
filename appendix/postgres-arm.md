@@ -39,8 +39,8 @@ aws ec2 describe-images --image-ids ami-00f1068284b9eca92
 Graviton2 과 X86 용 PostgreSQL 11 의 성능 비교를 위해 아키텍처 다이어그램에 나와 있는 것 처럼, 아래 스크립트를 이용하여 인프라를 빌드합니다.
 R6g 타입의 인스턴스는 AWS 그라비톤2 프로세스를 탑재하고 있는데, X86 대비 40% 까지 저렴합니다.(https://aws.amazon.com/ko/ec2/instance-types/r6/),
 
- - r6g.4xlarge: 16 vCPU / 128 GB / Network 최대 10 Gbps	4,750 Mbps / EBS IO1 10,000 IPOS (Graviton2)
- - r5.4xlarge:  16 vCPU / 128 GB / Network 최대 10 Gbps	4,750 Mbps / EBS IO1 10,000 IPOS (X86-64) 
+ - r6g.4xlarge: 16 vCPU / 128 GB / Network 최대 10 Gbps	4,750 Mbps / EBS IO1 30,000 IPOS (Graviton2)
+ - r5.4xlarge:  16 vCPU / 128 GB / Network 최대 10 Gbps	4,750 Mbps / EBS IO1 30,000 IPOS (X86-64) 
 
 로컬 PC 에서 신규 터미널을 오픈한 후, 아래의 스크립트를 copy 하여 AWS 클라우드에 인프라를 빌드합니다. 
 
