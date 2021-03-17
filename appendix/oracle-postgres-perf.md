@@ -6,9 +6,6 @@ Amazon Linux 2 에 GUI 를 구동시키기 위한 정보는 https://aws.amazon.c
 
 ### GUI 설치 ###
 
-    * https://velog.io/@kyoung99u/Ubuntu-GUI-%EC%84%A4%EC%B9%98
-    * https://z-wony.tistory.com/19
-
 * 우분투 VNC 설정
 ```
 ubuntu@ip-172-31-8-174:~$ sudo apt-get update; sudo apt-get upgrade
@@ -50,11 +47,16 @@ X DISPLAY #	RFB PORT #	PROCESS ID
 :1		5901		13208
 ```
 
-* 로컬 PC 터널링 설정
+* 로컬 PC 터널링 및 VNC 뷰어 실행
+
+먼저 로컬 PC 에 vnc viewer 를 다운로드 받습니다. 
+![vnc-viwer](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/images/vnc-viewer.png)
+
+
 ```
 $ ssh -L 5901:localhost:5901 -i ~/.ssh/tf_key ubuntu@3.35.13.129
 
-로컬 컴퓨터에서 VNC 클라이언트를 엽니다. VNC 서버의 호스트 이름을 묻는 메시지가 표시되면 localhost: 1을 입력한 다음 여기에 연결합니다.
+로컬 컴퓨터에서 VNC 클라이언트를 열어서 VNC 서버의 호스트 이름을 묻는 메시지가 표시되면 localhost: 1을 입력한 다음 여기에 연결합니다.
 
 TigerVNC 설치 섹션의 2단계에서 설정한 VNC 암호를 입력합니다. 연결이 안전하지 않다는 알림이 표시되면 무시하세요. VNC 데이터는 기본적으로 암호화되지 않지만 암호화된 SSH 터널을 사용하여 VNC 서버에 액세스합니다.
 ```
