@@ -53,7 +53,33 @@ A view-only password is not used
 
 [ec2-user@ip-172-31-41-48 system]$ sudo sed -i 's/<USER>/ec2-user/' /etc/systemd/system/vncserver@.service
 
+[ec2-user@ip-172-31-41-48 system]$ sudo systemctl daemon-reload
 
+[ec2-user@ip-172-31-41-48 system]$ sudo systemctl enable vncserver@:1
+Created symlink from /etc/systemd/system/multi-user.target.wants/vncserver@:1.service to /etc/systemd/system/vncserver@.service.
+
+[ec2-user@ip-172-31-41-48 system]$ sudo systemctl start vncserver@:1
+
+[ec2-user@ip-172-31-41-48 system]$ sudo systemctl status vncserver@:1
+● vncserver@:1.service - Remote desktop service (VNC)
+   Loaded: loaded (/etc/systemd/system/vncserver@.service; enabled; vendor preset: disabled)
+   Active: active (running) since 수 2021-03-17 02:57:52 UTC; 50s ago
+  Process: 2450 ExecStartPre=/bin/sh -c /usr/bin/vncserver -kill %i > /dev/null 2>&1 || : (code=exited, status=0/SUCCESS)
+ Main PID: 2454 (vncserver_wrapp)
+   CGroup: /system.slice/system-vncserver.slice/vncserver@:1.service
+           ├─2454 /bin/sh /usr/bin/vncserver_wrapper ec2-user :1
+           └─2806 sleep 5
+
+ 3월 17 02:57:52 ip-172-31-41-48.ap-northeast-2.compute.internal systemd[1]: Starting Remote desktop service (VNC)...
+ 3월 17 02:57:52 ip-172-31-41-48.ap-northeast-2.compute.internal systemd[1]: Started Remote desktop service (VNC).
+ 3월 17 02:57:53 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: xauth:  file /home/ec2-user/.Xauthor...t
+ 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: New 'ip-172-31-41-48.ap-northeast-2....1
+ 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: Creating default startup script /hom...p
+ 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: Creating default config /home/ec2-us...g
+ 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: Starting applications specified in /...p
+ 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: Log file is /home/ec2-user/.vnc/ip-1...g
+ 3월 17 02:58:01 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: 'vncserver :1' has PID 2478, waiting....
+Hint: Some lines were ellipsized, use -l to show in full.
 ```
 
 
