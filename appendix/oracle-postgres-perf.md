@@ -60,69 +60,6 @@ $ ssh -L 5901:localhost:5901 -i ~/.ssh/tf_key ubuntu@3.35.13.129
 TigerVNC 설치 섹션의 2단계에서 설정한 VNC 암호를 입력합니다. 연결이 안전하지 않다는 알림이 표시되면 무시하세요. VNC 데이터는 기본적으로 암호화되지 않지만 암호화된 SSH 터널을 사용하여 VNC 서버에 액세스합니다.
 ```
 
-
-### GUI 설치 ###
-
-* https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-linux-2-install-gui/
-
-```
-[ec2-user@ip-172-31-41-48 ~]$ sudo yum update
-
-[ec2-user@ip-172-31-41-48 ~]$ sudo yum groupinstall "Development tools"
-
-[ec2-user@ip-172-31-41-48 ~]$ sudo amazon-linux-extras install mate-desktop1.x
-
-[ec2-user@ip-172-31-41-48 ~]$ echo "/usr/bin/mate-session" > ~/.Xclients && chmod +x ~/.Xclients
-
-[ec2-user@ip-172-31-41-48 ~]$ sudo yum install tigervnc-server
-
-[ec2-user@ip-172-31-41-48 ~]$ vncpasswd
-vncpasswd
-Password:
-Verify:
-Would you like to enter a view-only password (y/n)? n
-A view-only password is not used
-
-[ec2-user@ip-172-31-41-48 ~]$ sudo cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@.service
-
-[ec2-user@ip-172-31-41-48 system]$ sudo sed -i 's/<USER>/ec2-user/' /etc/systemd/system/vncserver@.service
-
-[ec2-user@ip-172-31-41-48 system]$ sudo systemctl daemon-reload
-
-[ec2-user@ip-172-31-41-48 system]$ sudo systemctl enable vncserver@:1
-Created symlink from /etc/systemd/system/multi-user.target.wants/vncserver@:1.service to /etc/systemd/system/vncserver@.service.
-
-[ec2-user@ip-172-31-41-48 system]$ sudo systemctl start vncserver@:1
-
-[ec2-user@ip-172-31-41-48 system]$ sudo systemctl status vncserver@:1
-● vncserver@:1.service - Remote desktop service (VNC)
-   Loaded: loaded (/etc/systemd/system/vncserver@.service; enabled; vendor preset: disabled)
-   Active: active (running) since 수 2021-03-17 02:57:52 UTC; 50s ago
-  Process: 2450 ExecStartPre=/bin/sh -c /usr/bin/vncserver -kill %i > /dev/null 2>&1 || : (code=exited, status=0/SUCCESS)
- Main PID: 2454 (vncserver_wrapp)
-   CGroup: /system.slice/system-vncserver.slice/vncserver@:1.service
-           ├─2454 /bin/sh /usr/bin/vncserver_wrapper ec2-user :1
-           └─2806 sleep 5
-
- 3월 17 02:57:52 ip-172-31-41-48.ap-northeast-2.compute.internal systemd[1]: Starting Remote desktop service (VNC)...
- 3월 17 02:57:52 ip-172-31-41-48.ap-northeast-2.compute.internal systemd[1]: Started Remote desktop service (VNC).
- 3월 17 02:57:53 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: xauth:  file /home/ec2-user/.Xauthor...t
- 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: New 'ip-172-31-41-48.ap-northeast-2....1
- 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: Creating default startup script /hom...p
- 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: Creating default config /home/ec2-us...g
- 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: Starting applications specified in /...p
- 3월 17 02:57:56 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: Log file is /home/ec2-user/.vnc/ip-1...g
- 3월 17 02:58:01 ip-172-31-41-48.ap-northeast-2.compute.internal vncserver_wrapper[2454]: 'vncserver :1' has PID 2478, waiting....
-Hint: Some lines were ellipsized, use -l to show in full.
-```
-
-### 내 PC 설정하기 ###
-
-ssh 터널링을 통해서 VNC 클라이언트로 접속한다. 자세한 내용은 아래 URL 을 참고.
-
-https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-linux-2-install-gui/
-
-
 ### HammerDB 설치하기 ###
 
 ```
