@@ -55,6 +55,9 @@ X DISPLAY #	RFB PORT #	PROCESS ID
 ```
 $ ssh -L 5901:localhost:5901 -i ~/.ssh/tf_key ubuntu@3.35.13.129
 
+로컬 컴퓨터에서 VNC 클라이언트를 엽니다. VNC 서버의 호스트 이름을 묻는 메시지가 표시되면 localhost: 1을 입력한 다음 여기에 연결합니다.
+
+TigerVNC 설치 섹션의 2단계에서 설정한 VNC 암호를 입력합니다. 연결이 안전하지 않다는 알림이 표시되면 무시하세요. VNC 데이터는 기본적으로 암호화되지 않지만 암호화된 SSH 터널을 사용하여 VNC 서버에 액세스합니다.
 ```
 
 
