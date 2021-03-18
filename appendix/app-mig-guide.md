@@ -231,6 +231,17 @@ SELECT a1.name1, a2.name2
     LEFT OUTER JOIN a2 ON a1.code = a2.code;
 ```
 
+### RANDOM ###
+
+[oracle]
+```
+sql> SELECT column FROM ( SELECT column FROM table ORDER BY dbms_random.value ) WHERE rownum = 1;
+```
+
+[postgresql]
+```
+psql> SELECT column FROM table ORDER BY RANDOM() LIMIT 1;
+```
 
 ### DELETE ###
 
