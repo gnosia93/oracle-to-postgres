@@ -15,6 +15,7 @@ $ aws rds create-db-instance \
     --engine-version 12.4 \
     --master-username postgres \
     --master-user-password postgres 
+    --allocated-storage 600
 ```
 
-* https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html
+* https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
