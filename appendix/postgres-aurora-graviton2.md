@@ -33,7 +33,11 @@ $ aws rds modify-db-parameter-group \
     --db-parameter-group-name pg-aurora-postgres \
     --parameters "ParameterName='shared_buffers',ParameterValue=5242880,ApplyMethod=pending-reboot" \
                  "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"   
-                    
+
+$ aws ec2 create-security-group --group-name sg_aurora_postgres --description "aurora postgres security group"
+
+$ aws ec2 authorize-security-group-ingress --group-name sg_aurora_postgres --protocol tcp --port 5432 --cidr 0.0.0.0/0
+
 $ sleep 10       #   (10초 대기)                    
                                         
 $ aws rds create-db-cluster \
