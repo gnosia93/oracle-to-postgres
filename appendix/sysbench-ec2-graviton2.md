@@ -275,6 +275,20 @@ Threads fairness:
     events (avg/stddev):           1.0000/0.00
     execution time (avg/stddev):   32.4568/0.00
 ```
+
+* 추가테스트
+```
+sysbench mutex --threads=8 --mutex-locks=500000 --mutex-loops=100000 run
+graviton2 - 23.77s  x86 - 16.32s
+
+sysbench mutex --threads=16 --mutex-locks=500000 --mutex-loops=100000 run
+graviton2 - 23.78s  x86 - 16.32s
+
+sysbench mutex --threads=64 --mutex-locks=500000 --mutex-loops=100000 run
+graviton2 - 47.93s  x86 - 65.02s
+
+```
+
  
 
 
