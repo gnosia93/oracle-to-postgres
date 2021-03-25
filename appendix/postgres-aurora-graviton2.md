@@ -35,6 +35,9 @@ $ aws rds modify-db-parameter-group \
                  "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"   
 
 $ aws ec2 create-security-group --group-name sg_aurora_postgres --description "aurora postgres security group"
+{
+    "GroupId": "sg-06ad944bc6fccec5c"
+}
 
 $ aws ec2 authorize-security-group-ingress --group-name sg_aurora_postgres --protocol tcp --port 5432 --cidr 0.0.0.0/0
 
@@ -45,9 +48,8 @@ $ aws rds create-db-cluster \
     --engine aurora-postgresql \
     --engine-version 12.4 \
     --master-username postgres \
-    --master-user-password postgres    
-    
- #   // --db-subnet-group-name <blah> \
+    --master-user-password postgres \
+    --vpc-security-group-ids sg-06ad944bc6fccec5c          
 
 $ aws rds create-db-instance \
     --db-cluster-identifier postgres-graviton2 \
@@ -56,13 +58,15 @@ $ aws rds create-db-instance \
     --engine aurora-postgresql \
     --db-parameter-group-name pg-aurora-postgres
     
+    
 $ aws rds create-db-cluster \
     --db-cluster-identifier postgres-x64 \
     --engine aurora-postgresql \
     --engine-version 12.4 \
     --master-username postgres \
-    --master-user-password postgres 
-
+    --master-user-password postgres \
+    --vpc-security-group-ids sg-06ad944bc6fccec5c
+    
 $ aws rds create-db-instance \
     --db-cluster-identifier postgres-x64 \
     --db-instance-identifier postgres-x64-1 \
