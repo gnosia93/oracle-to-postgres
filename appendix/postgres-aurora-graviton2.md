@@ -84,10 +84,18 @@ $ aws rds create-db-instance \
 * https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-security-group.html
 
 
-### RDS 정보 확인하기 ###
+### RDS 엔드포인트 확인하기 ###
 
 ```
-$ aws rds describe-db-instances --db-instance-identifier postgres-x64-1
+$ aws rds describe-db-instances --db-instance-identifier postgres-graviton2-1 --query DBInstances[].Endpoint.Address
+[
+    "postgres-graviton2-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
+]
+
+$ aws rds describe-db-instances --db-instance-identifier postgres-x64-1 --query DBInstances[].Endpoint.Address
+[
+    "postgres-x64-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
+]
 ```
 
 
