@@ -3,6 +3,14 @@
 - https://github.com/akopytov/sysbench
 - https://wiki.gentoo.org/wiki/Sysbench#cite_note-1
 
+### 테스트 대상 서버 ###
+
+amazon linux2 가 탑재된 EC2 인스턴스를 대상으로 한다. 
+
+* r6g.4xlarge: 16 vCPU / 128 GB / Network 최대 10 Gbps 4,750 Mbps / EBS IO1 30,000 IPOS (Graviton2)
+* r5.4xlarge: 16 vCPU / 128 GB / Network 최대 10 Gbps 4,750 Mbps / EBS IO1 30,000 IPOS (X86-64)
+
+
 
 ### sysbench 설치 ###
 
