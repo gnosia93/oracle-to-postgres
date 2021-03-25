@@ -1,4 +1,6 @@
 
+### sysbench 설치 ###
+
 - https://zenliu.medium.com/sysbench-1-1-installation-for-aws-ec2-instance-running-amazon-linux-a330b1cce7a7
 
 ```
@@ -15,7 +17,7 @@
 sysbench 1.1.0-bbee5d5
 ```
 
-
+### 성능 테스트 ###
 
 - cpu 테스트
 
