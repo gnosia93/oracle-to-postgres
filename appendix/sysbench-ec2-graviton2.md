@@ -174,3 +174,10 @@ Latency (ms):
          95th percentile:                      0.01
          sum:                             296606.03
 ```
+
+### 메모리 테스트 ###
+
+```
+[ec2-user@ip-172-31-28-94 ~]$ sysbench memory --threads=4 run
+```
+
