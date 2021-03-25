@@ -23,42 +23,13 @@ sysbench 1.1.0-bbee5d5
 
 ### 성능 테스트 ###
 
-- cpu 테스트 https://wiki.gentoo.org/wiki/Sysbench#cite_note-1
+- cpu 테스트 
+
+https://wiki.gentoo.org/wiki/Sysbench#cite_note-1
 
 https://github.com/akopytov/sysbench/issues/140
 ```
-[ec2-user@ip-172-31-28-94 sysbench]$ sysbench cpu --cpu-max-prime=100000 --threads=1 --time=300 run
-sysbench 1.1.0-bbee5d5 (using bundled LuaJIT 2.1.0-beta3)
-
-Running the test with following options:
-Number of threads: 1
-Initializing random number generator from current time
-
-
-Prime numbers limit: 100000
-
-Initializing worker threads...
-
-Threads started!
-
-CPU speed:
-    events per second:   114.08
-
-Throughput:
-    events/s (eps):                      114.0750
-    time elapsed:                        10.0022s
-    total number of events:              1141
-
-Latency (ms):
-         min:                                    8.76
-         avg:                                    8.77
-         max:                                    8.78
-         95th percentile:                        8.74
-         sum:                                10001.78
-
-Threads fairness:
-    events (avg/stddev):           1141.0000/0.00
-    execution time (avg/stddev):   10.0018/0.00
+[ec2-user@ip-172-31-28-94 ~]$ sysbench cpu --cpu-max-prime=100000 --threads=1 --time=0 --events=10000 run
 ```
 
 - fileIO
