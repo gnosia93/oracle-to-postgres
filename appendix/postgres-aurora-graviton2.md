@@ -83,3 +83,7 @@ $ aws rds create-db-instance \
 * https://docs.aws.amazon.com/cli/latest/reference/rds/modify-db-parameter-group.html
 * https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-security-group.html
 
+
+### 성능 테스트 클라이언트 생성 ###
+
+
