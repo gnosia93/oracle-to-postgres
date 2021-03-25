@@ -189,9 +189,16 @@ memory options:
   --memory-oper=STRING        type of memory operations {read, write, none} [write]
   --memory-access-mode=STRING memory access mode {seq,rnd} [seq]
 
+Running memory speed test with the following options:
+  block size: 1KiB
+  total size: 102400MiB
+  operation: write
+  scope: global
 
 [ec2-user@ip-172-31-28-94 ~]$ sysbench memory --threads=8 run
 ```
+
+메모리 테스트의 경우 쓰레드 개수가 16 인 경우 거의 성능이 동일하고, 32인 경우에는 X86 이 더 빠르다. 아래는 쓰레드가 8인 경우의 결과 수치이다. 
 
 * graviton2
 ```
