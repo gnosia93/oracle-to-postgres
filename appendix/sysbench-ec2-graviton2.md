@@ -24,9 +24,9 @@ sysbench 1.1.0-bbee5d5
 
 ### CPU 성능 측정 ###
 
-10만개의 소수를 계산하는 로직을 1만회 수행하는데 소요되는 시간을 계산한다. 즉 한번 실행시 10만개의 소수를 계산하는 함수를 1만번 호출하다는 의미로, elapsed time 값이 작으면 작을 수록 빠른 CPU 연산이 수행된다는 의미이다.  
+10만개의 소수를 계산하는 로직을 1만회 수행하는데 소요되는 시간을 계산한다. 즉 한번 실행시 10만개의 소수를 계산하는 함수를 1만번 호출하다는 의미로, elapsed time 값이 작으면 작을 수록 빠른 CPU 연산이 수행된다는 의미이다. 소수는 컴퓨터 암호화 알고리즘에 사용된다(비대칭키 RSA)
 
-![소수와 컴퓨터 암호](http://blog.naver.com/PostView.nhn?blogId=weizmann_why&logNo=220799483125&parentCategoryNo=112&categoryNo=31&viewDate=&isShowPopularPosts=false&from=postView)
+[소수와 컴퓨터 암호](http://blog.naver.com/PostView.nhn?blogId=weizmann_why&logNo=220799483125&parentCategoryNo=112&categoryNo=31&viewDate=&isShowPopularPosts=false&from=postView)
 
 https://github.com/akopytov/sysbench/issues/140
 ```
