@@ -42,8 +42,12 @@ https://github.com/akopytov/sysbench/issues/140
 ```
 [ec2-user@ip-172-31-28-94 ~]$ sysbench cpu --cpu-max-prime=100000 \
                                            --threads=1 \
-                                           --time=0 --events=10000 run
+                                           --time=0 --events=10000 run                                      
+                                                                                      
 ```
+
+
+sysbench cpu --cpu-max-prime=100000 --threads=32 --time=0 --events=10000 run
 
 아래 테스트 결과에서 알수 있는 바와 같이 그라비톤은 총 소요시간이 87초, X64 는 220 초로 그라비톤이 2.5배 정도 빠르게 연산을 수행한다는 것을 볼 수 있다.
 
