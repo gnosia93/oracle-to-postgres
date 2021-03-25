@@ -97,6 +97,14 @@ Threads fairness:
 ``` 
 sysbench cpu --cpu-max-prime=100000 --threads=32 --time=0 --events=10000 run
 graviton2 - 2.745s, X64 - 7.95s
+
+sysbench cpu --cpu-max-prime=100000 --threads=16 --time=0 --events=10000 run
+graviton2 -  5.48s, X64 - 18.80s
+
+sysbench cpu --cpu-max-prime=100000 --threads=8 --time=0 --events=10000 run
+graviton2 - 10.96s, X64 - 27.56s
+
+
 ```
 
 
