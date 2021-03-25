@@ -45,10 +45,6 @@ https://github.com/akopytov/sysbench/issues/140
                                            --time=0 --events=10000 run                                      
                                                                                       
 ```
-
-
-sysbench cpu --cpu-max-prime=100000 --threads=32 --time=0 --events=10000 run
-
 아래 테스트 결과에서 알수 있는 바와 같이 그라비톤은 총 소요시간이 87초, X64 는 220 초로 그라비톤이 2.5배 정도 빠르게 연산을 수행한다는 것을 볼 수 있다.
 
 - graviton2
@@ -94,6 +90,16 @@ Threads fairness:
     events (avg/stddev):           10000.0000/0.00
     execution time (avg/stddev):   220.4686/0.00
 ```
+
+
+* 추가테스트 (쓰레드 32 인경우)  
+sysbench cpu --cpu-max-prime=100000 --threads=32 --time=0 --events=10000 run
+
+graviton2 - 2.745s, X64 - 7.95s
+
+
+
+
 
 ### FILE IO 성능 측정 ###
 
