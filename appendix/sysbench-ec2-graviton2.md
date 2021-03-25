@@ -178,6 +178,20 @@ Latency (ms):
 ### 메모리 테스트 ###
 
 ```
-[ec2-user@ip-172-31-28-94 ~]$ sysbench memory --threads=4 run
+[ec2-user@ip-172-31-28-94 ~]$ sysbench memory --threads=8 run
+```
+
+* graviton2
+```
+Total operations: 89194940 (8919408.08 per second)
+
+87104.43 MiB transferred (8710.36 MiB/sec)
+```
+
+* X64
+```
+Total operations: 61748299 (6174771.53 per second)
+
+60301.07 MiB transferred (6030.05 MiB/sec)
 ```
 
