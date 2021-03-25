@@ -90,7 +90,7 @@ EOF`
 aws ec2 run-instances \
   --image-id $ARM_AMI_ID \
   --count 1 \
-  --instance-type r6g.4xlarge \
+  --instance-type r6g.8xlarge \
   --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=600, VolumeType=io1, Iops=30000}'   \
   --key-name tf_key \
   --security-group-ids $SG_ID \
@@ -101,7 +101,7 @@ aws ec2 run-instances \
 aws ec2 run-instances \
   --image-id $X64_AMI_AMZN2_ID \
   --count 1 \
-  --instance-type r5.4xlarge \
+  --instance-type r5.8xlarge \
   --block-device-mappings 'DeviceName=/dev/xvda,Ebs={VolumeSize=600, VolumeType=io1, Iops=30000}'   \
   --key-name tf_key \
   --security-group-ids $SG_ID \
