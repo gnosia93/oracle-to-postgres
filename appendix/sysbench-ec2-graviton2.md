@@ -50,7 +50,7 @@ https://github.com/akopytov/sysbench/issues/140
 - graviton2
 ```
 CPU speed:
-    events per second:   114.02             (초당 10만개의 소수 계산을 114회 수행했다는 의미)
+    events per second:   114.02             (10만개의 소수 계산을 114회/ 수행했다는 의미)
 
 Throughput:
     events/s (eps):                      114.0161
