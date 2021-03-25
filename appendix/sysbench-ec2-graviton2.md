@@ -219,10 +219,7 @@ Total operations: 61748299 (6174771.53 per second)
 * https://minervadb.com/index.php/2018/03/27/benchmarking-cpu-memory-file-i-o-and-mutex-performance-using-sysbench/
 
 
-32개의 
-쓰
-
-
+32개의 쓰레드를 생성해서 쓰레드당 mutext lock 을 50만회, mutex lock을 획득하지 않는 empty loop 를 10만회 수행하는데 걸리는 시간을 측정한다.
 ```
 [ec2-user@ip-172-31-28-94 ~]$ sysbench mutex --threads=32 --mutex-locks=500000 --mutex-loops=100000 run
 ```
