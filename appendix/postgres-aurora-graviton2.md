@@ -6,6 +6,8 @@
 ```
 $ aws rds describe-db-engine-versions --default-only --engine aurora-postgresql
 
+$ SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
+
 $ aws rds create-db-instance \
     --db-instance-identifier postgres-graviton2 \
     --db-instance-class db.r6g.4xlarge \
