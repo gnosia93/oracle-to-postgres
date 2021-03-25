@@ -1,4 +1,4 @@
-## CPU/Memory/FileIO 성능 테스트 ##
+## CPU / Memory / FileIO 성능  ##
 
 - https://github.com/akopytov/sysbench
 - https://wiki.gentoo.org/wiki/Sysbench#cite_note-1
