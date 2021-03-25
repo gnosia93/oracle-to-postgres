@@ -144,9 +144,33 @@ Latency (ms):
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G cleanup
 ```
 
+시퀀셜 Write 역시 graviton2 가 X86 보다 빠르다. 청크 사이즈 128MB 하둡과 같은 빅데이터 시스템에서 성능 향상을 기대해 볼 수 있을듯(?) 하다. 
+
 * graviton2
 ```
+Throughput:
+         read:  IOPS=0.00 0.00 MiB/s (0.00 MB/s)
+         write: IOPS=30228.99 472.33 MiB/s (495.27 MB/s)
+         fsync: IOPS=38693.25
+
+Latency (ms):
+         min:                                  0.00
+         avg:                                  0.01
+         max:                                 55.32
+         95th percentile:                      0.01
+         sum:                             295189.20
 ```
 * X64
 ```
+Throughput:
+         read:  IOPS=0.00 0.00 MiB/s (0.00 MB/s)
+         write: IOPS=25128.71 392.64 MiB/s (411.71 MB/s)
+         fsync: IOPS=32164.94
+
+Latency (ms):
+         min:                                  0.00
+         avg:                                  0.02
+         max:                                 59.57
+         95th percentile:                      0.01
+         sum:                             296606.03
 ```
