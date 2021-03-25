@@ -169,7 +169,6 @@ thc   elaptime      reads     writes   others       tps        qps    errs      
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
-```
 
 
 
