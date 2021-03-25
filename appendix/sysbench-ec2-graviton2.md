@@ -93,10 +93,11 @@ Threads fairness:
 
 
 * 추가테스트 (쓰레드 32 인경우)  
+쓰레드 개수를 증가시키면 더 빠르게 수행하고 순차적으로 쓰레드의 개수를 늘렸을때 32 까지는 성능이 향상되고, 32 이상인 경우는 수행시간에 변화가 없다.
+``` 
 sysbench cpu --cpu-max-prime=100000 --threads=32 --time=0 --events=10000 run
-
 graviton2 - 2.745s, X64 - 7.95s
-
+```
 
 
 
