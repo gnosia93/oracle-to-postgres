@@ -83,9 +83,10 @@ Threads fairness:
 
 ### FILE IO 성능 측정 ###
 
-시스템의 메모리가 128GB 이므로, 총용량이 256GB 인 파일들(2.56G 100개)을 만든 다음, 랜던 Read / Write 의 성능을 측정한다. 
-
 https://imcreator.tistory.com/89 
+
+1. 시스템의 메모리가 128GB 이므로, 총용량이 256GB 인 파일들(2.56G 100개)을 만든 다음, 랜덤 Read / Write 의 성능을 측정한다. 
+
 ```
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G prepare
 
@@ -95,10 +96,47 @@ https://imcreator.tistory.com/89
 ```
 
 * graviton2
+```
+Throughput:
+         read:  IOPS=2279.18 35.61 MiB/s (37.34 MB/s)
+         write: IOPS=1519.46 23.74 MiB/s (24.89 MB/s)
+         fsync: IOPS=4862.66
 
+Latency (ms):
+         min:                                  0.00
+         avg:                                  0.12
+         max:                                 34.77
+         95th percentile:                      0.72
+         sum:                             299372.99
+```
 
 * X64
+```
+Throughput:
+         read:  IOPS=2050.36 32.04 MiB/s (33.59 MB/s)
+         write: IOPS=1366.91 21.36 MiB/s (22.40 MB/s)
+         fsync: IOPS=4374.47
 
+Latency (ms):
+         min:                                  0.00
+         avg:                                  0.13
+         max:                                112.32
+         95th percentile:                      0.78
+         sum:                             298252.29
+```
 
+2. 시스템의 메모리가 128GB 이므로, 총용량이 256GB 인 파일들(2.56G 100개)을 만든 다음, 랜덤 Read / Write 의 성능을 측정한다. 
+```
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G prepare
 
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G --file-test-mode=seqrewr --time=300 run
 
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G cleanup
+```
+
+* graviton2
+```
+```
+* X64
+```
+```
