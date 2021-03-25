@@ -81,7 +81,7 @@ Threads fairness:
 
 ### FILE IO 성능 측정 ###
 
-시스템의 메모리가 128GB 이므로, 총용량이 256GB 인 파일을 만든다음, 랜던 Read / Write 의 성능을 측정한다. 
+시스템의 메모리가 128GB 이므로, 총용량이 256GB 인 파일들(2.56G 100개)을 만든 다음, 랜던 Read / Write 의 성능을 측정한다. 
 
 https://imcreator.tistory.com/89 
 ```
