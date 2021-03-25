@@ -79,7 +79,10 @@ Threads fairness:
     execution time (avg/stddev):   220.4686/0.00
 ```
 
-### fileIO 성능 측정 ###
+### FILE IO 성능 측정 ###
+
+시스템의 메모리가 128GB 이므로, 총용량이 256GB 인 파일을 만든다음, 랜던 Read / Write 의 성능을 측정한다. 
+
 https://imcreator.tistory.com/89 
 ```
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G prepare
@@ -88,4 +91,12 @@ https://imcreator.tistory.com/89
 
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G cleanup
 ```
+
+* graviton2
+
+
+* X64
+
+
+
 
