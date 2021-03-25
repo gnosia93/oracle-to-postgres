@@ -152,6 +152,7 @@ thc   elaptime      reads     writes   others       tps        qps    errs      
  512   60.2552s    2846704     813306   406692   3374.35   67489.71       9      27.99     151.36    1013.57     253.35
 1024   60.2552s    2846704     813306   406692   3374.35   67489.71       9      27.99     151.36    1013.57     253.35
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
+```
 
 * graviton2
 ```
