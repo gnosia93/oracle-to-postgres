@@ -60,10 +60,10 @@ Threads fairness:
 - fileIO
 https://imcreator.tistory.com/89 
 ```
-[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=8G prepare
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G prepare
 
-[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=8G --file-test-mode=rndrw --time=300 run
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G --file-test-mode=rndrw --time=300 run
 
-[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=8G cleanup
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G cleanup
 ```
 
