@@ -1,5 +1,8 @@
 ## CPU/Memory/FileIO 성능 테스트 ##
 
+https://github.com/akopytov/sysbench
+
+
 ### sysbench 설치 ###
 
 - https://zenliu.medium.com/sysbench-1-1-installation-for-aws-ec2-instance-running-amazon-linux-a330b1cce7a7
