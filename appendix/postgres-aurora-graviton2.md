@@ -31,6 +31,8 @@ $ aws rds modify-db-parameter-group \
     --parameters "ParameterName='shared_buffers',ParameterValue=5242880,ApplyMethod=pending-reboot" \
                  "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"   
                     
+$ sleep 10          (10초 대기)                    
+                                        
 $ aws rds create-db-cluster \
     --db-cluster-identifier postgres-graviton2 \
     --engine aurora-postgresql \
