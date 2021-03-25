@@ -42,7 +42,7 @@ https://github.com/akopytov/sysbench/issues/140
 ```
 [ec2-user@ip-172-31-28-94 ~]$ sysbench cpu --cpu-max-prime=100000 \
                                            --threads=1 \
-                                           --time=0 --events=10000 run                                      
+                                           --time=0 --events=10000 run                                     
                                                                                       
 ```
 아래 테스트 결과에서 알수 있는 바와 같이 그라비톤은 총 소요시간이 87초, X64 는 220 초로 그라비톤이 2.5배 정도 빠르게 연산을 수행한다는 것을 볼 수 있다.
@@ -92,7 +92,7 @@ Threads fairness:
 ```
 
 
-* 추가테스트 (쓰레드 32 인경우)  
+* 추가테스트 (쓰레드 갯수가 32/16/6 인 경우)  
 쓰레드 개수를 증가시키면 더 빠르게 수행하고 순차적으로 쓰레드의 개수를 늘렸을때 32 까지는 성능이 향상되고, 32 이상인 경우는 수행시간에 변화가 없다.
 ``` 
 sysbench cpu --cpu-max-prime=100000 --threads=32 --time=0 --events=10000 run
