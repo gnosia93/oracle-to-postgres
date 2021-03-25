@@ -15,6 +15,7 @@
   listen_addresses = '*'        -- default / 수정 불필요
 ```
 
+아래의 스크립트를 순차적으로 실행합니다. 
 
 ```
 $ aws rds describe-db-engine-versions --default-only --engine aurora-postgresql
@@ -33,7 +34,7 @@ $ aws rds modify-db-parameter-group \
     --parameters "ParameterName='shared_buffers',ParameterValue=5242880,ApplyMethod=pending-reboot" \
                  "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"   
                     
-$ sleep 10          (10초 대기)                    
+$ sleep 10       #   (10초 대기)                    
                                         
 $ aws rds create-db-cluster \
     --db-cluster-identifier postgres-graviton2 \
