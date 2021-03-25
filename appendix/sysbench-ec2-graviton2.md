@@ -30,7 +30,8 @@ sysbench 1.1.0-bbee5d5
 
 https://github.com/akopytov/sysbench/issues/140
 ```
-[ec2-user@ip-172-31-28-94 ~]$ sysbench cpu --cpu-max-prime=100000 --threads=1 --time=0 --events=10000 run
+[ec2-user@ip-172-31-28-94 ~]$ sysbench cpu --cpu-max-prime=100000 --threads=1 \
+                                           --time=0 --events=10000 run
 ```
 
 * graviton2
