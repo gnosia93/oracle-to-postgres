@@ -104,7 +104,11 @@ $ aws rds describe-db-instances --db-instance-identifier postgres-x64-1 --query 
 https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-ec2-graviton2.md 에서 생성한 cl_stress_gen 으로 로그인 한 후, 아래의 명령어를 차례로 수행한다. 
 
 ```
-ubuntu@ip-172-31-45-65:~$ sudo apt install postgresql-client-common
+ubuntu@ip-172-31-45-65:~$ sudo apt-get install postgresql-client
+
+ubuntu@ip-172-31-45-65:~$ psql -V
+psql (PostgreSQL) 12.6 (Ubuntu 12.6-0ubuntu0.20.04.1)
+
 
 ```
 
