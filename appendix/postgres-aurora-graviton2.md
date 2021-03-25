@@ -109,6 +109,19 @@ ubuntu@ip-172-31-45-65:~$ sudo apt-get install postgresql-client
 ubuntu@ip-172-31-45-65:~$ psql -V
 psql (PostgreSQL) 12.6 (Ubuntu 12.6-0ubuntu0.20.04.1)
 
+ubuntu@ip-172-31-45-65:~$ psql -h postgres-graviton2-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -U postgres
+Password for user postgres: 
+psql (12.6 (Ubuntu 12.6-0ubuntu0.20.04.1), server 12.4)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+postgres=> select version();
+                                                   version                                                   
+-------------------------------------------------------------------------------------------------------------
+ PostgreSQL 12.4 on aarch64-unknown-linux-gnu, compiled by aarch64-unknown-linux-gnu-gcc (GCC) 7.4.0, 64-bit
+(1 row)
+
+postgres=> 
 
 ```
 
