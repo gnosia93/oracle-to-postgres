@@ -87,7 +87,7 @@ $ aws rds create-db-instance \
 ### 성능 테스트 하기 ###
 
 성능 테스트 방법은 기존과 동일하게 ubuntu 머신에 sysbench 를 설치하여 테스트 합니다. 자세한 방법은 
-https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-ec2-graviton2.md 의 sysbench 부분을 참고하세요.
+https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-ec2-graviton2.md 를 참고하세요.
 
 ### 테스트 결과 ###
 
