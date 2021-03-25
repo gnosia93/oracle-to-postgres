@@ -14,6 +14,8 @@ amazon linux2 가 탑재된 EC2 인스턴스를 대상으로 한다.
 
 ### sysbench 설치 ###
 
+아마존 리눅스용 sysbench 바이너리가 존재하지 않으므로, 아래와 같이 컴파일 한다. 이때 mysql 드라이버는 제거한다. 
+
 - https://zenliu.medium.com/sysbench-1-1-installation-for-aws-ec2-instance-running-amazon-linux-a330b1cce7a7
 
 ```
