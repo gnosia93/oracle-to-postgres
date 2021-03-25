@@ -1,6 +1,7 @@
 ## CPU/Memory/FileIO 성능 테스트 ##
 
-https://github.com/akopytov/sysbench
+- https://github.com/akopytov/sysbench
+- https://wiki.gentoo.org/wiki/Sysbench#cite_note-1
 
 
 ### sysbench 설치 ###
@@ -25,7 +26,9 @@ sysbench 1.1.0-bbee5d5
 
 - cpu 테스트 
 
-https://wiki.gentoo.org/wiki/Sysbench#cite_note-1
+10만개의 소수를 
+ㄱㅖ산
+
 
 https://github.com/akopytov/sysbench/issues/140
 ```
