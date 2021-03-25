@@ -41,8 +41,7 @@ $ aws rds create-db-cluster \
     --engine aurora-postgresql \
     --engine-version 12.4 \
     --master-username postgres \
-    --master-user-password postgres \
-    --db-cluster-parameter-group-name pg-aurora-postgres
+    --master-user-password postgres    
     
  #   // --db-subnet-group-name <blah> \
 
@@ -50,21 +49,22 @@ $ aws rds create-db-instance \
     --db-cluster-identifier postgres-graviton2 \
     --db-instance-identifier postgres-graviton2-1 \
     --db-instance-class db.r6g.4xlarge \
-    --engine aurora-postgresql    
+    --engine aurora-postgresql \
+    --db-parameter-group-name pg-aurora-postgres
     
 $ aws rds create-db-cluster \
     --db-cluster-identifier postgres-x64 \
     --engine aurora-postgresql \
     --engine-version 12.4 \
     --master-username postgres \
-    --master-user-password postgres \
-    --db-cluster-parameter-group-name pg-aurora-postgres  
+    --master-user-password postgres 
 
 $ aws rds create-db-instance \
     --db-cluster-identifier postgres-x64 \
     --db-instance-identifier postgres-x64-1 \
     --db-instance-class db.r5.4xlarge \
-    --engine aurora-postgresql 
+    --engine aurora-postgresql \
+    --db-parameter-group-name pg-aurora-postgres
     
 ```
 
