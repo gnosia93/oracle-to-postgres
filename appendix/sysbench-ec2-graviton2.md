@@ -50,3 +50,13 @@ Threads fairness:
     events (avg/stddev):           1141.0000/0.00
     execution time (avg/stddev):   10.0018/0.00
 ```
+
+- fileIO
+```
+[ec2-user@ip-172-31-15-22 sysbench]$ sysbench fileio --file-total-size=8G prepare
+
+[ec2-user@ip-172-31-15-22 sysbench]$ sysbench fileio --file-total-size=8G --file-test-mode=rndrw --time=300 run
+
+
+```
+
