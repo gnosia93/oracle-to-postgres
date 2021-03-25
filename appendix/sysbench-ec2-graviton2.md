@@ -15,7 +15,10 @@
 sysbench 1.1.0-bbee5d5
 ```
 
+
+
 - cpu 테스트
+
 ```
 [ec2-user@ip-172-31-28-94 sysbench]$ sysbench cpu --cpu-max-prime=100000 --threads=1 run
 sysbench 1.1.0-bbee5d5 (using bundled LuaJIT 2.1.0-beta3)
@@ -52,6 +55,7 @@ Threads fairness:
 ```
 
 - fileIO
+https://imcreator.tistory.com/89 
 ```
 [ec2-user@ip-172-31-15-22 sysbench]$ sysbench fileio --file-total-size=8G prepare
 
