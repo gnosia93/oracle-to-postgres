@@ -121,8 +121,13 @@ postgres=> select version();
  PostgreSQL 12.4 on aarch64-unknown-linux-gnu, compiled by aarch64-unknown-linux-gnu-gcc (GCC) 7.4.0, 64-bit
 (1 row)
 
-postgres=> 
-
+postgres=# CREATE USER sbtest WITH PASSWORD 'sbtest';
+CREATE ROLE
+postgres=# CREATE DATABASE sbtest;
+CREATE DATABASE
+postgres=# GRANT ALL PRIVILEGES ON DATABASE sbtest TO sbtest;
+GRANT
+postgres=# \q
 ```
 
 
