@@ -219,3 +219,51 @@ Total operations: 61748299 (6174771.53 per second)
 * https://minervadb.com/index.php/2018/03/27/benchmarking-cpu-memory-file-i-o-and-mutex-performance-using-sysbench/
 
 
+32개의 
+쓰
+
+
+```
+[ec2-user@ip-172-31-28-94 ~]$ sysbench mutex --threads=32 --mutex-locks=500000 --mutex-loops=100000 run
+```
+
+* graviton2
+```
+Throughput:
+    events/s (eps):                      1.3442
+    time elapsed:                        23.8054s
+    total number of events:              32
+
+Latency (ms):
+         min:                                23722.03
+         avg:                                23770.96
+         max:                                23803.06
+         95th percentile:                    23680.40
+         sum:                               760670.80
+
+Threads fairness:
+    events (avg/stddev):           1.0000/0.00
+    execution time (avg/stddev):   23.7710/0.02
+```
+
+* x64
+```
+Throughput:
+    events/s (eps):                      0.9857
+    time elapsed:                        32.4637s
+    total number of events:              32
+
+Latency (ms):
+         min:                                32448.79
+         avg:                                32456.82
+         max:                                32463.52
+         95th percentile:                    32745.49
+         sum:                              1038618.11
+
+Threads fairness:
+    events (avg/stddev):           1.0000/0.00
+    execution time (avg/stddev):   32.4568/0.00
+```
+ 
+
+
