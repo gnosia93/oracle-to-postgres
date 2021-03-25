@@ -30,25 +30,21 @@ sysbench 1.1.0-bbee5d5
 
 https://github.com/akopytov/sysbench/issues/140
 ```
-[ec2-user@ip-172-31-28-94 ~]$ sysbench cpu --cpu-max-prime=100000 --threads=1 \
+[ec2-user@ip-172-31-28-94 ~]$ sysbench cpu --cpu-max-prime=100000 \
+                                           --threads=1 \
                                            --time=0 --events=10000 run
 ```
 
+아래 테스트 결과에서 알수 있는 바와 같이 그라비톤은 총 소요시간이 87초, X64 는 220 초로 그라비톤이 2.5배 정도 빠르게 연산을 수행한다는 것을 볼 수 있다.
+
 * graviton2
-
 ```
-Prime numbers limit: 100000
-
-Initializing worker threads...
-
-Threads started!
-
 CPU speed:
-    events per second:   114.02
+    events per second:   114.02             (초당 10만개의 소수 계산을 114회 수행했다는 의미)
 
 Throughput:
     events/s (eps):                      114.0161
-    time elapsed:                        87.7069s
+    time elapsed:                        87.7069s       (총 소요시간)
     total number of events:              10000
 
 Latency (ms):
@@ -65,7 +61,24 @@ Threads fairness:
 
 - X64
 ```
+CPU speed:
+    events per second:    45.36
 
+Throughput:
+    events/s (eps):                      45.3573
+    time elapsed:                        220.4715s
+    total number of events:              10000
+
+Latency (ms):
+         min:                                   22.02
+         avg:                                   22.05
+         max:                                   22.16
+         95th percentile:                       21.89
+         sum:                               220468.57
+
+Threads fairness:
+    events (avg/stddev):           10000.0000/0.00
+    execution time (avg/stddev):   220.4686/0.00
 ```
 
 - fileIO
