@@ -214,3 +214,8 @@ Total operations: 61748299 (6174771.53 per second)
 60301.07 MiB transferred (6030.05 MiB/sec)
 ```
 
+### Mutex ###
+
+* https://minervadb.com/index.php/2018/03/27/benchmarking-cpu-memory-file-i-o-and-mutex-performance-using-sysbench/
+
+
