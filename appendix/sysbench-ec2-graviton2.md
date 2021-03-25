@@ -103,12 +103,7 @@ graviton2 -  5.48s, X64 - 18.80s
 
 sysbench cpu --cpu-max-prime=100000 --threads=8 --time=0 --events=10000 run
 graviton2 - 10.96s, X64 - 27.56s
-
-
 ```
-
-
-
 
 ### FILE IO 성능 측정 ###
 
