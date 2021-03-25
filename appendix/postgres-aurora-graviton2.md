@@ -84,10 +84,21 @@ $ aws rds create-db-instance \
 * https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-security-group.html
 
 
+
+
 ### 성능 테스트 하기 ###
 
+https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-ec2-graviton2.md 에서 생성한 cl_stress_gen 으로 로그인 한 후, 아래의 명령어를 차례로 수행한다. 
+
+````
+ubuntu@ip-172-31-45-65:~$ sudo apt install postgresql-client-common
+
+```
+
+
+
 성능 테스트 방법은 기존과 동일하게 ubuntu 머신에 sysbench 를 설치하여 테스트 합니다. 자세한 방법은 
-https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-ec2-graviton2.md 를 참고하세요.
+ 를 참고하세요.
 
 ### 테스트 결과 ###
 
