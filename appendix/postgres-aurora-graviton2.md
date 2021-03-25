@@ -86,4 +86,29 @@ $ aws rds create-db-instance \
 
 ### 성능 테스트 클라이언트 생성 ###
 
+```
+SG_ID=`aws ec2 describe-security-groups --group-names tf_sg_pub --query "SecurityGroups[0].{GroupId:GroupId}" --output text`; echo $SG_ID
 
+ARM_AMI_ID=`aws ec2 describe-images \
+                  --owners amazon \
+                  --filters "Name=name, Values=amzn2-ami-hvm-2.0.20210303.0-arm64-gp2" \
+                  --query "Images[0].{ImageId:ImageId}" --output text`; \
+                  echo $ARM_AMI_ID
+
+USER_DATA=`cat <<EOF | base64
+#! /bin/bash
+sudo amazon-linux-extras install postgresql11 epel -y
+sudo yum install postgresql-server postgresql-contrib postgresql-devel -y
+EOF`
+
+aws ec2 run-instances \
+  --image-id $X64_AMI_UBUNTU_ID \
+  --count 1 \
+  --instance-type r5.4xlarge \
+  --block-device-mappings 'DeviceName=/dev/sda1,Ebs={VolumeSize=50}'   \
+  --key-name tf_key \
+  --security-group-ids $SG_ID \
+  --monitoring Enabled=true \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=cl_stress-gen}]' \
+  --user-data $USER_DATA    
+```
