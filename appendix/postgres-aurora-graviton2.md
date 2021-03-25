@@ -84,6 +84,11 @@ $ aws rds create-db-instance \
 * https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-security-group.html
 
 
+### RDS 정보 확인하기 ###
+
+```
+$ aws rds describe-db-instances --db-instance-identifier postgres-x64-1
+```
 
 
 ### 성능 테스트 하기 ###
