@@ -178,6 +178,18 @@ Latency (ms):
 ### 메모리 테스트 ###
 
 ```
+[ec2-user@ip-172-31-28-94 ~]$ sysbench memory help
+sysbench 1.1.0-bbee5d5 (using bundled LuaJIT 2.1.0-beta3)
+
+memory options:
+  --memory-block-size=SIZE    size of memory block for test [1K]
+  --memory-total-size=SIZE    total size of data to transfer [100G]
+  --memory-scope=STRING       memory access scope {global,local} [global]
+  --memory-hugetlb[=on|off]   allocate memory from HugeTLB pool [off]
+  --memory-oper=STRING        type of memory operations {read, write, none} [write]
+  --memory-access-mode=STRING memory access mode {seq,rnd} [seq]
+
+
 [ec2-user@ip-172-31-28-94 ~]$ sysbench memory --threads=8 run
 ```
 
