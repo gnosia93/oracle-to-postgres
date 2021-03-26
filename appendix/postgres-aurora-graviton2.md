@@ -156,7 +156,7 @@ thc   elaptime      reads     writes   others       tps        qps    errs      
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
-[aurora-postgres-x64-8x-1]
+[aurora-postgres-x64-8x-1] - cpu 70%
 ```
 thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
    2   60.0055s     295330      84380    42190    351.54    7030.86       0       4.76       5.69     197.98       6.09
@@ -191,7 +191,7 @@ thc   elaptime      reads     writes   others       tps        qps    errs      
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
-[aurora-postgres-graviton2-8x-1] 
+[aurora-postgres-graviton2-8x-1] - cpu 70%
 ```
  thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
    2   60.0124s      81648      23328    11664     97.18    1943.55       0      19.12      20.58     164.17      20.74
