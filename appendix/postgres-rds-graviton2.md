@@ -65,3 +65,11 @@ $ aws rds create-db-instance \
     --no-multi-az \
     --no-deletion-protection        
 ```
+
+### RDS 엔드포인트 확인하기 ###
+```
+$ aws rds describe-db-instances --db-instance-identifier rds-postgres-x64 --query DBInstances[].Endpoint.Address
+[
+    "postgres-graviton2-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
+]
+```
