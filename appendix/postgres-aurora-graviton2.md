@@ -2,7 +2,7 @@
 
 ### 데이터베이스 생성 ###
 
-아래와 같은 스팩으로 Aurora PostgreSQL 클러스터를 각각 생성합니다. Aurora 역시 graviton2 용 인스턴스와 X86 용 인스턴스의 EBS Network 대역폭이 4xlarge 만 동일하고 다른 타입은 서로 상이한 관계로 4xlarge 에 대해 테스트 합니다.  
+아래와 같은 스팩으로 Aurora PostgreSQL 클러스터를 각각 생성합니다. Aurora 역시 graviton2 용 인스턴스와 X86 용 인스턴스의 EBS Network 대역폭이 4xlarge 만 동일하고 다른 타입은 서로 상이한 관계로 4xlarge 부터 먼저 테스트 합니다. 
 
 - r6g.4xlarge: 16 vCPU / 128 GB / Network 최대 10 Gbps / EBS Network 4,750 Mbps / EBS n/a IPOS (Graviton2)
 - r5.4xlarge: 16 vCPU / 128 GB / Network 최대 10 Gbps / EBS Network 4,750 Mbps / EBS n/a IPOS (X86-64)
@@ -137,6 +137,8 @@ postgres=> \q
 성능 테스트 방법은 기존과 동일하다. [테스트 자동화하기] 섹션에 나온대로 perf.sh 파일을 만들고, 대상 데이터베이스의 주소를 변경한 다음 실행한다. 
 
 ### 테스트 결과 ###
+
+이번 성능 비교 테스트는 graviton2(r6g.) 및 x64(r5.) 아키텍처를 쓰는 인스턴스 중 그 사이즈가  2x ~ 16x 인 인스턴스를 대상으로 합니다. 
 
 * X64
 [aurora-postgres-x64-2x-1] - cpu 0%
