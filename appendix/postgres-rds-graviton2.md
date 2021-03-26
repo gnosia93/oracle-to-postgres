@@ -21,7 +21,7 @@
 
 
 ```
-$ aws rds describe-db-engine-versions --default-only --engine aurora-postgresql
+$ aws rds describe-db-engine-versions --engine postgres
 12.4
 
 $ aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" | grep postgres
@@ -40,45 +40,28 @@ $ aws rds modify-db-parameter-group \
                  "ParameterName='min_wal_size',ParameterValue=30720,ApplyMethod=pending-reboot"  
 
 
-$ aws ec2 create-security-group --group-name sg_rds_postgres --description "aurora postgres security group"
+$ aws ec2 create-security-group --group-name sg_rds_postgres --description "rds postgres security group"
 {
-    "GroupId": "sg-06ad944bc6fccec5c"
+    "GroupId": "sg-0976d787e21a0eb07"
 }
 
 $ aws ec2 authorize-security-group-ingress --group-name sg_rds_postgres --protocol tcp --port 5432 --cidr 0.0.0.0/0
 
 $ sleep 10       #   (10초 대기)                    
-                                        
-$ aws rds create-db-cluster \
-    --db-cluster-identifier postgres-graviton2 \
-    --engine aurora-postgresql \
-    --engine-version 12.4 \
-    --master-username postgres \
-    --master-user-password postgres \
-    --vpc-security-group-ids sg-06ad944bc6fccec5c          
+
+# RDS 의 그라비톤2는 지원하지 않으므로 x86 만 생성한다. 
 
 $ aws rds create-db-instance \
-    --db-cluster-identifier postgres-graviton2 \
-    --db-instance-identifier postgres-graviton2-1 \
-    --db-instance-class db.r6g.4xlarge \
-    --engine aurora-postgresql \
-    --db-parameter-group-name pg-aurora-postgres
-    
-    
-$ aws rds create-db-cluster \
-    --db-cluster-identifier postgres-x64 \
-    --engine aurora-postgresql \
-    --engine-version 12.4 \
-    --master-username postgres \
-    --master-user-password postgres \
-    --vpc-security-group-ids sg-06ad944bc6fccec5c
-    
-$ aws rds create-db-instance \
-    --db-cluster-identifier postgres-x64 \
-    --db-instance-identifier postgres-x64-1 \
+    --db-instance-identifier rds-postgres-x64 \
     --db-instance-class db.r5.4xlarge \
-    --engine aurora-postgresql \
-    --db-parameter-group-name pg-aurora-postgres
-
-
+    --engine postgres \
+    --engine-version 12.4 \
+    --db-parameter-group-name pg-rds-postgres \
+    --master-username postgres \
+    --master-user-password postgres \
+    --iops 30000 \
+    --storage-type io1 \
+    --vpc-security-group-ids sg-0976d787e21a0eb07 \
+    --no-multi-az
+    
 ```
