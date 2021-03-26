@@ -140,6 +140,10 @@ postgres=> \q
 
 * X64
 
+[aurora-postgres-x64-2x-1] - cpu 0%
+```
+```
+
 [aurora-postgres-x64-4x-1] - cpu 90%
 ```
 thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
