@@ -155,6 +155,7 @@ sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
 * graviton2
+ 
 [aurora-postgres-graviton2-4x-1] 
 ```
 thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
