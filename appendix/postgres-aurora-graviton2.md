@@ -141,6 +141,7 @@ postgres=> \q
 이번 성능 비교 테스트는 graviton2(r6g.) 및 x64(r5.) 아키텍처를 쓰는 인스턴스 중 그 사이즈가  2x ~ 16x 인 인스턴스를 대상으로 합니다. 
 
 * X64
+ 
 [aurora-postgres-x64-2x-1] - cpu 98%
 ```
 thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
@@ -220,11 +221,13 @@ sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
 
-
-
-
-
 * graviton2   
+
+[aurora-postgres-graviton2-2x-1] - cpu 0%
+```
+
+```
+
 [aurora-postgres-graviton2-4x-1] - cpu 86%
 ```
 thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
