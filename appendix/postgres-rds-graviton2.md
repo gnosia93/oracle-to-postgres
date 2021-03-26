@@ -62,6 +62,7 @@ $ aws rds create-db-instance \
     --iops 30000 \
     --storage-type io1 \
     --vpc-security-group-ids sg-0976d787e21a0eb07 \
-    --no-multi-az
-    
+    --no-multi-az \
+    --no-deletion-protection
+        
 ```
