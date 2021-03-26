@@ -13,7 +13,7 @@
   listen_addresses = '*'        -- default / 수정 불필요
 ```
 
-데이터베이스를 생성하기 위해 아래의 스크립트를 순차적으로 실행합니다. 
+데이터베이스를 생성하기 위해 아래의 스크립트를 순차적으로 실행합니다. (2xlarge ~ 16xlarge 까지 테스트할 예정이므로, 인스턴스 사이즈에 맞게 아래 스크립트를 변경한 후 실행합니다.)
 
 ```
 $ aws rds describe-db-engine-versions --default-only --engine aurora-postgresql
