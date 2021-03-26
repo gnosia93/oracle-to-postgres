@@ -155,6 +155,7 @@ sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
 * graviton2
+[aurora-postgres-graviton2-4x-1] 
 ```
 thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
    2   60.0035s     271670      77620    38810    323.39    6467.80       0       4.65       6.18      50.15       6.67
@@ -168,9 +169,11 @@ thc   elaptime      reads     writes   others       tps        qps    errs      
  512   60.3207s    2970884     848767   424445   3517.68   70357.12      12       6.84     145.10     907.14     240.02
 1024   60.3483s    3394300     969713   484931   4016.95   80347.29      28       7.72     254.14     673.59     369.77
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
-
 ```
 
+[aurora-postgres-graviton2-8x-1] 
+```
+```
 
 
 
