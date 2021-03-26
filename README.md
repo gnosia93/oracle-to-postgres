@@ -1,6 +1,6 @@
 # Oracle to PostgreSQL Migration Workshop #
 
-*Definitive migration guide from oracle to postgresql*
+*Definitive guide from oracle to postgresql migration*
 ![oracle2postgres](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres1.png)
 
 이 튜토리얼은 AWS DMS 서비스를 이용한 oracle to PostgreSQL 마이그레이션 전체 과정에 대한 이해를 돕기 위해 만들어 졌습니다.   
