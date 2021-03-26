@@ -95,7 +95,7 @@ Type "help" for help.
 postgres=> select version();
                                                    version                                                   
 -------------------------------------------------------------------------------------------------------------
- PostgreSQL 12.4 on aarch64-unknown-linux-gnu, compiled by aarch64-unknown-linux-gnu-gcc (GCC) 7.4.0, 64-bit
+ PostgreSQL 12.4 on x86_64-pc-linux-gnu, compiled by gcc (GCC) 4.8.5 20150623 (Red Hat 4.8.5-11), 64-bit
 (1 row)
 
 postgres=> CREATE USER sbtest WITH PASSWORD 'sbtest';
