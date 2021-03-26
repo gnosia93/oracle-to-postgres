@@ -139,7 +139,6 @@ postgres=> \q
 ### 테스트 결과 ###
 
 * X64
-
 [aurora-postgres-x64-2x-1] - cpu 0%
 ```
 ```
