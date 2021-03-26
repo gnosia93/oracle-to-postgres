@@ -61,6 +61,7 @@ $ aws rds create-db-instance \
     --master-user-password postgres \
     --iops 30000 \
     --storage-type io1 \
+    --allocated-storage 600 \
     --vpc-security-group-ids sg-0976d787e21a0eb07 \
     --no-multi-az \
     --no-deletion-protection
