@@ -1,4 +1,4 @@
-## Performance of Amazon RDS for PostgreSQL ##
+## Performance of Amazon RDS for PostgreSQL(X64 Only) ##
 
 ### 데이터베이스 생성 ###
 
