@@ -1,4 +1,4 @@
-## Performance of Amazon RDS PostgreSQL ##
+## Performance of Amazon RDS for PostgreSQL ##
 
 ### 데이터베이스 생성 ###
 
