@@ -139,6 +139,8 @@ postgres=> \q
 ### 테스트 결과 ###
 
 * X64
+
+[aurora-postgres-x64-4x-1]
 ```
 thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
    2   60.0094s      68488      19568     9784     81.52    1630.37       0      23.36      24.53      92.17      24.83
@@ -153,6 +155,12 @@ thc   elaptime      reads     writes   others       tps        qps    errs      
 1024   60.5652s    3042144     869089   434641   3587.34   71753.57      23      29.48     283.81    1820.13     450.77
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
+
+[aurora-postgres-x64-8x-1]
+```
+
+```
+
 
 * graviton2
  
