@@ -12,7 +12,7 @@
 [postgresql.conf]
   shared_buffers = 5242880      -- 8K 블록 이므로 40GB 로 설정됨
   max_wal_size = 30720          -- MB 단위로 지정(30GB)
-  min_wal_size = 30720B         -- MB 단위로 지정(30GB)
+  min_wal_size = 30720          -- MB 단위로 지정(30GB)
   max_connections = 2000
   listen_addresses = '*'        -- default / 수정 불필요
 ```
