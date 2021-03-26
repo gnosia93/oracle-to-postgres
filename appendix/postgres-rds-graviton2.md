@@ -40,12 +40,12 @@ $ aws rds modify-db-parameter-group \
                  "ParameterName='min_wal_size',ParameterValue=30720,ApplyMethod=pending-reboot"  
 
 
-$ aws ec2 create-security-group --group-name sg_aurora_postgres --description "aurora postgres security group"
+$ aws ec2 create-security-group --group-name sg_rds_postgres --description "aurora postgres security group"
 {
     "GroupId": "sg-06ad944bc6fccec5c"
 }
 
-$ aws ec2 authorize-security-group-ingress --group-name sg_aurora_postgres --protocol tcp --port 5432 --cidr 0.0.0.0/0
+$ aws ec2 authorize-security-group-ingress --group-name sg_rds_postgres --protocol tcp --port 5432 --cidr 0.0.0.0/0
 
 $ sleep 10       #   (10초 대기)                    
                                         
