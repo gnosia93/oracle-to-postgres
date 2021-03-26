@@ -2,12 +2,8 @@
 
 ### 데이터베이스 생성 ###
 
-아래와 같은 스팩으로 Aurora PostgreSQL 클러스터를 각각 생성합니다. Aurora 역시 graviton2 용 인스턴스와 X86 용 인스턴스의 EBS Network 대역폭이 4xlarge 만 동일하고 다른 타입은 서로 상이한 관계로 4xlarge 부터 먼저 테스트 합니다. 
-
-- r6g.4xlarge: 16 vCPU / 128 GB / Network 최대 10 Gbps / EBS Network 4,750 Mbps / EBS n/a IPOS (Graviton2)
-- r5.4xlarge: 16 vCPU / 128 GB / Network 최대 10 Gbps / EBS Network 4,750 Mbps / EBS n/a IPOS (X86-64)
-
-성능 테스트시 적용되는 Aurora PostgreSQL 데이터베이스의 파리미터 값은 EC2 PostgreSQL 에서 적용한 값과 동일한 값을 적용합니다. wal log 관련 파리미터는 Aurora PostgreSQL 분산 스토리지 구조상 불필요한 파리미터입니다. 또한 shared buffers 는 Aurora에서는 메모리 총 사이즈가 아닌 블록수로 입력해야 합니다. 
+이번 챕터에서는 graviton2(r6g.) 와 x64(r5.) 를 대상으로 그 사이즈가 2x ~ 16x 사이에 있는 인스턴스를 대상으로 성능테스트를 수행합니다. 
+성능 테스트시 적용되는 Aurora PostgreSQL 데이터베이스의 파리미터 값은 EC2 PostgreSQL 에서 적용한 값과 동일한 값을 적용하는데, wal log 관련 파리미터는 Aurora PostgreSQL의 분산 스토리지 구조상 지원하지 않는 파라미터 이므로 제외합니다. Aurora 의 경우 파라미터 그룹을 먼저 만든 후, 변경을 필요한 값을 설정하게 되는데, shared buffers 의 경우 총 메모리 사이즈가 아니라 블록수로 입력해야 합니다. 
 ```
 [postgresql.conf]
   shared_buffers = 5242880      -- 8K 블록 이므로 40GB 로 설정됨
