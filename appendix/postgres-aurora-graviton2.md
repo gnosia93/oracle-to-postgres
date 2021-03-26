@@ -87,12 +87,12 @@ $ aws rds create-db-instance \
 ### Aurora 엔드포인트 확인하기 ###
 
 ```
-$ aws rds describe-db-instances --db-instance-identifier postgres-graviton2-1 --query DBInstances[].Endpoint.Address
+$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-graviton2-8x-1 --query DBInstances[].Endpoint.Address
 [
     "postgres-graviton2-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
 
-$ aws rds describe-db-instances --db-instance-identifier postgres-x64-1 --query DBInstances[].Endpoint.Address
+$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-x64-8x-1 --query DBInstances[].Endpoint.Address
 [
     "postgres-x64-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
@@ -103,7 +103,7 @@ $ aws rds describe-db-instances --db-instance-identifier postgres-x64-1 --query 
 
 https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-ec2-graviton2.md 에서 생성한 cl_stress_gen 으로 로그인 한 후, 아래의 명령어를 차례로 수행한다. 
 
-psql 클라이언트 프로램으로 postgres-graviton2-1, postgres-x64-1 에 각각 접속하여 테스트 유저와 데이터베이스 및 권한을 만든다. 
+psql 클라이언트 프로램으로 aurora-postgres-graviton2-8x-1, aurora-postgres-x64-8x-1 에 각각 접속하여 테스트 유저와 데이터베이스 및 권한을 만든다. 
 
 ```
 ubuntu@ip-172-31-45-65:~$ sudo apt-get install postgresql-client
