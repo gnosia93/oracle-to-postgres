@@ -73,3 +73,39 @@ $ aws rds describe-db-instances --db-instance-identifier rds-postgres-x64 --quer
     "postgres-graviton2-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
 ```
+
+
+### 성능 테스트 준비하기 ###
+https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-ec2-graviton2.md 에서 생성한 cl_stress_gen 으로 로그인 한 후, 아래의 명령어를 차례로 수행한다.
+
+psql 클라이언트 프로램으로 rds-postgres-x64 에 접속하여 테스트 유저와 데이터베이스 및 권한을 만든다.
+
+```
+ubuntu@ip-172-31-45-65:~$ sudo apt-get install postgresql-client
+
+ubuntu@ip-172-31-45-65:~$ psql -V
+psql (PostgreSQL) 12.6 (Ubuntu 12.6-0ubuntu0.20.04.1)
+
+ubuntu@ip-172-31-45-65:~$ psql -h postgres-graviton2-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -U postgres
+Password for user postgres: 
+psql (12.6 (Ubuntu 12.6-0ubuntu0.20.04.1), server 12.4)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+postgres=> select version();
+                                                   version                                                   
+-------------------------------------------------------------------------------------------------------------
+ PostgreSQL 12.4 on aarch64-unknown-linux-gnu, compiled by aarch64-unknown-linux-gnu-gcc (GCC) 7.4.0, 64-bit
+(1 row)
+
+postgres=> CREATE USER sbtest WITH PASSWORD 'sbtest';
+CREATE ROLE
+postgres=> CREATE DATABASE sbtest;
+CREATE DATABASE
+postgres=> GRANT ALL PRIVILEGES ON DATABASE sbtest TO sbtest;
+GRANT
+postgres=> \q
+```
+
+성능 테스트 방법은 기존과 동일하다. [테스트 자동화하기] 섹션에 나온대로 perf.sh 파일을 만들고, 대상 데이터베이스의 주소를 변경한 다음 실행한다.
+
