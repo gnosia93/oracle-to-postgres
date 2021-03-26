@@ -188,6 +188,12 @@ sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
+[aurora-postgres-x64-16x-1] - cpu %
+```
+ 
+```
+
+
 
 
 
