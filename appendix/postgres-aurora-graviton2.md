@@ -46,7 +46,7 @@ $ aws ec2 authorize-security-group-ingress --group-name sg_aurora_postgres --pro
 $ sleep 10       #   (10초 대기)                    
                                         
 $ aws rds create-db-cluster \
-    --db-cluster-identifier aurora-postgres-graviton2-16x \
+    --db-cluster-identifier aurora-postgres-graviton2-4x \
     --engine aurora-postgresql \
     --engine-version 12.4 \
     --master-username postgres \
@@ -54,15 +54,15 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-06ad944bc6fccec5c          
 
 $ aws rds create-db-instance \
-    --db-cluster-identifier aurora-postgres-graviton2-16x \
-    --db-instance-identifier aurora-postgres-graviton2-16x-1 \
-    --db-instance-class db.r6g.16xlarge \
+    --db-cluster-identifier aurora-postgres-graviton2-4x \
+    --db-instance-identifier aurora-postgres-graviton2-4x-1 \
+    --db-instance-class db.r6g.4xlarge \
     --engine aurora-postgresql \
     --db-parameter-group-name pg-aurora-postgres
     
     
 $ aws rds create-db-cluster \
-    --db-cluster-identifier aurora-postgres-x64-16x \
+    --db-cluster-identifier aurora-postgres-x64-4x \
     --engine aurora-postgresql \
     --engine-version 12.4 \
     --master-username postgres \
@@ -70,9 +70,9 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-06ad944bc6fccec5c
     
 $ aws rds create-db-instance \
-    --db-cluster-identifier aurora-postgres-x64-16x \
-    --db-instance-identifier aurora-postgres-x64-16x-1 \
-    --db-instance-class db.r5.16xlarge \
+    --db-cluster-identifier aurora-postgres-x64-4x \
+    --db-instance-identifier aurora-postgres-x64-4x-1 \
+    --db-instance-class db.r5.4xlarge \
     --engine aurora-postgresql \
     --db-parameter-group-name pg-aurora-postgres
     
@@ -87,12 +87,12 @@ $ aws rds create-db-instance \
 ### Aurora 엔드포인트 확인하기 ###
 
 ```
-$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-graviton2-8x-1 --query DBInstances[].Endpoint.Address
+$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-graviton2-4x-1 --query DBInstances[].Endpoint.Address
 [
-    "aurora-postgres-graviton2-8x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
+    "aurora-postgres-graviton2-4x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
 
-$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-x64-8x-1 --query DBInstances[].Endpoint.Address
+$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-x64-4x-1 --query DBInstances[].Endpoint.Address
 [
     "postgres-x64-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
@@ -111,7 +111,7 @@ ubuntu@ip-172-31-45-65:~$ sudo apt-get install postgresql-client
 ubuntu@ip-172-31-45-65:~$ psql -V
 psql (PostgreSQL) 12.6 (Ubuntu 12.6-0ubuntu0.20.04.1)
 
-ubuntu@ip-172-31-45-65:~$ psql -h aurora-postgres-graviton2-8x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -U postgres
+ubuntu@ip-172-31-45-65:~$ psql -h aurora-postgres-graviton2-4x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -U postgres
 Password for user postgres: 
 psql (12.6 (Ubuntu 12.6-0ubuntu0.20.04.1), server 12.4)
 SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
@@ -188,9 +188,20 @@ sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
-[aurora-postgres-x64-16x-1] - cpu %
+[aurora-postgres-x64-16x-1] - cpu 79%
 ```
- 
+thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
+   2   60.0150s      82040      23440    11720     97.64    1952.80       0      19.13      20.48     250.78      20.74
+   4   60.0190s     163576      46736    23368    194.67    3893.34       0      19.42      20.55      23.42      21.11
+   8   60.0049s     323036      92296    46148    384.53    7690.52       0      19.60      20.80      24.45      21.50
+  16   60.0212s     636286     181796    90898    757.20   15143.97       0      19.27      21.13      24.79      21.89
+  32   60.0211s    1238538     353865   176935   1473.88   29477.94       1      19.48      21.71     272.19      22.69
+  64   60.0306s    2402946     686550   343278   2859.08   57182.40       3      19.78      22.38     188.87      24.38
+ 128   60.0368s    4334442    1238392   619210   5156.63  103135.02       8      20.22      24.81     321.43      29.19
+ 256   60.0835s    7281694    2080413  1040261   8656.00  173127.72      26      21.25      29.54    1136.28      31.94
+ 512   60.1786s   10102596    2886285  1443319  11990.27  239817.42      40      23.24      42.60     616.10      84.47
+1024   60.3610s   11086908    3167290  1584048  13117.85  262385.87      97      23.59      77.68    1452.74     183.21
+sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2) 
 ```
 
 
