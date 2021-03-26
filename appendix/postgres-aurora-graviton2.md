@@ -46,7 +46,7 @@ $ aws ec2 authorize-security-group-ingress --group-name sg_aurora_postgres --pro
 $ sleep 10       #   (10초 대기)                    
                                         
 $ aws rds create-db-cluster \
-    --db-cluster-identifier postgres-graviton2 \
+    --db-cluster-identifier aurora-postgres-graviton2-8x \
     --engine aurora-postgresql \
     --engine-version 12.4 \
     --master-username postgres \
@@ -54,15 +54,15 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-06ad944bc6fccec5c          
 
 $ aws rds create-db-instance \
-    --db-cluster-identifier postgres-graviton2 \
-    --db-instance-identifier postgres-graviton2-1 \
-    --db-instance-class db.r6g.4xlarge \
+    --db-cluster-identifier aurora-postgres-graviton2-8x \
+    --db-instance-identifier aurora-postgres-graviton2-8x-1 \
+    --db-instance-class db.r6g.8xlarge \
     --engine aurora-postgresql \
     --db-parameter-group-name pg-aurora-postgres
     
     
 $ aws rds create-db-cluster \
-    --db-cluster-identifier postgres-x64 \
+    --db-cluster-identifier aurora-postgres-x64-8x \
     --engine aurora-postgresql \
     --engine-version 12.4 \
     --master-username postgres \
@@ -70,9 +70,9 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-06ad944bc6fccec5c
     
 $ aws rds create-db-instance \
-    --db-cluster-identifier postgres-x64 \
-    --db-instance-identifier postgres-x64-1 \
-    --db-instance-class db.r5.4xlarge \
+    --db-cluster-identifier aurora-postgres-x64-8x \
+    --db-instance-identifier aurora-postgres-x64-8x-1 \
+    --db-instance-class db.r5.8xlarge \
     --engine aurora-postgresql \
     --db-parameter-group-name pg-aurora-postgres
     
