@@ -149,7 +149,8 @@ Latency (ms):
          sum:                             298252.29
 ```
 
-2. 시스템의 메모리가 128GB 이므로, 총용량이 256GB 인 파일들(2.56G 100개)을 만든 다음, 랜덤 Read / Write 의 성능을 측정한다. 
+
+2. 시스템의 메모리가 128GB 이므로, 총용량이 256GB 인 파일들(2.56G 100개)을 만든 다음, 시퀀셜 Read / Write 의 성능을 측정한다. 
 ```
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G prepare
 
@@ -158,115 +159,13 @@ Latency (ms):
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G cleanup
 ```
 
-시퀀셜 Write 역시 graviton2 가 X86 보다 빠르다. 청크 사이즈 128MB 하둡과 같은 빅데이터 시스템에서 성능 향상을 기대해 볼 수 있을듯(?) 하다. 
-
 * graviton2
 ```
-Throughput:
-         read:  IOPS=0.00 0.00 MiB/s (0.00 MB/s)
-         write: IOPS=30228.99 472.33 MiB/s (495.27 MB/s)
-         fsync: IOPS=38693.25
-
-Latency (ms):
-         min:                                  0.00
-         avg:                                  0.01
-         max:                                 55.32
-         95th percentile:                      0.01
-         sum:                             295189.20
 ```
+
 * X64
 ```
-Throughput:
-         read:  IOPS=0.00 0.00 MiB/s (0.00 MB/s)
-         write: IOPS=25128.71 392.64 MiB/s (411.71 MB/s)
-         fsync: IOPS=32164.94
-
-Latency (ms):
-         min:                                  0.00
-         avg:                                  0.02
-         max:                                 59.57
-         95th percentile:                      0.01
-         sum:                             296606.03
 ```
-
-3. sequentail read
-
-* graviton2
-```
-[ec2-user@ip-172-31-28-94 ~]$ sysbench fileio --file-total-size=256G --file-test-mode=seqrd --time=300 run
-sysbench 1.1.0-bbee5d5 (using bundled LuaJIT 2.1.0-beta3)
-
-Running the test with following options:
-Number of threads: 1
-Initializing random number generator from current time
-
-
-Extra file open flags: (none)
-128 files, 2GiB each
-256GiB total file size
-Block size 16KiB
-Periodic FSYNC enabled, calling fsync() each 100 requests.
-Calling fsync() at the end of test, Enabled.
-Using synchronous I/O mode
-Doing sequential read test
-Initializing worker threads...
-
-Threads started!
-
-
-Throughput:
-         read:  IOPS=17486.93 273.23 MiB/s (286.51 MB/s)
-         write: IOPS=0.00 0.00 MiB/s (0.00 MB/s)
-         fsync: IOPS=0.00
-
-Latency (ms):
-         min:                                  0.00
-         avg:                                  0.06
-         max:                                 28.45
-         95th percentile:                      0.54
-         sum:                             298715.34
-```
-
-* x64
-```
-[ec2-user@ip-172-31-15-22 tmp]$ sysbench fileio --file-total-size=256G --file-test-mode=seqrd --time=300 run
-sysbench 1.1.0-bbee5d5 (using bundled LuaJIT 2.1.0-beta3)
-
-Running the test with following options:
-Number of threads: 1
-Initializing random number generator from current time
-
-
-Extra file open flags: (none)
-128 files, 2GiB each
-256GiB total file size
-Block size 16KiB
-Periodic FSYNC enabled, calling fsync() each 100 requests.
-Calling fsync() at the end of test, Enabled.
-Using synchronous I/O mode
-Doing sequential read test
-Initializing worker threads...
-
-Threads started!
-
-
-Throughput:
-         read:  IOPS=38208.31 597.00 MiB/s (626.00 MB/s)
-         write: IOPS=0.00 0.00 MiB/s (0.00 MB/s)
-         fsync: IOPS=0.00
-
-Latency (ms):
-         min:                                  0.00
-         avg:                                  0.03
-         max:                                120.12
-         95th percentile:                      0.00
-         sum:                             297432.10
-```
-
-
-
-
-
 
 
 
