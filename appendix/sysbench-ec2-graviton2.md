@@ -114,7 +114,7 @@ https://imcreator.tistory.com/89
 ```
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G prepare
 
-[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G --file-test-mode=rndrw --time=300 run
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G --file-test-mode=rndrw --time=120 run
 
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G cleanup
 ```
@@ -122,31 +122,32 @@ https://imcreator.tistory.com/89
 * graviton2
 ```
 Throughput:
-         read:  IOPS=2279.18 35.61 MiB/s (37.34 MB/s)
-         write: IOPS=1519.46 23.74 MiB/s (24.89 MB/s)
-         fsync: IOPS=4862.66
+         read:  IOPS=2366.91 36.98 MiB/s (38.78 MB/s)
+         write: IOPS=1577.94 24.66 MiB/s (25.85 MB/s)
+         fsync: IOPS=5050.32
 
 Latency (ms):
          min:                                  0.00
-         avg:                                  0.12
-         max:                                 34.77
-         95th percentile:                      0.72
-         sum:                             299372.99
+         avg:                                  0.11
+         max:                                 14.24
+         95th percentile:                      0.69
+         sum:                             119728.66
+
 ```
 
 * X64
 ```
 Throughput:
-         read:  IOPS=2050.36 32.04 MiB/s (33.59 MB/s)
-         write: IOPS=1366.91 21.36 MiB/s (22.40 MB/s)
-         fsync: IOPS=4374.47
+         read:  IOPS=2199.83 34.37 MiB/s (36.04 MB/s)
+         write: IOPS=1466.55 22.91 MiB/s (24.03 MB/s)
+         fsync: IOPS=4693.73
 
 Latency (ms):
          min:                                  0.00
-         avg:                                  0.13
-         max:                                112.32
-         95th percentile:                      0.78
-         sum:                             298252.29
+         avg:                                  0.12
+         max:                                 42.14
+         95th percentile:                      0.72
+         sum:                             119236.26
 ```
 
 
@@ -154,7 +155,7 @@ Latency (ms):
 ```
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G prepare
 
-[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G --file-test-mode=seqrewr --time=300 run
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G --file-test-mode=seqrewr --time=120 run
 
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G cleanup
 ```
