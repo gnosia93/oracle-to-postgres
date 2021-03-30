@@ -155,19 +155,68 @@ Latency (ms):
 ```
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G prepare
 
-[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G --file-test-mode=seqrewr --time=120 run
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G --file-test-mode=seqrd --time=120 run
+
+[ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G --file-test-mode=seqwr --time=120 run
 
 [ec2-user@ip-172-31-15-22]$ sysbench fileio --file-total-size=256G cleanup
 ```
 
 * graviton2
 ```
+Throughput:
+         read:  IOPS=41755.70 652.43 MiB/s (684.13 MB/s)
+         write: IOPS=0.00 0.00 MiB/s (0.00 MB/s)
+         fsync: IOPS=0.00
+
+Latency (ms):
+         min:                                  0.00
+         avg:                                  0.02
+         max:                                 36.78
+         95th percentile:                      0.02
+         sum:                             118855.52
+         
+
+Throughput:
+         read:  IOPS=0.00 0.00 MiB/s (0.00 MB/s)
+         write: IOPS=25128.68 392.64 MiB/s (411.71 MB/s)
+         fsync: IOPS=32164.91
+
+Latency (ms):
+         min:                                  0.00
+         avg:                                  0.02
+         max:                                 41.71
+         95th percentile:                      0.01
+         sum:                             118593.02
 ```
 
 * X64
 ```
-```
+Throughput:
+         read:  IOPS=34849.51 544.52 MiB/s (570.97 MB/s)
+         write: IOPS=0.00 0.00 MiB/s (0.00 MB/s)
+         fsync: IOPS=0.00
 
+Latency (ms):
+         min:                                  0.00
+         avg:                                  0.03
+         max:                                125.08
+         95th percentile:                      0.02
+         sum:                             119049.65
+
+
+Throughput:
+         read:  IOPS=0.00 0.00 MiB/s (0.00 MB/s)
+         write: IOPS=24222.87 378.48 MiB/s (396.87 MB/s)
+         fsync: IOPS=31005.47
+
+Latency (ms):
+         min:                                  0.00
+         avg:                                  0.02
+         max:                                 44.58
+         95th percentile:                      0.01
+         sum:                             118570.03
+```
 
 
 ### 메모리 테스트 ###
