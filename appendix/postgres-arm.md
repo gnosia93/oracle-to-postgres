@@ -1,3 +1,4 @@
+## PostgreSQL ##
 성능 테스트는 EC2와 Aurora RDS를 대상으로 수행합니다. 
 
 * [Performance of PostgreSQL 11 on AWS Graviton2 EC2 Instance](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-ec2-graviton2.md)
@@ -8,7 +9,7 @@
 
 * [EC2 CPU / Memory / FileIO 성능 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/sysbench-ec2-graviton2.md)
 
-----
+## MySQL ##
 
 MySQL 에 대해서도 테스트 합니다.
 
