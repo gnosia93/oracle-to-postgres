@@ -44,7 +44,7 @@ $ aws ec2 authorize-security-group-ingress --group-name sg_aurora_mysql --protoc
 $ sleep 10       #   (10초 대기)                    
                                         
 $ aws rds create-db-cluster \
-    --db-cluster-identifier aurora-mysql-graviton2-4x \
+    --db-cluster-identifier aurora-mysql-graviton2-2x \
     --engine aurora-mysql \
     --engine-version 5.7.mysql_aurora.2.09.2 \
     --master-username myadmin \
@@ -52,16 +52,16 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-0518761208b6e516f          
 
 $ aws rds create-db-instance \
-    --db-cluster-identifier aurora-mysql-graviton2-4x \
-    --db-instance-identifier aurora-mysql-graviton2-4x-1 \
-    --db-instance-class db.r6g.4xlarge \
+    --db-cluster-identifier aurora-mysql-graviton2-2x \
+    --db-instance-identifier aurora-mysql-graviton2-2x-1 \
+    --db-instance-class db.r6g.2xlarge \
     --engine aurora-mysql \
     --db-parameter-group-name pg-aurora-mysql \
     --availability-zone=ap-northeast-2b
     
     
 $ aws rds create-db-cluster \
-    --db-cluster-identifier aurora-mysql-x64-4x \
+    --db-cluster-identifier aurora-mysql-x64-2x \
     --engine aurora-mysql \
     --engine-version 5.7.mysql_aurora.2.09.2 \
     --master-username myadmin \
@@ -69,9 +69,9 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-0518761208b6e516f
     
 $ aws rds create-db-instance \
-    --db-cluster-identifier aurora-mysql-x64-4x \
-    --db-instance-identifier aurora-mysql-x64-4x-1 \
-    --db-instance-class db.r5.4xlarge \
+    --db-cluster-identifier aurora-mysql-x64-2x \
+    --db-instance-identifier aurora-mysql-x64-2x-1 \
+    --db-instance-class db.r5.2xlarge \
     --engine aurora-mysql \
     --db-parameter-group-name pg-aurora-mysql \
     --availability-zone=ap-northeast-2b
