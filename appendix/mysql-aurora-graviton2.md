@@ -203,6 +203,7 @@ do
   --time=$TEST_TIME \
   --mysql-host=$TARGET_DB --mysql-port=3306 \
   --mysql-user=sbtest --mysql-password=sbtest --mysql-db=sbtest \
+  --db-ps-mode=disable \
   /usr/share/sysbench/oltp_read_write.lua run | tee -a $filename >> sysbench.log
 
   while read line
