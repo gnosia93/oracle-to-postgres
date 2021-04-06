@@ -59,7 +59,7 @@ $ aws rds create-db-cluster \
     --engine aurora-mysql \
     --engine-version 5.7.mysql_aurora.2.09.2 \
     --master-username myadmin \
-    --master-user-password myadmin \
+    --master-user-password myadmin1234 \
     --vpc-security-group-ids sg-0518761208b6e516f
     
 $ aws rds create-db-instance \
