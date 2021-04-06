@@ -75,7 +75,7 @@ $ aws rds create-db-instance \
     --db-parameter-group-name pg-aurora-mysql \
 ```
 
-aws rds create-db-instance 옵션으로 --availability-zone=ap-northeast-2b 을 사용하면 데이터베이스 생성시 가용존을 선택할 수 있다. 
+(참고) aws rds create-db-instance 옵션으로 --availability-zone=ap-northeast-2b 을 사용하면 데이터베이스 생성시 가용존을 선택할 수 있다. 
 
 
 ### Aurora 엔드포인트 확인하기 ###
