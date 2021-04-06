@@ -224,7 +224,7 @@ sysbench --db-driver=mysql --report-interval=$REPORT_INTERVAL \
 
 * X64
  
-[aurora-postgres-x64-16x-1] - cpu %
+[aurora-postgres-x64-16x-1] - cpu 29%
 ```
 thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
    2   60.0181s      78302      22372    11186     93.19    1863.73       0      20.33      21.46      35.72      22.28
