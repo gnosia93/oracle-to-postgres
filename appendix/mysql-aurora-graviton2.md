@@ -42,16 +42,16 @@ $ aws rds create-db-cluster \
     --db-cluster-identifier aurora-mysql-graviton2-16x \
     --engine aurora-mysql \
     --engine-version 5.7.mysql_aurora.2.09.2 \
-    --master-username mysql \
-    --master-user-password mysql \
+    --master-username myadmin \
+    --master-user-password myadmin1234 \
     --vpc-security-group-ids sg-0518761208b6e516f          
 
 $ aws rds create-db-instance \
-    --db-cluster-identifier aurora-postgres-graviton2-4x \
-    --db-instance-identifier aurora-postgres-graviton2-4x-1 \
-    --db-instance-class db.r6g.4xlarge \
-    --engine aurora-postgresql \
-    --db-parameter-group-name pg-aurora-postgres
+    --db-cluster-identifier aurora-mysql-graviton2-16x \
+    --db-instance-identifier aurora-mysql-graviton2-16x-1 \
+    --db-instance-class db.r6g.16xlarge \
+    --engine aurora-mysql \
+    --db-parameter-group-name pg-aurora-mysql
     
     
 $ aws rds create-db-cluster \
