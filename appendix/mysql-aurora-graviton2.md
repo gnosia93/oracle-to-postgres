@@ -72,7 +72,7 @@ $ aws rds create-db-instance \
     --db-instance-identifier aurora-mysql-x64-16x-1-3 \
     --db-instance-class db.r5.16xlarge \
     --engine aurora-mysql \
-    --db-parameter-group-name pg-aurora-mysql \
+    --db-parameter-group-name pg-aurora-mysql 
 ```
 
 (참고) 데이터베이스 생성시 aws rds create-db-instance의 옵션으로 --availability-zone 를 사용하면(예시, --availability-zone=ap-northeast-2b) 데이터베이스가 생성되는 AZ를 선택할 수 있다. 
