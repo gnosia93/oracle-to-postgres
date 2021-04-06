@@ -23,13 +23,14 @@ $ aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGro
 aurora-mysql5.7
 
 $ aws rds create-db-parameter-group \
-    --db-parameter-group-name pg-aurora-postgres \
-    --db-parameter-group-family aurora-postgresql12 \
-    --description "My Aurora PostgreSQL new parameter group"
+     --db-parameter-group-name pg-aurora-mysql \
+     --db-parameter-group-family aurora-mysql5.7 \
+     --description "My Aurora MySQL new parameter group"
+
 
 $ aws rds modify-db-parameter-group \
-    --db-parameter-group-name pg-aurora-postgres \
-    --parameters "ParameterName='shared_buffers',ParameterValue=5242880,ApplyMethod=pending-reboot" \
+    --db-parameter-group-name pg-aurora-mysql \
+    --parameters "ParameterName='innodb_buffer_pool_size',ParameterValue=40GB,ApplyMethod=pending-reboot" \
                  "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"   
 
 $ aws ec2 create-security-group --group-name sg_aurora_postgres --description "aurora postgres security group"
