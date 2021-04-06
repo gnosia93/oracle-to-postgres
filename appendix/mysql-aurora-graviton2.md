@@ -268,6 +268,13 @@ sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
 
+[aurora-mysql-x64-16x-1] - cpu %
+```
+ 
+```
+
+
+
 * graviton2   
 
 
@@ -287,7 +294,7 @@ sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
-[aurora-postgres-graviton2-16x-1] - cpu %
+[aurora-mysql-graviton2-16x-1] - cpu %
 ```
  
 ```
