@@ -60,7 +60,7 @@ $ aws rds create-db-instance \
     
     
 $ aws rds create-db-cluster \
-    --db-cluster-identifier aurora-mysql-x64-16x \
+    --db-cluster-identifier aurora-mysql-x64-16x-2 \
     --engine aurora-mysql \
     --engine-version 5.7.mysql_aurora.2.09.2 \
     --master-username myadmin \
@@ -68,8 +68,8 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-0518761208b6e516f
     
 $ aws rds create-db-instance \
-    --db-cluster-identifier aurora-mysql-x64-16x \
-    --db-instance-identifier aurora-mysql-x64-16x-1 \
+    --db-cluster-identifier aurora-mysql-x64-16x-2 \
+    --db-instance-identifier aurora-mysql-x64-16x-1-2 \
     --db-instance-class db.r5.16xlarge \
     --engine aurora-mysql \
     --db-parameter-group-name pg-aurora-mysql
