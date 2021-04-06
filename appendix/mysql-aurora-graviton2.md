@@ -237,7 +237,7 @@ sysbench --db-driver=mysql --report-interval=$REPORT_INTERVAL \
 /usr/share/sysbench/oltp_read_write.lua cleanup
 ```
 
-### sysbench OLTP 테스트 시나리오 ##
+### sysbench OLTP 시나리오 ##
 
 * /usr/share/sysbench 의 oltp_common.lua 확인
 
