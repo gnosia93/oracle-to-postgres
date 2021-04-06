@@ -122,7 +122,7 @@ postgres=> \q
 ```
 
 성능 테스트 아래의 내용으로 perf.sh 파일을 만들고, 대상 데이터베이스의 주소를 변경한 다음 실행합니다. 
-````
+```
 #! /bin/sh
 TARGET_DB=aurora-postgres-graviton2-2x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com
 TEST_TIME=60
