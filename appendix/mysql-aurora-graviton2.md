@@ -1,9 +1,9 @@
-## Performance of Amazon Aurora PostgreSQL ##
+## Performance of Amazon Aurora MySQL ##
 
 ### 데이터베이스 생성 ###
 
 이번 챕터에서는 graviton2(r6g.) 와 x64(r5.) 를 대상으로 그 사이즈가 2x ~ 16x 사이에 있는 인스턴스를 대상으로 성능테스트를 수행합니다. 
-성능 테스트시 적용되는 Aurora PostgreSQL 데이터베이스의 파리미터 값은 EC2 PostgreSQL 에서 적용한 값과 동일한 값을 적용하는데, wal log 관련 파라미터는 Aurora PostgreSQL의 분산 스토리지 구조상 지원하지 않는 파라미터 이므로 제외합니다. Aurora 의 경우 파라미터 그룹을 먼저 만든 후, 변경이 필요한 파라미터 값을 설정하게 되는데, shared buffers 의 경우 총 메모리 사이즈가 아니라 블록수로 입력해야 합니다. 
+성능 테스트시 적용되는 Aurora MySQL 데이터베이스의 파리미터 값은 다음과 같습니다. 
 ```
 [postgresql.conf]
   innodb_buffer_pool_size = 2621440      -- 16K 블록 이므로 40GB 로 설정됨
