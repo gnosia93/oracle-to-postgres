@@ -8,7 +8,6 @@
 [postgresql.conf]
   innodb_buffer_pool_size = 2621440      -- 16K 블록 이므로 40GB 로 설정됨
   max_connections = 2000
-  listen_addresses = '*'        -- default / 수정 불필요
 ```
 
 데이터베이스를 생성하기 위해 아래의 스크립트를 순차적으로 실행합니다. (2xlarge ~ 16xlarge 까지 테스트할 예정이므로, 인스턴스 사이즈에 맞게 아래 스크립트를 변경한 후 실행합니다.)
