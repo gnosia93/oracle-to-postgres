@@ -121,9 +121,74 @@ GRANT
 postgres=> \q
 ```
 
+성능 테스트 아래의 내용으로 perf.sh 파일을 만들고, 대상 데이터베이스의 주소를 변경한 다음 실행합니다. 
+````
+#! /bin/sh
+TARGET_DB=aurora-postgres-graviton2-2x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com
+TEST_TIME=60
+TABLE_SIZE=5000000
+REPORT_INTERVAL=10
 
+# prepare
+sysbench --db-driver=mysql \
+--table-size=$TABLE_SIZE --tables=32 \
+--threads=32 \
+--mysql-host=$TARGET_DB --mysql-port=3306 \
+--mysql-user=sbtest \
+--mysql-password=sbtest \
+--mysql-db=sbtest \
+/usr/share/sysbench/oltp_read_write.lua prepare
 
-성능 테스트 방법은 기존과 동일하다. [테스트 자동화하기] 섹션에 나온대로 perf.sh 파일을 만들고, 대상 데이터베이스의 주소를 변경한 다음 실행한다. 
+# remove old sysbench.log
+rm sysbench.log 2> /dev/null
+
+# run
+THREAD="2 4 8 16 32 64 128 256 512 1024"
+printf "%4s %10s %10s %10s %8s %9s %10s %7s %10s %10s %10s %10s\n" "thc" "elaptime" "reads" "writes" "others" "tps" "qps" "errs" "min" "avg" "max" "p95"
+for THREAD_COUNT in $THREAD
+do
+  filename=result_$THREAD_COUNT
+
+  sysbench --db-driver=mysql --report-interval=$REPORT_INTERVAL \
+  --table-size=$TABLE_SIZE --tables=32 \
+  --threads=$THREAD_COUNT \
+  --time=$TEST_TIME \
+  --mysql-host=$TARGET_DB --mysql-port=3306 \
+  --mysql-user=sbtest --mysql-password=sbtest --mysql-db=sbtest \
+  /usr/share/sysbench/oltp_read_write.lua run | tee -a $filename >> sysbench.log
+
+  while read line
+  do
+   case "$line" in
+      *read:*)  read=$(echo $line | cut -d ' ' -f2) ;;
+      *write:*) write=$(echo $line | cut -d ' ' -f2) ;;
+      *other:*) other=$(echo $line | cut -d ' ' -f2) ;;
+      *transactions:*) tps=$(echo $line | cut -d ' ' -f3 | cut -d '(' -f2) ;;
+      *queries:*) qps=$(echo $line | cut -d ' ' -f3 | cut -d '(' -f2) ;;
+      *ignored" "errors:*) err=$(echo $line | cut -d ' ' -f3) ;;
+      *total" "time:*) ttime=$(echo $line | cut -d ' ' -f3) ;;
+      *min:*)  min=$(echo $line | cut -d ' ' -f2) ;;
+      *avg:*)  avg=$(echo $line | cut -d ' ' -f2) ;;
+      *max:*)  max=$(echo $line | cut -d ' ' -f2) ;;
+      *95th" "percentile:*) p95=$(echo $line | cut -d ' ' -f3) ;;
+   esac
+  done < $filename
+
+  #echo $THREAD_COUNT $ttime $read $write $other $tps $qps $err $min $avg $max $p95 
+  printf "%4s %10s %10s %10s %8s %9s %10s %7s %10s %10s %10s %10s\n" $THREAD_COUNT $ttime $read $write $other $tps $qps $err $min $avg $max $p95
+
+done
+
+# cleanup
+sysbench --db-driver=mysql --report-interval=$REPORT_INTERVAL \
+--table-size=$TABLE_SIZE --tables=32 \
+--threads=1 \
+--time=$TEST_TIME \
+--mysql-host=$TARGET_DB --pgsql-port=5432 \
+--mysql-user=sbtest --mysql-password=sbtest --mysql-db=sbtest \
+/usr/share/sysbench/oltp_read_write.lua cleanup
+```
+
 
 ### 테스트 결과 ###
 
