@@ -44,7 +44,7 @@ $ aws ec2 authorize-security-group-ingress --group-name sg_aurora_mysql --protoc
 $ sleep 10       #   (10초 대기)                    
                                         
 $ aws rds create-db-cluster \
-    --db-cluster-identifier aurora-mysql-graviton2-16x \
+    --db-cluster-identifier aurora-mysql-graviton2-4x \
     --engine aurora-mysql \
     --engine-version 5.7.mysql_aurora.2.09.2 \
     --master-username myadmin \
@@ -52,15 +52,16 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-0518761208b6e516f          
 
 $ aws rds create-db-instance \
-    --db-cluster-identifier aurora-mysql-graviton2-16x \
-    --db-instance-identifier aurora-mysql-graviton2-16x-1 \
-    --db-instance-class db.r6g.16xlarge \
+    --db-cluster-identifier aurora-mysql-graviton2-4x \
+    --db-instance-identifier aurora-mysql-graviton2-4x-1 \
+    --db-instance-class db.r6g.4xlarge \
     --engine aurora-mysql \
-    --db-parameter-group-name pg-aurora-mysql
+    --db-parameter-group-name pg-aurora-mysql \
+    --availability-zone=ap-northeast-2b
     
     
 $ aws rds create-db-cluster \
-    --db-cluster-identifier aurora-mysql-x64-16x-3 \
+    --db-cluster-identifier aurora-mysql-x64-4x \
     --engine aurora-mysql \
     --engine-version 5.7.mysql_aurora.2.09.2 \
     --master-username myadmin \
@@ -68,11 +69,12 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-0518761208b6e516f
     
 $ aws rds create-db-instance \
-    --db-cluster-identifier aurora-mysql-x64-16x-3 \
-    --db-instance-identifier aurora-mysql-x64-16x-1-3 \
-    --db-instance-class db.r5.16xlarge \
+    --db-cluster-identifier aurora-mysql-x64-4x \
+    --db-instance-identifier aurora-mysql-x64-4x-1 \
+    --db-instance-class db.r5.4xlarge \
     --engine aurora-mysql \
-    --db-parameter-group-name pg-aurora-mysql 
+    --db-parameter-group-name pg-aurora-mysql \
+    --availability-zone=ap-northeast-2b
 ```
 
 (참고) 데이터베이스 생성시 aws rds create-db-instance의 옵션으로 --availability-zone 를 사용하면(예시, --availability-zone=ap-northeast-2b) 데이터베이스가 생성되는 AZ를 선택할 수 있다. 
