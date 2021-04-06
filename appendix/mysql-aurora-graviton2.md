@@ -54,7 +54,7 @@ $ aws rds create-db-cluster \
 $ aws rds create-db-instance \
     --db-cluster-identifier aurora-mysql-graviton2-16x \
     --db-instance-identifier aurora-mysql-graviton2-16x-1 \
-    --db-instance-class db.r6g.8xlarge \
+    --db-instance-class db.r6g.16xlarge \
     --engine aurora-mysql \
     --db-parameter-group-name pg-aurora-mysql
     
