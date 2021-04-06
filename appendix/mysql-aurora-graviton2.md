@@ -56,7 +56,7 @@ $ aws rds create-db-instance \
     
     
 $ aws rds create-db-cluster \
-    --db-cluster-identifier aurora-postgres-x64-16x \
+    --db-cluster-identifier aurora-mysql-x64-16x \
     --engine aurora-mysql \
     --engine-version 5.7.mysql_aurora.2.09.2 \
     --master-username myadmin \
@@ -64,8 +64,8 @@ $ aws rds create-db-cluster \
     --vpc-security-group-ids sg-0518761208b6e516f
     
 $ aws rds create-db-instance \
-    --db-cluster-identifier aurora-postgres-x64-16x \
-    --db-instance-identifier aurora-postgres-x64-16x-1 \
+    --db-cluster-identifier aurora-mysql-x64-16x \
+    --db-instance-identifier aurora-mysql-x64-16x-1 \
     --db-instance-class db.r5.16xlarge \
     --engine aurora-mysql \
     --db-parameter-group-name pg-aurora-mysql
@@ -81,9 +81,9 @@ $ aws rds describe-db-instances --db-instance-identifier aurora-mysql-graviton2-
     "aurora-mysql-graviton2-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
 
-$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-x64-16x-1 --query DBInstances[].Endpoint.Address
+$ aws rds describe-db-instances --db-instance-identifier aurora-mysql-x64-16x-1 --query DBInstances[].Endpoint.Address
 [
-    "aurora-postgres-x64-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
+    "aurora-mysql-x64-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
 ```
 
