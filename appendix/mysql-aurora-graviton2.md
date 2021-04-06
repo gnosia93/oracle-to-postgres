@@ -253,7 +253,13 @@ FATAL: MySQL error: 1461 "Can't create more than max_prepared_stmt_count stateme
 ### 테스트 결과 ###
 
 * X64
+
+[aurora-mysql-x64-4x-1] - cpu %
+```
  
+```
+
+
 [aurora-mysql-x64-8x-1] - cpu 83%
 ```
  thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
@@ -290,6 +296,12 @@ sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 
 
 * graviton2   
+
+[aurora-mysql-graviton2-4x-1] - cpu %
+```
+ 
+```
+
 
 
 [aurora-mysql-graviton2-8x-1] - cpu 73%
