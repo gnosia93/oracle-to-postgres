@@ -72,7 +72,8 @@ $ aws rds create-db-instance \
     --db-instance-identifier aurora-mysql-x64-16x-1-2 \
     --db-instance-class db.r5.16xlarge \
     --engine aurora-mysql \
-    --db-parameter-group-name pg-aurora-mysql
+    --db-parameter-group-name pg-aurora-mysql \
+    --availability-zone=ap-northeast-2b
     
 ```
 
