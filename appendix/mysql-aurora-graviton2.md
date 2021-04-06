@@ -237,9 +237,10 @@ sysbench --db-driver=mysql --report-interval=$REPORT_INTERVAL \
 --mysql-user=sbtest --mysql-password=sbtest --mysql-db=sbtest \
 /usr/share/sysbench/oltp_read_write.lua cleanup
 ```
-MySQL 의 경우 preapred statement 에러를 방지하기 위해서 --db-ps-mode=disable 파리미터를 설정한다.  
+MySQL 의 경우 preapred statement 에러를 방지하기 위해서 --db-ps-mode=disable 파리미터를 설정한다. prepared statment 를 disable 하지 않고 테스트하면 아래와 같이 에러가 발생하게 되고, 제대로 된 부하 테스트를 수행할 수 없게 된다. 
+```
 FATAL: MySQL error: 1461 "Can't create more than max_prepared_stmt_count statements (current value: 16382)"
-
+```
 
 ### sysbench OLTP 시나리오 ##
 
