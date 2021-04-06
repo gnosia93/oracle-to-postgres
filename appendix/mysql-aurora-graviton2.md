@@ -29,22 +29,22 @@ $ aws rds modify-db-parameter-group \
     --parameters "ParameterName='innodb_buffer_pool_size',ParameterValue=42949672960,ApplyMethod=pending-reboot" \
                  "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"   
 
-$ aws ec2 create-security-group --group-name sg_aurora_postgres --description "aurora postgres security group"
+$ aws ec2 create-security-group --group-name sg_aurora_mysql --description "aurora mysql security group"
 {
-    "GroupId": "sg-06ad944bc6fccec5c"
+    "GroupId": "sg-0518761208b6e516f"
 }
 
-$ aws ec2 authorize-security-group-ingress --group-name sg_aurora_postgres --protocol tcp --port 5432 --cidr 0.0.0.0/0
+$ aws ec2 authorize-security-group-ingress --group-name sg_aurora_mysql --protocol tcp --port 3306 --cidr 0.0.0.0/0
 
 $ sleep 10       #   (10초 대기)                    
                                         
 $ aws rds create-db-cluster \
-    --db-cluster-identifier aurora-postgres-graviton2-4x \
-    --engine aurora-postgresql \
-    --engine-version 12.4 \
-    --master-username postgres \
-    --master-user-password postgres \
-    --vpc-security-group-ids sg-06ad944bc6fccec5c          
+    --db-cluster-identifier aurora-mysql-graviton2-16x \
+    --engine aurora-mysql \
+    --engine-version 5.7.mysql_aurora.2.09.2 \
+    --master-username mysql \
+    --master-user-password mysql \
+    --vpc-security-group-ids sg-0518761208b6e516f          
 
 $ aws rds create-db-instance \
     --db-cluster-identifier aurora-postgres-graviton2-4x \
