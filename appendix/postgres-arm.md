@@ -10,6 +10,6 @@
 
 ----
 
-MySQL 에 대해서는 테스트 합니다.
+MySQL 에 대해서도 테스트 합니다.
 
 * [Performance on Amazon Aurora MySQL](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/mysql-aurora-graviton2.md)
