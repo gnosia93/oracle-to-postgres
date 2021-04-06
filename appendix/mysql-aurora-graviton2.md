@@ -104,7 +104,7 @@ ubuntu@ip-172-31-45-65:~$ sudo apt-get install mysql-client
 ubuntu@ip-172-31-45-65:~$ mysql -V
 mysql  Ver 8.0.23-0ubuntu0.20.04.1 for Linux on x86_64 ((Ubuntu))
 
-ubuntu@ip-172-31-45-65:~$ mysql -h aurora-mysql-graviton2-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -u myadmin -pmyadmin1234
+ubuntu@ip-172-31-45-65:~$ mysql -h aurora-mysql-graviton2-8x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -u myadmin -pmyadmin1234
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 12
@@ -125,6 +125,22 @@ mysql> select version();
 | 5.7.12    |
 +-----------+
 1 row in set (0.01 sec)
+
+mysql> show variables like 'innodb_buffer%';
++-------------------------------------+----------------+
+| Variable_name                       | Value          |
++-------------------------------------+----------------+
+| innodb_buffer_pool_chunk_size       | 1342177280     |
+| innodb_buffer_pool_dump_at_shutdown | OFF            |
+| innodb_buffer_pool_dump_now         | OFF            |
+| innodb_buffer_pool_dump_pct         | 25             |
+| innodb_buffer_pool_filename         | ib_buffer_pool |
+| innodb_buffer_pool_instances        | 32             |
+| innodb_buffer_pool_load_abort       | OFF            |
+| innodb_buffer_pool_load_at_startup  | OFF            |
+| innodb_buffer_pool_load_now         | OFF            |
+| innodb_buffer_pool_size             | 42949672960    |
++-------------------------------------+----------------+
 
 mysql> CREATE USER sbtest@'%' identified by 'sbtest';
 Query OK, 0 rows affected (0.01 sec)
@@ -156,7 +172,7 @@ Bye
 성능 테스트 아래의 내용으로 perf.sh 파일을 만들고, 대상 데이터베이스의 주소를 변경한 다음 실행합니다. 
 ```
 #! /bin/sh
-TARGET_DB=aurora-mysql-graviton2-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com
+TARGET_DB=aurora-mysql-graviton2-8x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com
 TEST_TIME=60
 TABLE_SIZE=5000000
 REPORT_INTERVAL=10
