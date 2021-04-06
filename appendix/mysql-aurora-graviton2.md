@@ -6,7 +6,7 @@
 성능 테스트시 적용되는 Aurora MySQL 데이터베이스의 파리미터 값은 다음과 같습니다. 
 ```
 [postgresql.conf]
-  innodb_buffer_pool_size = 2621440      -- 16K 블록 이므로 40GB 로 설정됨
+  innodb_buffer_pool_size = 42949672960      -- byte 단위로 설정 (40GB)
   max_connections = 2000
 ```
 
@@ -26,7 +26,7 @@ $ aws rds create-db-parameter-group \
 
 $ aws rds modify-db-parameter-group \
     --db-parameter-group-name pg-aurora-mysql \
-    --parameters "ParameterName='innodb_buffer_pool_size',ParameterValue=2621440,ApplyMethod=pending-reboot" \
+    --parameters "ParameterName='innodb_buffer_pool_size',ParameterValue=42949672960,ApplyMethod=pending-reboot" \
                  "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"   
 
 $ aws ec2 create-security-group --group-name sg_aurora_postgres --description "aurora postgres security group"
