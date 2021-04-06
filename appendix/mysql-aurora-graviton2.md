@@ -9,6 +9,7 @@
   innodb_buffer_pool_size = 42949672960      -- byte 단위로 설정 (40GB)
   max_connections = 2000
 ```
+* https://aws.amazon.com/ko/premiumsupport/knowledge-center/low-freeable-memory-rds-mysql-mariadb/
 
 데이터베이스를 생성하기 위해 아래의 스크립트를 순차적으로 실행합니다. (2xlarge ~ 16xlarge 까지 테스트할 예정이므로, 인스턴스 사이즈에 맞게 아래 스크립트를 변경한 후 실행합니다.)
 
