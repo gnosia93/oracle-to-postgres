@@ -251,7 +251,7 @@ FATAL: MySQL error: 1461 "Can't create more than max_prepared_stmt_count stateme
 
 * X64
  
-[aurora-postgres-x64-8x-1] - cpu %
+[aurora-mysql-x64-8x-1] - cpu %
 ```
 ```
 
@@ -259,7 +259,7 @@ FATAL: MySQL error: 1461 "Can't create more than max_prepared_stmt_count stateme
 * graviton2   
 
 
-[aurora-postgres-graviton2-8x-1] - cpu 73%
+[aurora-mysql-graviton2-8x-1] - cpu 73%
 ```
  thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
    2   60.0129s      61964      17704     8852     73.75    1474.98       0      25.34      27.12      31.55      27.66
