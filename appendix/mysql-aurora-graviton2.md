@@ -288,6 +288,13 @@ sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
 
+[aurora-mysql-x64-12x-1] - cpu %
+```
+ 
+```
+
+
+
 [aurora-mysql-x64-16x-1] - cpu 51%
 ```
  thc   elaptime      reads     writes   others       tps        qps    errs        min        avg        max        p95
