@@ -5,7 +5,7 @@
 이번 챕터에서는 graviton2(r6g.) 와 x64(r5.) 를 대상으로 그 사이즈가 2x ~ 16x 사이에 있는 인스턴스를 대상으로 성능테스트를 수행합니다. 
 성능 테스트시 적용되는 Aurora MySQL 데이터베이스의 파리미터 값은 다음과 같습니다. 
 ```
-[postgresql.conf]
+[mysql.conf]
   innodb_buffer_pool_size = 42949672960      -- byte 단위로 설정 (40GB)
   max_connections = 2000
 ```
