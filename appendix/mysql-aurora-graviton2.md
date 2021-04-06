@@ -71,11 +71,6 @@ $ aws rds create-db-instance \
     
 ```
 
-* https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-instance.html
-* https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-parameter-group.html
-* https://docs.aws.amazon.com/cli/latest/reference/rds/modify-db-parameter-group.html
-* https://docs.aws.amazon.com/cli/latest/reference/rds/create-db-security-group.html
-
 
 ### Aurora 엔드포인트 확인하기 ###
 
