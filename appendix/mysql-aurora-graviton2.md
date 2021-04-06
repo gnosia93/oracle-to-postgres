@@ -275,4 +275,10 @@ FATAL: MySQL error: 1461 "Can't create more than max_prepared_stmt_count stateme
 sysbench 1.0.20 (using bundled LuaJIT 2.1.0-beta2)
 ```
 
+[aurora-postgres-graviton2-16x-1] - cpu %
+```
+ 
+```
+
+
 
