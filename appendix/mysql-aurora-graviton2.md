@@ -95,30 +95,58 @@ https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-ec2-g
 psql 클라이언트 프로램으로 aurora-postgres-graviton2-8x-1, aurora-postgres-x64-8x-1 에 각각 접속하여 테스트 유저와 데이터베이스 및 권한을 만든다. 
 
 ```
-ubuntu@ip-172-31-45-65:~$ sudo apt-get install postgresql-client
+ubuntu@ip-172-31-45-65:~$ sudo apt-get install mysql-client
 
-ubuntu@ip-172-31-45-65:~$ psql -V
-psql (PostgreSQL) 12.6 (Ubuntu 12.6-0ubuntu0.20.04.1)
+ubuntu@ip-172-31-45-65:~$ mysql -V
+mysql  Ver 8.0.23-0ubuntu0.20.04.1 for Linux on x86_64 ((Ubuntu))
 
-ubuntu@ip-172-31-45-65:~$ psql -h aurora-postgres-graviton2-4x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -U postgres
-Password for user postgres: 
-psql (12.6 (Ubuntu 12.6-0ubuntu0.20.04.1), server 12.4)
-SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
-Type "help" for help.
+ubuntu@ip-172-31-45-65:~$ mysql -h aurora-mysql-graviton2-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -u myadmin -pmyadmin1234
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 5.7.12 MySQL Community Server (GPL)
 
-postgres=> select version();
-                                                   version                                                   
--------------------------------------------------------------------------------------------------------------
- PostgreSQL 12.4 on aarch64-unknown-linux-gnu, compiled by aarch64-unknown-linux-gnu-gcc (GCC) 7.4.0, 64-bit
-(1 row)
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
 
-postgres=> CREATE USER sbtest WITH PASSWORD 'sbtest';
-CREATE ROLE
-postgres=> CREATE DATABASE sbtest;
-CREATE DATABASE
-postgres=> GRANT ALL PRIVILEGES ON DATABASE sbtest TO sbtest;
-GRANT
-postgres=> \q
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> select version();
++-----------+
+| version() |
++-----------+
+| 5.7.12    |
++-----------+
+1 row in set (0.01 sec)
+
+mysql> CREATE USER sbtest@'%' identified by 'sbtest';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> CREATE DATABASE sbtest;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sbtest             |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> GRANT ALL PRIVILEGES ON sbtest.* TO sbtest@'%';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> flush privileges;  
+
+mysql> quit
+Bye
 ```
 
 성능 테스트 아래의 내용으로 perf.sh 파일을 만들고, 대상 데이터베이스의 주소를 변경한 다음 실행합니다. 
