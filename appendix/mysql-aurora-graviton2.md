@@ -6,9 +6,7 @@
 성능 테스트시 적용되는 Aurora PostgreSQL 데이터베이스의 파리미터 값은 EC2 PostgreSQL 에서 적용한 값과 동일한 값을 적용하는데, wal log 관련 파라미터는 Aurora PostgreSQL의 분산 스토리지 구조상 지원하지 않는 파라미터 이므로 제외합니다. Aurora 의 경우 파라미터 그룹을 먼저 만든 후, 변경이 필요한 파라미터 값을 설정하게 되는데, shared buffers 의 경우 총 메모리 사이즈가 아니라 블록수로 입력해야 합니다. 
 ```
 [postgresql.conf]
-  shared_buffers = 5242880      -- 8K 블록 이므로 40GB 로 설정됨
-  max_wal_size = 30GB           -- Aurora 에서는 지원하지 않는 파라미터
-  min_wal_size = 30GB           -- Aurora 에서는 지원하지 않는 파라미터
+  innodb_buffer_pool_size = 2621440      -- 16K 블록 이므로 40GB 로 설정됨
   max_connections = 2000
   listen_addresses = '*'        -- default / 수정 불필요
 ```
@@ -27,10 +25,9 @@ $ aws rds create-db-parameter-group \
      --db-parameter-group-family aurora-mysql5.7 \
      --description "My Aurora MySQL new parameter group"
 
-
 $ aws rds modify-db-parameter-group \
     --db-parameter-group-name pg-aurora-mysql \
-    --parameters "ParameterName='innodb_buffer_pool_size',ParameterValue=40GB,ApplyMethod=pending-reboot" \
+    --parameters "ParameterName='innodb_buffer_pool_size',ParameterValue=2621440,ApplyMethod=pending-reboot" \
                  "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"   
 
 $ aws ec2 create-security-group --group-name sg_aurora_postgres --description "aurora postgres security group"
