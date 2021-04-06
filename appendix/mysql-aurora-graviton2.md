@@ -82,7 +82,7 @@ $ aws rds create-db-instance \
 ```
 $ aws rds describe-db-instances --db-instance-identifier aurora-mysql-graviton2-16x-1 --query DBInstances[].Endpoint.Address
 [
-    "aurora-mysql-graviton2-8x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
+    "aurora-mysql-graviton2-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
 
 $ aws rds describe-db-instances --db-instance-identifier aurora-mysql-x64-16x-1 --query DBInstances[].Endpoint.Address
@@ -104,7 +104,7 @@ ubuntu@ip-172-31-45-65:~$ sudo apt-get install mysql-client
 ubuntu@ip-172-31-45-65:~$ mysql -V
 mysql  Ver 8.0.23-0ubuntu0.20.04.1 for Linux on x86_64 ((Ubuntu))
 
-ubuntu@ip-172-31-45-65:~$ mysql -h aurora-mysql-x64-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -u myadmin -pmyadmin1234
+ubuntu@ip-172-31-45-65:~$ mysql -h aurora-mysql-graviton2-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com -u myadmin -pmyadmin1234
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 12
