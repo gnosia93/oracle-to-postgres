@@ -82,7 +82,7 @@ $ aws rds create-db-instance \
 ```
 $ aws rds describe-db-instances --db-instance-identifier aurora-mysql-graviton2-8x-1 --query DBInstances[].Endpoint.Address
 [
-    "aurora-mysql-graviton2-16x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
+    "aurora-mysql-graviton2-8x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
 
 $ aws rds describe-db-instances --db-instance-identifier aurora-mysql-x64-8x-1 --query DBInstances[].Endpoint.Address
