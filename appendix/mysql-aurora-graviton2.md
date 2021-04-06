@@ -75,12 +75,12 @@ $ aws rds create-db-instance \
 ### Aurora 엔드포인트 확인하기 ###
 
 ```
-$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-graviton2-4x-1 --query DBInstances[].Endpoint.Address
+$ aws rds describe-db-instances --db-instance-identifier aurora-mysql-graviton2-16x-1 --query DBInstances[].Endpoint.Address
 [
     "aurora-postgres-graviton2-4x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
 
-$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-x64-4x-1 --query DBInstances[].Endpoint.Address
+$ aws rds describe-db-instances --db-instance-identifier aurora-postgres-x64-16x-1 --query DBInstances[].Endpoint.Address
 [
     "aurora-postgres-x64-4x-1.cwhptybasok6.ap-northeast-2.rds.amazonaws.com"
 ]
