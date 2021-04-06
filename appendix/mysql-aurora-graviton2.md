@@ -7,6 +7,7 @@
 ```
 [mysql.conf]
   innodb_buffer_pool_size = 42949672960      -- byte 단위로 설정 (40GB)
+  query_cache_type = 0                       -- query cache disable
   max_connections = 2000
 ```
 * https://aws.amazon.com/ko/premiumsupport/knowledge-center/low-freeable-memory-rds-mysql-mariadb/
@@ -28,7 +29,8 @@ $ aws rds create-db-parameter-group \
 $ aws rds modify-db-parameter-group \
     --db-parameter-group-name pg-aurora-mysql \
     --parameters "ParameterName='innodb_buffer_pool_size',ParameterValue=42949672960,ApplyMethod=pending-reboot" \
-                 "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"   
+                 "ParameterName='max_connections',ParameterValue=2000,ApplyMethod=pending-reboot"  \
+                 "ParameterName='query_cache_type',ParameterValue=0,ApplyMethod=pending-reboot"  
 
 $ aws ec2 create-security-group --group-name sg_aurora_mysql --description "aurora mysql security group"
 {
