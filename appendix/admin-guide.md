@@ -11,6 +11,7 @@
 
 ### postgres.conf ###
 
+외부에서 접속하고자 하는 경우 listen_addresses 의 값을 * 설정.
 ```
 #------------------------------------------------------------------------------
 # CONNECTIONS AND AUTHENTICATION
@@ -87,7 +88,7 @@ default_text_search_config = 'pg_catalog.english'
 ```
 
 ### pg_hba.conf ####
-postgresql 접속 인증 관련 설정으로 oracle 의 sqlnet.ora 에 해당.
+postgresql 접속 인증 관련 설정으로 oracle 의 sqlnet.ora 에 해당, 외부에서 접속하고자 하는 경우 아래와 같이 md5 인증 추가 
 ```
 # TYPE  DATABASE        USER            ADDRESS                 METHOD
 
@@ -102,6 +103,7 @@ host    all             all             ::1/128                 trust
 local   replication     all                                     trust
 host    replication     all             127.0.0.1/32            trust
 host    replication     all             ::1/128                 trust
+host    all             all             0.0.0.0/0               md5             <--- 데이터베이스 유저 테이블의 패스워드 사용하여 
 ```
 
 ### 데이터베이스 생성 ###
