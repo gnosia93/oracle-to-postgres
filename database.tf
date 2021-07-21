@@ -1,3 +1,9 @@
+##   ******************** 주의 
+##   https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/oracle-xe_11.2.0-2_amd64.deb
+##   https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/oracle-database-preinstall-19c-1.0-1.el8.x86_64.rpm
+##   등... 
+##   demo-database-postgres.s3.ap-northeast-2.amazonaws.com 버킷이 닫혀 있어서. 직접 구글링해서 해당 파일들을 찾아야 함.
+##
 # AMI 정보를 어떻게 출력하는지 ?
 # amzn2-ami-hvm-2.0.20210303.0-x86_64-gp2 (ami-0e17ad9abf7e5c818)
 # 이미지가 update되는 경우 최신 버전의 AMI 를 받아오게 된다. 
