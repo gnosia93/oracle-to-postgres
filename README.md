@@ -93,9 +93,7 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 
 * [어플리케이션 변환 가이드(SQL/프로시저 변환가이드)](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/app-mig-guide.md)
 
-* [PostgreSQL 어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/admin-guide.md)
-
-* [PostgreSQL 개발자 가이드](https://www.tutorialspoint.com/postgresql/index.htm)
+* [어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/admin-guide.md) / [개발자 가이드](https://www.tutorialspoint.com/postgresql/index.htm)
 
 * [PSQL 명령어정리](https://browndwarf.tistory.com/51)
 
