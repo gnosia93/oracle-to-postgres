@@ -1,8 +1,9 @@
 
 ## PC 환경설정 ##
 
-튜토리얼을 원할하게 진행하기 위해서는 여러분들의 PC에 아래에 나열된 소트트웨어가 사전에 설치되어져 있어야 합니다. 설치가 필요한 소프트웨어 목록 중 오라클사에서 제공하는 JDK, sqldeveoper 는 오라클 계정이 필요합니다. 다운로드에 필요한 정보는 아래 가이드를 참고하세요.
+튜토리얼을 원할하게 진행하기 위해서는 여러분들의 PC에 아래에 나열된 소프트웨어가 사전에 설치되어져 있어야 합니다. 설치가 필요한 소프트웨어 목록 중 오라클사에서 제공하는 JDK, sqldeveoper 는 오라클 계정 등록이 필요합니다. 
 
+개별 사이트로 접속하여 필요한 소프트웨어를 다운로드 받을 것을 권장하나, 여의치 않은 경우 http://ec2-3-37-255-59.ap-northeast-2.compute.amazonaws.com 에서 한꺼번에 다운로드 받으실 수 있습니다. 
 
 
 ### homebrew ###
@@ -112,15 +113,6 @@ sqldeveloper는 오라클사에서 개발된 개발자용 SQL 클라이언트 �
 https://www.oracle.com/tools/downloads/sqldev-downloads.html 로 이동하여 mas 용 sqldeveoper를 다운로드 받은 후, 로컬 PC 에 설치합니다. 
 
 ![sqldeveloper](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/images/sqldeveloper.png)
-
-
-
-## 참고자료 ##
-
-* https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/apache-jmeter-5.4.1.tgz
-* https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/jdk-11.0.10_osx-x64_bin.dmg
-* https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/pgadmin4-4.30.dmg
-* https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/sqldeveloper-20.4.0.379.2205-macosx.app.zip
 
 
 
