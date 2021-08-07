@@ -6,8 +6,8 @@
 해당 정보는 테라폼에 의해 생성되는 EC2 인스턴스들의 시큐리티 그룹(tf_sg_pub) 설정시 사용되는 정보로, 모든 IP 에 대한 허용이 필요한 경우 0.0.0.0/0 으로 설정합니다. 
 
 ```
-$ git clone https://github.com/gnosia93/postgres-terraform.git
-$ cd postgres-terraform/
+$ git clone https://github.com/gnosia93/oracle-to-postgres.git
+$ cd oracle-to-postgres/
 $ vi var.tf
 variable "your_ip_addr" {
     type = string
