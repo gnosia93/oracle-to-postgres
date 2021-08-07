@@ -11,7 +11,9 @@
 
   - https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html
 
-  
+  - https://jdbc.postgresql.org/download.html
+
+    
 
 ### JDBC 경로 설정하기 ###
 
