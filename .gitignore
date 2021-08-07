@@ -1,3 +1,3 @@
-.terraform
-terraform.tfstate
-terraform.tfstate.backup
+tf/.terraform
+tf/terraform.tfstate
+tf/terraform.tfstate.backup
