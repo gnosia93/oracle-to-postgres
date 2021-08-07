@@ -22,7 +22,7 @@ SCT 는 JDBC 를 이용하여 데이터베이스 서버에 접근합니다. 본 
 SCT 를 실행한 후, 상단 Settings 메뉴밑에 Global Settings를 선택합니다. 
 ![setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-jdbc-setting.png)
 
-아래 화면에 보이는 것처럼 좌측 [드라이버] 메뉴를 선택한 후, 각 데이터베이스에 맞는 JDBC 드라이버 경로를 설정합니다. 
+아래 화면에 보이는 것처럼 좌측 [드라이버] 메뉴를 선택한 후, 각 데이터베이스에 맞는 JDBC 드라이버 경로를 설정합니다. 여기서는 오라클과 postgreSQL 경로만 설정합니다.
 ![setting](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-jdbc-driver.png)
 
 
