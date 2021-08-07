@@ -34,35 +34,35 @@ bfile         ---> 지원하지 않음
 아래와 같이 오라클의 SHOP 스키마를 선택하고 팝업 메뉴에서 create report 를 선택합니다.  
 
 [리포트 만들기]
-![create report](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-create-report.png)
+![create report](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-create-report.png)
 
 [리포트 결과]
-![create report](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-report.png)
+![create report](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-report.png)
 
 수정 또는 확인이 필요한 액션 아이템을 보여준고 있다. 주로 프로시저나 함수, 트리거와 같은 코드성 오브젝트에서 발생한다. 
 
 [액션 아이템]
-![action item](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-action-item.png)
+![action item](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-action-item.png)
 
 
 ### 스키마 변환하기 ###
 
 아래의 그림과 같이 오라클의 스키마를 postgres 용으로 변환합니다. 
 
-![convert1](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-convert-schema1.png)
+![convert1](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-convert-schema1.png)
 
-![convert2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-convert-schema2.png)
+![convert2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-convert-schema2.png)
 
-![convert3](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-convert-schema3.png)
+![convert3](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-convert-schema3.png)
 
 
 ### 스미카 적용하기 ###
 
 변환된 스키마를 확인하여 최종적으로 postgresql 에 적용합니다.
 
-![convert1](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-apply1.png)
+![convert1](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-apply1.png)
 
-![convert2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-apply2.png)
+![convert2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-apply2.png)
 
 
 ### 오류 수정하기 ###
@@ -112,7 +112,7 @@ SELECT
 ```
 
 
-![example3](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-3.png)
+![example3](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-example1-3.png)
 
 postgresql 의 View Definition 선택하고 아래의 문장을 이용하여 수정합니다.  
 ```
@@ -126,10 +126,10 @@ LIMIT 30;
 ```
 
 [apply to database] 로 타켓 DB 에 적용합니다.  
-![example2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-2.png)
+![example2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-example1-2.png)
 
 최종적으로 오류 내용이 사라진 것을 확인할 수 있습니다. 
-![example2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-1.png)
+![example2](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-example1-1.png)
 
 
 ### SCT 메뉴얼 ###
