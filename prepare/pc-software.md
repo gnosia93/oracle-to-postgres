@@ -105,7 +105,7 @@ Check : https://jmeter.apache.org/usermanual/best-practices.html
 ================================================================================
 ```
 
-![jmeter-exec](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/apache-jmeter-exec.png)
+![jmeter-exec](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/images/apache-jmeter-exec.png)
 
 
 ## Pgadmin4 ##
@@ -114,7 +114,7 @@ pgadmin4 는 웹기반의 postgresql 용 SQL 클라이언트 입니다.
 
 https://www.pgadmin.org/download/pgadmin-4-macos/ 로 이동하여 mac 용 pgadmin4 를 다운로드 받은 후, 로컬 PC 에 설치합니다. 
 
-![pgadmin4](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/pgadmin4.png)
+![pgadmin4](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/images/pgadmin4.png)
 
 
 ## SQLDeveloper ##
@@ -123,7 +123,7 @@ sqldeveloper는 오라클사에서 개발된 개발자용 SQL 클라이언트 �
  
 https://www.oracle.com/tools/downloads/sqldev-downloads.html 로 이동하여 mas 용 sqldeveoper를 다운로드 받은 후, 로컬 PC 에 설치합니다. 
 
-![sqldeveloper](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/sqldeveloper.png)
+![sqldeveloper](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/images/sqldeveloper.png)
 
 
 
