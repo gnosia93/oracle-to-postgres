@@ -18,7 +18,7 @@ SQL> select name, log_mode from v$database;
 
 NAME	  LOG_MODE
 --------- ------------
-XE	  NOARCHIVELOG
+CDB1	  NOARCHIVELOG
 ```
 
 [아카이브 로그 전환]
@@ -144,7 +144,7 @@ SQL> select name, log_mode,
        
 NAME	  LOG_MODE     LOG_MIN	  LOG_PK     LOG_UI	LOG_ALL
 --------- ------------ ---------- ---------- ---------- ----------
-XE	  ARCHIVELOG NO	  NO	     NO 	NO
+CDB1	  ARCHIVELOG NO	  NO	     NO 	NO
 ```
 
 [supplemental logging 활성화]
@@ -167,7 +167,7 @@ SQL> select name, log_mode,
 
 NAME	  LOG_MODE     LOG_MIN	  LOG_PK     LOG_UI	LOG_ALL
 --------- ------------ ---------- ---------- ---------- ----------
-XE	  NOARCHIVELOG YES	  YES	     YES	NO
+CDB1	  NOARCHIVELOG YES	  YES	     YES	NO
 ```
 
 CDC 방식을 이용하여 변경 데이터를 오라클로 부터 읽어오기 위해서는 suppplemental 로깅이 활성화 되어 있어야 합니다. 
