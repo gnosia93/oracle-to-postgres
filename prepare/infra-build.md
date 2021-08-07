@@ -204,3 +204,32 @@ oracle 19c installation completed...
 [oracle@ip-172-31-1-144 ~]$ 
 ```
 
+## 트러블 슈팅 ##
+
+```
+aws_dms_replication_instance.tf_dms_19c: Creation complete after 3m15s [id=tf-dms-19c]
+
+Error: Error creating IAM Role dms-vpc-role: EntityAlreadyExists: Role with name dms-vpc-role already exists.
+	status code: 409, request id: 5a0635ef-981f-44cd-9fc9-80643ba1e882
+
+  on security.tf line 23, in resource "aws_iam_role" "dms-vpc-role":
+  23: resource "aws_iam_role" "dms-vpc-role" {
+
+
+
+Error: Error creating IAM Role tf_dms_service_role: EntityAlreadyExists: Role with name tf_dms_service_role already exists.
+	status code: 409, request id: 6c924d1c-1c7d-4f10-87de-b9597c21a7e0
+
+  on security.tf line 73, in resource "aws_iam_role" "tf_dms_service_role":
+  73: resource "aws_iam_role" "tf_dms_service_role" {
+
+
+
+Error: Error creating IAM Role tf_ec2_service_role: EntityAlreadyExists: Role with name tf_ec2_service_role already exists.
+	status code: 409, request id: 12cf703c-1ea3-4e80-9170-bed811149948
+
+  on security.tf line 113, in resource "aws_iam_role" "tf_ec2_service_role":
+ 113: resource "aws_iam_role" "tf_ec2_service_role" {
+
+```
+
