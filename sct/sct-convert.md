@@ -132,3 +132,10 @@ LIMIT 30;
 ![example2](https://github.com/gnosia93/postgres-terraform/blob/main/sct/images/sct-example1-1.png)
 
 
+### SCT 메뉴얼 ###
+
+좀 더 상세한 SCT 와 관련된 정보는 아래 URL 에서 참고하실 수 있습니다. 
+
+https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/Schema-Conversion-Tool.pdf
+
+
