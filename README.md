@@ -72,7 +72,7 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 
 - [오라클 설정](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/oracle-prepare.md)
 
-- [postgresql 설정](https://github.com/gnosia93/postgres-terraform/blob/main/postgres/postgres-conf.md)
+- [postgresql 설정](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/postgres-conf.md)
 
 
 
