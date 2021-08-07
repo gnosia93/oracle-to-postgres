@@ -98,6 +98,6 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 ## Revision History 
 
 - 2021.2.01 first draft released 
-- 2021.3.16 PostgreSQL Performance on AWS Graviton2 is added
-- 2021.8.06 layout modified. 
+- 2021.3.16 postgre performance on AWS graviton2 added
+- 2021.8.06 page layout modified. 
 
