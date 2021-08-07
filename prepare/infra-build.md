@@ -125,7 +125,7 @@ oracle 19c installation completed...
 
 (Optional) 오라클 프로세스 확인하기
 
-아래는 오라클 19c 백그라운드 프로세스 리스트를 출력한 결과 입니다. build.result 값이 위와 같이 complted ... 로 나온 후, 추가적으로 오라클 프로세스 리스트를 조회해 봅니다. 
+build.result 파일의 출력를 확인 한 후, ps 명령어를 이용하여 오라클 백그라운드 프로세스를 확인합니다. (아래는 오라클 19c 의 예시)
 ```
 [oracle@ip-172-31-1-144 ~]$ ps aux | grep oracle
 root       19611  0.0  0.0 140324  7760 pts/0    S    22:05   0:00 sudo su - oracle
