@@ -65,12 +65,12 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 
 ### 2. 인프라 빌드 ###
 
-- [테라폼으로 인프라 구성하기](https://github.com/gnosia93/postgres-terraform/blob/main/terraform/infra-build.md)
+- [테라폼으로 인프라 구성하기](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/infra-build.md)
 
 
 ### 3. 복제를 위한 원본/타켓 DB 설정 ##
 
-- [오라클 설정](https://github.com/gnosia93/postgres-terraform/blob/main/oracle/oracle-prepare.md)
+- [오라클 설정](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/oracle-prepare.md)
 
 - [postgresql 설정](https://github.com/gnosia93/postgres-terraform/blob/main/postgres/postgres-conf.md)
 
