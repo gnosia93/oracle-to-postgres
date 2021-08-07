@@ -206,7 +206,7 @@ oracle 19c installation completed...
 
 ### 트러블 슈팅 ###
 
-인프라 빌드시 아래와 같은 에러 메시지가 발생하는 경우 
+인프라 빌드시 아래와 같은 에러 메시지가 발생하는 경우, 이미 해당 오브젝트가 존재하는 경우 입니다.  
 ```
 aws_dms_replication_instance.tf_dms_19c: Creation complete after 3m15s [id=tf-dms-19c]
 
@@ -233,9 +233,17 @@ Error: Error creating IAM Role tf_ec2_service_role: EntityAlreadyExists: Role wi
  113: resource "aws_iam_role" "tf_ec2_service_role" {
 ```
 
+아래 명령어를 실행해서 중복되는 IAM 오브젝트를 삭제하고, 다시 테라폼을 실행합니다. 
 ```
-$ aws iam delte-policy --policy-name tf_dms_policy
+$ aws iam delete-role-policy --role-name dms-vpc-role --policy-name tf_dms_policy
 $ aws iam delete-role --role-name dms-vpc-role
+
+$ aws iam delete-role-policy --role-name tf_dms_service_role --policy-name tf_dms_service_role_policy
+$ aws iam delete-role --role-name tf_dms_service_role
+
+$ aws iam remove-role-from-instance-profile --role-name tf_ec2_service_role --instance-profile-name tf_ec2_profile
+$ aws iam delete-role-policy --role-name tf_ec2_service_role --policy-name tf_ec2_policy
+$ aws iam delete-role --role-name tf_ec2_service_role
 ```
 
 
