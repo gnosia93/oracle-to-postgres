@@ -13,7 +13,7 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 
 ## 아키텍처 ##
 
-![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres-architecture.png)
+![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/oracle-to-postgres-architecture.png)
 
 * 네트워크는 별도로 생성하지 않으며 계정별로 기본 제공되는 VPC 와 Public 서브넷을 활용합니다. 
 
