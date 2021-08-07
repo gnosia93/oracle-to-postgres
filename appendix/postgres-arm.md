@@ -1,3 +1,5 @@
+![graviton2](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/aws-graviton2.png)
+
 ## EC2 ##
 
 * [EC2 CPU / Memory / FileIO 성능 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/sysbench-ec2-graviton2.md)
