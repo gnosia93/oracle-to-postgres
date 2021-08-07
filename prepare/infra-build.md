@@ -204,8 +204,9 @@ oracle 19c installation completed...
 [oracle@ip-172-31-1-144 ~]$ 
 ```
 
-## 트러블 슈팅 ##
+### 트러블 슈팅 ###
 
+인프라 빌드시 아래와 같은 에러 메시지가 발생하는 경우 
 ```
 aws_dms_replication_instance.tf_dms_19c: Creation complete after 3m15s [id=tf-dms-19c]
 
@@ -230,6 +231,10 @@ Error: Error creating IAM Role tf_ec2_service_role: EntityAlreadyExists: Role wi
 
   on security.tf line 113, in resource "aws_iam_role" "tf_ec2_service_role":
  113: resource "aws_iam_role" "tf_ec2_service_role" {
+```
 
 ```
+$ aws iam delete-role --role-name dms-vpc-role
+```
+
 
