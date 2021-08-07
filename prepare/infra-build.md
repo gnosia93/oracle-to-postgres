@@ -242,8 +242,10 @@ $ aws iam delete-role-policy --role-name tf_dms_service_role --policy-name tf_dm
 $ aws iam delete-role --role-name tf_dms_service_role
 
 $ aws iam remove-role-from-instance-profile --role-name tf_ec2_service_role --instance-profile-name tf_ec2_profile
+$ aws iam delete-instance-profile --instance-profile-name tf_ec2_profile
 $ aws iam delete-role-policy --role-name tf_ec2_service_role --policy-name tf_ec2_policy
 $ aws iam delete-role --role-name tf_ec2_service_role
+
 ```
 
 
