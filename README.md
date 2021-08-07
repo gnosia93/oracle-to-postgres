@@ -59,9 +59,9 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 
 ### 5. 스키마 변환하기 (/w SCT) ###
 
-* [SCT 설치하기](https://github.com/gnosia93/postgres-terraform/blob/main/sct/sct-setup.md)
+* [SCT 설치하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/sct-setup.md)
 
-* [오브젝트 변환하기](https://github.com/gnosia93/postgres-terraform/blob/main/sct/sct-convert.md)
+* [오브젝트 변환하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/sct-convert.md)
 
 
 ### 6. 데이터 복제하기 (/w DMS) ###
