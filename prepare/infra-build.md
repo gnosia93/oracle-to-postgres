@@ -234,6 +234,7 @@ Error: Error creating IAM Role tf_ec2_service_role: EntityAlreadyExists: Role wi
 ```
 
 ```
+$ aws iam delte-policy --policy-name tf_dms_policy
 $ aws iam delete-role --role-name dms-vpc-role
 ```
 
