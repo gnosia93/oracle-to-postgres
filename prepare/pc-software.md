@@ -1,5 +1,5 @@
 
-# PC 환경설정 #
+## PC 환경설정 ##
 
 튜토리얼을 원할하게 진행하기 위해서는 여러분들의 PC에 아래에 나열된 소트트웨어가 사전에 설치되어져 있어야 합니다. 설치가 필요한 소프트웨어 목록중 오라클사에서 제공하는 JDK, sqldeveoper 는 오라클 계정으로 로그인하여 받아야 하지만, 계정이 없는 경우 아래의 URL 에서도 다운로드 받을 수 있습니다.
 
@@ -8,14 +8,14 @@
 * https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/pgadmin4-4.30.dmg
 * https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/sqldeveloper-20.4.0.379.2205-macosx.app.zip
 
-## homebrew ##
+### homebrew ###
 
 homebrew 는 mac 용 소프트웨어 패키지 매니저로 테라폼, git 설치에 사용됩니다.
 ```
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-## 테라폼 ##
+### 테라폼 ###
 
 ```
 $ brew install terraform
@@ -23,7 +23,7 @@ $ terraform -version
 Terraform v0.14.5
 ```
 
-## git ##
+### git ###
 
 ```
 $ brew install git
@@ -31,7 +31,7 @@ $ git --version
 git version 2.29.1
 ```
 
-## 오라클 JDK 설치(버전 11) ##
+### 오라클 JDK 설치(버전 11) ###
 
 오라클 JDK 를 다운로드 받기위해서 https://www.oracle.com/kr/java/technologies/javase-jdk11-downloads.html 로 방문합니다.  
 아래 리스트에서 macOS Installer 를 다운받아서 설치합니다. 이때 인스톨러를 로컬 PC 로 다운로드 받기 위해서는 오라클 로그인 계정이 필요합니다. 
@@ -78,7 +78,7 @@ Java(TM) SE Runtime Environment 18.9 (build 11.0.10+8-LTS-162)
 Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.10+8-LTS-162, mixed mode)
 ```
 
-## apache jmeter ##
+### apache jmeter ###
 
 apache jmeter 는 웹 및 JDBC 성능 테스트용으로 사용되는 오픈 소스 소프트웨어입니다.
 
@@ -109,7 +109,7 @@ Check : https://jmeter.apache.org/usermanual/best-practices.html
 ![jmeter-exec](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/images/apache-jmeter-exec.png)
 
 
-## Pgadmin4 ##
+### Pgadmin4 ###
 
 pgadmin4 는 웹기반의 postgresql 용 SQL 클라이언트 입니다. 
 
@@ -118,7 +118,7 @@ https://www.pgadmin.org/download/pgadmin-4-macos/ 로 이동하여 mac 용 pgadm
 ![pgadmin4](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/images/pgadmin4.png)
 
 
-## SQLDeveloper ##
+### SQLDeveloper ###
 
 sqldeveloper는 오라클사에서 개발된 개발자용 SQL 클라이언트 입니다. 
  
