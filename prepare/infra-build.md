@@ -123,6 +123,28 @@ oracle 19c installation completed...
 [oracle@ip-172-31-1-144 ~]$ 
 ```
 
+(Optional) 오라클 프로세스 확인하기
+
+아래는 오라클 19c 백그라운드 프로세스 리스트를 출력한 결과 입니다. build.result 값이 위와 같이 complted ... 로 나온 후, 추가적으로 오라클 프로세스 리스트를 조회해 봅니다. 
+```
+[oracle@ip-172-31-1-144 ~]$ ps aux | grep oracle
+root       19611  0.0  0.0 140324  7760 pts/0    S    22:05   0:00 sudo su - oracle
+root       19613  0.0  0.0 134576  5964 pts/0    S    22:05   0:00 su - oracle
+oracle     19614  0.0  0.0  24096  3856 pts/0    S    22:05   0:00 -bash
+oracle     24179  0.0  0.0  93904  9708 ?        Ss   22:05   0:00 /usr/lib/systemd/systemd --user
+oracle     24181  0.0  0.0 323168  5312 ?        S    22:05   0:00 (sd-pam)
+oracle     24208  0.0  0.0 242708 30776 ?        Ssl  22:05   0:00 /app/oracle/product/19c/dbhome/bin/tnslsnr LISTENER -inherit
+oracle     27295  0.0  0.2 2002292 75272 ?       Ss   22:29   0:00 ora_pmon_cdb1
+oracle     27297  0.0  0.1 2002292 62016 ?       Ss   22:29   0:00 ora_clmn_cdb1
+oracle     27299  0.0  0.1 2002804 62272 ?       Ss   22:29   0:00 ora_psp0_cdb1
+oracle     27301  0.3  0.1 2002804 60804 ?       Ss   22:29   0:00 ora_vktm_cdb1
+oracle     27305  0.0  0.2 2017720 78168 ?       Ss   22:29   0:00 ora_gen0_cdb1
+oracle     27307  0.0  0.7 2002808 230508 ?      Ss   22:29   0:00 ora_mman_cdb1
+
+...
+```
+
+
 ## 트러블 슈팅 ##
 
 인프라 빌드시 아래와 같은 에러 메시지가 발생하는 경우, 이미 해당 오브젝트가 존재하는 경우 입니다.  
