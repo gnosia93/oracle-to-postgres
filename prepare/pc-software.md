@@ -1,3 +1,4 @@
+
 # PC 환경설정 #
 
 튜토리얼을 원할하게 진행하기 위해서는 여러분들의 PC에 아래에 나열된 소트트웨어가 사전에 설치되어져 있어야 합니다. 설치가 필요한 소프트웨어 목록중 오라클사에서 제공하는 JDK, sqldeveoper 는 오라클 계정으로 로그인하여 받아야 하지만, 계정이 없는 경우 아래의 URL 에서도 다운로드 받을 수 있습니다.
@@ -35,7 +36,7 @@ git version 2.29.1
 오라클 JDK 를 다운로드 받기위해서 https://www.oracle.com/kr/java/technologies/javase-jdk11-downloads.html 로 방문합니다.  
 아래 리스트에서 macOS Installer 를 다운받아서 설치합니다. 이때 인스톨러를 로컬 PC 로 다운로드 받기 위해서는 오라클 로그인 계정이 필요합니다. 
 
-![oracle-jdk](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/oracle-jdk11.png)
+![oracle-jdk](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/images/oracle-jdk11.png)
 
 macOS Installer 를 설치한 이후, JDK Home 의 대한 변경이 필요합니다. 우선 java_home 명령어를 이용하여 현재 PC 에 설치된 오라클 JDK 버전을 조회한 후, bash profile 에 새롭게 설치된 JDK 11 에 대한 환경 변수를 등록합니다. 
 
@@ -83,7 +84,7 @@ apache jmeter 는 웹 및 JDBC 성능 테스트용으로 사용되는 오픈 소
 
 https://jmeter.apache.org/download_jmeter.cgi 로 방문하여 아파치 jmeter 최신 바이너리를 다운로드 받아 설치합니다. (현재 기준 apache-jmeter-5.4.1.zip 이 최신버전입니다.)
 
-![jmeter](https://github.com/gnosia93/postgres-terraform/blob/main/pc/images/apache-jmeter.png)
+![jmeter](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/images/apache-jmeter.png)
 
 
 jmeter 를 실행하기 전에 bin 디렉토리 밑에 있는 jmeter.sh 파일에 다음 항목 추가하여 JVM 에 할당되는 메모리 사이즈를 1GB 로 증가시키고, 출력되는 언어를 영어로 수정합니다. (jmeter.sh 파일의 33번째 라인에 추가) 
