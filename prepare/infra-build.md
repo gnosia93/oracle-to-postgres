@@ -7,7 +7,7 @@
 
 ```
 $ git clone https://github.com/gnosia93/oracle-to-postgres.git
-$ cd oracle-to-postgres/
+$ cd oracle-to-postgres/tf/
 $ vi var.tf
 variable "your_ip_addr" {
     type = string
