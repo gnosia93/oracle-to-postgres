@@ -152,7 +152,7 @@ Error: Error creating IAM Role tf_ec2_service_role: EntityAlreadyExists: Role wi
  113: resource "aws_iam_role" "tf_ec2_service_role" {
 ```
 
-아래 명령어를 실행해서 중복되는 IAM 오브젝트를 삭제하고, 다시 테라폼을 실행합니다. (terraform apply -auto-approve)
+아래 명령어를 실행해서 중복되는 IAM 오브젝트를 삭제하고, 다시 테라폼을 실행합니다. 
 ```
 $ aws iam delete-role-policy --role-name dms-vpc-role --policy-name tf_dms_policy
 $ aws iam delete-role --role-name dms-vpc-role
@@ -165,6 +165,7 @@ $ aws iam delete-instance-profile --instance-profile-name tf_ec2_profile
 $ aws iam delete-role-policy --role-name tf_ec2_service_role --policy-name tf_ec2_policy
 $ aws iam delete-role --role-name tf_ec2_service_role
 
+$ terraform apply -auto-approve
 ```
 
 
