@@ -16,7 +16,7 @@ resource "aws_instance" "tf_loadgen" {
 #! /bin/bash
 sudo yum install -y python37 git telnet
 sudo pip3 install cx_oracle
-sudo -u ec2-user git clone https://github.com/gnosia93/postgres-pyoracle.git /home/ec2-user/pyoracle
+sudo -u ec2-user git clone https://github.com/gnosia93/oracle-to-postgres-pyoracle.git /home/ec2-user/pyoracle
 sudo -u ec2-user mkdir -p /home/ec2-user/pyoracle/images
 sudo -u ec2-user curl -o /home/ec2-user/pyoracle/images/images.tar http://ec2-3-37-255-59.ap-northeast-2.compute.amazonaws.com/images.tar
 sudo -u ec2-user tar xvf /home/ec2-user/pyoracle/images/images.tar -C /home/ec2-user/pyoracle/images
