@@ -1,4 +1,4 @@
-# Oracle to PostgreSQL Migration Workshop #
+# Oracle to PostgreSQL Migration #
 
 *Definitive guide from oracle to postgresql migration*
 
