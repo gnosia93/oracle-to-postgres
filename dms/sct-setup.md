@@ -9,9 +9,9 @@
 
 * 오라클 및 postgresql 용 JDBC 드라이버를 로컬 PC로 다운로드 받습니다.
 
-  - https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/ojdbc8.jar
-  - https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/postgresql-42.2.18.jar
+  - https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html
 
+  
 
 ### JDBC 경로 설정하기 ###
 
@@ -41,3 +41,10 @@ shop 유저의 패스워드는 shop 입니다.
 
 오라클 및 postgresql 이 제대로 연결되는지 확인합니다. 
 ![sct-result](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-connect-result.png)
+
+
+## 참고자료 ##
+
+- https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/ojdbc8.jar
+- https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/postgresql-42.2.18.jar
+
