@@ -34,7 +34,7 @@ File 메뉴에서 New project 를 선택합니다.
 프로젝트 명을 tf_oracle_to_postgres 로 입력하고 소스는 오라클, 타켓은 postgres RDS 를 선택합니다. 
 ![project-info](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-new-project.png)
 
-상단 메뉴에 [Connect to Oracle] 을 클릭한 후, 오라클 연결을 위한 설정 정보를 입력합니다. Type 을 Service Name 으로 변경한 후, Server name 은 오라클 데이터베이스의 공인 IP를 넣고, service name으로 pdb1 을 입력합니다. user name 은 system 이고, password 는 manager 입니다.
+상단 메뉴에 [Connect to Oracle] 을 클릭한 후, 오라클 연결을 위한 설정 정보를 입력합니다. Type 을 Service Name 으로 변경한 후, Server name 은 오라클 19c 데이터베이스의 공인 IP를 넣고, service name으로 pdb1 을 입력합니다. user name 은 system 이고, password 는 manager 입니다.
 ![oracle-connect](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-oracle-connect.png)
 
 postgres 역시 오라클과 동일한 과정을 거치게 됩니다. 상단 메뉴에 [Connect to Amazon RDS for PostgreSQL] 을 선택한 후, 각 필드에 해당하는 정보를 입력합니다.
@@ -43,6 +43,8 @@ shop 유저의 패스워드는 shop 입니다.
 
 오라클 및 postgresql 이 제대로 연결되는지 확인합니다. 
 ![sct-result](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sct-connect-result.png)
+
+11g 에 대한 테스트가 필요한 경우 tf_oracle_11xe 및 tf_postgres_11xe 에 대해 동일한 과정을 반복합니다. 
 
 
 ## 참고자료 ##
