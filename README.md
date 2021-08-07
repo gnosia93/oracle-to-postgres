@@ -13,7 +13,7 @@
 PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베이스입니다. 은행, 정부, 국방, 의학 및 자동차 산업과 같은 중요한 환경에서 채택되었습니다. 다양한 방식의 인증과 pgaudit 을 이용한 감사로그, 3rd party 제품을 통한 Data Redation(Masking) 기능 및 데이터베이스 암호화 기능을 지원합니다.
 
 
-## 실습 아키텍처 ##
+## 아키텍처 ##
 
 ![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres-architecture.png)
 
@@ -30,7 +30,7 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 * 통상적으로 onprem의 오라클 데이터베이스를 AWS로 이전시 마이그레이션을 위한 네트워크는 VPN(1.25Gbps/s) 또는 DX(Max 40Gbps/s) 를 사용하게 되는데, 허용 가능한 서비스 다운타임에 따라 네트워크의 종류와 bandwidth 를 선택하게 됩니다. 마이그레이션을 위한 네트워크 아키텍처는 초기 데이터 로딩량과 변경 데이터량(ongoing 데이터 적재량)을 고려하여 설계하여야 합니다. 
 
 
-## 마이그레이션 실습 ##
+## 실습 ##
 
 ### 1. 사전 준비 ###
 
