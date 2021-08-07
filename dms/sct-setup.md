@@ -9,9 +9,9 @@
 
 * 오라클 및 postgresql 용 JDBC 드라이버를 로컬 PC로 다운로드 받습니다.
 
-  - https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html
+  - https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html. 에서 ojdbc8.jar 파일 다운로드
 
-  - https://jdbc.postgresql.org/download.html
+  - https://jdbc.postgresql.org/download.html 에서 최신 버전 다운로드
 
     
 
