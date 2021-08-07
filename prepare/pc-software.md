@@ -78,7 +78,6 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.10+8-LTS-162, mixed mode)
 ### apache jmeter ###
 
 apache jmeter 는 웹 및 JDBC 성능 테스트용으로 사용되는 오픈 소스 소프트웨어입니다.
-
 https://jmeter.apache.org/download_jmeter.cgi 로 방문하여 아파치 jmeter 최신 바이너리를 다운로드 받아 설치합니다. (현재 기준 apache-jmeter-5.4.1.zip 이 최신버전입니다.)
 
 ![jmeter](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/images/apache-jmeter.png)
