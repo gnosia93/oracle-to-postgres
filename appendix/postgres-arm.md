@@ -9,14 +9,14 @@
 
 ## PostgreSQL ##
 
-* [Performance on Amazon Aurora PostgreSQL](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-aurora-graviton2.md)
+* [Performance on Amazon Aurora PostgreSQL with Graviton2](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-aurora-graviton2.md)
 
 * [Performance on Amazon RDS for PostgreSQL(X64 Only)](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-rds-graviton2.md)
 
 
 ## MySQL ##
 
-* [Performance on Amazon Aurora MySQL](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/mysql-aurora-graviton2.md)
+* [Performance on Amazon Aurora MySQL with Graviton2](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/mysql-aurora-graviton2.md)
 
 
 ## ORACLE ##
