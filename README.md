@@ -24,12 +24,6 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 다양한 방식의 인증과 pgaudit 을 이용한 감사로그, 3rd party 제품을 통한 Data Redation(Masking) 기능 및 데이터베이스 암호화 기능을 지원합니다.
 
 
-## Revision History 
-
-- 2021.2.01 first draft released 
-- 2021.3.16 PostgreSQL Performance on AWS Graviton2 is added
-
-
 ## 실습 아키텍처 ##
 
 ![architecture](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres-architecture.png)
@@ -121,4 +115,11 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 * [Oralce vs PostgreSQL 성능 비교](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/oracle-postgres-perf.md)
  
 * [RDS Performance on Amazon Graviton2](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-arm.md)
+
+
+
+## Revision History 
+
+- 2021.2.01 first draft released 
+- 2021.3.16 PostgreSQL Performance on AWS Graviton2 is added
 
