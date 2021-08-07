@@ -1,7 +1,9 @@
 
 ## PC 환경설정 ##
 
-튜토리얼을 원할하게 진행하기 위해서는 여러분들의 PC에 아래에 나열된 소트트웨어가 사전에 설치되어져 있어야 합니다. 설치가 필요한 소프트웨어 목록중 오라클사에서 제공하는 JDK, sqldeveoper 는 오라클 계정으로 로그인하여 받아야 하지만, 계정이 없는 경우 아래의 URL 에서도 다운로드 받을 수 있습니다.
+튜토리얼을 원할하게 진행하기 위해서는 여러분들의 PC에 아래에 나열된 소트트웨어가 사전에 설치되어져 있어야 합니다. 설치가 필요한 소프트웨어 목록 중 오라클사에서 제공하는 JDK, sqldeveoper 는 오라클 계정이 필요합니다. 다운로드에 필요한 정보는 아래 가이드를 참고하세요.
+
+
 
 ### homebrew ###
 
@@ -10,7 +12,7 @@ homebrew 는 mac 용 소프트웨어 패키지 매니저로 테라폼, git 설�
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### 테라폼 ###
+### terraform ###
 
 ```
 $ brew install terraform
@@ -124,8 +126,6 @@ https://www.oracle.com/tools/downloads/sqldev-downloads.html 로 이동하여 ma
 
 
 ## 참고자료 ##
-
-아래 URL 은 현재 닫혀 있습니다. 
 
 * https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/apache-jmeter-5.4.1.tgz
 * https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/jdk-11.0.10_osx-x64_bin.dmg
