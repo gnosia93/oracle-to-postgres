@@ -1,7 +1,6 @@
 # Oracle to PostgreSQL Migration Workshop #
 
 *Definitive guide from oracle to postgresql migration*
-![oracle2postgres](https://github.com/gnosia93/postgres-terraform/blob/main/images/oracle-to-postgres1.png)
 
 이 튜토리얼은 AWS DMS 서비스를 이용한 oracle to PostgreSQL 마이그레이션 전체 과정에 대한 이해를 돕기 위해 만들어 졌습니다.   
 본 튜토리얼은 여러분이 사용하는 클라리언트 PC 가 Mac OS 임 가정하고 작성되었으며, 테스트에 필요한 인프라의 경우 테라폼 스크립트를 이용하여 자동빌드하며,
@@ -58,9 +57,9 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 
 ### 1. 사전 준비 ###
 
-- [PC 환경설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/pc-software.md) 
+- [PC 환경설정](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/pc-software.md) 
 
-- [AWS 억세스 키 설정](https://github.com/gnosia93/postgres-terraform/blob/main/pc/aws-access-key.md)  
+- [AWS 억세스 키 설정](https://github.com/gnosia93/postgres-terraform/blob/main/prepare/aws-access-key.md)  
 
 
 ### 2. 인프라 빌드 ###
