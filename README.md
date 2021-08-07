@@ -91,8 +91,6 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 
 * [어드민 가이드](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/admin-guide.md) / [개발자 가이드](https://www.tutorialspoint.com/postgresql/index.htm)
 
-* [PSQL 명령어정리](https://browndwarf.tistory.com/51)
-
 * [RDS Performance on Amazon Graviton2](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-arm.md)
 
 
