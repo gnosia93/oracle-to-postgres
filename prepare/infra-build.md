@@ -93,7 +93,7 @@ postgres_19c_public_ip = 3.36.11.115
 
 ### 빌드 완료 여부 확인하기 ###
 
-tf_oracle_19c 서버로 로그인 한 후 아래와 같이 파일의 내용이 제대로 출력되는지 확인합니다. 인프라 구성은 보통 30분 정도 소요되며, cat build.result 쉘 명령의 결과가 아래와 같이 보이는 것을 확인한 후 다음 과정을 진행해야 합니다.   
+tf_oracle_19c 서버로 로그인 하여 oracle OS 계정으로 스위치한 후, 아래와 같이 파일의 내용이 제대로 출력되는지 확인합니다. cat build.result 실행 결과가 아래와 같이 보이는 것을 확인한 후 다음 과정을 진행해야 합니다.   
 ```
 $ ssh -i ~/.ssh/tf_key ec2-user@3.35.170.8
 The authenticity of host '3.35.170.8 (3.35.170.8)' can't be established.
@@ -125,7 +125,7 @@ oracle 19c installation completed...
 
 (Optional) 오라클 프로세스 확인하기
 
-build.result 파일의 출력를 확인 한 후, ps 명령어를 이용하여 오라클 백그라운드 프로세스를 확인합니다. (아래는 오라클 19c 의 예시)
+ps 명령어를 이용하여 오라클 백그라운드 프로세스를 확인합니다. (아래는 오라클 19c 의 예시)
 ```
 [oracle@ip-172-31-1-144 ~]$ ps aux | grep oracle
 root       19611  0.0  0.0 140324  7760 pts/0    S    22:05   0:00 sudo su - oracle
