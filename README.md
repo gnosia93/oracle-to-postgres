@@ -75,7 +75,7 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 * [마이그레이션 모니터링하기](https://github.com/gnosia93/postgres-terraform/blob/main/dms/dms-monitoring.md)
 
 
-### 7. PostgreSQL 성능 테스트 및 진단 ###
+### 7. PostgreSQL 성능 진단 및 테스트 ###
 
 * [JMeter를 활용한 PostgreSQL 성능 테스트](https://github.com/gnosia93/postgres-terraform/blob/main/performance/jmeter.md)
 
