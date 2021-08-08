@@ -133,6 +133,7 @@ resource "aws_instance" "tf_oracle_11xe" {
     ami = data.aws_ami.ubuntu-20.id
     associate_public_ip_address = true
     instance_type = "c5.4xlarge"
+    iam_instance_profile = aws_iam_instance_profile.tf_ec2_profile.name
     monitoring = true
     root_block_device {
         volume_size = "300"
