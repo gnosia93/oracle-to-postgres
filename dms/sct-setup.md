@@ -13,7 +13,9 @@
 
   - https://jdbc.postgresql.org/download.html 에서 최신 버전 PostgreSQL JDBC 4.2 Driver 다운로드
 
-    
+
+  (참고) 드라이버는 http://ec2-3-37-255-59.ap-northeast-2.compute.amazonaws.com/ 에서도 다운로드 받을 수 있습니다. 
+  
 
 ### JDBC 경로 설정하기 ###
 
@@ -47,8 +49,5 @@ shop 유저의 패스워드는 shop 입니다.
 11g 에 대한 테스트가 필요한 경우 tf_postgres_11xe 에 대해 동일한 과정을 반복합니다. 
 
 
-## 참고자료 ##
 
-- https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/ojdbc8.jar
-- https://demo-database-postgres.s3.ap-northeast-2.amazonaws.com/postgresql-42.2.18.jar
 
