@@ -47,6 +47,8 @@ initilize product table...
 ******
 ```
 
+추가적으로 11g 에도 샘플 데이터를 빌드하고자 하는 경우 init-11xe.sh 쉘을 실행합니다. 
+
 
 ### Sqldeveloper로 생성 데이터 확인하기 ###
 
