@@ -57,11 +57,11 @@ Apache JMeter는 웹어플리케이션의 성능 테스트를 위해서 만들�
 JMeter 처음 실행하면 아무런 설정이 없는 Test Plan를 확인하실 수 있습니다. Test Plan 에 대한 설정을 진행하기 전에 우선 테스트하고자 하는 데이터베이스의 JDBC 드라이버를 JMeter 에 등록해야 합니다.
 여기서 우리는 소스 데이터베이스인 오라클과 타켓 데이터베이스인 PostgreSQL 에 대해 동일 형태의 Test Plan를 생성하여 테스트를 진행할 예정이므로, 아래와 같이 오라클용 및 PostgreSQL 용 JDBC 드라이버를 등록하도록 합니다. JDBC 드라이버를 등록하기 위해서는 로컬 PC에 JDBC 드리어버 jar 파일이 다운로드 되어져 있어야 합니다. 드라이버가 없는 경우 아래 URL에서 JDBC 드라이버를 로컬 PC로 다운로드 받으십시오.
 
-* 오라클 및 postgresql 용 JDBC 드라이버를 로컬 PC로 다운로드 받습니다.
+오라클 및 postgresql 용 JDBC 드라이버를 로컬 PC로 다운로드 받습니다.
 
-https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html 에서 ojdbc8.jar 파일 다운로드
+- https://www.oracle.com/database/technologies/jdbc-ucp-122-downloads.html 에서 ojdbc8.jar 파일 다운로드
 
-https://jdbc.postgresql.org/download.html 에서 최신 버전 PostgreSQL JDBC 4.2 Driver 다운로드
+- https://jdbc.postgresql.org/download.html 에서 최신 버전 PostgreSQL JDBC 4.2 Driver 다운로드
 
 (참고) 드라이버는 http://ec2-3-37-255-59.ap-northeast-2.compute.amazonaws.com/ 에서도 다운로드 받을 수 있습니다.
 
