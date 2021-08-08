@@ -94,3 +94,6 @@ select count(1) as category_cnt from shop.tb_category;
 
 ![count](https://github.com/gnosia93/postgres-terraform/blob/main/dms/images/sqldevel-table-cnt.png)
 
+테이블별로 현재까지 입력된 데이터 레코드 수를 확인할 수 있습니다. 데이터 빌드를 수행하는 파이썬 프로그램은 충분히 많은 레코드를 생성하도록 디자인 되어 있기 때문에, 실행시 마다 테이블의 건수는 지속적으로 증가하는 것을 확인할 수 있습니다. 이 후 과정에서 DMS 태스크를 생성하여, 오라클 데이터베이스의 데이터를 postgresql 로 실시간으로 복제할 예정이며, 복제에 대상이 되는 데이터 건수는 쉘 프로그램(init-19c.sh) 을 중단하지 않는 경우 지속적으로 증가하게 됩니다. 
+
+
