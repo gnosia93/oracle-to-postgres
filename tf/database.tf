@@ -133,7 +133,7 @@ resource "aws_instance" "tf_oracle_11xe" {
     ami = data.aws_ami.ubuntu-20.id
     associate_public_ip_address = true
     instance_type = "c5.4xlarge"
-    iam_instance_profile = aws_iam_instance_profile.tf_ec2_profile.name
+    iam_instance_profile = aws_iam_instance_profile.tf_ec2_profile.name               # PVRE 설정을 막는다. PVRE 로 인해 오라클 인스턴스가 crash 가 일어나는듯~.
     monitoring = true
     root_block_device {
         volume_size = "300"
