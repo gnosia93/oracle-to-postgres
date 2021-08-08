@@ -100,9 +100,9 @@ resource "aws_instance" "tf_postgres_19c" {
     instance_type = "c5.4xlarge"
     monitoring = true
     root_block_device {
-        volume_size = "300"
+        volume_size = "900"
         volume_type = "io1"
-        iops = "10000"
+        iops = "30000"
     }
     key_name = aws_key_pair.tf_key.id
     vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
