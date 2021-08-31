@@ -178,7 +178,7 @@ EOF
 sudo service procps start
 sudo touch /var/lock/subsys/listener
 
-sudo curl -o oracle-xe_11.2.0-2_amd64.deb http://ec2-3-37-255-59.ap-northeast-2.compute.amazonaws.com/oracle-xe_11.2.0-2_amd64.deb
+sudo curl -o oracle-xe_11.2.0-2_amd64.deb http://www.studydev.com/oracle-xe_11.2.0-2_amd64.deb
 sudo dpkg --install oracle-xe_11.2.0-2_amd64.deb
 sudo cat > xe.rsp <<EOF
 ORACLE_HTTP_PORT=8080
@@ -231,7 +231,7 @@ resource "aws_instance" "tf_oracle_19c" {
     vpc_security_group_ids = [ aws_security_group.tf_sg_pub.id ]
     user_data = <<_DATA
 #! /bin/bash
-sudo dnf install -y http://ec2-3-37-255-59.ap-northeast-2.compute.amazonaws.com/oracle-database-preinstall-19c-1.0-1.el8.x86_64.rpm
+sudo dnf install -y http://www.studydev.com/oracle-database-preinstall-19c-1.0-1.el8.x86_64.rpm
 sudo cat > /etc/selinux/config <<EOF
 SELINUX=permissive
 SELINUXTYPE=targeted
@@ -284,7 +284,7 @@ export PATH=$ORACLE_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib:/lib:/usr/lib
 export CLASSPATH=$ORACLE_HOME/jlib:$ORACLE_HOME/rdbms/jlib
 
-sudo -u oracle curl -o $ORACLE_HOME/oracle.zip http://ec2-3-37-255-59.ap-northeast-2.compute.amazonaws.com/LINUX.X64_193000_db_home.zip
+sudo -u oracle curl -o $ORACLE_HOME/oracle.zip http://www.studydev.com/LINUX.X64_193000_db_home.zip
 sudo -u oracle unzip -o $ORACLE_HOME/oracle.zip -d $ORACLE_HOME
 sudo -u oracle rm $ORACLE_HOME/oracle.zip
 
