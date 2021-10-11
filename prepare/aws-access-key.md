@@ -20,3 +20,8 @@ export aws_access_key_id = AAaaaaaaaaaaaaa                          <--- 억세�
 export aws_secret_access_key = SSssssssssssssss                     <--- 시크리트 억세스키 추가 
 export aws_region = "ap-northeast-2"                                <--- 리전 설정
 ```
+
+
+## 참고자료 ##
+
+* https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-configure-profiles.html
