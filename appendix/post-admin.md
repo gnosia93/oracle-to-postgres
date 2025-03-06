@@ -1,6 +1,9 @@
 ### replication ###
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg_replication.png)
 * A replication slot is a PostgreSQL feature that ensures the master server keeps the WAL logs required by replicas even when they are disconnected from the master.
+* pg_basebackup is used to take a base backup of a running PostgreSQL database cluster. The backup is taken without affecting other clients of the database, and can be used both for point-in-time recovery (see Section 25.3) and as the starting point for a log-shipping or streaming-replication standby server (see Section 26.2).
+
+
 
 ### [pg_upgrade --link](https://blog.ex-em.com/1746) ###
 * 하드링크를 사용하여 업그레이드 하므로 수분안에 업그레이드가 가능하다.
