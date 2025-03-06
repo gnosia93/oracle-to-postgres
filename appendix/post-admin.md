@@ -1,6 +1,6 @@
 ### replication ###
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg_replication.png)
-
+* A replication slot is a PostgreSQL feature that ensures the master server keeps the WAL logs required by replicas even when they are disconnected from the master.
 
 ### [pg_upgrade --link](https://blog.ex-em.com/1746) ###
 * 하드링크를 사용하여 업그레이드 하므로 수분안에 업그레이드가 가능하다.
