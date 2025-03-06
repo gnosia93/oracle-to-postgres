@@ -2,7 +2,8 @@
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg_replication.png)
 * A replication slot is a PostgreSQL feature that ensures the master server keeps the WAL logs required by replicas even when they are disconnected from the master.
 * pg_basebackup is used to take a base backup of a running PostgreSQL database cluster. The backup is taken without affecting other clients of the database, and can be used both for point-in-time recovery (see Section 25.3) and as the starting point for a log-shipping or streaming-replication standby server (see Section 26.2).
-* In PostgreSQL, "LSN" stands for "Log Sequence Number," which is essentially a unique identifier that points to a specific location within the Write-Ahead Log (WAL), essentially marking the position where a transaction's changes were recorded; it acts as a pointer to track the chronological order of data modifications within the database system. 
+* In PostgreSQL, "LSN" stands for "Log Sequence Number," which is essentially a unique identifier that points to a specific location within the Write-Ahead Log (WAL), essentially marking the position where a transaction's changes were recorded; it acts as a pointer to track the chronological order of data modifications within the database system.
+* replica instance has standby.signal file, it means this instance is replica. 
 
 
 ### [pg_upgrade --link](https://blog.ex-em.com/1746) ###
