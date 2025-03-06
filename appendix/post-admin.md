@@ -2,8 +2,8 @@
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg-wal-1.png)
 
 * $PG_DATA/pg_wal/
-  * default size of file is 16MB
-  * pg_wal directory's default size is 1gb, when this directory size increase more than 1gb, existing file is overritten.
+  * default size of file is 16MB (wal_segment_size)
+  * pg_wal directory's default size is 1gb, when this directory size increase more than 1gb, existing file is overritten. (max_wal_size)
 
 
 ### replication ###
