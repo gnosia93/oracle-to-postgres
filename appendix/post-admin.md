@@ -6,6 +6,10 @@
   * pg_wal directory's default size is 1gb, when this directory size increase more than 1gb, existing file is overritten. (max_wal_size)
   * lsn => log sequence number / distincquish each tx records with lsn.
 
+![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg-wal-2.png)
+
+
+
 ### replication ###
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg_replication.png)
 * A replication slot is a PostgreSQL feature that ensures the master server keeps the WAL logs required by replicas even when they are disconnected from the master.
