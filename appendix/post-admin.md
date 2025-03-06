@@ -1,5 +1,5 @@
 ### WAL ###
-
+![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg-wal-1.png)
 
 ### replication ###
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg_replication.png)
