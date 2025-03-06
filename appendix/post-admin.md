@@ -1,6 +1,6 @@
 ### [Architecture](https://www.youtube.com/watch?v=6f-TqM4HYPY&list=PLZwFtgKc35I_05Hr9e_3dsWpOCv9c7k2L&index=15) ###
 
-
+* checkpoint - Synchronizing memory state and disk state
 
 ### WAL ###
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg-wal-1.png)
