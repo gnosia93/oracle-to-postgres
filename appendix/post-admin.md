@@ -1,6 +1,11 @@
 ### WAL ###
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg-wal-1.png)
 
+* $PG_DATA/pg_wal/
+  * default size of file is 16MB
+  * pg_wal directory's default size is 1gb, when this directory size increase more than 1gb, existing file is overritten.
+
+
 ### replication ###
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg_replication.png)
 * A replication slot is a PostgreSQL feature that ensures the master server keeps the WAL logs required by replicas even when they are disconnected from the master.
