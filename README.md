@@ -95,7 +95,7 @@ PostgreSQL은 수년에 걸쳐 반복적으로 입증 된 견고한 데이터베
 
 * [RDS Performance on Amazon Graviton2](https://github.com/gnosia93/postgres-terraform/blob/main/appendix/postgres-arm.md)
 
-* [Admin]
+* [Admin](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/post-admin.md)
 
 ## Revision History 
 
