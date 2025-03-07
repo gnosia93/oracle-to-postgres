@@ -17,7 +17,7 @@
     * uncommitted read
     * committed read
     * repeatable read
-    * serializable - SERIALIZABLE is the strictest isolation level, and as the name suggests, it proceeds transactions sequentially
+    * serializable - SERIALIZABLE is the strictest isolation level, and as the name suggests, it proceeds transactions sequentially (SERIALIZABLE은 가장 엄격한 격리 수준으로, 이름 그대로 트랜잭션을 순차적으로 진행시킨다)
   * durability      
 
 
