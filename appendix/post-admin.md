@@ -13,7 +13,7 @@
 * ACID
   * atomicity
   * consistency
-  * isolation
+  * [isolation](https://mangkyu.tistory.com/299)
     * uncommitted read
     * committed read
     * repeatable read
