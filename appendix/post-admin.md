@@ -8,8 +8,18 @@
      * clog buffer (tx buffer)
      * lock space 
    * local memory 
+
 ### WAL ###
-![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg-wal-1.png)
+* ACID
+  * atomicity
+  * consistency
+  * isolation
+    * uncommitted read
+    * committed read
+    * repeatable read
+    * serializable  
+  * durability      
+
 
 * $PG_DATA/pg_wal/
   * default size of file is 16MB (wal_segment_size)
