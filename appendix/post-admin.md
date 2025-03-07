@@ -14,7 +14,7 @@
    * wal writer
    * auto vaccume.
    * checkpoint  
-* [hba_conf](https://berasix.tistory.com/entry/PostgreSQL-%EC%84%A4%EC%B9%98%EC%99%80-%EC%9A%B4%EC%98%81-3-pghbaconf-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0)   
+* [pg_hba.conf](https://berasix.tistory.com/entry/PostgreSQL-%EC%84%A4%EC%B9%98%EC%99%80-%EC%9A%B4%EC%98%81-3-pghbaconf-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0)   
 
 ### WAL ###
 * ACID
