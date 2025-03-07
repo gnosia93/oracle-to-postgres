@@ -35,7 +35,7 @@
 
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg-wal-2.png)
 
-* https://pgbackrest.org/
+
 
 ### replication ###
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg_replication.png)
@@ -50,6 +50,11 @@
 * inplace 업그레이드시 카탈로그 정보를 변경한다.
 * 하드링크는 파일시스템의 메타데이터에 정보를 저장하는 inode 를 공유한다.   
 * pg_dump(all) 또는 logical replication (cdc) 이용하여 업그레이드 할 수도 있다. 
+
+### backup & recovery ###
+
+* https://github.com/ossc-db/pg_rman
+* https://pgbackrest.org/
 
 
 ### pg_vector extension ###
