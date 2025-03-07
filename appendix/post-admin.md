@@ -7,7 +7,14 @@
      * wall buffer
      * clog buffer (tx buffer)
      * lock space 
-   * local memory 
+   * local memory
+* background process
+   * postgres (master) -> fork backround process
+   * background writer
+   * wal writer
+   * auto vaccume.
+   * checkpoint  
+   
 
 ### WAL ###
 * ACID
