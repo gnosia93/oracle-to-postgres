@@ -36,5 +36,9 @@
 
 
 ### pg_vector extension ###
-* 유클리디안 거리 - https://blog.naver.com/bsw2428/221388885007
+* 유클리디안 거리(L2 distance) - https://blog.naver.com/bsw2428/221388885007
+* Cosine Similarity - https://wikidocs.net/24603
+    * 문서를 구성하는 단어들의 벡터의 방향성을 우선으로 계산하기 때문에 문서의 길이에 영향을 받을 수 있는 유클리디안 방식보다 정확하다.
+    * 예를들어 A, B, C 문서가 있고, A 와 B 가 유사한 문서이지만, B 가 상대적으로 A 보다 2배 정도의 분량이고, C 의 경우 A 와
+      동일한 분량의 문서의 경우 A-C 의 유사도가 A-B 유사도 보다 높게 나오는 경우가 발생한다.  
 
