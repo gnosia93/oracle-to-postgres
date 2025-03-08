@@ -51,6 +51,9 @@
 * 하드링크는 파일시스템의 메타데이터에 정보를 저장하는 inode 를 공유한다.   
 * pg_dump(all) 또는 logical replication (cdc) 이용하여 업그레이드 할 수도 있다. 
 
+* [postgresql db version upgrade](https://www.google.co.kr/search?q=postgresql+db+version+upgrade&sca_esv=0aa6c026f1990de0&sxsrf=AHTn8zpIbfPQ-O9GoJqYygvxexp4q88j_Q%3A1741409756602&source=hp&ei=3M3LZ_DvIZ3F1e8P_YiUuAs&iflsig=ACkRmUkAAAAAZ8vb7ICDGP6mtQ0k8sq1jhWUNNBHQzYh&ved=0ahUKEwjwzcrv2PmLAxWdYvUHHX0EBbcQ4dUDCBs&uact=5&oq=postgresql+db+version+upgrade&gs_lp=Egdnd3Mtd2l6Ih1wb3N0Z3Jlc3FsIGRiIHZlcnNpb24gdXBncmFkZTIFECEYoAEyBRAhGKABSOBDUABYu0JwA3gAkAEAmAHTAaAB1RuqAQYxLjI4LjG4AQPIAQD4AQGYAiGgAsYcqAIBwgILEAAYgAQYsQMYgwHCAgQQABgDwgIREC4YgAQYsQMY0QMYgwEYxwHCAggQLhiABBixA8ICCxAuGIAEGLEDGIMBwgIFEAAYgATCAggQABiABBixA8ICBhCzARiFBMICDhAuGIAEGLEDGNEDGMcBwgIEEAAYHsICBhAAGAgYHsICBhAAGAUYHsICCBAAGAUYChgewgIEECEYFcICBxAhGKABGAqYAwPxBRH2-W69B066kgcGMy4yOS4xoAe6rQE&sclient=gws-wiz)
+
+
 ### backup & recovery ###
 
 * https://github.com/ossc-db/pg_rman
@@ -58,6 +61,8 @@
 
 시간차가 있는 standby 복제서버를 둔다던가, 백업본을 사용해 특정시점으로 복구하는 방안이 있지만 flashback이나 temporal table 같은 기능은 제공되지 않음
 * https://database.sarang.net/?criteria=pgsql
+
+
 ### pg_vector extension ###
 * 유클리디안 거리(L2 distance) - https://blog.naver.com/bsw2428/221388885007
 * Cosine Similarity - https://wikidocs.net/24603
