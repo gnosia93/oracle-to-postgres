@@ -35,7 +35,7 @@
 
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg-wal-2.png)
 
-
+* https://tmaxtibero.blog/4592/
 
 ### replication ###
 ![](https://github.com/gnosia93/oracle-to-postgres/blob/main/appendix/images/pg_replication.png)
