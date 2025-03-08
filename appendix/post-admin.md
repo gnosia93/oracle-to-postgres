@@ -73,3 +73,7 @@
   * 내적은 영어로 다양하게 불리는데 Inner product 라고도 하고, dot product, scalar product 라고도 불린다. 가끔은 projection product 라고도 불린다
 
 
+## misc ##
+
+* [PostgreSQL 아카이브 백업과 특정시점 복구방법](https://mozi.tistory.com/560)
+
