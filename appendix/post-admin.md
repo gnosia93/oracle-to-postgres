@@ -56,6 +56,7 @@
 * https://github.com/ossc-db/pg_rman
 * https://pgbackrest.org/
 
+시간차가 있는 standby 복제서버를 둔다던가, 백업본을 사용해 특정시점으로 복구하는 방안이 있지만 flashback이나 temporal table 같은 기능은 제공되지 않음
 
 ### pg_vector extension ###
 * 유클리디안 거리(L2 distance) - https://blog.naver.com/bsw2428/221388885007
